@@ -1437,6 +1437,95 @@ button {
   transform: translateY(-2px);
 }
 
+.paystack-accepted-cards {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.paystack-cards-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+}
+
+.payment-badges-row,
+.cart-accepted-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.cart-accepted-cards {
+  margin-top: 0.6rem;
+}
+
+.pay-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  transition: var(--tr-fast);
+}
+
+.pay-badge.pay-visa {
+  color: #1a1f71;
+  background: #ffffff;
+  border-color: #ffffff;
+  font-style: italic;
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+}
+
+.pay-badge.pay-mc {
+  color: #ffffff;
+  background: linear-gradient(135deg, #eb001b 0%, #ff5f00 50%, #f79e1b 100%);
+  border: none;
+  font-family: Arial, sans-serif;
+}
+
+.pay-badge.pay-mpesa {
+  color: #ffffff;
+  background: #008751;
+  border-color: #00a664;
+  font-weight: 800;
+}
+
+.pay-badge.pay-apple {
+  color: #ffffff;
+  background: #000000;
+  border-color: #333333;
+}
+
+.pay-badge.pay-verve {
+  color: #ffffff;
+  background: #00425f;
+  border-color: #02648f;
+}
+
+.paystack-security-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  color: #8fa89b;
+  margin-top: 0.65rem;
+}
+
 /* ==========================================================================
    MODALS (<dialog>)
    ========================================================================== */
