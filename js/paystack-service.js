@@ -5,7 +5,9 @@
 
 class PaystackPaymentService {
   constructor() {
-    this.publicKey = CONFIG.paystack.publicKey;
+    this.publicKey = (typeof localStorage !== "undefined" && localStorage.getItem("nah_paystack_key")) 
+      ? localStorage.getItem("nah_paystack_key") 
+      : (CONFIG.paystack?.publicKey || "pk_test_51a2f4d6e8b09c12a7f9e8d4a3b2c1d0e8f7a6b5");
   }
 
   setPublicKey(newKey) {
@@ -65,6 +67,7 @@ class PaystackPaymentService {
           email: customerEmail,
           amount: amountInSubunits,
           currency: currentCurrency,
+          channels: ['card', 'mobile_money', 'bank', 'ussd', 'qr'],
           ref: reference,
           metadata: {
             custom_fields: [

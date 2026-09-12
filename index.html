@@ -7,6 +7,23 @@
   <meta name="description" content="Pure East African & global wildcrafted herbal remedies, moringa, baobab, rosemary hair elixirs, bedtime sleep teas, and sacred ceremony portfolios. Zero-database, Paystack checkout.">
   <meta name="keywords" content="moringa, baobab, herbal teas, insomnia herbs, rosemary scalp oil, bloating tea, kenyan botanicals, african herbs, paystack herbal shop">
 
+  <!-- Canonical & Domain Verification -->
+  <link rel="canonical" href="https://omnicorehub.app/">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://omnicorehub.app/">
+  <meta property="og:title" content="NewAge Health Botanicals & Rituals | Sacred Earth Herbal Alchemy">
+  <meta property="og:description" content="Pure East African & global wildcrafted herbal remedies, moringa, baobab, rosemary hair elixirs, bedtime sleep teas, and sacred ceremony portfolios. Zero-database, Paystack checkout.">
+  <meta property="og:image" content="https://omnicorehub.app/assets/images/hero-apothecary.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://omnicorehub.app/">
+  <meta name="twitter:title" content="NewAge Health Botanicals & Rituals | Sacred Earth Herbal Alchemy">
+  <meta name="twitter:description" content="Pure East African & global wildcrafted herbal remedies, moringa, baobab, rosemary hair elixirs, bedtime sleep teas, and sacred ceremony portfolios.">
+  <meta name="twitter:image" content="https://omnicorehub.app/assets/images/hero-apothecary.jpg">
+
   <!-- Favicon / Brand Icon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
 
@@ -644,14 +661,23 @@
         <div class="ai-avatar">🍃</div>
         <div>
           <h3 class="ai-panel-title">Sacred Herbal Alchemist</h3>
-          <span class="ai-panel-badge"><span class="ai-online-dot"></span> Free AI Consultation · Puter</span>
+          <span class="ai-panel-badge"><span class="ai-online-dot"></span> Botanical Pharmacopoeia · Online</span>
         </div>
       </div>
       <div class="ai-header-controls">
-        <button class="ai-control-btn" onclick="aiHerbalist.clearChat()" title="Clear Consultation" aria-label="Clear chat">
+        <button class="ai-control-btn" onclick="aiHerbalist.promptClearChat()" title="Clear Consultation" aria-label="Clear chat">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18m-2 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
         </button>
         <button class="ai-close-btn" onclick="aiHerbalist.close()" aria-label="Close herbalist window">&times;</button>
+      </div>
+    </div>
+
+    <!-- Inline Clear Confirmation Bar -->
+    <div class="ai-clear-confirm-bar" id="aiClearConfirmBar" style="display: none;">
+      <span>Reset consultation session?</span>
+      <div class="ai-clear-actions">
+        <button type="button" class="ai-clear-action-btn ai-clear-yes" onclick="aiHerbalist.confirmClearChat()">Reset</button>
+        <button type="button" class="ai-clear-action-btn ai-clear-cancel" onclick="aiHerbalist.cancelClearChat()">Cancel</button>
       </div>
     </div>
 

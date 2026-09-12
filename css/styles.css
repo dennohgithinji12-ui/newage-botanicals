@@ -1767,14 +1767,29 @@ dialog::backdrop {
   animation: aiPanelOpen 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+.ai-herbalist-panel.closing {
+  animation: aiPanelClose 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 @keyframes aiPanelOpen {
   from {
     opacity: 0;
-    transform: translateY(20px) scale(0.96);
+    transform: translateY(24px) scale(0.96);
   }
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes aiPanelClose {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
   }
 }
 
@@ -1858,6 +1873,52 @@ dialog::backdrop {
 .ai-close-btn {
   font-size: 1.4rem;
   line-height: 1;
+}
+
+/* Inline Clear Confirmation Bar */
+.ai-clear-confirm-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.55rem 1rem;
+  background: rgba(231, 111, 81, 0.18);
+  border-bottom: 1px solid rgba(231, 111, 81, 0.4);
+  font-size: 0.76rem;
+  color: #f4a261;
+  animation: aiPanelOpen 0.2s ease forwards;
+}
+
+.ai-clear-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.ai-clear-action-btn {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--tr-fast);
+}
+
+.ai-clear-yes {
+  background: #e76f51;
+  border: none;
+  color: #fff;
+}
+.ai-clear-yes:hover {
+  background: #f4a261;
+}
+
+.ai-clear-cancel {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-parchment);
+}
+.ai-clear-cancel:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Quick Prompt Chips */
@@ -1971,6 +2032,63 @@ dialog::backdrop {
   color: var(--text-parchment);
 }
 
+.ai-msg-text ul, .ai-msg-text ol {
+  margin: 0.5rem 0 0.5rem 1.2rem;
+  padding: 0;
+}
+.ai-msg-text li {
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+}
+.ai-msg-text ul li {
+  list-style-type: '🌿 ';
+  padding-left: 0.2rem;
+}
+.ai-msg-text ol li {
+  list-style-type: decimal;
+}
+.ai-msg-text blockquote {
+  margin: 0.6rem 0;
+  padding: 0.5rem 0.75rem;
+  background: rgba(212, 175, 55, 0.08);
+  border-left: 3px solid var(--gold-glow);
+  border-radius: 4px;
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--text-parchment);
+}
+
+/* Dynamic Follow-up Suggestions */
+.ai-suggestions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding-top: 0.55rem;
+  border-top: 1px dashed rgba(212, 175, 55, 0.2);
+}
+
+.ai-suggestion-chip {
+  font-size: 0.72rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(14, 41, 27, 0.85);
+  color: var(--gold-glow);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  cursor: pointer;
+  transition: var(--tr-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ai-suggestion-chip:hover {
+  background: rgba(212, 175, 55, 0.22);
+  border-color: var(--gold-glow);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
 /* Embedded Recommendation Cards */
 .ai-recommendations-wrap {
   margin-top: 0.85rem;
@@ -2082,6 +2200,26 @@ dialog::backdrop {
   transform: scale(1.03);
 }
 
+.ai-btn-add.ai-btn-added {
+  background: #00c389;
+  color: #050e09;
+  box-shadow: 0 0 10px rgba(0, 195, 137, 0.45);
+  transform: scale(1.02);
+}
+
+.ai-btn-cartlink {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--gold-glow);
+  font-size: 0.68rem;
+  padding: 0.22rem 0.5rem;
+}
+.ai-btn-cartlink:hover {
+  background: rgba(212, 175, 55, 0.18);
+  color: #fff;
+  border-color: var(--gold-glow);
+}
+
 /* Typing Indicator */
 .ai-typing-bubble {
   display: flex;
@@ -2168,7 +2306,9 @@ dialog::backdrop {
     width: 100vw;
     max-width: 100vw;
     height: 85vh;
+    height: 85dvh;
     max-height: 85vh;
+    max-height: 85dvh;
     border-radius: 20px 20px 0 0;
   }
   .ai-herbalist-launcher {

@@ -43,7 +43,7 @@ class ShoppingCart {
     return null;
   }
 
-  addItem(productId, quantity = 1) {
+  addItem(productId, quantity = 1, openDrawer = true) {
     const product = PRODUCTS_DATA.find(p => p.id === productId);
     if (!product) return;
 
@@ -63,7 +63,9 @@ class ShoppingCart {
     }
 
     this.saveCart();
-    this.openDrawer();
+    if (openDrawer) {
+      this.openDrawer();
+    }
     this.showToast(`🌿 Added "${product.name}" to your basket!`);
   }
 
