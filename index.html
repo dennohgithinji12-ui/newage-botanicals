@@ -18,8 +18,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="assets/images/hero-apothecary.webp" type="image/webp" fetchpriority="high">
 
-  <!-- Google Fonts (Non-blocking) -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap">
+  <!-- Google Fonts (Asynchronous Non-blocking Load) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
+  </noscript>
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
@@ -142,8 +146,6 @@
   }
   </script>
 
-  <!-- Puter.js (Free Client-Side AI & Cloud - Loaded with defer) -->
-  <script src="https://js.puter.com/v2/" defer></script>
 </head>
 <body>
 
@@ -890,8 +892,7 @@
     </form>
   </div>
 
-  <!-- Scripts -->
-  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <!-- Scripts (Paystack & Puter are loaded on-demand when user interacts) -->
   <script src="js/config.js"></script>
   <script src="js/geo-currency.js"></script>
   <script src="js/data/products.js"></script>

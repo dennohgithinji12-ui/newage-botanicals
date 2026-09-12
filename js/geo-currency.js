@@ -12,17 +12,15 @@ class GeoCurrencyEngine {
     this.init();
   }
 
-  async init() {
+  init() {
     // 1. Check if user already manually chose a currency in a previous visit
     const savedCurrency = localStorage.getItem(this.storageKey);
     if (savedCurrency && CONFIG.currencies[savedCurrency]) {
       this.setCurrency(savedCurrency, false);
       this.updateLocationBadge(`📍 Currency: ${savedCurrency} (Saved Choice)`);
     } else {
-      // 2. Synchronous zero-latency detection via browser timezone/locale
+      // 2. Synchronous zero-latency detection via browser timezone/locale (0ms, no network delay)
       this.detectViaTimezone();
-      // 3. Asynchronous refinement via IP Geolocation API
-      this.detectViaIP();
     }
   }
 

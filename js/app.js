@@ -143,9 +143,12 @@ class ApothecaryApp {
       return;
     }
 
-    grid.innerHTML = filtered.map(product => {
+    grid.innerHTML = filtered.map((product, idx) => {
       const formattedPrice = window.geoCurrency ? window.geoCurrency.formatPrice(product.priceKES) : `KSh ${product.priceKES}`;
       const basePriceKES = `KSh ${product.priceKES.toLocaleString()}`;
+      const isAboveFold = idx < 4;
+      const loadingAttr = isAboveFold ? 'loading="eager"' : 'loading="lazy"';
+      const priorityAttr = isAboveFold ? 'fetchpriority="high"' : '';
 
       // Pick top 2 illness tags and top 1 herb tag
       const illnessPills = (product.illnesses || []).slice(0, 2).map(ill => `<span class="card-pill">🎯 ${ill}</span>`).join("");
@@ -156,7 +159,7 @@ class ApothecaryApp {
           <div class="card-image-wrap">
             <picture>
               <source srcset="${product.image.replace('.jpg', '.webp')}" type="image/webp">
-              <img src="${product.image}" alt="${product.name}" class="card-img" loading="lazy" decoding="async" width="380" height="280" onerror="this.src='assets/images/hero-apothecary.jpg'">
+              <img src="${product.image}" alt="${product.name}" class="card-img" ${loadingAttr} ${priorityAttr} decoding="async" width="380" height="280" onerror="this.src='assets/images/hero-apothecary.jpg'">
             </picture>
             ${product.tag ? `<span class="card-badge">${product.tag}</span>` : ""}
             <button class="quick-view-trigger" onclick="app.showQuickView('${product.id}')" title="Quick View Botanical Details" aria-label="Quick View ${product.name}">

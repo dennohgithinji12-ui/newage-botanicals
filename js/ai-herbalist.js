@@ -84,6 +84,18 @@ class AIHerbalistController {
     setTimeout(() => {
       if (this.inputField) this.inputField.focus();
     }, 150);
+
+    // On-demand background load of Puter SDK only when user actually engages with chat
+    this.loadPuterSDK();
+  }
+
+  loadPuterSDK() {
+    if (window.puter || this._loadingPuter) return;
+    this._loadingPuter = true;
+    const script = document.createElement("script");
+    script.src = "https://js.puter.com/v2/";
+    script.async = true;
+    document.head.appendChild(script);
   }
 
   close() {
