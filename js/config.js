@@ -15,9 +15,9 @@ const CONFIG = {
     hours: "Mon - Sat: 8:00 AM - 7:00 PM EAT"
   },
   paystack: {
-    // Replace with your live Paystack public key (pk_live_...) or test key (pk_test_...)
-    publicKey: "pk_test_51a2f4d6e8b09c12a7f9e8d4a3b2c1d0e8f7a6b5",
-    testMode: true,
+    // Live Paystack public key
+    publicKey: "pk_live_fb70c442b890ed7467719e6771a0766b16894aae",
+    testMode: false,
     channels: ["card", "mobile_money", "bank", "ussd", "qr"]
   },
   // Base currency of the catalog is KES (Kenyan Shillings)

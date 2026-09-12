@@ -7,7 +7,7 @@ class PaystackPaymentService {
   constructor() {
     this.publicKey = (typeof localStorage !== "undefined" && localStorage.getItem("nah_paystack_key")) 
       ? localStorage.getItem("nah_paystack_key") 
-      : (CONFIG.paystack?.publicKey || "pk_test_51a2f4d6e8b09c12a7f9e8d4a3b2c1d0e8f7a6b5");
+      : (CONFIG.paystack?.publicKey || "pk_live_fb70c442b890ed7467719e6771a0766b16894aae");
   }
 
   setPublicKey(newKey) {
