@@ -3,26 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NewAge Health Botanicals & Rituals | Sacred Earth Herbal Alchemy</title>
-  <meta name="description" content="Pure East African & global wildcrafted herbal remedies, moringa, baobab, rosemary hair elixirs, bedtime sleep teas, and sacred ceremony portfolios. Zero-database, Paystack checkout.">
-  <meta name="keywords" content="moringa, baobab, herbal teas, insomnia herbs, rosemary scalp oil, bloating tea, kenyan botanicals, african herbs, paystack herbal shop">
+  <title>NewAge Health Botanicals & Rituals | African Herbal Medicine & Body Confidence Apothecary</title>
+  <meta name="description" content="Shop ethically wildcrafted East African herbal remedies, organic Moringa, ancient Baobab, rosemary hair growth oils, bedtime sleep teas & vitality blends. Same-day Nairobi dispatch & worldwide shipping with M-Pesa, Card & Apple Pay.">
+  <meta name="keywords" content="african herbal remedies, kenyan botanicals, moringa powder nairobi, baobab fruit powder, sleep tea herbs, rosemary hair growth oil, mukombero vitality, herbalist nairobi, paystack m-pesa shop, natural wellness kenya">
+  <meta name="author" content="NewAge Health Botanicals & Rituals">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" content="#050e09">
 
   <!-- Canonical & Domain Verification -->
   <link rel="canonical" href="https://omnicorehub.app/">
 
+  <!-- Performance: Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/images/hero-apothecary.webp" type="image/webp" fetchpriority="high">
+
+  <!-- Google Fonts (Non-blocking) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap">
+
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://omnicorehub.app/">
+  <meta property="og:site_name" content="NewAge Health Botanicals & Rituals">
   <meta property="og:title" content="NewAge Health Botanicals & Rituals | Sacred Earth Herbal Alchemy">
-  <meta property="og:description" content="Pure East African & global wildcrafted herbal remedies, moringa, baobab, rosemary hair elixirs, bedtime sleep teas, and sacred ceremony portfolios. Zero-database, Paystack checkout.">
-  <meta property="og:image" content="https://omnicorehub.app/assets/images/hero-apothecary.jpg">
+  <meta property="og:description" content="Pure East African wildcrafted herbal remedies: Moringa, Baobab, Rosemary scalp elixirs, bedtime sleep teas, and body confidence formulations. Instant M-Pesa & Card checkout.">
+  <meta property="og:image" content="https://omnicorehub.app/assets/images/hero-apothecary.webp">
+  <meta property="og:image:width" content="1376">
+  <meta property="og:image:height" content="768">
+  <meta property="og:locale" content="en_KE">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://omnicorehub.app/">
   <meta name="twitter:title" content="NewAge Health Botanicals & Rituals | Sacred Earth Herbal Alchemy">
-  <meta name="twitter:description" content="Pure East African & global wildcrafted herbal remedies, moringa, baobab, rosemary hair elixirs, bedtime sleep teas, and sacred ceremony portfolios.">
-  <meta name="twitter:image" content="https://omnicorehub.app/assets/images/hero-apothecary.jpg">
+  <meta name="twitter:description" content="Pure East African wildcrafted herbal remedies: Moringa, Baobab, Rosemary scalp elixirs, bedtime sleep teas, and body confidence formulations. Instant M-Pesa & Card checkout.">
+  <meta name="twitter:image" content="https://omnicorehub.app/assets/images/hero-apothecary.webp">
 
   <!-- Favicon / Brand Icon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
@@ -30,11 +45,105 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Paystack Inline SDK (Official Client-Side Payment Script) -->
-  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <!-- Structured Data: Schema.org JSON-LD (Store, WebSite, FAQPage, ItemList) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Store",
+        "@id": "https://omnicorehub.app/#store",
+        "name": "NewAge Health Botanicals & Rituals",
+        "alternateName": "Omnicore Hub Botanicals",
+        "url": "https://omnicorehub.app/",
+        "logo": "https://omnicorehub.app/assets/images/hero-apothecary.webp",
+        "image": "https://omnicorehub.app/assets/images/hero-apothecary.webp",
+        "description": "Ethically wildcrafted East African herbal remedies, organic superfoods, hair elixirs, and holistic body wellness.",
+        "telephone": "+254700123456",
+        "email": "orders@omnicorehub.app",
+        "priceRange": "KSh 1,150 - KSh 3,400",
+        "currenciesAccepted": "KES, USD, NGN, GHS, ZAR, GBP, EUR",
+        "paymentAccepted": "M-Pesa, Credit Card, Debit Card, Apple Pay, Bank Transfer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Nairobi",
+          "addressRegion": "Nairobi County",
+          "addressCountry": "KE"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "19:00"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://omnicorehub.app/#website",
+        "url": "https://omnicorehub.app/",
+        "name": "NewAge Health Botanicals & Rituals",
+        "description": "Sacred Earth Wisdom · Modern Holistic Herbal Alchemy",
+        "publisher": {
+          "@id": "https://omnicorehub.app/#store"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://omnicorehub.app/?q={search_term_string}#shop",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://omnicorehub.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I order and pay with M-Pesa or Card?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Simply add your chosen herbal formulations to your basket, click 'Pay with Paystack', and enter your delivery details. You can pay instantly using M-Pesa (by entering your Safaricom phone number to trigger an STK push) or with any Visa, Mastercard, Verve, or Apple Pay. You receive an instant digital receipt and WhatsApp dispatch notification."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where do you ship, and how fast is delivery across Kenya?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We deliver across Nairobi and all major towns in Kenya (Mombasa, Kisumu, Nakuru, Eldoret) via express courier, typically arriving within 24–48 hours. Orders over KSh 4,500 enjoy free standard delivery. Worldwide international shipping is also available via DHL Express."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How are NewAge Health botanicals harvested and crafted?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All our botanicals are ethically wildcrafted and small-batch processed across Kenya's rich microclimates—from Mount Kenya's volcanic slopes to Kilifi's ancient baobab groves. We utilize gentle solar curing and cold extraction to preserve vital enzymatic life-force without synthetic preservatives or chemical fillers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are these formulations safe to combine, or to use alongside other supplements?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our daily nutritional powders (Moringa, Baobab) and gentle functional herbal teas (Hibiscus, Chamomile, Peppermint) are whole-food botanicals safe for regular wellness integration. For concentrated therapeutic tinctures or during pregnancy/nursing, we recommend consulting our AI Herbalist or your healthcare practitioner."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Apple Pay supported for mobile checkout?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Our domain omnicorehub.app is officially registered and verified with Apple Pay through Paystack. When shopping on Safari or iOS devices, Apple Pay will appear automatically at checkout for one-touch biometric payment."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
-  <!-- Puter.js (100% Free, Serverless Client-Side AI & Cloud) -->
-  <script src="https://js.puter.com/v2/"></script>
+  <!-- Puter.js (Free Client-Side AI & Cloud - Loaded with defer) -->
+  <script src="https://js.puter.com/v2/" defer></script>
 </head>
 <body>
 
@@ -116,7 +225,10 @@
          ========================================================================== -->
     <section class="hero-section" id="hero">
       <div class="hero-bg">
-        <img src="assets/images/hero-apothecary.jpg" alt="Mystical Herbal Apothecary Studio" class="hero-bg-img">
+        <picture>
+          <source srcset="assets/images/hero-apothecary.webp" type="image/webp">
+          <img src="assets/images/hero-apothecary.jpg" alt="Mystical Herbal Apothecary Studio" class="hero-bg-img" fetchpriority="high" decoding="async" width="1376" height="768">
+        </picture>
         <div class="hero-overlay"></div>
       </div>
       <div class="container">
@@ -352,8 +464,60 @@
             </div>
           </div>
           <div>
-            <img src="assets/images/hero-apothecary.jpg" alt="Botanical studio apothecary" style="border-radius: 14px; border: 1px solid var(--border-active); box-shadow: var(--shadow-card);">
+            <picture>
+              <source srcset="assets/images/hero-apothecary.webp" type="image/webp">
+              <img src="assets/images/hero-apothecary.jpg" alt="Botanical studio apothecary" loading="lazy" decoding="async" width="600" height="400" style="border-radius: 14px; border: 1px solid var(--border-active); box-shadow: var(--shadow-card);">
+            </picture>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FREQUENTLY ASKED QUESTIONS (SEO & FAQPAGE SCHEMA)
+         ========================================================================== -->
+    <section class="faq-section" id="faq" aria-labelledby="faqTitle">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-subtitle">Apothecary Guidance</span>
+          <h2 class="section-title" id="faqTitle">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-summary">How do I order and pay with M-Pesa or Card?</summary>
+            <div class="faq-content">
+              Simply add your chosen herbal formulations to your basket, click "Pay with Paystack", and enter your delivery details. You can pay instantly using M-Pesa (by entering your Safaricom phone number to trigger an STK push) or with any Visa, Mastercard, Verve, or Apple Pay. You receive an instant digital receipt and WhatsApp dispatch notification.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Where do you ship, and how fast is delivery across Kenya?</summary>
+            <div class="faq-content">
+              We deliver across Nairobi and all major towns in Kenya (Mombasa, Kisumu, Nakuru, Eldoret) via express courier, typically arriving within 24–48 hours. Orders over KSh 4,500 enjoy free standard delivery. Worldwide international shipping is also available via DHL Express.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">How are NewAge Health botanicals harvested and crafted?</summary>
+            <div class="faq-content">
+              All our botanicals are ethically wildcrafted and small-batch processed across Kenya's rich microclimates—from Mount Kenya's volcanic slopes to Kilifi's ancient baobab groves. We utilize gentle solar curing and cold extraction to preserve vital enzymatic life-force without synthetic preservatives or chemical fillers.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Are these formulations safe to combine, or to use alongside other supplements?</summary>
+            <div class="faq-content">
+              Our daily nutritional powders (Moringa, Baobab) and gentle functional herbal teas (Hibiscus, Chamomile, Peppermint) are whole-food botanicals safe for regular wellness integration. For concentrated therapeutic tinctures or during pregnancy/nursing, we recommend consulting our AI Herbalist or your healthcare practitioner.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Is Apple Pay supported for mobile checkout?</summary>
+            <div class="faq-content">
+              Yes! Our domain omnicorehub.app is officially registered and verified with Apple Pay through Paystack. When shopping on Safari or iOS devices, Apple Pay will appear automatically at checkout for one-touch biometric payment.
+            </div>
+          </details>
         </div>
       </div>
     </section>

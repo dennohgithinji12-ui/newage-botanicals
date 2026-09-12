@@ -1,0 +1,6 @@
+# robots.txt for https://omnicorehub.app
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://omnicorehub.app/sitemap.xml

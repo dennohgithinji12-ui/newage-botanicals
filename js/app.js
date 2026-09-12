@@ -154,7 +154,10 @@ class ApothecaryApp {
       return `
         <article class="product-card" data-id="${product.id}">
           <div class="card-image-wrap">
-            <img src="${product.image}" alt="${product.name}" class="card-img" loading="lazy" onerror="this.src='assets/images/hero-apothecary.jpg'">
+            <picture>
+              <source srcset="${product.image.replace('.jpg', '.webp')}" type="image/webp">
+              <img src="${product.image}" alt="${product.name}" class="card-img" loading="lazy" decoding="async" width="380" height="280" onerror="this.src='assets/images/hero-apothecary.jpg'">
+            </picture>
             ${product.tag ? `<span class="card-badge">${product.tag}</span>` : ""}
             <button class="quick-view-trigger" onclick="app.showQuickView('${product.id}')" title="Quick View Botanical Details" aria-label="Quick View ${product.name}">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
@@ -402,7 +405,10 @@ class ApothecaryApp {
     grid.innerHTML = BLOG_POSTS.map(post => `
       <article class="blog-card" onclick="app.readBlogPost('${post.id}')">
         <div class="blog-img-wrap">
-          <img src="${post.image}" alt="${post.title}" class="blog-img" loading="lazy" onerror="this.src='assets/images/hero-apothecary.jpg'">
+          <picture>
+            <source srcset="${post.image.replace('.jpg', '.webp')}" type="image/webp">
+            <img src="${post.image}" alt="${post.title}" class="blog-img" loading="lazy" decoding="async" width="380" height="220" onerror="this.src='assets/images/hero-apothecary.jpg'">
+          </picture>
         </div>
         <div class="blog-body">
           <div class="blog-meta-row">
@@ -486,7 +492,10 @@ class ApothecaryApp {
     grid.innerHTML = PORTFOLIOS_DATA.map(port => `
       <article class="portfolio-card" onclick="app.viewPortfolio('${port.id}')">
         <div class="portfolio-img-wrap">
-          <img src="${port.image}" alt="${port.title}" class="portfolio-img" loading="lazy" onerror="this.src='assets/images/hero-apothecary.jpg'">
+          <picture>
+            <source srcset="${port.image.replace('.jpg', '.webp')}" type="image/webp">
+            <img src="${port.image}" alt="${port.title}" class="portfolio-img" loading="lazy" decoding="async" width="380" height="240" onerror="this.src='assets/images/hero-apothecary.jpg'">
+          </picture>
         </div>
         <div class="portfolio-body">
           <span class="portfolio-cat">${port.category}</span>

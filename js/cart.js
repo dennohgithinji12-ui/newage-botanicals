@@ -168,7 +168,10 @@ class ShoppingCart {
 
       return `
         <div class="cart-item" data-id="${item.id}">
-          <img src="${item.image}" alt="${item.name}" class="cart-item-img" onerror="this.src='assets/images/hero-apothecary.jpg'">
+          <picture>
+            <source srcset="${item.image.replace('.jpg', '.webp')}" type="image/webp">
+            <img src="${item.image}" alt="${item.name}" class="cart-item-img" loading="lazy" decoding="async" width="70" height="70" onerror="this.src='assets/images/hero-apothecary.jpg'">
+          </picture>
           <div class="cart-item-info">
             <h4 class="cart-item-title">${item.name}</h4>
             <p class="cart-item-botanical">${item.botanicalName}</p>
