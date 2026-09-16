@@ -1,0 +1,58 @@
+{
+  "lotNumber": "NAB-2026-HIB-001",
+  "sku": "NAB-SKU-HIB-150",
+  "productId": "hibiscus-ruby-infusion",
+  "productName": "Wild Kenyan Ruby Hibiscus & Lemongrass Tisane",
+  "botanicalName": "Hibiscus sabdariffa & Cymbopogon citratus",
+  "batchSizeUnits": 500,
+  "netWeightPerUnit": "150g / 5.3 oz",
+  "manufactureDate": "2026-09-16",
+  "bestBeforeDate": "2028-09-05",
+  "originTraceability": {
+    "supplierId": "sup-003",
+    "supplierName": "Taita Hills Herbal Collective",
+    "harvestRegion": "Taita Taveta Hills & Tsavo Borderland, Kenya",
+    "rawBatchRef": "RM-601500"
+  },
+  "labTesting": {
+    "accreditedLabName": "KEBS National Metrology & Analytical Lab",
+    "labReportNumber": "LAB-REPORT-829241",
+    "testDate": "2026-09-16",
+    "heavyMetals": {
+      "leadPpm": 0.8,
+      "arsenicPpm": 0.18,
+      "cadmiumPpm": 0.05,
+      "mercuryPpm": 0.02
+    },
+    "microbiology": {
+      "tamcCfuPerG": 1400,
+      "tymcCfuPerG": 95,
+      "eColi": "absent",
+      "salmonella": "absent"
+    },
+    "activePhytochemicalAssay": {
+      "marker": "Total Anthocyanins",
+      "measuredValue": "2.3% Anthocyanin calyx content",
+      "standardSpecification": "≥ 1.8% Anthocyanins"
+    },
+    "moisturePercentage": 7.1
+  },
+  "complianceEvaluation": {
+    "passed": true,
+    "qcDecision": "RELEASE_FOR_SALE",
+    "errors": [],
+    "warnings": [],
+    "evaluatedAt": "2026-09-16T16:53:21.500Z"
+  },
+  "digitalVerification": {
+    "cryptographicHash": "0d781b00ff8186f189097c61c77b4c9f50f3571c296ab7d393e5ff443f95e0d4",
+    "shortHash": "0d781b00ff8186f1",
+    "atlasVerificationUrl": "https://omnicorehub.app/atlas?sku=hibiscus-ruby-infusion&lot=NAB-2026-HIB-001&verify=0d781b00ff8186f1",
+    "qrPayload": {
+      "brand": "NewAge Botanicals",
+      "sku": "NAB-SKU-HIB-150",
+      "lot": "NAB-2026-HIB-001",
+      "url": "https://omnicorehub.app/atlas?sku=hibiscus-ruby-infusion&lot=NAB-2026-HIB-001&verify=0d781b00ff8186f1"
+    }
+  }
+}

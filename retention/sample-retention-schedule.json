@@ -1,0 +1,50 @@
+{
+  "orderId": "NAB-ORD-2026-001",
+  "customerName": "Wanjiku Muthoni",
+  "customerPhone": "+254722123456",
+  "orderDate": "2026-09-13",
+  "milestones": [
+    {
+      "day": 0,
+      "triggerDate": "2026-09-13",
+      "channel": "WhatsApp & Email",
+      "title": "Day 0: Order Confirmed & Sacred Unboxing Preparation",
+      "message": "Greetings Wanjiku Muthoni 🌿 \n\nYour order for *Pure Wildcrafted Moringa Leaf Powder* (Lot: `NAB-2026-MOR-001`) is safely secured at our Nairobi apothecary.\n\nBefore your courier arrives, you can inspect your batch's certified laboratory Certificate of Analysis (CoA) testing for heavy metals and purity:\n👉 https://omnicorehub.app/atlas?lot=NAB-2026-MOR-001\n\nPrepare a quiet morning moment for your unboxing ritual."
+    },
+    {
+      "day": 2,
+      "triggerDate": "2026-09-15",
+      "channel": "WhatsApp & SMS",
+      "title": "Day 2: Courier Arrival & Ritual Video Guide",
+      "message": "Your botanical parcel has been safely dispatched via courier 📦\n\n*Your Sacred First Day Ritual:*\nWatch our 60-second video on how to whisk and savor your Pure Wildcrafted Moringa Leaf Powder for maximum cellular absorption:\n👉 https://omnicorehub.app/#ritual-guide\n\nMay this plant ally bring harmony and vigor to your sanctuary today."
+    },
+    {
+      "day": 7,
+      "triggerDate": "2026-09-20",
+      "channel": "WhatsApp",
+      "title": "Day 7: First-Week Habit Check-In",
+      "message": "Hello Wanjiku Muthoni 🍃 It has been 7 days since you welcomed Pure Wildcrafted Moringa Leaf Powder into your daily rhythm.\n\n*How are your cells feeling?*\nMost of our community begins to notice lighter digestion and clearer morning wakefulness around Day 7.\n\nReply directly to this message if you have any questions on brewing temperature, taste adjustments, or pairing with meals. We are here to support your journey."
+    },
+    {
+      "day": 14,
+      "triggerDate": "2026-09-27",
+      "channel": "Email & WhatsApp",
+      "title": "Day 14: Cellular Compounding Education",
+      "message": "The Science of Botanical Compounding 🌱\n\nUnlike synthetic stimulants that spike and crash, natural polyphenols and adaptogens work cumulatively. At Day 14, your cellular receptors have assimilated the plant compounds, supporting steady baseline homeostasis.\n\nKeep your daily ritual consistent—the greatest benefits are unfolding right now."
+    },
+    {
+      "day": 21,
+      "triggerDate": "2026-10-04",
+      "channel": "WhatsApp & Email",
+      "title": "Day 21: Review Collection & Reward Incentive",
+      "message": "Wanjiku Muthoni, your experience inspires our whole community 🌟\n\nHow has your energy and wellbeing transformed over the last 3 weeks? \n\nShare a 30-second video or photo review of your ritual and receive **KSh 500 in apothecary credit** toward your next order:\n👉 https://omnicorehub.app/#reviews?order=NAB-ORD-2026-001"
+    },
+    {
+      "day": 30,
+      "triggerDate": "2026-10-13",
+      "channel": "WhatsApp & SMS",
+      "title": "Day 30: Smart Replenishment Trigger",
+      "message": "Time for your monthly replenishment 🌿\n\nYour 30-day supply of *Pure Wildcrafted Moringa Leaf Powder* is likely in its final servings. Keep your wellness momentum unbroken without missing a single morning.\n\n*One-Click M-Pesa Reorder (10% Loyalty Discount):*\n👉 https://omnicorehub.app?reorder=moringa-powder-organic&discount=LOYAL10"
+    }
+  ]
+}

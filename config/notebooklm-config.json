@@ -1,0 +1,11 @@
+{
+  "transport": "stdio",
+  "vaultPath": "../research/notebooklm/notes",
+  "ingestionPath": "../research/notebooklm/ingested",
+  "headless": true,
+  "syncIntervalMs": 300000,
+  "auth": {
+    "type": "persistent",
+    "tokenPath": ".notebooklm-auth-token"
+  }
+}

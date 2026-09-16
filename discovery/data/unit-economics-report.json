@@ -1,0 +1,479 @@
+{
+  "generatedAt": "2026-09-13T13:09:18.481Z",
+  "benchmarkAssumptions": {
+    "labTestingCostPerBatchKES": 25000,
+    "domesticFulfillmentKES": 120,
+    "paystackLocalRate": 0.015,
+    "paystackLocalFixedKES": 3,
+    "paystackIntlRate": 0.029,
+    "minimumGrossMarginPercent": 65,
+    "targetGrossMarginPercent": 75,
+    "targetMarketingSpendRatio": 0.35
+  },
+  "catalogSummary": {
+    "productCount": 5,
+    "standardLaunchBatchUnitsPerSKU": 500,
+    "totalLaunchBatchUnits": 2500,
+    "averageGrossMarginPercent": 78.7,
+    "averageNetContributionMarginPercent": 69.4,
+    "allPassMinimumFloor": true
+  },
+  "tierComparison": {
+    "batch_100": [
+      {
+        "sku": "NAB-SKU-MOR-250",
+        "productName": "Pure Wildcrafted Moringa Leaf Powder",
+        "batchSize": 100,
+        "costBreakdownKES": {
+          "rawIngredient": 130,
+          "processingExtraction": 35,
+          "primaryPackaging": 45,
+          "secondaryPackaging": 35,
+          "assemblyLabor": 30,
+          "amortizedLabAssay": 250,
+          "totalLandedCOGS": 525
+        },
+        "commercialsKES": {
+          "retailPrice": 1450,
+          "grossMarginKES": 925,
+          "grossMarginPercent": 63.79,
+          "fulfillmentCost": 120,
+          "paystackFee": 24.75,
+          "netContributionMarginKES": 780.25,
+          "netContributionMarginPercent": 53.81,
+          "maxAllowableCAC": 780.25,
+          "targetRecommendedCAC": 429
+        },
+        "status": {
+          "passesMarginThreshold": false,
+          "passesTargetMargin": false,
+          "statusLabel": "BELOW_MARGIN_FLOOR"
+        }
+      },
+      {
+        "sku": "NAB-SKU-BAO-200",
+        "productName": "Sacred Baobab Prebiotic Fruit Powder",
+        "batchSize": 100,
+        "costBreakdownKES": {
+          "rawIngredient": 120,
+          "processingExtraction": 30,
+          "primaryPackaging": 45,
+          "secondaryPackaging": 45,
+          "assemblyLabor": 30,
+          "amortizedLabAssay": 250,
+          "totalLandedCOGS": 520
+        },
+        "commercialsKES": {
+          "retailPrice": 1600,
+          "grossMarginKES": 1080,
+          "grossMarginPercent": 67.5,
+          "fulfillmentCost": 120,
+          "paystackFee": 27,
+          "netContributionMarginKES": 933,
+          "netContributionMarginPercent": 58.31,
+          "maxAllowableCAC": 933,
+          "targetRecommendedCAC": 513
+        },
+        "status": {
+          "passesMarginThreshold": true,
+          "passesTargetMargin": false,
+          "statusLabel": "ACCEPTABLE_MARGIN"
+        }
+      },
+      {
+        "sku": "NAB-SKU-MAR-050",
+        "productName": "Cold-Pressed High-Altitude Marula Glow Elixir",
+        "batchSize": 100,
+        "costBreakdownKES": {
+          "rawIngredient": 210,
+          "processingExtraction": 40,
+          "primaryPackaging": 155,
+          "secondaryPackaging": 70,
+          "assemblyLabor": 45,
+          "amortizedLabAssay": 250,
+          "totalLandedCOGS": 770
+        },
+        "commercialsKES": {
+          "retailPrice": 2400,
+          "grossMarginKES": 1630,
+          "grossMarginPercent": 67.92,
+          "fulfillmentCost": 120,
+          "paystackFee": 39,
+          "netContributionMarginKES": 1471,
+          "netContributionMarginPercent": 61.29,
+          "maxAllowableCAC": 1471,
+          "targetRecommendedCAC": 809
+        },
+        "status": {
+          "passesMarginThreshold": true,
+          "passesTargetMargin": false,
+          "statusLabel": "ACCEPTABLE_MARGIN"
+        }
+      },
+      {
+        "sku": "NAB-SKU-TUR-100",
+        "productName": "Highland Volcanic Turmeric & Wild Ginger Elixir",
+        "batchSize": 100,
+        "costBreakdownKES": {
+          "rawIngredient": 95,
+          "processingExtraction": 35,
+          "primaryPackaging": 95,
+          "secondaryPackaging": 40,
+          "assemblyLabor": 35,
+          "amortizedLabAssay": 250,
+          "totalLandedCOGS": 550
+        },
+        "commercialsKES": {
+          "retailPrice": 1500,
+          "grossMarginKES": 950,
+          "grossMarginPercent": 63.33,
+          "fulfillmentCost": 120,
+          "paystackFee": 25.5,
+          "netContributionMarginKES": 804.5,
+          "netContributionMarginPercent": 53.63,
+          "maxAllowableCAC": 804.5,
+          "targetRecommendedCAC": 442
+        },
+        "status": {
+          "passesMarginThreshold": false,
+          "passesTargetMargin": false,
+          "statusLabel": "BELOW_MARGIN_FLOOR"
+        }
+      },
+      {
+        "sku": "NAB-SKU-HIB-150",
+        "productName": "Wild Kenyan Ruby Hibiscus & Lemongrass Tisane",
+        "batchSize": 100,
+        "costBreakdownKES": {
+          "rawIngredient": 110,
+          "processingExtraction": 25,
+          "primaryPackaging": 40,
+          "secondaryPackaging": 30,
+          "assemblyLabor": 30,
+          "amortizedLabAssay": 250,
+          "totalLandedCOGS": 485
+        },
+        "commercialsKES": {
+          "retailPrice": 1250,
+          "grossMarginKES": 765,
+          "grossMarginPercent": 61.2,
+          "fulfillmentCost": 120,
+          "paystackFee": 21.75,
+          "netContributionMarginKES": 623.25,
+          "netContributionMarginPercent": 49.86,
+          "maxAllowableCAC": 623.25,
+          "targetRecommendedCAC": 343
+        },
+        "status": {
+          "passesMarginThreshold": false,
+          "passesTargetMargin": false,
+          "statusLabel": "BELOW_MARGIN_FLOOR"
+        }
+      }
+    ],
+    "batch_500": [
+      {
+        "sku": "NAB-SKU-MOR-250",
+        "productName": "Pure Wildcrafted Moringa Leaf Powder",
+        "batchSize": 500,
+        "costBreakdownKES": {
+          "rawIngredient": 121,
+          "processingExtraction": 33,
+          "primaryPackaging": 42,
+          "secondaryPackaging": 33,
+          "assemblyLabor": 30,
+          "amortizedLabAssay": 50,
+          "totalLandedCOGS": 309
+        },
+        "commercialsKES": {
+          "retailPrice": 1450,
+          "grossMarginKES": 1141,
+          "grossMarginPercent": 78.69,
+          "fulfillmentCost": 120,
+          "paystackFee": 24.75,
+          "netContributionMarginKES": 996.25,
+          "netContributionMarginPercent": 68.71,
+          "maxAllowableCAC": 996.25,
+          "targetRecommendedCAC": 507
+        },
+        "status": {
+          "passesMarginThreshold": true,
+          "passesTargetMargin": true,
+          "statusLabel": "OPTIMAL_MARGIN"
+        }
+      },
+      {
+        "sku": "NAB-SKU-BAO-200",
+        "productName": "Sacred Baobab Prebiotic Fruit Powder",
+        "batchSize": 500,
+        "costBreakdownKES": {
+          "rawIngredient": 112,
+          "processingExtraction": 28,
+          "primaryPackaging": 42,
+          "secondaryPackaging": 42,
+          "assemblyLabor": 30,
+          "amortizedLabAssay": 50,
+          "totalLandedCOGS": 304
+        },
+        "commercialsKES": {
+          "retailPrice": 1600,
+          "grossMarginKES": 1296,
+          "grossMarginPercent": 81,
+          "fulfillmentCost": 120,
+          "paystackFee": 27,
+          "netContributionMarginKES": 1149,
+          "netContributionMarginPercent": 71.81,
+          "maxAllowableCAC": 1149,
+          "targetRecommendedCAC": 560
+        },
+        "status": {
+          "passesMarginThreshold": true,
+          "passesTargetMargin": true,
+          "statusLabel": "OPTIMAL_MARGIN"
+        }
+      },
+      {
+        "sku": "NAB-SKU-MAR-050",
+        "productName": "Cold-Pressed High-Altitude Marula Glow Elixir",
+        "batchSize": 500,
+        "costBreakdownKES": {
+          "rawIngredient": 195,
+          "processingExtraction": 37,
+          "primaryPackaging": 144,
+          "secondaryPackaging": 65,
+          "assemblyLabor": 45,
+          "amortizedLabAssay": 50,
+          "totalLandedCOGS": 536
+        },
+        "commercialsKES": {
+          "retailPrice": 2400,
+          "grossMarginKES": 1864,
+          "grossMarginPercent": 77.67,
+          "fulfillmentCost": 120,
+          "paystackFee": 39,
+          "netContributionMarginKES": 1705,
+          "netContributionMarginPercent": 71.04,
+          "maxAllowableCAC": 1705,
+          "targetRecommendedCAC": 840
+        },
+        "status": {
+          "passesMarginThreshold": true,
+          "passesTargetMargin": true,
+          "statusLabel": "OPTIMAL_MARGIN"
+        }
+      },
+      {
+        "sku": "NAB-SKU-TUR-100",
+        "productName": "Highland Volcanic Turmeric & Wild Ginger Elixir",
+        "batchSize": 500,
+        "costBreakdownKES": {
+          "rawIngredient": 88,
+          "processingExtraction": 33,
+          "primaryPackaging": 88,
+          "secondaryPackaging": 37,
+          "assemblyLabor": 35,
+          "amortizedLabAssay": 50,
+          "totalLandedCOGS": 331
+        },
+        "commercialsKES": {
+          "retailPrice": 1500,
+          "grossMarginKES": 1169,
+          "grossMarginPercent": 77.93,
+          "fulfillmentCost": 120,
+          "paystackFee": 25.5,
+          "netContributionMarginKES": 1023.5,
+          "netContributionMarginPercent": 68.23,
+          "maxAllowableCAC": 1023.5,
+          "targetRecommendedCAC": 525
+        },
+        "status": {
+          "passesMarginThreshold": true,
+          "passesTargetMargin": true,
+          "statusLabel": "OPTIMAL_MARGIN"
+        }
+      },
+      {
+        "sku": "NAB-SKU-HIB-150",
+        "productName": "Wild Kenyan Ruby Hibiscus & Lemongrass Tisane",
+        "batchSize": 500,
+        "costBreakdownKES": {
+          "rawIngredient": 102,
+          "processingExtraction": 23,
+          "primaryPackaging": 37,
+          "secondaryPackaging": 28,
+          "assemblyLabor": 30,
+          "amortizedLabAssay": 50,
+          "totalLandedCOGS": 270
+        },
+        "commercialsKES": {
+          "retailPrice": 1250,
+          "grossMarginKES": 980,
+          "grossMarginPercent": 78.4,
+          "fulfillmentCost": 120,
+          "paystackFee": 21.75,
+          "netContributionMarginKES": 838.25,
+          "netContributionMarginPercent": 67.06,
+          "maxAllowableCAC": 838.25,
+          "targetRecommendedCAC": 438
+        },
+        "status": {
+          "passesMarginThreshold": true,
+          "passesTargetMargin": true,
+          "statusLabel": "OPTIMAL_MARGIN"
+        }
+      }
+    ],
+    "batch_2500": [
+      {
+        "sku": "NAB-SKU-MOR-250",
+        "productName": "Pure Wildcrafted Moringa Leaf Powder",
+        "batchSize": 2500,
+        "costBreakdownKES": {
+          "rawIngredient": 111,
+          "processingExtraction": 30,
+          "primaryPackaging": 38,
+          "secondaryPackaging": 30,
+          "assemblyLabor": 26,
+          "amortizedLabAssay": 10,
+          "totalLandedCOGS": 245
+        },
+        "commercialsKES": {
+          "retailPrice": 1450,
+          "grossMarginKES": 1205,
+          "grossMarginPercent": 83.1,
+          "fulfillmentCost": 120,
+          "paystackFee": 24.75,
+          "netContributionMarginKES": 1060.25,
+          "netContributionMarginPercent": 73.12,
+          "maxAllowableCAC": 1060.25,
+          "targetRecommendedCAC": 507
+        },
+        "status": {
+          "passesMarginThreshold": true,
+          "passesTargetMargin": true,
+          "statusLabel": "OPTIMAL_MARGIN"
+        }
+      },
+      {
+        "sku": "NAB-SKU-BAO-200",
+        "productName": "Sacred Baobab Prebiotic Fruit Powder",
+        "batchSize": 2500,
+        "costBreakdownKES": {
+          "rawIngredient": 102,
+          "processingExtraction": 26,
+          "primaryPackaging": 38,
+          "secondaryPackaging": 38,
+          "assemblyLabor": 26,
+          "amortizedLabAssay": 10,
+          "totalLandedCOGS": 240
+        },
+        "commercialsKES": {
+          "retailPrice": 1600,
+          "grossMarginKES": 1360,
+          "grossMarginPercent": 85,
+          "fulfillmentCost": 120,
+          "paystackFee": 27,
+          "netContributionMarginKES": 1213,
+          "netContributionMarginPercent": 75.81,
+          "maxAllowableCAC": 1213,
+          "targetRecommendedCAC": 560
+        },
+        "status": {
+          "passesMarginThreshold": true,
+          "passesTargetMargin": true,
+          "statusLabel": "OPTIMAL_MARGIN"
+        }
+      },
+      {
+        "sku": "NAB-SKU-MAR-050",
+        "productName": "Cold-Pressed High-Altitude Marula Glow Elixir",
+        "batchSize": 2500,
+        "costBreakdownKES": {
+          "rawIngredient": 179,
+          "processingExtraction": 34,
+          "primaryPackaging": 132,
+          "secondaryPackaging": 60,
+          "assemblyLabor": 38,
+          "amortizedLabAssay": 10,
+          "totalLandedCOGS": 453
+        },
+        "commercialsKES": {
+          "retailPrice": 2400,
+          "grossMarginKES": 1947,
+          "grossMarginPercent": 81.13,
+          "fulfillmentCost": 120,
+          "paystackFee": 39,
+          "netContributionMarginKES": 1788,
+          "netContributionMarginPercent": 74.5,
+          "maxAllowableCAC": 1788,
+          "targetRecommendedCAC": 840
+        },
+        "status": {
+          "passesMarginThreshold": true,
+          "passesTargetMargin": true,
+          "statusLabel": "OPTIMAL_MARGIN"
+        }
+      },
+      {
+        "sku": "NAB-SKU-TUR-100",
+        "productName": "Highland Volcanic Turmeric & Wild Ginger Elixir",
+        "batchSize": 2500,
+        "costBreakdownKES": {
+          "rawIngredient": 81,
+          "processingExtraction": 30,
+          "primaryPackaging": 81,
+          "secondaryPackaging": 34,
+          "assemblyLabor": 30,
+          "amortizedLabAssay": 10,
+          "totalLandedCOGS": 266
+        },
+        "commercialsKES": {
+          "retailPrice": 1500,
+          "grossMarginKES": 1234,
+          "grossMarginPercent": 82.27,
+          "fulfillmentCost": 120,
+          "paystackFee": 25.5,
+          "netContributionMarginKES": 1088.5,
+          "netContributionMarginPercent": 72.57,
+          "maxAllowableCAC": 1088.5,
+          "targetRecommendedCAC": 525
+        },
+        "status": {
+          "passesMarginThreshold": true,
+          "passesTargetMargin": true,
+          "statusLabel": "OPTIMAL_MARGIN"
+        }
+      },
+      {
+        "sku": "NAB-SKU-HIB-150",
+        "productName": "Wild Kenyan Ruby Hibiscus & Lemongrass Tisane",
+        "batchSize": 2500,
+        "costBreakdownKES": {
+          "rawIngredient": 94,
+          "processingExtraction": 21,
+          "primaryPackaging": 34,
+          "secondaryPackaging": 26,
+          "assemblyLabor": 26,
+          "amortizedLabAssay": 10,
+          "totalLandedCOGS": 211
+        },
+        "commercialsKES": {
+          "retailPrice": 1250,
+          "grossMarginKES": 1039,
+          "grossMarginPercent": 83.12,
+          "fulfillmentCost": 120,
+          "paystackFee": 21.75,
+          "netContributionMarginKES": 897.25,
+          "netContributionMarginPercent": 71.78,
+          "maxAllowableCAC": 897.25,
+          "targetRecommendedCAC": 438
+        },
+        "status": {
+          "passesMarginThreshold": true,
+          "passesTargetMargin": true,
+          "statusLabel": "OPTIMAL_MARGIN"
+        }
+      }
+    ]
+  }
+}

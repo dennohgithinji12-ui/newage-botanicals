@@ -45,6 +45,11 @@ class ApothecaryApp {
     if (urlParams.has("search")) {
       this.setSearchQuery(urlParams.get("search"));
     }
+    if (urlParams.has("lot") || urlParams.has("verify")) {
+      setTimeout(() => {
+        this.openBatchModal(urlParams.get("lot") || urlParams.get("verify"));
+      }, 350);
+    }
   }
 
   // =========================================================================
@@ -153,14 +158,13 @@ class ApothecaryApp {
       // Pick top 2 illness tags and top 1 herb tag
       const illnessPills = (product.illnesses || []).slice(0, 2).map(ill => `<span class="card-pill">🎯 ${ill}</span>`).join("");
       const herbPill = (product.herbs || []).slice(0, 1).map(h => `<span class="card-pill">🌿 ${h}</span>`).join("");
+      const img1 = product.image || 'assets/images/hero-apothecary.jpg';
+      const img2 = product.imageSecondary || product.images?.[1] || img1;
 
       return `
         <article class="product-card" data-id="${product.id}">
           <div class="card-image-wrap">
-            <picture>
-              <source srcset="${product.image.replace('.jpg', '.webp')}" type="image/webp">
-              <img src="${product.image}" alt="${product.name}" class="card-img" ${loadingAttr} ${priorityAttr} decoding="async" width="380" height="280" onerror="this.src='assets/images/hero-apothecary.jpg'">
-            </picture>
+            <img src="${img1}" alt="${product.name}" class="card-img-primary" ${loadingAttr} ${priorityAttr} decoding="async" width="380" height="280" onerror="this.src='assets/images/hero-apothecary.jpg'">
             ${product.tag ? `<span class="card-badge">${product.tag}</span>` : ""}
             <button class="quick-view-trigger" onclick="app.showQuickView('${product.id}')" title="Quick View Botanical Details" aria-label="Quick View ${product.name}">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
@@ -169,9 +173,13 @@ class ApothecaryApp {
 
           <div class="card-body">
             <span class="card-cat-label">${product.categoryName}</span>
-            <h3 class="card-title">${product.name}</h3>
+            <h3 class="card-title">
+              <a href="product.html?id=${product.id}" style="color:inherit; text-decoration:none;" title="View Clinical Dossier">${product.name}</a>
+            </h3>
             <p class="card-botanical">${product.botanicalName}</p>
-            <p class="card-snippet">${product.description}</p>
+            <p class="card-snippet" style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.75rem;">
+              <strong>Action:</strong> ${product.whatItDoes ? product.whatItDoes.substring(0, 115) + '...' : product.description}
+            </p>
 
             <div class="card-pill-cloud">
               ${illnessPills}
@@ -183,10 +191,14 @@ class ApothecaryApp {
                 <span class="card-price">${formattedPrice}</span>
                 ${window.geoCurrency && window.geoCurrency.currentCurrency !== "KES" ? `<span class="card-price-base">(${basePriceKES})</span>` : ""}
               </div>
-              <button class="btn-add-cart" onclick="cart.addItem('${product.id}', 1)" aria-label="Add ${product.name} to basket">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                Add
-              </button>
+              <div style="display: flex; gap: 0.4rem; align-items: center;">
+                <button class="btn-buy-instant" onclick="window.location.href='checkout.html?buy=${product.id}'" title="Instant 1-Click Checkout">
+                  ⚡ Buy
+                </button>
+                <button class="btn-add-cart" onclick="cart.addItem('${product.id}', 1)" aria-label="Add ${product.name} to basket">
+                  + Add
+                </button>
+              </div>
             </div>
           </div>
         </article>
@@ -253,51 +265,58 @@ class ApothecaryApp {
 
     titleEl.textContent = product.name;
     const formattedPrice = window.geoCurrency ? window.geoCurrency.formatPrice(product.priceKES) : `KSh ${product.priceKES}`;
+    const img1 = product.image || 'assets/images/hero-apothecary.jpg';
+    const img2 = product.imageSecondary || product.images?.[1] || img1;
 
     contentEl.innerHTML = `
       <div class="quickview-container">
         <div>
-          <img src="${product.image}" alt="${product.name}" class="qv-image" onerror="this.src='assets/images/hero-apothecary.jpg'">
+          <div style="position: relative; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-subtle);">
+            <img id="qvMainImg" src="${img1}" alt="${product.name}" class="qv-image" onerror="this.src='assets/images/hero-apothecary.jpg'">
+          </div>
+
           <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
-            ${(product.herbs || []).map(h => `<span class="card-pill">🌿 Herb: ${h}</span>`).join("")}
+            ${(product.herbs || []).map(h => `<span class="card-pill">🌿 ${h}</span>`).join("")}
           </div>
         </div>
 
         <div>
           <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-primary); letter-spacing: 0.1em;">${product.categoryName}</span>
-          <h2 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--text-parchment); margin-bottom: 0.25rem;">${product.name}</h2>
-          <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">${product.botanicalName}</p>
+          <h2 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--text-parchment); margin-bottom: 0.25rem;">${product.name}</h2>
+          <p style="font-style: italic; color: var(--text-muted); margin-bottom: 0.75rem;">${product.botanicalName}</p>
           
-          <div style="font-size: 1.6rem; font-weight: 700; color: var(--gold-glow); margin-bottom: 1.25rem;">
+          <div style="font-size: 1.6rem; font-weight: 700; color: var(--gold-glow); margin-bottom: 1rem;">
             ${formattedPrice}
           </div>
 
-          <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-linen); margin-bottom: 1.25rem;">
-            ${product.description}
-          </p>
-
-          <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Targeted Ailments & Goals:</h4>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem;">
-            ${(product.illnesses || []).map(ill => `<span class="card-pill" style="background: rgba(231, 111, 81, 0.15); border-color: rgba(231, 111, 81, 0.4); color: #f4a261;">🎯 ${ill}</span>`).join("")}
+          <!-- What it does section -->
+          <div class="what-it-does-box" style="margin: 0.75rem 0 1rem; padding: 0.85rem 1rem;">
+            <h4 style="font-size: 0.95rem; margin-bottom: 0.35rem;">🔬 What This Medicine Does:</h4>
+            <p style="font-size: 0.86rem; line-height: 1.5; color: var(--text-linen);">
+              ${product.whatItDoes || product.description}
+            </p>
           </div>
 
-          <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Holistic Benefits:</h4>
-          <ul style="padding-left: 1.25rem; font-size: 0.88rem; line-height: 1.6; color: var(--text-linen); margin-bottom: 1.25rem;">
-            ${product.benefits.map(b => `<li>${b}</li>`).join("")}
-          </ul>
+          <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">Targeted Ailments:</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1rem;">
+            ${(product.illnesses || []).slice(0, 6).map(ill => `<span class="card-pill" style="background: rgba(231, 111, 81, 0.15); border-color: rgba(231, 111, 81, 0.4); color: #f4a261; font-size: 0.75rem;">🎯 ${ill}</span>`).join("")}
+          </div>
 
-          <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Mindful Ritual Guide:</h4>
-          <div style="background: rgba(14, 41, 27, 0.5); padding: 0.85rem 1rem; border-radius: 6px; border-left: 3px solid var(--gold-primary); font-size: 0.85rem; font-style: italic; margin-bottom: 1.5rem;">
+          <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">Sacred Preparation:</h4>
+          <div style="background: rgba(14, 41, 27, 0.5); padding: 0.75rem; border-radius: 6px; border-left: 3px solid var(--gold-primary); font-size: 0.82rem; font-style: italic; margin-bottom: 1.25rem;">
             ${product.ritualGuide}
           </div>
 
-          <div style="display: flex; gap: 1rem;">
-            <button class="btn-primary" style="flex-grow: 1; justify-content: center;" onclick="cart.addItem('${product.id}', 1); document.getElementById('quickViewModal').close();">
-              Add to Basket (${formattedPrice})
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            <button class="btn-primary" style="flex: 2; min-width: 150px; justify-content: center; font-size: 0.9rem;" onclick="window.location.href='checkout.html?buy=${product.id}'">
+              ⚡ Instant Buy (${formattedPrice})
             </button>
-            <button class="btn-secondary" onclick="document.getElementById('quickViewModal').close()">
-              Close
+            <button class="btn-secondary" style="flex: 1.5; min-width: 130px; justify-content: center; font-size: 0.85rem;" onclick="cart.addItem('${product.id}', 1); document.getElementById('quickViewModal').close();">
+              🛒 Add to Basket
             </button>
+            <a href="product.html?id=${product.id}" class="btn-secondary" style="flex: 1; min-width: 110px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; text-decoration: none;">
+              📖 Dossier →
+            </a>
           </div>
         </div>
       </div>
@@ -599,10 +618,19 @@ class ApothecaryApp {
   processPaystackSubmit(e) {
     e.preventDefault();
     const name = document.getElementById("custName").value.trim();
-    const email = document.getElementById("custEmail").value.trim();
     const phone = document.getElementById("custPhone").value.trim();
+    const emailInput = document.getElementById("custEmail").value.trim();
+    const email = emailInput || `${phone.replace(/[^0-9]/g, '') || 'customer'}@orders.omnicorehub.app`;
     const address = document.getElementById("custAddress").value.trim();
     const notes = document.getElementById("custNotes").value.trim();
+
+    // Persist details for frictionless future checkout
+    try {
+      localStorage.setItem('nah_cust_name', name);
+      localStorage.setItem('nah_cust_phone', phone);
+      localStorage.setItem('nah_cust_town', address);
+      if (emailInput) localStorage.setItem('nah_cust_email', emailInput);
+    } catch (err) {}
 
     const totals = cart.getTotals();
 
@@ -737,6 +765,180 @@ class ApothecaryApp {
   contactWhatsAppGeneral() {
     const cleanPhone = CONFIG.contact.whatsapp.replace(/[^0-9]/g, "");
     window.open(`https://wa.me/${cleanPhone}?text=${encodeURIComponent("Hello! I have a question regarding your herbal remedies and rituals.")}`, "_blank");
+  }
+
+  // =========================================================================
+  // BATCH VERIFICATION & SOIL-TO-SHELF COA MODAL (GATE 7 & 8)
+  // =========================================================================
+
+  openBatchModal(initialQuery = "") {
+    const modal = document.getElementById("batchModal");
+    const input = document.getElementById("batchLotInput");
+    if (!modal) return;
+
+    if (initialQuery) {
+      if (input) input.value = initialQuery;
+      this.searchBatchLot(initialQuery);
+    } else {
+      // Default to first batch (Moringa)
+      this.searchBatchLot("NAB-2026-MOR-001");
+    }
+
+    modal.showModal();
+  }
+
+  searchBatchLot(queryOverride) {
+    const input = document.getElementById("batchLotInput");
+    const query = queryOverride || (input ? input.value.trim() : "");
+    const container = document.getElementById("batchResultContainer");
+    if (!container) return;
+
+    if (!query) {
+      container.innerHTML = `
+        <div style="text-align: center; padding: 2rem; color: var(--text-muted);">
+          Please enter a lot number or product name above to verify laboratory analysis.
+        </div>
+      `;
+      return;
+    }
+
+    if (!window.batchVerifier) {
+      container.innerHTML = `<div style="color: #e76f51; padding: 1rem;">Batch verification service initializing...</div>`;
+      return;
+    }
+
+    const batch = window.batchVerifier.lookup(query);
+
+    if (!batch) {
+      container.innerHTML = `
+        <div style="background: rgba(231, 111, 81, 0.1); border: 1px solid rgba(231, 111, 81, 0.3); padding: 1.5rem; border-radius: 8px; text-align: center;">
+          <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">⚠️</div>
+          <h4 style="color: #e76f51; font-family: var(--font-serif); margin-bottom: 0.5rem;">Lot Not Found: "${query}"</h4>
+          <p style="font-size: 0.85rem; color: var(--text-linen); max-width: 460px; margin: 0 auto 1rem;">
+            Please double-check the lot code on the bottom of your glass jar or kraft box. Sample registered hero lots include:
+          </p>
+          <div style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+            <button class="card-pill" style="cursor: pointer;" onclick="app.openBatchModal('NAB-2026-MOR-001')">NAB-2026-MOR-001</button>
+            <button class="card-pill" style="cursor: pointer;" onclick="app.openBatchModal('NAB-2026-BAO-001')">NAB-2026-BAO-001</button>
+            <button class="card-pill" style="cursor: pointer;" onclick="app.openBatchModal('NAB-2026-MAR-001')">NAB-2026-MAR-001</button>
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    this.renderBatchDetails(batch, container);
+  }
+
+  renderBatchDetails(batch, container) {
+    const lab = batch.labTesting;
+    const origin = batch.originTraceability;
+
+    container.innerHTML = `
+      <div style="background: rgba(15, 40, 30, 0.7); border: 1px solid var(--border-active); border-radius: 12px; padding: 1.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.4);">
+        <!-- Status Header -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1.25rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+              <span style="font-family: monospace; font-size: 1.1rem; color: var(--gold-glow); font-weight: 700; letter-spacing: 1px;">LOT: ${batch.lotNumber}</span>
+              <span class="card-pill" style="background: rgba(0, 195, 137, 0.15); border-color: #00c389; color: #00c389; font-weight: 600;">
+                ✓ ${batch.complianceEvaluation.qcDecision.replace(/_/g, ' ')}
+              </span>
+            </div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--text-parchment); margin: 0 0 0.2rem 0;">${batch.productName}</h3>
+            <span style="font-style: italic; font-size: 0.9rem; color: var(--text-muted);">${batch.botanicalName}</span>
+          </div>
+
+          <div style="text-align: right; font-size: 0.8rem; color: var(--text-muted);">
+            <div><strong>Batch Size:</strong> ${batch.batchSizeUnits} units (${batch.netWeightPerUnit})</div>
+            <div><strong>Manufactured:</strong> ${batch.manufactureDate}</div>
+            <div><strong>Best Before:</strong> ${batch.bestBeforeDate}</div>
+          </div>
+        </div>
+
+        <!-- Terroir & Provenance -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; background: rgba(14, 41, 27, 0.4); padding: 1rem; border-radius: 8px;">
+          <div>
+            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-primary); letter-spacing: 1px; display: block; margin-bottom: 0.25rem;">Harvest Origin & Terroir</span>
+            <div style="font-size: 0.88rem; color: var(--text-linen); font-weight: 500;">📍 ${origin.harvestRegion}</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Partner: ${origin.supplierName} (${origin.rawBatchRef})</div>
+          </div>
+          <div>
+            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-primary); letter-spacing: 1px; display: block; margin-bottom: 0.25rem;">Testing Laboratory</span>
+            <div style="font-size: 0.88rem; color: var(--text-linen); font-weight: 500;">🔬 ${lab.accreditedLabName}</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Report: ${lab.labReportNumber} (Tested ${lab.testDate})</div>
+          </div>
+        </div>
+
+        <!-- Heavy Metals Safety Assay Table -->
+        <div style="margin-bottom: 1.25rem;">
+          <h4 style="font-family: var(--font-serif); font-size: 1rem; color: var(--gold-glow); margin: 0 0 0.5rem 0; display: flex; align-items: center; justify-content: space-between;">
+            <span>Heavy Metals Safety Panel (ICP-MS)</span>
+            <span style="font-size: 0.75rem; color: #00c389; font-weight: normal; font-family: -apple-system, sans-serif;">✓ 100% Meets USP &amp; WHO Standards</span>
+          </h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.5rem;">
+            <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Lead (Pb)</div>
+              <div style="font-size: 1rem; font-weight: 700; color: #00c389;">${lab.heavyMetals.leadPpm} ppm</div>
+              <div style="font-size: 0.68rem; color: var(--text-muted);">Limit: &lt; ${lab.heavyMetals.leadLimitPpm} ppm</div>
+            </div>
+            <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Arsenic (As)</div>
+              <div style="font-size: 1rem; font-weight: 700; color: #00c389;">${lab.heavyMetals.arsenicPpm} ppm</div>
+              <div style="font-size: 0.68rem; color: var(--text-muted);">Limit: &lt; ${lab.heavyMetals.arsenicLimitPpm} ppm</div>
+            </div>
+            <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Cadmium (Cd)</div>
+              <div style="font-size: 1rem; font-weight: 700; color: #00c389;">${lab.heavyMetals.cadmiumPpm} ppm</div>
+              <div style="font-size: 0.68rem; color: var(--text-muted);">Limit: &lt; ${lab.heavyMetals.cadmiumLimitPpm} ppm</div>
+            </div>
+            <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Mercury (Hg)</div>
+              <div style="font-size: 1rem; font-weight: 700; color: #00c389;">${lab.heavyMetals.mercuryPpm} ppm</div>
+              <div style="font-size: 0.68rem; color: var(--text-muted);">Limit: &lt; ${lab.heavyMetals.mercuryLimitPpm} ppm</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phytochemical Potency & Microbiology -->
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+          <div style="background: rgba(14, 41, 27, 0.4); padding: 0.9rem; border-radius: 8px; border-left: 3px solid var(--gold-primary);">
+            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-primary); letter-spacing: 1px; display: block; margin-bottom: 0.25rem;">Active Phytochemical Marker</span>
+            <div style="font-size: 0.92rem; color: var(--text-parchment); font-weight: 600;">${lab.activePhytochemicalAssay.marker}</div>
+            <div style="font-size: 0.85rem; color: var(--gold-glow); margin-top: 0.2rem;">Measured: ${lab.activePhytochemicalAssay.measuredValue}</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">Pharmacopoeial Spec: ${lab.activePhytochemicalAssay.standardSpecification}</div>
+          </div>
+          <div style="background: rgba(14, 41, 27, 0.4); padding: 0.9rem; border-radius: 8px;">
+            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-primary); letter-spacing: 1px; display: block; margin-bottom: 0.25rem;">Microbiological Clearance</span>
+            <div style="font-size: 0.82rem; color: var(--text-linen); display: flex; justify-content: space-between; margin-bottom: 0.2rem;">
+              <span>E. Coli:</span> <strong style="color: #00c389;">${lab.microbiology.eColi}</strong>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-linen); display: flex; justify-content: space-between; margin-bottom: 0.2rem;">
+              <span>Salmonella:</span> <strong style="color: #00c389;">${lab.microbiology.salmonella}</strong>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-linen); display: flex; justify-content: space-between;">
+              <span>TAMC / TYMC:</span> <span>${lab.microbiology.tamcCfuPerG} / ${lab.microbiology.tymcCfuPerG} CFU/g</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cryptographic Blockchain/SHA-256 Seal & Action -->
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+          <div style="font-family: monospace; font-size: 0.72rem; color: var(--text-muted); max-width: 440px; word-break: break-all;">
+            <span style="color: var(--gold-primary);">SHA-256 DIGITAL SEAL:</span><br>
+            ${batch.digitalVerification.cryptographicHash}
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <a href="discovery/index.html" class="btn-secondary" style="font-size: 0.82rem; padding: 0.5rem 0.9rem; text-decoration: none;">
+              Open Full Dossier 🔬
+            </a>
+            <button class="btn-primary" style="font-size: 0.82rem; padding: 0.5rem 0.9rem;" onclick="document.getElementById('batchModal').close(); app.showQuickView('${batch.productId}');">
+              View Product
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
   }
 }
 

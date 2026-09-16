@@ -1,0 +1,58 @@
+{
+  "lotNumber": "NAB-2026-BAO-001",
+  "sku": "NAB-SKU-BAO-200",
+  "productId": "baobab-fruit-powder",
+  "productName": "Sacred Baobab Prebiotic Fruit Powder",
+  "botanicalName": "Adansonia digitata",
+  "batchSizeUnits": 500,
+  "netWeightPerUnit": "200g / 7.0 oz",
+  "manufactureDate": "2026-09-16",
+  "bestBeforeDate": "2028-09-05",
+  "originTraceability": {
+    "supplierId": "sup-002",
+    "supplierName": "Baobab Swahili Coast Coop",
+    "harvestRegion": "Kilifi & Kwale Coastal Lowlands, Kenya",
+    "rawBatchRef": "RM-601489"
+  },
+  "labTesting": {
+    "accreditedLabName": "KEBS National Metrology & Analytical Lab",
+    "labReportNumber": "LAB-REPORT-504356",
+    "testDate": "2026-09-16",
+    "heavyMetals": {
+      "leadPpm": 0.6,
+      "arsenicPpm": 0.15,
+      "cadmiumPpm": 0.04,
+      "mercuryPpm": 0.01
+    },
+    "microbiology": {
+      "tamcCfuPerG": 850,
+      "tymcCfuPerG": 45,
+      "eColi": "absent",
+      "salmonella": "absent"
+    },
+    "activePhytochemicalAssay": {
+      "marker": "Soluble Dietary Prebiotic Fiber",
+      "measuredValue": "54.2% Prebiotic Pectin",
+      "standardSpecification": "≥ 50% Soluble Fiber"
+    },
+    "moisturePercentage": 6.8
+  },
+  "complianceEvaluation": {
+    "passed": true,
+    "qcDecision": "RELEASE_FOR_SALE",
+    "errors": [],
+    "warnings": [],
+    "evaluatedAt": "2026-09-16T16:53:21.489Z"
+  },
+  "digitalVerification": {
+    "cryptographicHash": "4048ccd2a96163033ff7ae2d1e7506871b2d675ed3ca1e767b736e62f6559c25",
+    "shortHash": "4048ccd2a9616303",
+    "atlasVerificationUrl": "https://omnicorehub.app/atlas?sku=baobab-fruit-powder&lot=NAB-2026-BAO-001&verify=4048ccd2a9616303",
+    "qrPayload": {
+      "brand": "NewAge Botanicals",
+      "sku": "NAB-SKU-BAO-200",
+      "lot": "NAB-2026-BAO-001",
+      "url": "https://omnicorehub.app/atlas?sku=baobab-fruit-powder&lot=NAB-2026-BAO-001&verify=4048ccd2a9616303"
+    }
+  }
+}

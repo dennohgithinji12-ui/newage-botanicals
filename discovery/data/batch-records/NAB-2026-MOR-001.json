@@ -1,0 +1,58 @@
+{
+  "lotNumber": "NAB-2026-MOR-001",
+  "sku": "NAB-SKU-MOR-250",
+  "productId": "moringa-powder-organic",
+  "productName": "Pure Wildcrafted Moringa Leaf Powder",
+  "botanicalName": "Moringa oleifera",
+  "batchSizeUnits": 500,
+  "netWeightPerUnit": "250g / 8.8 oz",
+  "manufactureDate": "2026-09-16",
+  "bestBeforeDate": "2028-09-05",
+  "originTraceability": {
+    "supplierId": "sup-001",
+    "supplierName": "Rift Valley Botanicals",
+    "harvestRegion": "Nanyuki, Laikipia County, Kenya (Highland Volcanic Soil)",
+    "rawBatchRef": "RM-601483"
+  },
+  "labTesting": {
+    "accreditedLabName": "SGS Kenya Phytochemical Laboratory",
+    "labReportNumber": "LAB-REPORT-653475",
+    "testDate": "2026-09-16",
+    "heavyMetals": {
+      "leadPpm": 1.1,
+      "arsenicPpm": 0.35,
+      "cadmiumPpm": 0.08,
+      "mercuryPpm": 0.02
+    },
+    "microbiology": {
+      "tamcCfuPerG": 1200,
+      "tymcCfuPerG": 80,
+      "eColi": "absent",
+      "salmonella": "absent"
+    },
+    "activePhytochemicalAssay": {
+      "marker": "Vitamin C & Bioavailable Iron",
+      "measuredValue": "210mg/100g Vitamin C, 28.4mg/100g Iron",
+      "standardSpecification": "≥ 180mg Vitamin C"
+    },
+    "moisturePercentage": 5.2
+  },
+  "complianceEvaluation": {
+    "passed": true,
+    "qcDecision": "RELEASE_FOR_SALE",
+    "errors": [],
+    "warnings": [],
+    "evaluatedAt": "2026-09-16T16:53:21.482Z"
+  },
+  "digitalVerification": {
+    "cryptographicHash": "96fc2c5939f4831bddd252ff100d719a18d70579f68a194e946feb68db7c0b89",
+    "shortHash": "96fc2c5939f4831b",
+    "atlasVerificationUrl": "https://omnicorehub.app/atlas?sku=moringa-powder-organic&lot=NAB-2026-MOR-001&verify=96fc2c5939f4831b",
+    "qrPayload": {
+      "brand": "NewAge Botanicals",
+      "sku": "NAB-SKU-MOR-250",
+      "lot": "NAB-2026-MOR-001",
+      "url": "https://omnicorehub.app/atlas?sku=moringa-powder-organic&lot=NAB-2026-MOR-001&verify=96fc2c5939f4831b"
+    }
+  }
+}

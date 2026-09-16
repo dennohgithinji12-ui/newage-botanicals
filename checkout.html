@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy & Discreet Checkout | NewAge Health Botanicals & Rituals</title>
+  <meta name="description" content="Effortless, frictionless checkout with instant M-Pesa, Pay on Delivery, and 100% discreet plain-box packaging guarantee.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <span>🔒 100% Confidential & Plain Packaging | Same-Day & 24h Countrywide Courier Dispatch</span>
+      <div class="currency-selector-wrap">
+        <label for="currencySelect" class="sr-only">Currency</label>
+        <select id="currencySelect" class="currency-select" aria-label="Select Currency" onchange="geoCurrency.setCurrency(this.value)">
+          <option value="KES">🇰🇪 KES (KSh)</option>
+          <option value="USD">🇺🇸 USD ($)</option>
+          <option value="GBP">🇬🇧 GBP (£)</option>
+          <option value="EUR">🇪🇺 EUR (€)</option>
+          <option value="NGN">🇳🇬 NGN (₦)</option>
+          <option value="GHS">🇬🇭 GHS (GH₵)</option>
+          <option value="ZAR">🇿🇦 ZAR (R)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="NewAge Health Home">
+        <span class="logo-symbol">🌿</span>
+        <div class="logo-text">
+          <span class="brand-name">NewAge Health</span>
+          <span class="brand-subtitle">Botanicals & Rituals</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Dispensary</a>
+      </nav>
+
+      <div class="header-actions">
+        <span class="card-pill" style="background: rgba(42, 157, 143, 0.15); border-color: #2a9d8f; color: #32b5a5;">
+          🛡️ 256-bit Encrypted Checkout
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Checkout Content -->
+  <main class="checkout-page-wrap container">
+    <div style="margin-bottom: 2rem;">
+      <h1 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--gold-glow); margin-bottom: 0.35rem;">
+        Easy & Confidential Checkout
+      </h1>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        Complete your botanical order in under 30 seconds. Choose your preferred delivery & payment method below.
+      </p>
+    </div>
+
+    <!-- 100% Discreet Packaging Guarantee -->
+    <div class="discreet-guarantee-badge" style="margin-bottom: 2rem;">
+      <span class="icon">📦</span>
+      <div>
+        <strong style="color: var(--gold-glow); display: block; font-size: 1rem;">100% Discreet & Confidential Packaging Guarantee</strong>
+        <span style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.5;">
+          All packages arrive in plain, unbranded security boxes. There are zero product names, illness references, or medical descriptions on the shipping label. Your privacy is 100% protected.
+        </span>
+      </div>
+    </div>
+
+    <div class="checkout-grid" id="checkoutMainGrid">
+      <!-- Left Column: Fast Form & Payment Selection -->
+      <div class="checkout-card">
+        <h2 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--gold-primary); margin-bottom: 1rem;">
+          1. Select How You Would Like to Pay & Receive:
+        </h2>
+
+        <div class="payment-method-selector">
+          <div class="pay-choice-btn active" id="methodMpesa" onclick="selectPaymentMethod('mpesa')">
+            <span class="choice-icon">⚡</span>
+            <span class="choice-title">M-Pesa / Card</span>
+            <span class="choice-sub">Instant Paystack</span>
+          </div>
+          <div class="pay-choice-btn" id="methodCod" onclick="selectPaymentMethod('cod')">
+            <span class="choice-icon">📦</span>
+            <span class="choice-title">Pay on Delivery</span>
+            <span class="choice-sub">Cash / M-Pesa on Arrival</span>
+          </div>
+          <div class="pay-choice-btn" id="methodWhatsapp" onclick="selectPaymentMethod('whatsapp')">
+            <span class="choice-icon">💬</span>
+            <span class="choice-title">WhatsApp Order</span>
+            <span class="choice-sub">1-Click Concierge</span>
+          </div>
+        </div>
+
+        <h2 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--gold-primary); margin-bottom: 1.25rem;">
+          2. Delivery Information:
+        </h2>
+
+        <form id="expressCheckoutForm" onsubmit="handleCheckoutSubmission(event)">
+          <div class="form-group">
+            <label class="form-label" for="checkoutName">Full Name *</label>
+            <input type="text" id="checkoutName" class="form-input" placeholder="e.g. Samuel Maina" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkoutPhone">Mobile Phone Number (M-Pesa & Courier SMS) *</label>
+            <input type="tel" id="checkoutPhone" class="form-input" placeholder="e.g. 0712 345 678 or +254 7..." required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkoutTown">Town / City & Delivery Location *</label>
+            <input type="text" id="checkoutTown" class="form-input" placeholder="e.g. Nairobi, Westlands / Mombasa / Kisumu / Nakuru" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkoutEmail">Email Address (Optional)</label>
+            <input type="email" id="checkoutEmail" class="form-input" placeholder="you@example.com (Optional for receipt)">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkoutNotes">Special Delivery / Gate Instructions (Optional)</label>
+            <input type="text" id="checkoutNotes" class="form-input" placeholder="e.g. Call upon arrival, leave at reception, discreet delivery">
+          </div>
+
+          <button type="submit" class="btn-paystack" id="submitOrderBtn" style="width: 100%; margin-top: 1rem; font-size: 1.1rem; padding: 1rem;">
+            Proceed to Secure Payment
+          </button>
+        </form>
+      </div>
+
+      <!-- Right Column: Order Summary -->
+      <div class="checkout-card">
+        <h2 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--gold-primary); margin-bottom: 1rem;">
+          Order Summary
+        </h2>
+
+        <div id="checkoutItemsList" style="margin-bottom: 1.5rem;">
+          <!-- Populated dynamically -->
+        </div>
+
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+          <div style="display:flex; justify-content:space-between; margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-muted);">
+            <span>Subtotal</span>
+            <strong id="summarySubtotal" style="color: var(--text-parchment);">KSh 0</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-muted);">
+            <span>Discreet Courier Dispatch</span>
+            <span id="summaryShipping" style="color: var(--gold-primary);">KSh 350</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--border-subtle); font-size: 1.3rem;">
+            <strong style="color: var(--gold-glow); font-family: var(--font-serif);">Total Amount:</strong>
+            <strong id="summaryTotal" style="color: var(--gold-glow); font-family: var(--font-serif);">KSh 0</strong>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; background: rgba(5, 14, 9, 0.6); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-subtle); font-size: 0.85rem; color: var(--text-muted);">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem; color: var(--gold-primary); font-weight: 600;">
+            <span>🛡️ Buyer Protection & Verification</span>
+          </div>
+          Every botanical remedy is tested by KEBS / SGS accredited labs. Certificate of Analysis (CoA) lot number included in every package.
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Success Receipt Screen (Initially Hidden) -->
+    <div id="orderSuccessScreen" style="display: none; max-width: 680px; margin: 0 auto; text-align: center;">
+      <div class="checkout-card" style="padding: 3rem 2rem;">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">🌿</div>
+        <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--gold-glow); margin-bottom: 0.5rem;">
+          Order Confirmed & Received!
+        </h2>
+        <p style="color: var(--text-linen); font-size: 1.05rem; margin-bottom: 1.5rem;" id="successSubtitle">
+          Your order has been logged with the apothecary dispensary.
+        </p>
+
+        <div style="background: rgba(14, 41, 27, 0.6); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-subtle); text-align: left; margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; border-bottom: 1px dashed var(--border-subtle); padding-bottom: 0.5rem;">
+            <span style="color: var(--text-muted);">Order Tracking Code:</span>
+            <strong id="successOrderRef" style="color: var(--gold-glow); font-family: monospace; font-size: 1.1rem;">NAH-12345</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+            <span style="color: var(--text-muted);">Recipient:</span>
+            <span id="successName" style="color: var(--text-parchment);"></span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+            <span style="color: var(--text-muted);">Delivery Town:</span>
+            <span id="successTown" style="color: var(--text-parchment);"></span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+            <span style="color: var(--text-muted);">Payment Method:</span>
+            <span id="successPayment" style="color: var(--gold-primary); font-weight: 600;"></span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-top: 0.75rem; padding-top: 0.5rem; border-top: 1px dashed var(--border-subtle);">
+            <strong style="color: var(--text-parchment);">Total Order Value:</strong>
+            <strong id="successTotal" style="color: var(--gold-glow); font-size: 1.2rem;"></strong>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a id="successWhatsAppLink" href="#" target="_blank" class="btn-whatsapp" style="text-decoration: none; padding: 0.85rem 1.5rem;">
+            💬 Track Order on WhatsApp
+          </a>
+          <a href="shop.html" class="btn-primary" style="text-decoration: none; padding: 0.85rem 1.5rem;">
+            Return to Dispensary
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/geo-currency.js"></script>
+  <script src="js/data/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/paystack-service.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    let checkoutItems = [];
+    let selectedPayment = 'mpesa';
+
+    function initCheckoutPage() {
+      // Check if buying a specific single product via URL ?buy=...
+      const params = new URLSearchParams(window.location.search);
+      const buyId = params.get('buy');
+
+      if (buyId) {
+        const product = PRODUCTS_DATA.find(p => p.id === buyId);
+        if (product) {
+          checkoutItems = [{
+            id: product.id,
+            name: product.name,
+            botanicalName: product.botanicalName,
+            priceKES: product.priceKES,
+            image: product.image,
+            quantity: 1
+          }];
+        }
+      }
+
+      // If no URL single product, use basket items
+      if (checkoutItems.length === 0) {
+        checkoutItems = [...cart.items];
+      }
+
+      // If still empty, default to premier launch item for demonstration
+      if (checkoutItems.length === 0) {
+        const defaultProduct = PRODUCTS_DATA[0];
+        checkoutItems = [{
+          id: defaultProduct.id,
+          name: defaultProduct.name,
+          botanicalName: defaultProduct.botanicalName,
+          priceKES: defaultProduct.priceKES,
+          image: defaultProduct.image,
+          quantity: 1
+        }];
+      }
+
+      // Auto-fill customer info from localStorage if previously entered
+      try {
+        const savedName = localStorage.getItem('nah_cust_name');
+        const savedPhone = localStorage.getItem('nah_cust_phone');
+        const savedTown = localStorage.getItem('nah_cust_town');
+        const savedEmail = localStorage.getItem('nah_cust_email');
+
+        if (savedName) document.getElementById('checkoutName').value = savedName;
+        if (savedPhone) document.getElementById('checkoutPhone').value = savedPhone;
+        if (savedTown) document.getElementById('checkoutTown').value = savedTown;
+        if (savedEmail) document.getElementById('checkoutEmail').value = savedEmail;
+      } catch (e) {}
+
+      renderCheckoutSummary();
+    }
+
+    function renderCheckoutSummary() {
+      const listEl = document.getElementById('checkoutItemsList');
+      if (!listEl) return;
+
+      const subtotalKES = checkoutItems.reduce((sum, item) => sum + (item.priceKES * item.quantity), 0);
+      const shippingKES = subtotalKES >= CONFIG.shipping.freeThresholdKES ? 0 : CONFIG.shipping.standardRateKES;
+      const totalKES = subtotalKES + shippingKES;
+
+      listEl.innerHTML = checkoutItems.map(item => `
+        <div style="display:flex; gap:1rem; align-items:center; margin-bottom: 0.85rem; padding-bottom: 0.85rem; border-bottom: 1px solid rgba(212,175,55,0.1);">
+          <img src="${item.image}" alt="${item.name}" style="width: 55px; height: 55px; object-fit: cover; border-radius: 6px;" onerror="this.src='assets/images/hero-apothecary.jpg'">
+          <div style="flex:1;">
+            <strong style="display:block; font-size: 0.92rem; color: var(--text-parchment);">${item.name}</strong>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">${item.botanicalName || ''} (Qty: ${item.quantity})</span>
+          </div>
+          <div style="font-weight: 700; color: var(--gold-glow); font-size: 0.95rem;">
+            ${window.geoCurrency ? window.geoCurrency.formatPrice(item.priceKES * item.quantity) : `KSh ${item.priceKES * item.quantity}`}
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('summarySubtotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(subtotalKES) : `KSh ${subtotalKES}`;
+      document.getElementById('summaryShipping').textContent = shippingKES === 0 ? 'FREE (Blessing Threshold)' : (window.geoCurrency ? window.geoCurrency.formatPrice(shippingKES) : `KSh ${shippingKES}`);
+      document.getElementById('summaryTotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(totalKES) : `KSh ${totalKES}`;
+    }
+
+    function selectPaymentMethod(method) {
+      selectedPayment = method;
+      document.getElementById('methodMpesa').classList.toggle('active', method === 'mpesa');
+      document.getElementById('methodCod').classList.toggle('active', method === 'cod');
+      document.getElementById('methodWhatsapp').classList.toggle('active', method === 'whatsapp');
+
+      const submitBtn = document.getElementById('submitOrderBtn');
+      if (method === 'mpesa') {
+        submitBtn.textContent = '⚡ Pay Now via Paystack (M-Pesa / Card)';
+        submitBtn.className = 'btn-paystack';
+      } else if (method === 'cod') {
+        submitBtn.textContent = '📦 Confirm Order (Pay on Delivery)';
+        submitBtn.className = 'btn-primary';
+      } else {
+        submitBtn.textContent = '💬 Place Order via 1-Click WhatsApp';
+        submitBtn.className = 'btn-whatsapp';
+      }
+    }
+
+    function handleCheckoutSubmission(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('checkoutName').value.trim();
+      const phone = document.getElementById('checkoutPhone').value.trim();
+      const town = document.getElementById('checkoutTown').value.trim();
+      const email = document.getElementById('checkoutEmail').value.trim() || `${phone.replace(/[^0-9]/g, '')}@orders.omnicorehub.app`;
+      const notes = document.getElementById('checkoutNotes').value.trim();
+
+      // Persist customer details for next time (0-friction reorders)
+      try {
+        localStorage.setItem('nah_cust_name', name);
+        localStorage.setItem('nah_cust_phone', phone);
+        localStorage.setItem('nah_cust_town', town);
+        if (email) localStorage.setItem('nah_cust_email', email);
+      } catch (e) {}
+
+      const subtotalKES = checkoutItems.reduce((sum, item) => sum + (item.priceKES * item.quantity), 0);
+      const shippingKES = subtotalKES >= CONFIG.shipping.freeThresholdKES ? 0 : CONFIG.shipping.standardRateKES;
+      const totalKES = subtotalKES + shippingKES;
+      const reference = `NAH-${Date.now().toString().slice(-6)}-${Math.floor(Math.random() * 899 + 100)}`;
+
+      const orderData = {
+        reference,
+        customerName: name,
+        customerPhone: phone,
+        customerAddress: town,
+        customerEmail: email,
+        orderNotes: notes,
+        items: checkoutItems,
+        amountInKES: totalKES,
+        paymentMethod: selectedPayment,
+        date: new Date().toLocaleString()
+      };
+
+      if (selectedPayment === 'whatsapp') {
+        // Direct WhatsApp order
+        const cleanStorePhone = CONFIG.contact.whatsapp.replace(/[^0-9]/g, '');
+        let msg = `🌿 *CONFIDENTIAL EXPRESS ORDER - NEWAGE HEALTH BOTANICALS*\n\n`;
+        msg += `*Order Ref:* ${reference}\n`;
+        msg += `*Customer:* ${name}\n*Phone:* ${phone}\n*Delivery Location:* ${town}\n\n`;
+        msg += `*Items Ordered:*\n`;
+        checkoutItems.forEach((it, i) => {
+          msg += `${i + 1}. *${it.name}* (x${it.quantity}) - KSh ${it.priceKES * it.quantity}\n`;
+        });
+        msg += `\n*Total Due:* KSh ${totalKES.toLocaleString()}\n`;
+        msg += `*Packaging:* 100% Plain & Discreet Courier Dispatch\n`;
+        if (notes) msg += `*Notes:* ${notes}\n`;
+        msg += `\nPlease confirm dispatch!`;
+
+        window.open(`https://wa.me/${cleanStorePhone}?text=${encodeURIComponent(msg)}`, '_blank');
+        cart.clearCart();
+        showSuccessScreen(orderData);
+        return;
+      }
+
+      if (selectedPayment === 'cod') {
+        // Pay on delivery
+        orderData.paystackResponse = { status: 'pending_cod', message: 'Pay on Delivery Approved' };
+        window.paystackService.saveOrderHistory(orderData);
+        cart.clearCart();
+        showSuccessScreen(orderData);
+        return;
+      }
+
+      // Online Paystack (M-Pesa / Card / Apple Pay)
+      window.paystackService.initiatePayment({
+        customerName: name,
+        customerEmail: email,
+        customerPhone: phone,
+        customerAddress: town,
+        orderNotes: notes,
+        amountInKES: totalKES,
+        items: checkoutItems,
+        onSuccess: (resData) => {
+          cart.clearCart();
+          showSuccessScreen({ ...orderData, reference: resData.reference || reference });
+        },
+        onClose: () => {
+          console.log('Payment window closed');
+        }
+      });
+    }
+
+    function showSuccessScreen(orderData) {
+      document.getElementById('checkoutMainGrid').style.display = 'none';
+      const screen = document.getElementById('orderSuccessScreen');
+      screen.style.display = 'block';
+
+      document.getElementById('successOrderRef').textContent = orderData.reference;
+      document.getElementById('successName').textContent = orderData.customerName;
+      document.getElementById('successTown').textContent = orderData.customerAddress;
+      document.getElementById('successPayment').textContent = orderData.paymentMethod === 'cod' ? '📦 Pay on Delivery (Cash/M-Pesa)' : '⚡ Paid via M-Pesa / Card';
+      document.getElementById('successTotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(orderData.amountInKES) : `KSh ${orderData.amountInKES.toLocaleString()}`;
+
+      const cleanStorePhone = CONFIG.contact.whatsapp.replace(/[^0-9]/g, '');
+      const waText = `🌿 Hi Apothecary Team! My order ref is *${orderData.reference}*. Please provide tracking details for delivery to *${orderData.customerAddress}*.`;
+      document.getElementById('successWhatsAppLink').href = `https://wa.me/${cleanStorePhone}?text=${encodeURIComponent(waText)}`;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.addEventListener('DOMContentLoaded', initCheckoutPage);
+  </script>
+</body>
+</html>

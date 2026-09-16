@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botanical Remedy Dossier | NewAge Health Botanicals & Rituals</title>
+  <meta name="description" content="Detailed botanical pharmacopoeia, clinical mechanisms, active ingredients, and sacred preparation ritual guide.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <span>✨ Free Courier Delivery on orders above KSh 4,500 | 100% Discreet Packaging Guarantee</span>
+      <div class="currency-selector-wrap">
+        <label for="currencySelect" class="sr-only">Currency</label>
+        <select id="currencySelect" class="currency-select" aria-label="Select Currency" onchange="geoCurrency.setCurrency(this.value)">
+          <option value="KES">🇰🇪 KES (KSh)</option>
+          <option value="USD">🇺🇸 USD ($)</option>
+          <option value="GBP">🇬🇧 GBP (£)</option>
+          <option value="EUR">🇪🇺 EUR (€)</option>
+          <option value="NGN">🇳🇬 NGN (₦)</option>
+          <option value="GHS">🇬🇭 GHS (GH₵)</option>
+          <option value="ZAR">🇿🇦 ZAR (R)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="NewAge Health Home">
+        <span class="logo-symbol">🌿</span>
+        <div class="logo-text">
+          <span class="brand-name">NewAge Health</span>
+          <span class="brand-subtitle">Botanicals & Rituals</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link active">Dispensary</a>
+        <a href="index.html#portfolio" class="nav-link">Sacred Rituals</a>
+        <a href="javascript:void(0)" class="nav-link" onclick="app.openBatchModal()">Verify CoA 🛡️</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" onclick="aiHerbalist.open()" title="Ask AI Master Herbalist" aria-label="AI Herbalist">
+          <span class="sparkle-icon">✨</span>
+          <span class="hide-mobile">AI Herbalist</span>
+        </button>
+        <button class="icon-btn cart-btn" onclick="cart.openDrawer()" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cartCountBadge" style="display:none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dedicated Product Detail Container -->
+  <main class="pdp-page-container container" id="pdpMain">
+    <nav class="pdp-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> &gt; <a href="shop.html">Dispensary</a> &gt; <span id="pdpBreadcrumbTitle">Remedy Details</span>
+    </nav>
+
+    <div class="pdp-grid" id="pdpGrid">
+      <!-- Left: Dual Image Interactive Gallery -->
+      <div class="pdp-gallery-wrap">
+        <div class="pdp-main-image-container">
+          <img id="pdpActiveImage" src="assets/images/hero-apothecary.jpg" alt="Botanical Medicine" class="pdp-main-img">
+          <span id="pdpTagBadge" class="card-badge" style="top: 15px; left: 15px;"></span>
+        </div>
+
+        <!-- 100% Discreet Packaging Assurance -->
+        <div class="discreet-guarantee-badge">
+          <span class="icon">🔒</span>
+          <div>
+            <strong style="color: var(--gold-glow); display: block; font-size: 0.92rem;">100% Confidential & Discreet Delivery</strong>
+            <span style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
+              All remedies are dispatched in plain, unbranded security packaging with zero product names or medical details on the exterior.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Product Clinical & Ritual Dossier -->
+      <div class="pdp-details-wrap">
+        <span class="card-cat-label" id="pdpCategory">Remedy Category</span>
+        <h1 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--gold-glow); margin: 0.35rem 0;" id="pdpTitle">Product Name</h1>
+        <p style="font-style: italic; color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.25rem;" id="pdpBotanical">Botanical Species</p>
+
+        <div class="pdp-price-row">
+          <span class="pdp-price-current" id="pdpPrice">KSh 0</span>
+          <span style="color: var(--text-muted); font-size: 0.9rem;" id="pdpBasePrice"></span>
+          <span class="card-pill" style="background: rgba(42, 157, 143, 0.2); border-color: #2a9d8f; color: #32b5a5;">✓ In Stock & Freshly Formulated</span>
+        </div>
+
+        <!-- WHAT THIS MEDICINE DOES SECTION -->
+        <div class="what-it-does-box">
+          <h4>🔬 What This Medicine Does & How It Works</h4>
+          <p id="pdpWhatItDoes" style="margin-bottom: 0.75rem;"></p>
+          <p id="pdpDescription" style="color: var(--text-muted); font-size: 0.88rem;"></p>
+        </div>
+
+        <!-- Target Illnesses & Symptoms -->
+        <div style="margin-bottom: 1.5rem;">
+          <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Targeted Illnesses & Symptoms:</h4>
+          <div id="pdpIllnessTags" style="display: flex; flex-wrap: wrap; gap: 0.4rem;"></div>
+        </div>
+
+        <!-- Holistic Benefits -->
+        <div style="margin-bottom: 1.5rem;">
+          <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Documented Therapeutic Actions:</h4>
+          <ul id="pdpBenefitsList" style="padding-left: 1.25rem; font-size: 0.92rem; line-height: 1.7; color: var(--text-linen);"></ul>
+        </div>
+
+        <!-- Active Herbal Ingredients -->
+        <div style="margin-bottom: 1.5rem;">
+          <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Pharmacological Ingredients:</h4>
+          <p id="pdpIngredients" style="font-size: 0.88rem; line-height: 1.6; color: var(--text-muted); background: rgba(5, 14, 9, 0.6); padding: 0.85rem; border-radius: 6px; border: 1px solid var(--border-subtle);"></p>
+        </div>
+
+        <!-- Sacred Preparation & Ritual Dosage -->
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Preparation & Mindful Ritual Guide:</h4>
+          <div id="pdpRitualGuide" style="background: rgba(14, 41, 27, 0.6); padding: 1rem 1.25rem; border-radius: 6px; border-left: 3px solid var(--gold-primary); font-style: italic; font-size: 0.9rem; line-height: 1.6;"></div>
+        </div>
+
+        <!-- Action Buttons / Frictionless Checkout -->
+        <div class="pdp-actions-row">
+          <div class="pdp-btn-group">
+            <button class="btn-primary" style="flex: 2; justify-content: center; font-size: 1.05rem; padding: 0.9rem 1.5rem;" onclick="buyNowCurrentProduct()">
+              ⚡ Instant 1-Click Checkout
+            </button>
+            <button class="btn-secondary" style="flex: 1.5; justify-content: center; font-size: 0.95rem;" onclick="addToBasketCurrentProduct()">
+              🛒 Add to Basket
+            </button>
+          </div>
+          <div class="pdp-btn-group">
+            <button class="btn-whatsapp" style="flex: 1; justify-content: center; font-size: 0.9rem; padding: 0.75rem;" onclick="orderWhatsAppCurrentProduct()">
+              💬 Order via Confidential WhatsApp Concierge
+            </button>
+            <button class="btn-secondary" style="flex: 0.8; justify-content: center; font-size: 0.85rem;" onclick="app.openBatchModal(currentProduct.id)">
+              🔬 Verify Batch CoA
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Remedies Section -->
+    <section style="margin-top: 5rem;">
+      <div class="section-header-center">
+        <span class="section-subtitle">Synergistic Formulations</span>
+        <h2 class="section-title">Related Botanical Therapies</h2>
+      </div>
+      <div class="products-grid" id="relatedGrid" style="margin-top: 2rem;"></div>
+    </section>
+  </main>
+
+  <!-- Cart Drawer & Backdrop (reusable across pages) -->
+  <div class="cart-backdrop" id="cartBackdrop" onclick="cart.closeDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Basket">
+    <div class="cart-drawer-header">
+      <div class="cart-title-row">
+        <h3>Sacred Botanical Basket</h3>
+        <button class="cart-close-btn" onclick="cart.closeDrawer()" aria-label="Close basket">&times;</button>
+      </div>
+    </div>
+    <div class="cart-items-list" id="cartItemsList"></div>
+    <div class="cart-empty-notice" id="cartEmptyNotice" style="display:none; text-align:center; padding: 3rem 1rem;">
+      <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1rem;">Your apothecary basket is empty.</p>
+      <a href="shop.html" class="btn-primary">Browse Dispensary</a>
+    </div>
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-totals-group">
+        <div class="cart-total-row"><span>Subtotal</span><strong id="cartSubtotalAmount">KSh 0</strong></div>
+        <div class="cart-total-row" id="cartDiscountRow" style="display:none;"><span>Promo Discount</span><strong id="cartDiscountAmount" style="color:#2a9d8f;">-KSh 0</strong></div>
+        <div class="cart-total-row"><span>Discreet Courier Delivery</span><span id="cartShippingAmount">KSh 350</span></div>
+        <div class="cart-total-row grand-total"><span>Total Due</span><strong id="cartTotalAmount" style="color:var(--gold-glow); font-size:1.3rem;">KSh 0</strong></div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.25rem;">
+        <a href="checkout.html" class="btn-paystack" style="text-align:center; text-decoration:none;">Proceed to Easy Checkout</a>
+        <button class="btn-whatsapp" onclick="app.checkoutWhatsApp()">Order via WhatsApp</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- AI Herbalist Widget & Panel -->
+  <div class="ai-herbalist-launcher" id="aiHerbalistLauncher" onclick="aiHerbalist.toggle()">
+    <span class="launcher-icon">🌿</span>
+    <span class="launcher-pulse"></span>
+    <span class="launcher-label">AI Herbalist</span>
+  </div>
+
+  <div class="ai-herbalist-panel" id="aiHerbalistPanel" style="display:none;">
+    <div class="ai-panel-header">
+      <div class="ai-avatar">🍃</div>
+      <div class="ai-header-info">
+        <h3>Sacred Herbal Alchemist</h3>
+        <p>Evidence-Grounded Plant Wisdom</p>
+      </div>
+      <button class="ai-close-btn" onclick="aiHerbalist.close()">&times;</button>
+    </div>
+    <div class="ai-messages-list" id="aiMessagesList"></div>
+    <div class="ai-input-wrap">
+      <input type="text" id="aiUserInput" placeholder="Ask about illnesses, dosage, or remedies..." onkeydown="if(event.key==='Enter') aiHerbalist.sendMessage()">
+      <button class="ai-send-btn" onclick="aiHerbalist.sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/geo-currency.js"></script>
+  <script src="js/data/products.js"></script>
+  <script src="js/data/batch-registry.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/paystack-service.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/ai-herbalist.js"></script>
+
+  <script>
+    let currentProduct = null;
+    let activeImageIndex = 0;
+
+    function initProductPage() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id') || 'glucofort-x-diabetes-pancreatic-cure';
+      currentProduct = PRODUCTS_DATA.find(p => p.id === id) || PRODUCTS_DATA[0];
+
+      if (!currentProduct) return;
+
+      document.title = `${currentProduct.name} | NewAge Health Botanicals`;
+      document.getElementById('pdpBreadcrumbTitle').textContent = currentProduct.name;
+      document.getElementById('pdpCategory').textContent = currentProduct.categoryName;
+      document.getElementById('pdpTitle').textContent = currentProduct.name;
+      document.getElementById('pdpBotanical').textContent = currentProduct.botanicalName;
+      document.getElementById('pdpPrice').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(currentProduct.priceKES) : `KSh ${currentProduct.priceKES}`;
+      document.getElementById('pdpBasePrice').textContent = `(KSh ${currentProduct.priceKES.toLocaleString()})`;
+
+      const badge = document.getElementById('pdpTagBadge');
+      if (currentProduct.tag) {
+        badge.textContent = currentProduct.tag;
+        badge.style.display = 'inline-block';
+      } else {
+        badge.style.display = 'none';
+      }
+
+      // Images
+      // Primary Product Image
+      const mainImg = document.getElementById('pdpActiveImage');
+      mainImg.src = currentProduct.image || 'assets/images/hero-apothecary.jpg';
+
+      // What it does
+      document.getElementById('pdpWhatItDoes').textContent = currentProduct.whatItDoes || currentProduct.description;
+      document.getElementById('pdpDescription').textContent = currentProduct.description;
+
+      // Illness tags
+      const illnessContainer = document.getElementById('pdpIllnessTags');
+      illnessContainer.innerHTML = (currentProduct.illnesses || []).map(ill => `
+        <span class="card-pill" style="background: rgba(231, 111, 81, 0.15); border-color: rgba(231, 111, 81, 0.4); color: #f4a261;">🎯 ${ill}</span>
+      `).join('');
+
+      // Benefits
+      const benefitsContainer = document.getElementById('pdpBenefitsList');
+      benefitsContainer.innerHTML = (currentProduct.benefits || []).map(b => `<li>${b}</li>`).join('');
+
+      // Ingredients
+      document.getElementById('pdpIngredients').textContent = (currentProduct.ingredients || []).join(', ');
+
+      // Ritual Guide
+      document.getElementById('pdpRitualGuide').textContent = currentProduct.ritualGuide || 'Take with pure warm spring water and intention.';
+
+      // Render Related Products
+      const relatedGrid = document.getElementById('relatedGrid');
+      const related = PRODUCTS_DATA
+        .filter(p => p.id !== currentProduct.id && (p.category === currentProduct.category || p.tag === 'Master Clinical Formulation'))
+        .slice(0, 4);
+
+      relatedGrid.innerHTML = related.map(p => `
+        <article class="product-card">
+          <div class="card-image-wrap">
+            <img src="${p.image}" alt="${p.name}" class="card-img-primary" onerror="this.src='assets/images/hero-apothecary.jpg'">
+            <button class="quick-view-trigger" onclick="window.location.href='product.html?id=${p.id}'" title="View Dossier">👁️</button>
+          </div>
+          <div class="card-body">
+            <span class="card-cat-label">${p.categoryName}</span>
+            <h4 class="card-title"><a href="product.html?id=${p.id}" style="color:inherit; text-decoration:none;">${p.name}</a></h4>
+            <div class="card-footer" style="margin-top:0.75rem;">
+              <span class="card-price">${window.geoCurrency ? window.geoCurrency.formatPrice(p.priceKES) : `KSh ${p.priceKES}`}</span>
+              <a href="product.html?id=${p.id}" class="btn-buy-instant">Dossier →</a>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function buyNowCurrentProduct() {
+      if (!currentProduct) return;
+      window.location.href = `checkout.html?buy=${currentProduct.id}`;
+    }
+
+    function addToBasketCurrentProduct() {
+      if (!currentProduct) return;
+      cart.addItem(currentProduct.id, 1, true);
+    }
+
+    function orderWhatsAppCurrentProduct() {
+      if (!currentProduct) return;
+      const cleanPhone = CONFIG.contact.whatsapp.replace(/[^0-9]/g, '');
+      const price = window.geoCurrency ? window.geoCurrency.formatPrice(currentProduct.priceKES) : `KSh ${currentProduct.priceKES}`;
+      const msg = `🌿 *CONFIDENTIAL ORDER INQUIRY*\n\nHello Apothecary Team, I would like to order:\n*${currentProduct.name}*\nPrice: ${price}\n\nPlease confirm availability and discreet delivery to my location.`;
+      window.open(`https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    window.addEventListener('DOMContentLoaded', initProductPage);
+    window.addEventListener('currencyChanged', () => {
+      if (currentProduct) {
+        document.getElementById('pdpPrice').textContent = window.geoCurrency.formatPrice(currentProduct.priceKES);
+      }
+    });
+  </script>
+</body>
+</html>

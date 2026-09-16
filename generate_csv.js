@@ -34,8 +34,10 @@ const headers = [
   'benefits',
   'ingredients',
   'ritual_guide',
+  'what_it_does',
   'in_stock',
-  'image'
+  'image',
+  'image_secondary'
 ];
 
 const rows = [headers.join(',')];
@@ -58,8 +60,10 @@ for (const p of global.PRODUCTS_DATA) {
     escapeCSV(p.benefits),
     escapeCSV(p.ingredients),
     escapeCSV(p.ritualGuide),
+    escapeCSV(p.whatItDoes),
     escapeCSV(p.inStock ? 'Yes' : 'No'),
-    escapeCSV(p.image)
+    escapeCSV(p.image),
+    escapeCSV(p.imageSecondary)
   ];
   rows.push(row.join(','));
 }

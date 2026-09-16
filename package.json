@@ -1,0 +1,28 @@
+{
+  "name": "m",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate_csv.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennohgithinji12-ui/newage-botanicals.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dennohgithinji12-ui/newage-botanicals/issues"
+  },
+  "homepage": "https://github.com/dennohgithinji12-ui/newage-botanicals#readme",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "joi": "^18.2.9"
+  }
+}

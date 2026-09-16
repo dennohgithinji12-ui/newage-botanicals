@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <!-- Background Radial Studio Vignette -->
+    <radialGradient id="bgGlow" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#142b1f"/>
+      <stop offset="55%" stop-color="#091710"/>
+      <stop offset="100%" stop-color="#040a07"/>
+    </radialGradient>
+
+    <!-- Metallic Gold Foil Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE8B3"/>
+      <stop offset="25%" stop-color="#C49A45"/>
+      <stop offset="50%" stop-color="#EED596"/>
+      <stop offset="75%" stop-color="#8C6721"/>
+      <stop offset="100%" stop-color="#E2B755"/>
+    </linearGradient>
+
+    <!-- Glass Shading Gradient -->
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0e1711"/>
+      <stop offset="25%" stop-color="#3c5e47"/>
+      <stop offset="50%" stop-color="#0e1711"/>
+      <stop offset="75%" stop-color="#0a0503"/>
+      <stop offset="100%" stop-color="#0e1711"/>
+    </linearGradient>
+
+    <!-- Specular Reflection -->
+    <linearGradient id="specularGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Kraft Gradient -->
+    <linearGradient id="kraftGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#70502e"/>
+      <stop offset="35%" stop-color="#997043"/>
+      <stop offset="70%" stop-color="#7d5932"/>
+      <stop offset="100%" stop-color="#5c3f21"/>
+    </linearGradient>
+
+    <!-- Obsidian Pouch Gradient -->
+    <linearGradient id="obsidianPouchGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0a0a0c"/>
+      <stop offset="35%" stop-color="#19191d"/>
+      <stop offset="70%" stop-color="#111114"/>
+      <stop offset="100%" stop-color="#060607"/>
+    </linearGradient>
+
+    <!-- Copper Pouch Gradient -->
+    <linearGradient id="copperPouchGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4d2413"/>
+      <stop offset="35%" stop-color="#9c4e2b"/>
+      <stop offset="70%" stop-color="#6e351d"/>
+      <stop offset="100%" stop-color="#3d1b0c"/>
+    </linearGradient>
+
+    <!-- Metal Tin Gradient -->
+    <linearGradient id="tinGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#102118"/>
+      <stop offset="30%" stop-color="#1e3d2c"/>
+      <stop offset="60%" stop-color="#2a523c"/>
+      <stop offset="85%" stop-color="#152b1f"/>
+      <stop offset="100%" stop-color="#0c1912"/>
+    </linearGradient>
+
+    <!-- Wood Cap Gradient -->
+    <linearGradient id="woodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#693b1b"/>
+      <stop offset="50%" stop-color="#40200c"/>
+      <stop offset="100%" stop-color="#291306"/>
+    </linearGradient>
+
+    <!-- Shadow -->
+    <filter id="dropShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Studio Stage Background -->
+  <rect width="600" height="600" fill="url(#bgGlow)"/>
+
+  <!-- Apothecary Stage Floor Shadow & Pedestal Glow -->
+  <ellipse cx="300" cy="515" rx="210" ry="34" fill="#000000" opacity="0.6" filter="blur(8px)"/>
+  <ellipse cx="300" cy="505" rx="140" ry="18" fill="#C79F4E" opacity="0.08" filter="blur(6px)"/>
+
+  <!-- Packaging Physical Model -->
+  
+      <!-- Slender Fine-Mist Spray Flacon -->
+      <rect x="286" y="55" width="28" height="35" rx="3" fill="none" stroke="#FFF" stroke-width="1.5" opacity="0.5"/>
+      <rect x="292" y="70" width="16" height="15" fill="url(#goldGrad)"/>
+      <rect x="278" y="90" width="44" height="24" rx="2" fill="url(#goldGrad)"/>
+      <rect x="286" y="114" width="28" height="15" fill="url(#glassGrad)"/>
+      <path d="M 245 150 C 245 125, 275 120, 286 120 L 314 120 C 325 120, 355 125, 355 150 L 355 475 C 355 492, 340 498, 300 498 C 260 498, 245 492, 245 475 Z" fill="url(#glassGrad)" filter="url(#dropShadow)"/>
+
+      <!-- Label -->
+      <rect x="254" y="180" width="92" height="260" rx="3" fill="#F1F5F2" stroke="#C79F4E" stroke-width="1.5"/>
+      <rect x="257" y="183" width="86" height="254" rx="2" fill="none" stroke="#C79F4E" stroke-width="0.75" stroke-dasharray="3,2"/>
+    
+
+  <!-- Center Label Typography & Details -->
+  <g id="labelContent">
+    <!-- Brand Crest -->
+    <circle cx="300" cy="226" r="13" fill="#2A4533"/>
+    
+      <polygon points="300,217 308,222 308,231 300,236 292,231 292,222" fill="none" stroke="#C79F4E" stroke-width="1.2"/>
+      <circle cx="300" cy="226" r="2.5" fill="#C79F4E"/>
+    
+
+    <!-- Brand Header -->
+    <text x="300" y="247" font-family="'Cinzel', Georgia, serif" font-size="6.5" font-weight="bold" fill="#101C14" text-anchor="middle" letter-spacing="1.4">NEWAGE BOTANICALS</text>
+    <line x1="265" y1="251" x2="335" y2="251" stroke="#C79F4E" stroke-width="0.8"/>
+
+    <!-- Product Title -->
+    <text x="300" y="264" font-family="'Playfair Display', Georgia, serif" font-size="8.5" font-weight="bold" fill="#101C14" text-anchor="middle">Wild African Sage &amp;</text><text x="300" y="274" font-family="'Playfair Display', Georgia, serif" font-size="8.5" font-weight="bold" fill="#101C14" text-anchor="middle">Rosemary Terpene</text><text x="300" y="284" font-family="'Playfair Display', Georgia, serif" font-size="8.5" font-weight="bold" fill="#101C14" text-anchor="middle">Focus Mist</text>
+
+    <!-- Latin Binomial -->
+    <text x="300" y="298" font-family="Georgia, serif" font-style="italic" font-size="6" fill="#3C5C46" text-anchor="middle">Salvia africana &amp; Rosmarinus officinalis</text>
+
+    <!-- Extraction Badge -->
+    <rect x="256" y="306" width="88" height="13" rx="2.5" fill="#2A4533"/>
+    <text x="300" y="315" font-family="sans-serif" font-size="4.5" font-weight="bold" fill="#FFF" text-anchor="middle" letter-spacing="0.4">100% THERAPEUTIC PURITY</text>
+
+    <!-- Net Quantity & Lot -->
+    <line x1="260" y1="408" x2="340" y2="408" stroke="#C79F4E" stroke-width="0.75"/>
+    <text x="300" y="418" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="bold" fill="#101C14" text-anchor="middle">100 ML · 3.4 FL. OZ</text>
+    <text x="300" y="427" font-family="'JetBrains Mono', monospace" font-size="4.5" fill="#3C5C46" text-anchor="middle">NAB-2026-AFRI-001</text>
+
+    <!-- Contact & Brand Channels Prominently on Label -->
+    <text x="300" y="435" font-family="sans-serif" font-size="4" font-weight="bold" fill="#C79F4E" text-anchor="middle">TEL: +254141270112 · @newagebotanicals</text>
+  </g>
+
+  <!-- Top Apothecary Luxury Header Overlay -->
+  <g opacity="0.85">
+    <text x="30" y="42" font-family="'Cinzel', Georgia, serif" font-size="9" font-weight="bold" fill="#C79F4E" letter-spacing="2">NEWAGE HEALTH BOTANICALS</text>
+    <text x="30" y="55" font-family="sans-serif" font-size="6.5" fill="#88A092" letter-spacing="1">AUTHENTIC PACKAGING · DISPENSARY GRADE</text>
+  </g>
+
+  <!-- Bottom Origin Badge & Direct Contact Verification -->
+  <g opacity="0.85">
+    <text x="570" y="562" font-family="'JetBrains Mono', monospace" font-size="6.5" fill="#C79F4E" text-anchor="end">NAB-2026-AFRI-001</text>
+    <text x="570" y="574" font-family="sans-serif" font-size="6" fill="#88A092" text-anchor="end">Aberdare Mist Rainforest · Central Kenya</text>
+    <text x="570" y="584" font-family="sans-serif" font-size="5.5" font-weight="bold" fill="#C79F4E" text-anchor="end">TEL: +254141270112 | @newagebotanicals</text>
+  </g>
+</svg>

@@ -1,0 +1,212 @@
+[
+  {
+    "profile": {
+      "id": "sup-001",
+      "name": "Rift Valley Botanicals",
+      "location": "Nanyuki, Laikipia County, Kenya",
+      "botanicalSupplied": "moringa-oleifera-lam",
+      "originType": "farmed",
+      "extractionMethod": "Solar shade-dried ultra-fine leaf powder",
+      "productionCapacityKgPerMonth": 5000,
+      "leadTimeDays": 14
+    },
+    "compliance": {
+      "kebsCertified": true,
+      "fdaRegistered": true,
+      "gmpCompliant": true,
+      "organicCertified": true,
+      "certifyingBody": "Ecocert & KEBS"
+    },
+    "safety": {
+      "heavyMetals": {
+        "leadPpm": 1.1,
+        "arsenicPpm": 0.35,
+        "cadmiumPpm": 0.08,
+        "mercuryPpm": 0.02
+      },
+      "microbial": {
+        "totalPlateCount": 1200,
+        "yeastAndMold": 80,
+        "eColi": "absent",
+        "salmonella": "absent"
+      },
+      "pesticideResidueFree": true,
+      "lastTestedDate": "2026-09-01T00:00:00Z"
+    },
+    "standardization": {
+      "activeMarker": "Vitamin C & Bioavailable Iron",
+      "minimumConcentrationPercentage": 1.8,
+      "testingMethod": "HPLC"
+    },
+    "status": "approved",
+    "rejectionReason": null
+  },
+  {
+    "profile": {
+      "id": "sup-002",
+      "name": "Baobab Swahili Coast Coop",
+      "location": "Kilifi & Kwale Coastal Lowlands, Kenya",
+      "botanicalSupplied": "adansonia-digitata",
+      "originType": "wild-harvested",
+      "extractionMethod": "Raw mechanical fruit pod separation & sieving",
+      "productionCapacityKgPerMonth": 4000,
+      "leadTimeDays": 14
+    },
+    "compliance": {
+      "kebsCertified": true,
+      "fdaRegistered": true,
+      "gmpCompliant": true,
+      "organicCertified": true,
+      "certifyingBody": "Soil Association & KEBS"
+    },
+    "safety": {
+      "heavyMetals": {
+        "leadPpm": 0.6,
+        "arsenicPpm": 0.15,
+        "cadmiumPpm": 0.04,
+        "mercuryPpm": 0.01
+      },
+      "microbial": {
+        "totalPlateCount": 850,
+        "yeastAndMold": 45,
+        "eColi": "absent",
+        "salmonella": "absent"
+      },
+      "pesticideResidueFree": true,
+      "lastTestedDate": "2026-09-01T00:00:00Z"
+    },
+    "standardization": {
+      "activeMarker": "Soluble Dietary Prebiotic Pectin",
+      "minimumConcentrationPercentage": 50,
+      "testingMethod": "AOAC Enzymatic-Gravimetric"
+    },
+    "status": "approved",
+    "rejectionReason": null
+  },
+  {
+    "profile": {
+      "id": "sup-003",
+      "name": "Taita Hills Herbal Collective",
+      "location": "Taita Taveta Hills, Kenya",
+      "botanicalSupplied": "hibiscus-sabdariffa",
+      "originType": "farmed",
+      "extractionMethod": "Whole sun-cured ruby calyxes",
+      "productionCapacityKgPerMonth": 3500,
+      "leadTimeDays": 10
+    },
+    "compliance": {
+      "kebsCertified": true,
+      "fdaRegistered": false,
+      "gmpCompliant": true,
+      "organicCertified": true,
+      "certifyingBody": "AfriCert & KEBS"
+    },
+    "safety": {
+      "heavyMetals": {
+        "leadPpm": 0.8,
+        "arsenicPpm": 0.18,
+        "cadmiumPpm": 0.05,
+        "mercuryPpm": 0.02
+      },
+      "microbial": {
+        "totalPlateCount": 1400,
+        "yeastAndMold": 95,
+        "eColi": "absent",
+        "salmonella": "absent"
+      },
+      "pesticideResidueFree": true,
+      "lastTestedDate": "2026-09-01T00:00:00Z"
+    },
+    "standardization": {
+      "activeMarker": "Total Anthocyanins & Hibiscus Acid",
+      "minimumConcentrationPercentage": 1.8,
+      "testingMethod": "Spectrophotometry (pH Differential)"
+    },
+    "status": "approved",
+    "rejectionReason": null
+  },
+  {
+    "profile": {
+      "id": "sup-004",
+      "name": "Savannah Harvest Oils",
+      "location": "Kitui County, Semi-Arid Eastern Kenya",
+      "botanicalSupplied": "sclerocarya-birrea",
+      "originType": "wild-harvested",
+      "extractionMethod": "Cold expeller pressed virgin seed oil",
+      "productionCapacityKgPerMonth": 1500,
+      "leadTimeDays": 21
+    },
+    "compliance": {
+      "kebsCertified": true,
+      "fdaRegistered": true,
+      "gmpCompliant": true,
+      "organicCertified": true,
+      "certifyingBody": "Ecocert Organic Fair Trade"
+    },
+    "safety": {
+      "heavyMetals": {
+        "leadPpm": 0.05,
+        "arsenicPpm": 0.02,
+        "cadmiumPpm": 0.01,
+        "mercuryPpm": 0.005
+      },
+      "microbial": {
+        "totalPlateCount": 10,
+        "yeastAndMold": 0,
+        "eColi": "absent",
+        "salmonella": "absent"
+      },
+      "pesticideResidueFree": true,
+      "lastTestedDate": "2026-09-01T00:00:00Z"
+    },
+    "standardization": {
+      "activeMarker": "Oleic Acid (Omega-9)",
+      "minimumConcentrationPercentage": 70,
+      "testingMethod": "GC-MS"
+    },
+    "status": "approved",
+    "rejectionReason": null
+  },
+  {
+    "profile": {
+      "id": "sup-005",
+      "name": "Mount Kenya Highland Herbs",
+      "location": "Meru & Tharaka Nithi, Mount Kenya Foothills",
+      "botanicalSupplied": "ginger-turmeric-highland",
+      "originType": "farmed",
+      "extractionMethod": "Clean solar-dried volcanic rhizome powder",
+      "productionCapacityKgPerMonth": 3000,
+      "leadTimeDays": 14
+    },
+    "compliance": {
+      "kebsCertified": true,
+      "fdaRegistered": true,
+      "gmpCompliant": true,
+      "organicCertified": true,
+      "certifyingBody": "KEBS & GlobalG.A.P."
+    },
+    "safety": {
+      "heavyMetals": {
+        "leadPpm": 0.9,
+        "arsenicPpm": 0.22,
+        "cadmiumPpm": 0.07,
+        "mercuryPpm": 0.03
+      },
+      "microbial": {
+        "totalPlateCount": 2100,
+        "yeastAndMold": 85,
+        "eColi": "absent",
+        "salmonella": "absent"
+      },
+      "pesticideResidueFree": true,
+      "lastTestedDate": "2026-09-01T00:00:00Z"
+    },
+    "standardization": {
+      "activeMarker": "Curcuminoids & 6-Gingerol",
+      "minimumConcentrationPercentage": 5.2,
+      "testingMethod": "HPLC"
+    },
+    "status": "approved",
+    "rejectionReason": null
+  }
+]

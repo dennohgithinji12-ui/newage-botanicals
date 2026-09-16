@@ -1,0 +1,53 @@
+[
+  {
+    "name": "irish sea moss",
+    "source": "CUSTOMER_COMMUNITY_REQUEST",
+    "requestVolume": 3,
+    "communityDemandScore": 5,
+    "notes": "Extracted from 3 verified post-purchase customer feedback requests.",
+    "botanicalTaxonomy": "Chondrus crispus / Gracilaria",
+    "category": "daily-nutrition",
+    "targetSymptom": "Thyroid support, natural minerals & respiratory mucilage"
+  },
+  {
+    "name": "caffeine eye cream",
+    "source": "CUSTOMER_COMMUNITY_REQUEST",
+    "requestVolume": 2,
+    "communityDemandScore": 3,
+    "notes": "Extracted from 2 verified post-purchase customer feedback requests.",
+    "botanicalTaxonomy": "Coffea arabica & Helichrysum",
+    "category": "skin-body",
+    "targetSymptom": "Under-eye dark circles, puffiness & fine lines"
+  },
+  {
+    "name": "bladderwrack",
+    "source": "CUSTOMER_COMMUNITY_REQUEST",
+    "requestVolume": 1,
+    "communityDemandScore": 2,
+    "notes": "Extracted from 1 verified post-purchase customer feedback requests."
+  },
+  {
+    "name": "sleep spray",
+    "source": "CUSTOMER_COMMUNITY_REQUEST",
+    "requestVolume": 1,
+    "communityDemandScore": 2,
+    "notes": "Extracted from 1 verified post-purchase customer feedback requests.",
+    "botanicalTaxonomy": "Piper methysticum & Lavandula",
+    "category": "mind-sleep",
+    "targetSymptom": "Acute social anxiety & sensory decompression"
+  },
+  {
+    "name": "maca root",
+    "source": "CUSTOMER_COMMUNITY_REQUEST",
+    "requestVolume": 1,
+    "communityDemandScore": 2,
+    "notes": "Extracted from 1 verified post-purchase customer feedback requests."
+  },
+  {
+    "name": "joint balm",
+    "source": "CUSTOMER_COMMUNITY_REQUEST",
+    "requestVolume": 1,
+    "communityDemandScore": 2,
+    "notes": "Extracted from 1 verified post-purchase customer feedback requests."
+  }
+]

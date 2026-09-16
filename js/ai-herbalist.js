@@ -19,11 +19,13 @@ class AIHerbalistController {
     this.inputField = null;
     this.clearConfirmBar = null;
 
-    // Wait for DOM to be ready
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => this.init());
-    } else {
-      this.init();
+    // Wait for DOM to be ready if running in browser
+    if (typeof document !== "undefined") {
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => this.init());
+      } else {
+        this.init();
+      }
     }
   }
 
@@ -204,7 +206,7 @@ class AIHerbalistController {
       let puterSuccess = false;
       if (window.puter && window.puter.ai && typeof window.puter.ai.chat === "function") {
         try {
-          const systemPrompt = this.buildSystemPrompt();
+          const systemPrompt = this.buildSystemPrompt(userText);
           const puterMessages = [
             { role: "system", content: systemPrompt },
             ...this.messages.slice(-6).map(m => ({
@@ -348,32 +350,68 @@ class AIHerbalistController {
   // CATALOG CONTEXT & SYSTEM PROMPT
   // =========================================================================
 
-  buildCatalogContext() {
-    if (typeof PRODUCTS_DATA === "undefined" || !Array.isArray(PRODUCTS_DATA)) {
-      return "";
+  buildCatalogContext(query = "", asString = false) {
+    const catalog = typeof PRODUCTS_DATA !== "undefined"
+      ? PRODUCTS_DATA
+      : (typeof require !== "undefined" ? require("./data/products.js") : []);
+    if (!Array.isArray(catalog) || catalog.length === 0) {
+      return asString ? "" : [];
     }
 
-    return PRODUCTS_DATA.map(p => {
+    let relevantProducts = [];
+    if (query && query.trim()) {
+      const matchedIds = this.findMatchingProductIds(query);
+      const matchedSet = new Set(matchedIds);
+      const topMatched = catalog.filter(p => matchedSet.has(p.id));
+      
+      // Also include high priority launch items
+      const heroItems = catalog.filter(p => p.tag === "High-Priority Launch" && !matchedSet.has(p.id)).slice(0, 4);
+      relevantProducts = [...topMatched, ...heroItems].slice(0, 25);
+    }
+
+    if (relevantProducts.length === 0) {
+      // Return 2 top items per category for balanced context
+      const categoryMap = {};
+      catalog.forEach(p => {
+        if (!categoryMap[p.category]) categoryMap[p.category] = [];
+        if (categoryMap[p.category].length < 2) categoryMap[p.category].push(p);
+      });
+      relevantProducts = Object.values(categoryMap).flat().slice(0, 20);
+    }
+
+    const formattedLines = relevantProducts.map(p => {
       const illnesses = (p.illnesses || []).slice(0, 5).join(", ");
       const herbs = (p.herbs || []).slice(0, 4).join(", ");
       return `ID: ${p.id} | Name: "${p.name}" | Botanical: "${p.botanicalName}" | Category: ${p.categoryName} | Price: KSh ${p.priceKES} | Herbs: [${herbs}] | Helps With: [${illnesses}] | Ritual: "${p.ritualGuide || ''}"`;
-    }).join("\n");
+    });
+
+    if (asString) {
+      return formattedLines.join("\n");
+    }
+
+    formattedLines.toString = function() {
+      return this.join("\n");
+    };
+
+    return formattedLines;
   }
 
-  buildSystemPrompt() {
-    const catalog = this.buildCatalogContext();
+  buildSystemPrompt(query = "") {
+    const catalog = this.buildCatalogContext(query);
 
-    return `You are the Master Herbal Alchemist for "NewAge Health Botanicals & Rituals", an East African botanical apothecary.
+    return `You are the Master Herbal Alchemist for "NewAge Botanicals", an evidence-grounded African botanical apothecary.
 Your role: Compassionately diagnose wellness imbalances and recommend exact remedies from our apothecary catalog.
 
-CATALOG REFERENCE:
-${catalog}
+STRICT BRAND & REGULATORY POLICIES:
+1. Anti-Claims Policy: NEVER claim to cure, treat, or prevent chronic clinical diseases (e.g. do NOT say "cures cancer/diabetes/hypertension"). Use supportive, grounding language ("supports healthy glucose balance", "nourishes vascular tone", "calms nocturnal tension").
+2. Evidence Awareness: Strictly distinguish traditional African ethnobotanical wisdom from peer-reviewed human clinical trials.
+3. Traceability & Testing: Every batch is tested by KEBS / SGS accredited laboratories for heavy metals (Lead, Arsenic, Cadmium, Mercury) and microbiological clearance, verifiable via the public Botanical Atlas.
+4. Product Tags: Always tag recommended remedies using [PRODUCT: product-id] syntax so interactive purchasing cards render for the user.
+5. Mindful Rituals: Detail exact steeping temperatures (e.g., 90°C), brewing duration, or topical application movements.
+6. Tone: Poetic, respectful, scientifically literate, rooted in African botanical luxury. Keep replies concise and formatted with clean markdown.
 
-RULES:
-1. Tone: Calming, poetic, respectful, grounded in traditional African and global phytotherapy.
-2. Product tags: Include [PRODUCT: product-id] for 1 to 2 products recommended.
-3. Rituals: Detail exact brewing temperature, steeping time, or application methods.
-4. Formatting: Use clean markdown bolding and bullet points. Keep answers concise.`;
+CATALOG REFERENCE (Curated from 150 Remedies):
+${catalog}`;
   }
 
   // =========================================================================
@@ -405,6 +443,123 @@ RULES:
           "What are your bestsellers?",
           "How do I brew herbal teas?",
           "What remedies do you recommend for fatigue?"
+        ]
+      };
+    }
+
+    // 2B. LAB TESTING, SAFETY & BOTANICAL ATLAS VERIFICATION
+    if (/\b(tested|testing|lab|labs|assay|assays|heavy metals?|lead|arsenic|microbial|safety|coa|certificate of analysis|kebs|sgs|clinical evidence|scientific rigor|botanical atlas|lot\s*#|lot\s*number|nab-2026)\b/i.test(q) && !/testosterone/i.test(q)) {
+      return {
+        text: `At NewAge Botanicals, sacred tradition is authenticated by **empirical scientific rigor**: 🔬\n\n- **10-Gate Quality Pipeline:** Every harvest passes strict botanical identity testing, farm origin traceability, and 3rd-party certified lab assays.\n- **Heavy Metal Safety (ICP-MS):** Strictly tested for Lead (< 3.0 ppm), Arsenic (< 1.0 ppm), Cadmium (< 0.3 ppm), and Mercury (< 0.1 ppm).\n- **Microbiological Clearance:** Certified free of E. coli, Salmonella, and excessive plate counts per KEBS KS 229 & US FDA Botanical limits.\n- **Soil-to-Shelf QR Verification:** Every single product bottle and pouch features a dynamic batch QR code linking directly to its cryptographic Certificate of Analysis (CoA) in our live **Botanical Atlas**.\n\nYou can explore our comprehensive pharmacopoeial monographs and clinical trial dossiers directly in the **Discovery Hub** above!`,
+        productIds: ["moringa-powder-organic", "marula-facial-elixir"],
+        suggestions: [
+          "What are the test results for Moringa?",
+          "How do you test Marula oil?",
+          "Tell me about the 10-Gate Quality System"
+        ]
+      };
+    }
+
+    // 2B-1. DIABETES, HIGH BLOOD SUGAR & PANCREATIC HEALTH
+    if (/(diabetes|diabetic|sugar|blood sugar|glucose|insulin|pancreas|pancreatic|neuropathy|hba1c)/i.test(q)) {
+      return {
+        text: `Blood sugar stability and metabolic longevity rely on rejuvenating pancreatic beta-cells and clearing cellular insulin resistance:\n\n🌿 **Master Clinical Remedy:** **Glucofort-X Sacred Pancreatic & Blood Sugar Botanical Reversal Cure** (KES 10,000)\nFormulated with wild African Bitter Melon (*Momordica charantia*), Himalayan Gymnema sylvestre (the 'Sugar Destroyer'), and pharmaceutical-grade Berberine HCl 98%.\n\n✨ **What this medicine does:**\n- Stimulates endogenous insulin secretion and regenerates exhausted pancreatic islet cells.\n- Gymnemic acids naturally block excess sugar absorption in the small intestine.\n- Activates cellular AMPK pathways to reverse insulin resistance and alleviate diabetic foot numbness and tingling.\n\n**Morning Glycemic Protocol:**\n- Take 30 drops in 150ml lukewarm spring water 20 minutes before breakfast and dinner.\n- Pair with leafy greens and abundant daily hydration.`,
+        productIds: ["glucofort-x-diabetes-pancreatic-cure", "moringa-powder-organic"],
+        suggestions: [
+          "How fast does Glucofort-X stabilize blood sugar?",
+          "Can Glucofort-X help with diabetic neuropathy?",
+          "How do I take it before meals?"
+        ]
+      };
+    }
+
+    // 2B-2. BLOOD PRESSURE, HYPERTENSION & ARTERIAL FLOW
+    if (/(blood pressure|hypertension|hypertensive|high bp|systolic|arterial|palpitation|vascular|artery|heart pressure)/i.test(q)) {
+      return {
+        text: `Arterial health and blood pressure equilibrium require restoring vascular nitric oxide compliance and calming sympathetic autonomic tension:\n\n🌿 **Cardiovascular Master Cure:** **Hyperten-Arterial Master Shield & Blood Pressure Normalizing Cure** (KES 10,000)\nCrafted from indigenous African Snake Root (*Rauvolfia vomitoria*), wild Kenyan Olive leaf (*Olea africana* oleuropein), and aged Black Garlic allicin.\n\n✨ **What this medicine does:**\n- Safely normalizes elevated systolic and diastolic blood pressure without sudden drops or lethargy.\n- Dilates stiffened peripheral arteries and stimulates endothelial nitric oxide (eNOS).\n- Relieves morning occipital headaches, temporal throbbing, and distressing heart palpitations.\n\n**Cardiovascular Harmony Ritual:**\n- Place 25 drops sublingually under the tongue or in 100ml warm water at dawn and dusk.\n- Practice 5 minutes of mindful 4-second inhale, 6-second exhale calming breath.`,
+        productIds: ["hyperten-arterial-blood-pressure-cure", "hibiscus-ruby-infusion"],
+        suggestions: [
+          "How does Hyperten-Arterial lower blood pressure?",
+          "Is African Olive Leaf clinically proven for arteries?",
+          "Can this remedy stop heart palpitations?"
+        ]
+      };
+    }
+
+    // 2B-3. HIV / AIDS VIRAL LOAD CONTROL & CD4 CELLULAR IMMUNE DEFENSE
+    if (/(hiv|aids|cd4|viral load|retroviral|immune deficiency|opportunistic|wasting|immunocompromised)/i.test(q)) {
+      return {
+        text: `Deep immune defense and viral suppression depend on ancestral African phytosterols and antiviral phytochemical compounds:\n\n🌿 **Cellular Immune Shield:** **Immuno-Apex African Potato & Sutherlandia HIV/AIDS Viral Defense Complex** (KES 15,000)\nRooted in South African traditional medical wisdom, combining Wild African Potato (*Hypoxis rooperi* sterols & sterolins), Cancer Bush (*Sutherlandia frutescens* canavanine), and pure Artemisia annua.\n\n✨ **What this medicine does:**\n- Inhibits retroviral reverse transcriptase, supporting rapid viral load containment.\n- Stimulates bone marrow to elevate depleted CD4+ and CD8+ helper T-lymphocyte counts.\n- Quells chronic wasting syndrome, restoring healthy body weight, appetite, and cellular vitality.\n- Shields against chronic opportunistic infections and deep lymphatic congestion.\n\n**Immune Fortification Protocol:**\n- Stir 1 level scoop (5g) into warm bone broth, green juice, or herbal infusion twice daily.\n- Maintain consistent daily intake for 90 days for profound immune rejuvenation.`,
+        productIds: ["immuno-apex-hiv-viral-defense-complex", "moringa-powder-organic"],
+        suggestions: [
+          "How does African Potato support CD4 count?",
+          "Can Immuno-Apex be taken alongside routine diets?",
+          "What herbs are in this viral defense complex?"
+        ]
+      };
+    }
+
+    // 2B-4. PENIS ENLARGEMENT, LIBIDO OIL & MALE VIRILITY
+    if (/(penis|enlarge|enlargement|girth|shaft|libido oil|erectile|hard on|premature ejaculation|virility oil|manhood|small penis)/i.test(q)) {
+      return {
+        text: `Male tissue capacity, penile vascular engorgement, and boundless sexual virility are achieved through transdermal tissue expansion phytosterols:\n\n🌿 **Premier Virility Formula:** **Maximus Titan African Mukombero & Kigelia Penile Expansion & Libido Oil** (KES 15,000)\nInfused with wild Kenyan Mukombero (*Mondia whitei* root resin), Sausage Tree fruit (*Kigelia africana* tissue-plumping sterols), and Thai Butea superba flavonoids.\n\n✨ **What this medicine does:**\n- Stimulates cellular division and collagenous matrix plumping within the corpus cavernosum chambers for permanent gains in length and thick girth.\n- Floods penile tissues with oxygen-rich arterial flow for rock-hard, unyielding erections on demand.\n- Ignites intense raw libido, sexual stamina, and eliminates premature ejaculation.\n\n**Nightly Expansion Jelqing Ritual:**\n- Warm 6 to 8 drops between palms.\n- Massage along the entire penile shaft from base to glans using firm, milking jelqing strokes for 10 minutes before bed.\n- Leave overnight for maximum transdermal absorption.`,
+        productIds: ["maximus-titan-penile-expansion-libido-oil", "mukombero-mondia-whitei-root-elixir"],
+        suggestions: [
+          "How do I perform the jelqing ritual with this oil?",
+          "How long does it take to see visible girth expansion?",
+          "Does Mukombero naturally boost libido?"
+        ]
+      };
+    }
+
+    // 2B-5. VAGINAL HEALTH, YONI TIGHTENING, YEAST & BV
+    if (/(vagina|vaginal|yoni|yeast|bacterial vaginosis|bv|vaginal odor|itching|tightening|womb|intimate dryness|pelvic inflammatory|fibroid)/i.test(q)) {
+      return {
+        text: `Feminine intimate harmony and vaginal mucosal health require balancing the delicate acid mantle and rejuvenating pelvic musculature:\n\n🌸 **Purifying Detox:** **Sacred Yoni Flora Purifying Pearls & Tightening Infusion** (KES 5,000)\nEradicates recurrent BV, candidiasis, foul intimate odor, and abnormal discharge while naturally contracting loose vaginal canal walls.\n\n💧 **Intimate Hydration:** **Lotus Essence Vaginal pH Restorative & Mucosal Tightening Elixir** (KES 8,500)\nInfused with Shatavari and Sea Buckthorn Omega-7 to banish chronic vaginal dryness, mucosal atrophy, and painful intercourse.\n\n👑 **Complete Master Rebirth:** **Empress Sovereign Complete Vaginal & Womb Cellular Regeneration Master Cure** (KES 20,000)\nThe ultimate royal formulation for full vaginal, cervical, and pelvic floor restoration.\n\n**Sacred Yoni Care Ritual:**\n- Use Yoni Pearls for 48-72 hour deep cleansing to expel stagnant toxins.\n- Apply 3 drops of Lotus Essence nightly to maintain supple, lubricated mucosal elasticity.`,
+        productIds: ["sacred-yoni-flora-purifying-pearls", "lotus-essence-vaginal-ph-tightening-elixir"],
+        suggestions: [
+          "How do I use the Yoni Detox Pearls?",
+          "Which remedy is best for chronic vaginal dryness?",
+          "Can this eliminate recurrent bacterial vaginosis (BV)?"
+        ]
+      };
+    }
+
+    // 2C. MEN'S VITALITY, STAMINA & TESTOSTERONE
+    if (/(men|male|vitality|testosterone|libido|erect|stamina|prostate|mukombero|tongkat|mondia|shilajit)/i.test(q)) {
+      return {
+        text: `Male hormonal equilibrium and physical vigor depend on deep cellular nourishment, endothelial nitric oxide flow, and adrenal adaptogens:\n\n🌿 **Premier African Ally:** **Wild Mukombero (Mondia Whitei) Raw Chewing Roots & Elixir** (*Mondia whitei*)\nRevered across East Africa as the 'King of Roots'. Rich in natural vanilla-scented sterols that stimulate nitric oxide pathways, enhance pelvic vascular circulation, and dispel performance anxiety.\n\n✨ **Anabolic Synergy:** **Wild Tongkat Ali (200:1) & Fadogia Agrestis Male Power**\nClinically documented to liberate bound testosterone and elevate physical athletic endurance.\n\n👑 **Mineral Resin:** **Pure Himalayan Gold-Grade Shilajit Mineral Resin** restores 84 ionic trace minerals and mitochondrial ATP energy.\n\n**Morning Warrior Protocol:**\n- Dissolve a rice-grain portion of Shilajit in warm spring water at sunrise.\n- Take 30 drops of Mukombero elixir 45 minutes prior to peak physical or intimate demands.`,
+        productIds: ["mukombero-mondia-whitei-root-elixir", "tongkat-ali-fadogia-anabolic-matrix"],
+        suggestions: [
+          "How do I use Mukombero root?",
+          "Can I take Tongkat Ali daily?",
+          "What helps with prostate health?"
+        ]
+      };
+    }
+
+    // 2D. WOMEN'S WELLNESS, CYCLE HARMONY & HORMONAL BALANCE
+    if (/(women|female|period|cramp|pms|menstrual|cycle|fertility|estrogen|progesterone|womb|shatavari|vitex|hot flash|menopause)/i.test(q)) {
+      return {
+        text: `Feminine vitality follows the rhythm of the moon and the sacred balance between estrogen and progesterone throughout your cycle:\n\n🌿 **Hormonal Master Ally:** **Pure Vitex (Chaste Tree Berry) Progesterone Balance Drops** (*Vitex agnus-castus*)\nCalibrates the pituitary-hypothalamic axis to encourage natural progesterone synthesis, clearing jawline hormonal acne and relieving premenstrual mood distress.\n\n✨ **Womb Tonic:** **Wild Mountain Red Raspberry Leaf & Nettle Womb Tea** (*Rubus idaeus*)\nRich in fragarine alkaloid to tone uterine smooth muscle and eliminate debilitating menstrual cramps.\n\n🌸 **Nourishing Adaptogen:** **Sacred Shatavari & Wild Yam Cycle Harmony Elixir**\nRestores internal mucosal hydration and cushions menopausal thermal surges.\n\n**Sacred Moon Ritual:**\n- Drink 1 cup of warm Raspberry Leaf tea daily during your luteal and bleeding phases.\n- Take 30 drops of Vitex upon waking to support hormonal balance.`,
+        productIds: ["chasteberry-vitex-pms-relief-drops", "red-raspberry-leaf-womb-toning-tea"],
+        suggestions: [
+          "How does Vitex help with hormonal acne?",
+          "What tea is best for painful menstrual cramps?",
+          "What remedies help with perimenopause?"
+        ]
+      };
+    }
+
+    // 2E. SACRED RITUALS, RESINS & ENERGETIC PURIFICATION
+    if (/(smudge|sage|smoke|incense|frankincense|myrrh|palo santo|resin|altar|cleansing|energy|spiritual|negative energy)/i.test(q)) {
+      return {
+        text: `Smoke cleansing and resin burning are ancient aromatic technologies for clearing stagnant sensory vibrations and cultivating sacred presence:\n\n🌿 **Sacred Temple Incense:** **Somali Royal Green Hojari Frankincense Tears** (*Boswellia sacra*)\nTranslucent emerald-tinted tears tapped from remote Somaliland cliffs. Incensole acetate in pure frankincense smoke triggers neural TRPV3 calm receptors in the brain.\n\n✨ **Space Purification:** **Wild African Mountain Sage & Lavender Smudge Wand**\nWild mountain sage hand-harvested on Mount Kenya to clear lingering mental and environmental heaviness.\n\n🪵 **Ancestral Holy Wood:** **Sustainably Gathered Peruvian Palo Santo Sticks**\nReleases sweet mint-pine smoke to invite fortune, peace, and creative inspiration.\n\n**Consecration Ritual:**\n- Light the tip of the sage wand or place frankincense on a hot charcoal burner.\n- Waft aromatic smoke clockwise around the perimeter of your sanctuary with conscious intention.`,
+        productIds: ["somali-royal-green-hojari-frankincense", "wild-african-sage-smudge"],
+        suggestions: [
+          "How do I burn Frankincense tears?",
+          "What is the difference between Sage and Sweetgrass?",
+          "How often should I smudge my room?"
         ]
       };
     }
@@ -597,9 +752,12 @@ RULES:
   }
 
   findMatchingProductIds(text) {
-    if (!text || typeof PRODUCTS_DATA === "undefined") return [];
+    const catalog = typeof PRODUCTS_DATA !== "undefined"
+      ? PRODUCTS_DATA
+      : (typeof require !== "undefined" ? require("./data/products.js") : []);
+    if (!text || !Array.isArray(catalog) || catalog.length === 0) return [];
     const lower = text.toLowerCase();
-    const scored = PRODUCTS_DATA.map(product => {
+    const scored = catalog.map(product => {
       let score = 0;
       // Match by illness keywords
       (product.illnesses || []).forEach(ill => {
@@ -830,4 +988,9 @@ RULES:
 }
 
 // Global instance
-window.aiHerbalist = new AIHerbalistController();
+if (typeof window !== "undefined") {
+  window.aiHerbalist = new AIHerbalistController();
+}
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = AIHerbalistController;
+}

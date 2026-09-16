@@ -9,7 +9,9 @@ const CONFIG = {
   domain: "omnicorehub.app",
   siteUrl: "https://omnicorehub.app",
   contact: {
-    whatsapp: "+254700123456", // Customizable WhatsApp phone number
+    whatsapp: "+254141270112", // Direct WhatsApp Hotline
+    phone: "+254141270112",
+    socials: "@newagebotanicals",
     email: "orders@omnicorehub.app",
     location: "Nairobi, Kenya & Global Shipping",
     hours: "Mon - Sat: 8:00 AM - 7:00 PM EAT"

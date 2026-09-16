@@ -1,0 +1,169 @@
+{
+  "brandGuidelines": {
+    "brandName": "NewAge Botanicals",
+    "brandCrest": "Sacred Seed of Life enclosed in botanical leaf canopy",
+    "primaryFont": "Playfair Display, Georgia, serif",
+    "secondaryFont": "Inter, -apple-system, sans-serif",
+    "palette": {
+      "forestGreen": "#0F281E",
+      "richSage": "#2E5A44",
+      "earthGold": "#C49A45",
+      "neutralParchment": "#F4EFEA",
+      "charcoalBlack": "#1A2421"
+    },
+    "regulatoryStandard": "Kenya Bureau of Standards (KEBS) KS 229 & Codex Alimentarius Botanical Guidelines",
+    "antiClaimsStatement": "This product is a natural botanical food / cosmetic supplement. It is not intended to diagnose, treat, cure, or prevent any chronic disease."
+  },
+  "labels": [
+    {
+      "sku": "NAB-SKU-MOR-250",
+      "format": "Pouch Label (Front & Back Wrap)",
+      "dimensionsMm": {
+        "width": 140,
+        "height": 200,
+        "bleed": 3
+      },
+      "substrate": "FSC-certified unbleached wet-strength paper with matte biodegradable laminate and gold metallic foil accents",
+      "frontPanel": {
+        "brand": "NEWAGE BOTANICALS",
+        "title": "Pure Wildcrafted Moringa Leaf Powder",
+        "botanicalName": "Moringa oleifera",
+        "partUsed": "Sun-dried organic mature leaves",
+        "claim": "Daily Cellular Vitality & Metabolic Nourishment",
+        "netQuantity": "250g (8.8 oz) · 50 Servings",
+        "originBadge": "Highland Volcanic Soil · Nanyuki, Kenya"
+      },
+      "backPanel": {
+        "description": "Hand-harvested from mature moringa trees nurtured in the mineral-rich volcanic soils of Mount Kenya's foothills. Shade-dried below 40°C to preserve heat-sensitive enzymes, chlorophyll, and vital bioflavonoids.",
+        "activeConstituents": "Bioavailable Iron, Quercetin, Kaempferol, Chlorogenic Acid, Natural Vitamin C",
+        "ritualDirections": "Whisk 1 level teaspoon (5g) into 200ml warm spring water, fresh fruit juice, or morning smoothie. Best savored at sunrise.",
+        "cautions": "Consult your physician prior to use if pregnant, nursing, or taking blood sugar/blood pressure pharmaceuticals.",
+        "storage": "Reseal tightly. Store in a cool, dark apothecary cabinet away from direct sunlight.",
+        "traceabilityQr": {
+          "label": "SCAN FOR CERTIFICATE OF ANALYSIS & FARM TRACEABILITY",
+          "target": "https://omnicorehub.app/atlas?sku=moringa-powder-organic&lot={LOT_NUMBER}"
+        }
+      }
+    },
+    {
+      "sku": "NAB-SKU-BAO-200",
+      "format": "Canister / Pouch Label",
+      "dimensionsMm": {
+        "width": 120,
+        "height": 180,
+        "bleed": 3
+      },
+      "substrate": "Recyclable textured stone paper with soft-touch matte finish and gold leaf debossing",
+      "frontPanel": {
+        "brand": "NEWAGE BOTANICALS",
+        "title": "Sacred Baobab Prebiotic Fruit Powder",
+        "botanicalName": "Adansonia digitata",
+        "partUsed": "Wild-harvested raw fruit pulp",
+        "claim": "Microbiome Nourishment & High-Potency Vitamin C",
+        "netQuantity": "200g (7.0 oz) · 20 Servings",
+        "originBadge": "Wild Coast Harvest · Kilifi, Kenya"
+      },
+      "backPanel": {
+        "description": "Wildcrafted from centuries-old coastal Kenyan baobab trees. The fruit naturally dehydrates on the branch under equatorial sunshine, yielding an unheated raw superfood containing over 50% prebiotic soluble dietary fiber.",
+        "activeConstituents": "Prebiotic Soluble Pectin, L-Ascorbic Acid (Vitamin C), Potassium, Calcium, Bioflavonoids",
+        "ritualDirections": "Stir 1 tablespoon (10g) briskly into spring water, chilled coconut water, or yogurt. Tart and refreshing citrus-sherbet profile.",
+        "cautions": "Safe for the entire family under normal dietary consumption.",
+        "storage": "Keep airtight. Naturally hygroscopic; protect from humidity.",
+        "traceabilityQr": {
+          "label": "SCAN TO VERIFY ORGANIC HARVEST & LAB REPORT",
+          "target": "https://omnicorehub.app/atlas?sku=baobab-fruit-powder&lot={LOT_NUMBER}"
+        }
+      }
+    },
+    {
+      "sku": "NAB-SKU-MAR-050",
+      "format": "Dropper Bottle Wrap Label & Outer Box",
+      "dimensionsMm": {
+        "width": 105,
+        "height": 55,
+        "bleed": 2
+      },
+      "substrate": "Oil-resistant velvet-touch vinyl with embossed gold metallic foil lettering",
+      "frontPanel": {
+        "brand": "NEWAGE BOTANICALS",
+        "title": "Cold-Pressed High-Altitude Marula Glow Elixir",
+        "botanicalName": "Sclerocarya birrea",
+        "partUsed": "100% Virgin Cold-Pressed Kernel Oil",
+        "claim": "Lipid Barrier Restoration & Luminous Antioxidant Veil",
+        "netQuantity": "50ml (1.7 fl oz)",
+        "originBadge": "Single-Origin Wild Harvest · Kitui, Kenya"
+      },
+      "backPanel": {
+        "description": "Cold-pressed from wild marula kernels harvested by rural women's collectives in Kenya's semi-arid scrublands. A non-comedogenic elixir rich in essential Omegas 6 & 9 that locks in deep hydration and shields delicate skin barriers.",
+        "activeConstituents": "Oleic Acid (Omega-9), Linoleic Acid (Omega-6), Natural Tocopherols (Vitamin E), Phytosterols",
+        "ritualDirections": "Warm 3 to 5 drops between clean fingertips. Press mindfully into clean, damp facial skin morning and night.",
+        "cautions": "Nut allergy warning: Contains tree nut derivatives. Perform patch test 24 hours prior to full use.",
+        "storage": "Store upright in protective violet glass bottle below 25°C.",
+        "traceabilityQr": {
+          "label": "SCAN TO VIEW LOT PEROXIDE VALUE & GC-MS PROFILE",
+          "target": "https://omnicorehub.app/atlas?sku=marula-facial-elixir&lot={LOT_NUMBER}"
+        }
+      }
+    },
+    {
+      "sku": "NAB-SKU-TUR-100",
+      "format": "Apothecary Jar Label",
+      "dimensionsMm": {
+        "width": 130,
+        "height": 60,
+        "bleed": 2
+      },
+      "substrate": "Unbleached parchment with warm gold foil stamping",
+      "frontPanel": {
+        "brand": "NEWAGE BOTANICALS",
+        "title": "Highland Volcanic Turmeric & Wild Ginger Elixir",
+        "botanicalName": "Curcuma longa & Zingiber officinale",
+        "partUsed": "Sun-cured volcanic rhizomes with cracked black pepper",
+        "claim": "Systemic Inflammatory Ease & Joint Flexibility",
+        "netQuantity": "100g (3.5 oz) · 33 Servings",
+        "originBadge": "Mount Kenya Volcanic Highlands · Meru, Kenya"
+      },
+      "backPanel": {
+        "description": "Cultivated in high-altitude volcanic loam at the base of Mount Kenya. Slow sun-cured and enhanced with black pepper piperine to maximize curcuminoid absorption and soothe daily physical strain.",
+        "activeConstituents": "Curcuminoids (Curcumin, Demethoxycurcumin), Gingerols, Shogaols, Piperine",
+        "ritualDirections": "Whisk 1/2 teaspoon (3g) into warm coconut or oat milk with a dash of raw honey. Simmer for 3 minutes for Golden Milk.",
+        "cautions": "Avoid during acute gallstones or bile obstruction. Consult doctor if taking anticoagulant therapy.",
+        "storage": "Keep lid tightly closed to preserve pungent volatile oils.",
+        "traceabilityQr": {
+          "label": "SCAN TO VERIFY CURCUMINOID POTENCY & HEAVY METAL TEST",
+          "target": "https://omnicorehub.app/atlas?sku=turmeric-ginger-golden-blend&lot={LOT_NUMBER}"
+        }
+      }
+    },
+    {
+      "sku": "NAB-SKU-HIB-150",
+      "format": "Pouch Wrap Label",
+      "dimensionsMm": {
+        "width": 140,
+        "height": 180,
+        "bleed": 3
+      },
+      "substrate": "Textured linen paper with gold foil border and botanical leaf deboss",
+      "frontPanel": {
+        "brand": "NEWAGE BOTANICALS",
+        "title": "Wild Kenyan Ruby Hibiscus & Lemongrass Tisane",
+        "botanicalName": "Hibiscus sabdariffa & Cymbopogon citratus",
+        "partUsed": "Hand-picked whole dried calyces & highland lemongrass",
+        "claim": "Cardiovascular Refreshment & Cellular Antioxidant Protection",
+        "netQuantity": "150g (5.3 oz) · 30 Servings",
+        "originBadge": "Taita Hills & Tsavo Basin, Kenya"
+      },
+      "backPanel": {
+        "description": "Hand-harvested crimson calyces blended with wild highland lemongrass. Infuses into a vibrant ruby-red tonic overflowing with natural anthocyanins, fruit acids, and delicate citrus aromatics.",
+        "activeConstituents": "Anthocyanins (Delphinidin-3-sambubioside), Hibiscus Acid, Citral, Polyphenols",
+        "ritualDirections": "Steep 1 tablespoon (5g) in 350ml boiling water (95°C) for 6 to 8 minutes. Savor hot or pour over ice with fresh mint.",
+        "cautions": "Consult physician if managing hypotension (low blood pressure) or during early pregnancy.",
+        "storage": "Store in a cool dry pantry away from spices with strong aromas.",
+        "traceabilityQr": {
+          "label": "SCAN TO TRACE TAITA TAVETA HARVEST & CLEAN TEST COA",
+          "target": "https://omnicorehub.app/atlas?sku=hibiscus-ruby-infusion&lot={LOT_NUMBER}"
+        }
+      }
+    }
+  ]
+}

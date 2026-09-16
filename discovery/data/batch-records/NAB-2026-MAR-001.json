@@ -1,0 +1,58 @@
+{
+  "lotNumber": "NAB-2026-MAR-001",
+  "sku": "NAB-SKU-MAR-050",
+  "productId": "marula-facial-elixir",
+  "productName": "Cold-Pressed High-Altitude Marula Glow Elixir",
+  "botanicalName": "Sclerocarya birrea",
+  "batchSizeUnits": 500,
+  "netWeightPerUnit": "50ml / 1.7 fl oz",
+  "manufactureDate": "2026-09-16",
+  "bestBeforeDate": "2028-09-05",
+  "originTraceability": {
+    "supplierId": "sup-004",
+    "supplierName": "Savannah Harvest Oils",
+    "harvestRegion": "Kitui County, Semi-Arid Eastern Kenya",
+    "rawBatchRef": "RM-601496"
+  },
+  "labTesting": {
+    "accreditedLabName": "AfriCert Analytical Laboratories",
+    "labReportNumber": "LAB-REPORT-626977",
+    "testDate": "2026-09-16",
+    "heavyMetals": {
+      "leadPpm": 0.05,
+      "arsenicPpm": 0.02,
+      "cadmiumPpm": 0.01,
+      "mercuryPpm": 0.005
+    },
+    "microbiology": {
+      "tamcCfuPerG": 10,
+      "tymcCfuPerG": 0,
+      "eColi": "absent",
+      "salmonella": "absent"
+    },
+    "activePhytochemicalAssay": {
+      "marker": "Oleic Acid (Omega-9)",
+      "measuredValue": "74.8% Oleic Acid, Peroxide Value 2.4 meq/kg",
+      "standardSpecification": "≥ 70% Oleic Acid"
+    },
+    "moisturePercentage": 0.1
+  },
+  "complianceEvaluation": {
+    "passed": true,
+    "qcDecision": "RELEASE_FOR_SALE",
+    "errors": [],
+    "warnings": [],
+    "evaluatedAt": "2026-09-16T16:53:21.496Z"
+  },
+  "digitalVerification": {
+    "cryptographicHash": "da591519035d13f7219d3d2febb9ad3c7da0432f26e1e644f8add84b007e9627",
+    "shortHash": "da591519035d13f7",
+    "atlasVerificationUrl": "https://omnicorehub.app/atlas?sku=marula-facial-elixir&lot=NAB-2026-MAR-001&verify=da591519035d13f7",
+    "qrPayload": {
+      "brand": "NewAge Botanicals",
+      "sku": "NAB-SKU-MAR-050",
+      "lot": "NAB-2026-MAR-001",
+      "url": "https://omnicorehub.app/atlas?sku=marula-facial-elixir&lot=NAB-2026-MAR-001&verify=da591519035d13f7"
+    }
+  }
+}

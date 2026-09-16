@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apothecary Dispensary | All Botanical Remedies & Sacred Formulas</title>
+  <meta name="description" content="Explore our full collection of 158 verified African and global botanical remedies for diabetes, hypertension, HIV immune support, male virility, feminine wellness, and holistic health.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <span>✨ 164 Verified Botanical Formulations &amp; Clinical Protocols | 100% Discreet Packaging Guarantee | Same-Day Nairobi Dispatch</span>
+      <div class="currency-selector-wrap">
+        <label for="currencySelect" class="sr-only">Currency</label>
+        <select id="currencySelect" class="currency-select" aria-label="Select Currency" onchange="geoCurrency.setCurrency(this.value)">
+          <option value="KES">🇰🇪 KES (KSh)</option>
+          <option value="USD">🇺🇸 USD ($)</option>
+          <option value="GBP">🇬🇧 GBP (£)</option>
+          <option value="EUR">🇪🇺 EUR (€)</option>
+          <option value="NGN">🇳🇬 NGN (₦)</option>
+          <option value="GHS">🇬🇭 GHS (GH₵)</option>
+          <option value="ZAR">🇿🇦 ZAR (R)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="NewAge Health Home">
+        <span class="logo-symbol">🌿</span>
+        <div class="logo-text">
+          <span class="brand-name">NewAge Health</span>
+          <span class="brand-subtitle">Botanicals & Rituals</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link active">Dispensary</a>
+        <a href="index.html#portfolio" class="nav-link">Sacred Rituals</a>
+        <a href="javascript:void(0)" class="nav-link" onclick="app.openBatchModal()">Verify CoA 🛡️</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" onclick="aiHerbalist.open()" title="Ask AI Master Herbalist" aria-label="AI Herbalist">
+          <span class="sparkle-icon">✨</span>
+          <span class="hide-mobile">AI Herbalist</span>
+        </button>
+        <button class="icon-btn cart-btn" onclick="cart.openDrawer()" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cartCountBadge" style="display:none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dispensary Hero & Omnisearch -->
+  <section class="omnisearch-section" style="padding: 2.5rem 0 1.5rem;">
+    <div class="container">
+      <div class="omnisearch-card">
+        <div class="omnisearch-header">
+          <div class="omnisearch-title-group">
+            <span class="section-subtitle">Full Pharmacopoeia</span>
+            <h1 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--gold-glow); margin: 0.25rem 0 0.5rem;">
+              Apothecary Dispensary & Illness Index
+            </h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Search across 164 remedies by targeted health intention, botanical species, or wellness goal. Every remedy features dual images (Packaging Cover &amp; Botanical Lab Detail) and complete therapeutic explanation.
+            </p>
+          </div>
+        </div>
+
+        <div class="search-input-wrap">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            id="omnisearchInput" 
+            class="omnisearch-input" 
+            placeholder="Search by intention or herb (sleep, moringa, digestion, stamina, rosemary, muscle, stress)..." 
+            autocomplete="off"
+            aria-label="Search remedies"
+          >
+          <button id="searchClearBtn" class="search-clear-btn" onclick="app.clearSearch()" aria-label="Clear search">&times;</button>
+        </div>
+
+        <div class="omnisearch-tags">
+          <span class="tags-label">Key Intentions & Categories:</span>
+          <button class="filter-chip" onclick="app.setSearchQuery('vitality')">🌿 Daily Superfoods & Vitality</button>
+          <button class="filter-chip" onclick="app.setSearchQuery('insomnia')">🌙 Insomnia & Deep Sleep</button>
+          <button class="filter-chip" onclick="app.setSearchQuery('stress')">🧘 Stress & Nervous System</button>
+          <button class="filter-chip" onclick="app.setSearchQuery('bloating')">🍵 Bloating & Gut Health</button>
+          <button class="filter-chip" onclick="app.setSearchQuery('muscle pain')">🔥 Muscle Recovery & Joints</button>
+          <button class="filter-chip" onclick="app.setSearchQuery('rosemary')">💆 Scalp & Hair Density</button>
+          <button class="filter-chip" onclick="app.setSearchQuery('stamina')">⚡ Men's Stamina & Energy</button>
+          <button class="filter-chip" onclick="app.setSearchQuery('cycle')">🌸 Women's Moon Harmony</button>
+          <button class="filter-chip" onclick="app.setSearchQuery('frankincense')">✨ Sacred Resins & Smudge</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop Grid Section -->
+  <section class="shop-section" id="shop" style="padding-top: 1rem;">
+    <div class="container">
+      <!-- Category Tabs -->
+      <div class="category-tabs-wrapper">
+        <div class="category-tabs" id="categoryTabs" role="tablist">
+          <button class="cat-tab-btn active" data-category="all" role="tab" onclick="app.filterByCategory('all')">🌿 Shop All (164)</button>
+          <button class="cat-tab-btn" data-category="clinical-protocols" role="tab" onclick="app.filterByCategory('clinical-protocols')" style="color: var(--gold-glow); font-weight: 600;">🔬 Master Clinical (14)</button>
+          <button class="cat-tab-btn" data-category="daily-nutrition" role="tab" onclick="app.filterByCategory('daily-nutrition')">1. Daily Nutrition</button>
+          <button class="cat-tab-btn" data-category="mind-sleep" role="tab" onclick="app.filterByCategory('mind-sleep')">2. Mind & Sleep</button>
+          <button class="cat-tab-btn" data-category="energy-muscle" role="tab" onclick="app.filterByCategory('energy-muscle')">3. Energy & Muscle</button>
+          <button class="cat-tab-btn" data-category="gut-digestive" role="tab" onclick="app.filterByCategory('gut-digestive')">4. Gut & Digestion</button>
+          <button class="cat-tab-btn" data-category="skin-body" role="tab" onclick="app.filterByCategory('skin-body')">5. Skin & Body</button>
+          <button class="cat-tab-btn" data-category="hair-grooming" role="tab" onclick="app.filterByCategory('hair-grooming')">6. Hair & Grooming</button>
+          <button class="cat-tab-btn" data-category="mens-wellness" role="tab" onclick="app.filterByCategory('mens-wellness')">7. Men's Wellness</button>
+          <button class="cat-tab-btn" data-category="womens-wellness" role="tab" onclick="app.filterByCategory('womens-wellness')">8. Women's Wellness</button>
+          <button class="cat-tab-btn" data-category="sacred-rituals" role="tab" onclick="app.filterByCategory('sacred-rituals')">9. Sacred Rituals</button>
+        </div>
+      </div>
+
+      <!-- Controls Bar -->
+      <div class="shop-controls-bar">
+        <span id="resultsCount">Showing all botanicals</span>
+        <div class="sort-wrap">
+          <label for="sortSelect" style="margin-right: 0.5rem;">Sort by:</label>
+          <select id="sortSelect" class="sort-select" onchange="app.sortProducts(this.value)">
+            <option value="featured">Featured / Master Clinical</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+            <option value="name">Alphabetical</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick View Modal (<dialog>) -->
+  <dialog id="quickViewModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="qvTitle" style="font-family: var(--font-serif); color: var(--gold-glow); font-size: 1.35rem;">Remedy Overview</h3>
+        <button class="modal-close-btn" onclick="document.getElementById('quickViewModal').close()">&times;</button>
+      </div>
+      <div class="modal-body" id="qvContent">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Cart Drawer & Backdrop -->
+  <div class="cart-backdrop" id="cartBackdrop" onclick="cart.closeDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Basket">
+    <div class="cart-drawer-header">
+      <div class="cart-title-row">
+        <h3>Sacred Botanical Basket</h3>
+        <button class="cart-close-btn" onclick="cart.closeDrawer()" aria-label="Close basket">&times;</button>
+      </div>
+    </div>
+    <div class="cart-items-list" id="cartItemsList"></div>
+    <div class="cart-empty-notice" id="cartEmptyNotice" style="display:none; text-align:center; padding: 3rem 1rem;">
+      <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1rem;">Your apothecary basket is empty.</p>
+      <button class="btn-primary" onclick="cart.closeDrawer()">Browse Formulations</button>
+    </div>
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-totals-group">
+        <div class="cart-total-row"><span>Subtotal</span><strong id="cartSubtotalAmount">KSh 0</strong></div>
+        <div class="cart-total-row" id="cartDiscountRow" style="display:none;"><span>Promo Discount</span><strong id="cartDiscountAmount" style="color:#2a9d8f;">-KSh 0</strong></div>
+        <div class="cart-total-row"><span>Discreet Delivery</span><span id="cartShippingAmount">KSh 350</span></div>
+        <div class="cart-total-row grand-total"><span>Total Due</span><strong id="cartTotalAmount" style="color:var(--gold-glow); font-size:1.3rem;">KSh 0</strong></div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.25rem;">
+        <a href="checkout.html" class="btn-paystack" style="text-align:center; text-decoration:none;">Proceed to Easy Checkout</a>
+        <button class="btn-whatsapp" onclick="app.checkoutWhatsApp()">Order via WhatsApp</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- AI Herbalist Widget & Panel -->
+  <div class="ai-herbalist-launcher" id="aiHerbalistLauncher" onclick="aiHerbalist.toggle()">
+    <span class="launcher-icon">🌿</span>
+    <span class="launcher-pulse"></span>
+    <span class="launcher-label">AI Herbalist</span>
+  </div>
+
+  <div class="ai-herbalist-panel" id="aiHerbalistPanel" style="display:none;">
+    <div class="ai-panel-header">
+      <div class="ai-avatar">🍃</div>
+      <div class="ai-header-info">
+        <h3>Sacred Herbal Alchemist</h3>
+        <p>Evidence-Grounded Plant Wisdom</p>
+      </div>
+      <button class="ai-close-btn" onclick="aiHerbalist.close()">&times;</button>
+    </div>
+    <div class="ai-messages-list" id="aiMessagesList"></div>
+    <div class="ai-input-wrap">
+      <input type="text" id="aiUserInput" placeholder="Ask about illnesses, dosage, or remedies..." onkeydown="if(event.key==='Enter') aiHerbalist.sendMessage()">
+      <button class="ai-send-btn" onclick="aiHerbalist.sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/geo-currency.js"></script>
+  <script src="js/data/products.js"></script>
+  <script src="js/data/batch-registry.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/paystack-service.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/ai-herbalist.js"></script>
+</body>
+</html>

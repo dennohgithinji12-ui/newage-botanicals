@@ -1,0 +1,67 @@
+{
+  "brandSystem": {
+    "name": "NewAge Botanicals",
+    "designPhilosophy": "African Botanical Luxury + Modern Laboratory Cleanliness",
+    "visualTokens": {
+      "palette": {
+        "primaryBackground": "#F4EFEA",
+        "secondaryBackground": "#FFFFFF",
+        "primaryText": "#1A2421",
+        "accentColor": "#C49A45",
+        "botanicalGreen": "#0F281E"
+      },
+      "typography": {
+        "headline": "'Playfair Display', serif",
+        "body": "'Inter', sans-serif"
+      }
+    }
+  },
+  "videoFormats": {
+    "plant_of_the_week": {
+      "targetDuration": "45s",
+      "pacing": "Medium, educational",
+      "structure": [
+        "Hook (Visual macro shot of botanical)",
+        "Traditional Heritage (Location & historical use)",
+        "Clinical Evidence (Science-backed benefit)",
+        "Call to Action (Discover on Botanical Atlas)"
+      ]
+    },
+    "myth_vs_evidence": {
+      "targetDuration": "60s",
+      "pacing": "Fast, authoritative",
+      "structure": [
+        "The Myth (Common misconception)",
+        "The Science (Peer-reviewed reality)",
+        "How we use it (Our formulation)",
+        "Call to Action (Shop the standard)"
+      ]
+    },
+    "soil_to_self": {
+      "targetDuration": "50s",
+      "pacing": "Slow, luxurious, transparent",
+      "structure": [
+        "Origin (The farm/harvest location)",
+        "Process (Extraction and testing)",
+        "Product (The final format)",
+        "Call to Action (Experience true traceability)"
+      ]
+    },
+    "phytochemical_deep_dive": {
+      "targetDuration": "40s",
+      "pacing": "Laboratory-style, analytical",
+      "structure": [
+        "The Compound (e.g., Oleic Acid)",
+        "The Function (What it does for you)",
+        "The Source (The botanical)",
+        "Call to Action (Explore the science)"
+      ]
+    }
+  },
+  "outputParameters": {
+    "aspectRatio": "9:16",
+    "frameRate": 30,
+    "resolution": "1080x1920",
+    "musicVibe": "Minimalist, grounded, modern ambient"
+  }
+}

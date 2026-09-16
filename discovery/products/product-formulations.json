@@ -1,0 +1,236 @@
+[
+  {
+    "sku": "NAB-SKU-MOR-250",
+    "id": "moringa-powder-organic",
+    "name": "Pure Wildcrafted Moringa Leaf Powder",
+    "botanicalId": "moringa-oleifera-lam",
+    "botanicalName": "Moringa oleifera",
+    "category": "Superfoods & Cellular Vitality",
+    "netQuantity": "250g / 8.8 oz",
+    "servingSize": "5g (approx. 1 level tsp)",
+    "servingsPerUnit": 50,
+    "supplierId": "sup-001",
+    "supplierName": "Rift Valley Botanicals",
+    "origin": "Nanyuki, Laikipia County, Kenya (Highland Volcanic Soil)",
+    "formulationType": "Single-origin raw botanical powder",
+    "formulationIngredients": [
+      {
+        "ingredient": "Moringa oleifera leaf powder",
+        "botanicalPart": "Mature leaves",
+        "percentage": 100,
+        "processing": "Shade-dried below 40°C, ultra-fine milled (< 100 mesh)"
+      }
+    ],
+    "standardization": {
+      "marker": "Natural Vitamin C & Polyphenols",
+      "targetContent": "≥ 180mg Vitamin C per 100g, ≥ 25% plant protein",
+      "heavyMetalCompliance": "KEBS KS 229:2018 & US FDA Botanical limits compliant"
+    },
+    "packagingSpecs": {
+      "primary": "Food-grade multi-layer matte dark green foil barrier pouch with resealable airtight zip & oxygen scavenger",
+      "secondary": "FSC certified recyclable kraft exterior sleeve with debossed gold foil crest",
+      "labelType": "Direct hot-stamp gold & UV-cured matte label with dynamic batch QR code",
+      "shelfLifeMonths": 24
+    },
+    "usageRitual": "Whisk 1 level teaspoon (5g) into 200ml warm water, coconut water, or morning smoothie. Best enjoyed at dawn with a squeeze of fresh lime juice.",
+    "contraindications": "Consult physician if pregnant, attempting to conceive, or taking blood pressure / hypoglycemic medications.",
+    "pricing": {
+      "currency": "KES",
+      "recommendedRetailPrice": 1450,
+      "usdMSRP": 11.30,
+      "minimumAcceptableRetail": 1200
+    }
+  },
+  {
+    "sku": "NAB-SKU-BAO-200",
+    "id": "baobab-fruit-powder",
+    "name": "Sacred Baobab Prebiotic Fruit Powder",
+    "botanicalId": "adansonia-digitata",
+    "botanicalName": "Adansonia digitata",
+    "category": "Microbiome & Immune Balance",
+    "netQuantity": "200g / 7.0 oz",
+    "servingSize": "10g (approx. 1 generous tbsp)",
+    "servingsPerUnit": 20,
+    "supplierId": "sup-002",
+    "supplierName": "Baobab Swahili Coast Coop",
+    "origin": "Kilifi & Kwale Coastal Lowlands, Kenya",
+    "formulationType": "Wild-harvested raw soluble fruit pulp",
+    "formulationIngredients": [
+      {
+        "ingredient": "Adansonia digitata fruit pulp powder",
+        "botanicalPart": "Naturally desiccated fruit pod pulp",
+        "percentage": 100,
+        "processing": "Mechanically separated, sieved without heat or chemical solvents"
+      }
+    ],
+    "standardization": {
+      "marker": "Prebiotic Soluble Fiber & Ascorbic Acid",
+      "targetContent": "≥ 52% dietary fiber (soluble prebiotic pectins), ≥ 280mg Vitamin C per 100g",
+      "heavyMetalCompliance": "KEBS KS 229:2018 compliant"
+    },
+    "packagingSpecs": {
+      "primary": "Airtight nitrogen-flushed recyclable aluminum-barrier pouch with moisture-lock zip",
+      "secondary": "Unbleached FSC cardboard cylinder with gold debossed monogram",
+      "labelType": "Biodegradable stone paper label with batch verification QR code",
+      "shelfLifeMonths": 36
+    },
+    "usageRitual": "Stir 1 tablespoon (10g) briskly into room-temperature spring water, oats, or yogurt. Naturally tart citrus flavor.",
+    "contraindications": "None known under standard culinary doses. Suitable for all ages.",
+    "pricing": {
+      "currency": "KES",
+      "recommendedRetailPrice": 1600,
+      "usdMSRP": 12.50,
+      "minimumAcceptableRetail": 1350
+    }
+  },
+  {
+    "sku": "NAB-SKU-MAR-050",
+    "id": "marula-facial-elixir",
+    "name": "Cold-Pressed High-Altitude Marula Glow Elixir",
+    "botanicalId": "sclerocarya-birrea",
+    "botanicalName": "Sclerocarya birrea",
+    "category": "Botanical Barrier & Dermal Repair",
+    "netQuantity": "50ml / 1.7 fl oz",
+    "servingSize": "3-5 drops",
+    "servingsPerUnit": 120,
+    "supplierId": "sup-004",
+    "supplierName": "Savannah Harvest Oils",
+    "origin": "Kitui County, Semi-Arid Eastern Kenya",
+    "formulationType": "100% Virgin Cold-Pressed Kernel Oil",
+    "formulationIngredients": [
+      {
+        "ingredient": "Sclerocarya birrea kernel oil",
+        "botanicalPart": "Nut kernels",
+        "percentage": 99.7,
+        "processing": "Hydraulic cold-pressed below 38°C, unrefined, triple-filtered"
+      },
+      {
+        "ingredient": "Natural Tocopherol (Vitamin E)",
+        "botanicalPart": "Soybean-free non-GMO sunflower source",
+        "percentage": 0.3,
+        "processing": "Natural antioxidant stabilizer"
+      }
+    ],
+    "standardization": {
+      "marker": "Oleic Acid (Omega-9) & Total Tocopherols",
+      "targetContent": "≥ 72% Oleic acid, peroxide value < 5.0 meq/kg",
+      "heavyMetalCompliance": "Zero heavy metal detection (<0.01 ppm)"
+    },
+    "packagingSpecs": {
+      "primary": "Heavy-base biophotonic violet UV-protective glass bottle with natural bamboo & glass pipette dropper",
+      "secondary": "Rigid textured paperboard gift box with gold foil lettering",
+      "labelType": "Waterproof velvet-touch soft-feel label with serialized CoA QR code",
+      "shelfLifeMonths": 24
+    },
+    "usageRitual": "Warm 3 to 5 drops between clean palms and press gently into damp face, neck, and décolletage every evening following cleansing.",
+    "contraindications": "Nut allergy warning: Derived from wild tree nuts. Patch test 24 hours prior to full facial application.",
+    "pricing": {
+      "currency": "KES",
+      "recommendedRetailPrice": 2400,
+      "usdMSRP": 18.70,
+      "minimumAcceptableRetail": 2000
+    }
+  },
+  {
+    "sku": "NAB-SKU-TUR-100",
+    "id": "turmeric-ginger-golden-blend",
+    "name": "Highland Volcanic Turmeric & Wild Ginger Elixir",
+    "botanicalId": "ginger-turmeric-highland",
+    "botanicalName": "Curcuma longa & Zingiber officinale",
+    "category": "Inflammatory Balance & Joint Ease",
+    "netQuantity": "100g / 3.5 oz",
+    "servingSize": "3g (approx. 1/2 tsp)",
+    "servingsPerUnit": 33,
+    "supplierId": "sup-005",
+    "supplierName": "Mount Kenya Highland Herbs",
+    "origin": "Meru & Tharaka Nithi, Volcanic Foothills of Mount Kenya",
+    "formulationType": "Synergistic Bio-Enhanced Botanical Infusion",
+    "formulationIngredients": [
+      {
+        "ingredient": "Curcuma longa rhizome powder",
+        "botanicalPart": "Sun-cured rhizomes",
+        "percentage": 65,
+        "processing": "Slow-cured, micro-pulverized"
+      },
+      {
+        "ingredient": "Zingiber officinale rhizome powder",
+        "botanicalPart": "Aromatic ginger root",
+        "percentage": 30,
+        "processing": "Air-dried, fiber-sieved"
+      },
+      {
+        "ingredient": "Piper nigrum fruit powder",
+        "botanicalPart": "Black peppercorns",
+        "percentage": 5,
+        "processing": "Freshly cracked for active piperine bioavailability enhancement"
+      }
+    ],
+    "standardization": {
+      "marker": "Curcuminoids & Gingerols",
+      "targetContent": "≥ 5.5% total curcuminoids, ≥ 1.8% gingerols",
+      "heavyMetalCompliance": "Strict Lead < 1.0 ppm, Cadmium < 0.2 ppm"
+    },
+    "packagingSpecs": {
+      "primary": "Amber glass apothecary jar with food-grade airtight gold aluminum screw lid",
+      "secondary": "Debossed unbleached kraft carton with embossed botanical seal",
+      "labelType": "Gold foil accentuated parchment label with batch traceability QR",
+      "shelfLifeMonths": 24
+    },
+    "usageRitual": "Whisk 1/2 teaspoon into 250ml warm plant milk with a drop of coconut oil or raw honey. Drink at twilight to ease daily joint tension.",
+    "contraindications": "Avoid in acute gallstones or bile duct obstruction. Consult doctor if on pharmaceutical blood thinners (warfarin/heparin).",
+    "pricing": {
+      "currency": "KES",
+      "recommendedRetailPrice": 1500,
+      "usdMSRP": 11.70,
+      "minimumAcceptableRetail": 1250
+    }
+  },
+  {
+    "sku": "NAB-SKU-HIB-150",
+    "id": "hibiscus-ruby-infusion",
+    "name": "Wild Kenyan Ruby Hibiscus & Lemongrass Tisane",
+    "botanicalId": "hibiscus-sabdariffa",
+    "botanicalName": "Hibiscus sabdariffa & Cymbopogon citratus",
+    "category": "Cellular Antioxidant & Heart Harmony",
+    "netQuantity": "150g / 5.3 oz",
+    "servingSize": "5g (approx. 1 tbsp whole calyces)",
+    "servingsPerUnit": 30,
+    "supplierId": "sup-003",
+    "supplierName": "Taita Hills Herbal Collective",
+    "origin": "Taita Taveta Hills & Tsavo Borderland, Kenya",
+    "formulationType": "Whole-cut botanical loose tisane",
+    "formulationIngredients": [
+      {
+        "ingredient": "Hibiscus sabdariffa calyces",
+        "botanicalPart": "Sun-dried whole fleshy calyces",
+        "percentage": 80,
+        "processing": "Hand-plucked, shade-dried, sifted clean of dust"
+      },
+      {
+        "ingredient": "Cymbopogon citratus grass",
+        "botanicalPart": "Highland lemongrass aerial leaves",
+        "percentage": 20,
+        "processing": "Cut and sifted aromatic dried leaves"
+      }
+    ],
+    "standardization": {
+      "marker": "Total Anthocyanins & Hibiscus Acids",
+      "targetContent": "≥ 2.0% delphinidin-3-sambubioside & cyanidin-3-sambubioside",
+      "heavyMetalCompliance": "KEBS KS 229:2018 compliant"
+    },
+    "packagingSpecs": {
+      "primary": "Triple-ply matte forest green freshness pouch with clear bottom window & aroma-lock valve",
+      "secondary": "Gold foil debossed band wrap",
+      "labelType": "Matte finish premium textured label with origin coordinates and QR link",
+      "shelfLifeMonths": 24
+    },
+    "usageRitual": "Steep 1 heaping tablespoon in 350ml boiling water (95°C) for 6 to 8 minutes. Enjoy piping hot or chill with ice and fresh mint leaves.",
+    "contraindications": "Avoid in severe low blood pressure (hypotension). Consult doctor during early pregnancy due to mild emmenagogue properties.",
+    "pricing": {
+      "currency": "KES",
+      "recommendedRetailPrice": 1250,
+      "usdMSRP": 9.75,
+      "minimumAcceptableRetail": 1050
+    }
+  }
+]

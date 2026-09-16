@@ -63,7 +63,7 @@
         "logo": "https://omnicorehub.app/assets/images/hero-apothecary.webp",
         "image": "https://omnicorehub.app/assets/images/hero-apothecary.webp",
         "description": "Ethically wildcrafted East African herbal remedies, organic superfoods, hair elixirs, and holistic body wellness.",
-        "telephone": "+254700123456",
+        "telephone": "+254141270112",
         "email": "orders@omnicorehub.app",
         "priceRange": "KSh 1,150 - KSh 3,400",
         "currenciesAccepted": "KES, USD, NGN, GHS, ZAR, GBP, EUR",
@@ -179,11 +179,11 @@
 
       <!-- Main Navigation -->
       <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
-        <a href="#shop" class="nav-link active" onclick="app.filterByCategory('all')">Shop All</a>
-        <a href="#omnisearch" class="nav-link">Search Remedies</a>
-        <a href="#timer" class="nav-link">Brewing Guide</a>
-        <a href="#portfolio" class="nav-link">Rituals Portfolio</a>
-        <a href="#blog" class="nav-link">Herbal Journal</a>
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="shop.html" class="nav-link">Dispensary 🌿</a>
+        <a href="checkout.html" class="nav-link" style="color: var(--gold-glow); font-weight: 600;">Easy Checkout ⚡</a>
+        <a href="javascript:void(0)" class="nav-link" onclick="app.openBatchModal()" title="Verify Soil-to-Shelf Laboratory CoA" style="color: #C49A45;">Verify CoA 🛡️</a>
+        <a href="#portfolio" class="nav-link">Rituals</a>
         <a href="#about" class="nav-link">Philosophy</a>
       </nav>
 
@@ -211,11 +211,6 @@
           </svg>
           <span>Basket</span>
           <span id="cartCountBadge" class="cart-count-badge" style="display: none;">0</span>
-        </button>
-
-        <!-- Admin / Settings Trigger -->
-        <button class="location-badge-btn" onclick="app.openSettingsModal()" title="Apothecary Settings & Paystack Key" aria-label="Settings">
-          ⚙️
         </button>
       </div>
     </div>
@@ -301,16 +296,16 @@
           </div>
 
           <div class="omnisearch-tags">
-            <span class="tags-label">Popular Intentions:</span>
-            <button class="filter-chip" onclick="app.setSearchQuery('insomnia')">🌙 Insomnia & Sleep</button>
-            <button class="filter-chip" onclick="app.setSearchQuery('bloating')">🍵 Bloating & Digestion</button>
-            <button class="filter-chip" onclick="app.setSearchQuery('moringa')">🌿 Moringa Superfood</button>
+            <span class="tags-label">Key Intentions & Categories:</span>
+            <button class="filter-chip" onclick="app.setSearchQuery('vitality')">🌿 Daily Superfoods & Vitality</button>
+            <button class="filter-chip" onclick="app.setSearchQuery('insomnia')">🌙 Insomnia & Deep Sleep</button>
+            <button class="filter-chip" onclick="app.setSearchQuery('stress')">🧘 Stress & Nervous System</button>
+            <button class="filter-chip" onclick="app.setSearchQuery('bloating')">🍵 Bloating & Gut Health</button>
+            <button class="filter-chip" onclick="app.setSearchQuery('muscle pain')">🔥 Muscle Recovery & Joints</button>
             <button class="filter-chip" onclick="app.setSearchQuery('rosemary')">💆 Rosemary Scalp Density</button>
-            <button class="filter-chip" onclick="app.setSearchQuery('muscle pain')">🔥 Muscle Recovery</button>
-            <button class="filter-chip" onclick="app.setSearchQuery('shea butter')">✨ Shea Body Nourishment</button>
-            <button class="filter-chip" onclick="app.setSearchQuery('stamina')">🦁 Men's Vitality</button>
-            <button class="filter-chip" onclick="app.setSearchQuery('pcos')">🌸 Hormonal Balance & Moon Tea</button>
-            <button class="filter-chip" onclick="app.setSearchQuery('smudge')">🕯️ Sacred Smudge Cleansing</button>
+            <button class="filter-chip" onclick="app.setSearchQuery('stamina')">⚡ Men's Stamina & Energy</button>
+            <button class="filter-chip" onclick="app.setSearchQuery('cycle')">🌸 Women's Moon Harmony</button>
+            <button class="filter-chip" onclick="app.setSearchQuery('frankincense')">✨ Sacred Resins & Smudge</button>
           </div>
         </div>
       </div>
@@ -339,6 +334,7 @@
             <button class="cat-tab-btn" data-category="mens-wellness" role="tab" onclick="app.filterByCategory('mens-wellness')">7. Men's Wellness</button>
             <button class="cat-tab-btn" data-category="womens-wellness" role="tab" onclick="app.filterByCategory('womens-wellness')">8. Women's Wellness</button>
             <button class="cat-tab-btn" data-category="sacred-rituals" role="tab" onclick="app.filterByCategory('sacred-rituals')">9. Sacred Rituals</button>
+            <button class="cat-tab-btn" data-category="clinical-protocols" role="tab" onclick="app.filterByCategory('clinical-protocols')" style="color: var(--gold-glow); font-weight: 600;">🔬 Master Clinical Protocols</button>
           </div>
         </div>
 
@@ -566,7 +562,8 @@
             <li><a href="#portfolio">Ceremony Portfolios</a></li>
             <li><a href="#timer">Brewing Guide & Timer</a></li>
             <li><a href="#omnisearch">Search by Ailment</a></li>
-            <li><a href="javascript:void(0)" onclick="app.openSettingsModal()">Store Settings / Paystack Key</a></li>
+            <li><a href="javascript:void(0)" onclick="app.openBatchModal()" style="color: var(--gold-glow); font-weight: 600;">Verify Batch &amp; Lab CoA 🛡️</a></li>
+            <li><a href="shop.html">Full Dispensary Catalog</a></li>
           </ul>
         </div>
 
@@ -648,9 +645,12 @@
       </div>
 
       <div class="cart-actions-column">
+        <a href="checkout.html" class="btn-primary" style="display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 1rem; padding: 0.85rem; background: linear-gradient(135deg, #2a9d8f 0%, #1e7066 100%);">
+          ⚡ Proceed to Easy Checkout (M-Pesa / Delivery)
+        </a>
         <button class="btn-paystack" onclick="app.openCheckoutModal()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-          Pay with Paystack (Cards / M-Pesa / Bank)
+          Pay Inline (Cards / M-Pesa / Bank)
         </button>
         <button class="btn-whatsapp" onclick="app.checkoutWhatsApp()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
@@ -733,12 +733,12 @@
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
-              <label class="form-label" for="custEmail">Email Address *</label>
-              <input type="email" id="custEmail" class="form-input" placeholder="you@example.com" required>
+              <label class="form-label" for="custPhone">Phone Number (M-Pesa & Courier SMS) *</label>
+              <input type="tel" id="custPhone" class="form-input" placeholder="+254 7..." required>
             </div>
             <div class="form-group">
-              <label class="form-label" for="custPhone">Phone Number *</label>
-              <input type="tel" id="custPhone" class="form-input" placeholder="+254 7..." required>
+              <label class="form-label" for="custEmail">Email Address (Optional)</label>
+              <input type="email" id="custEmail" class="form-input" placeholder="you@example.com (Optional)">
             </div>
           </div>
 
@@ -752,8 +752,13 @@
             <input type="text" id="custNotes" class="form-input" placeholder="Any specific herbal preparation notes or gate directions">
           </div>
 
+          <!-- 100% Discreet Packaging Reassurance -->
+          <div style="background: rgba(212, 175, 55, 0.08); border: 1px dashed var(--gold-primary); border-radius: 6px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.8rem; color: var(--text-parchment);">
+            🔒 <strong>100% Discreet Plain Packaging:</strong> Neutral unbranded parcel with zero product names or illness labels on exterior.
+          </div>
+
           <!-- Checkout summary snippet -->
-          <div style="background: rgba(14, 41, 27, 0.6); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-subtle); margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+          <div style="background: rgba(14, 41, 27, 0.6); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-subtle); margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
             <div>
               <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Total Amount to Pay</span>
               <strong id="checkoutTotalDisplay" style="font-size: 1.3rem; color: var(--gold-glow);">KSh 0</strong>
@@ -761,9 +766,13 @@
             <span class="card-pill">⚡ Paystack Inline</span>
           </div>
 
-          <button type="submit" class="btn-paystack" style="width: 100%;">
-            Proceed to Paystack Payment
+          <button type="submit" class="btn-paystack" style="width: 100%; margin-bottom: 0.75rem;">
+            Proceed to Secure Payment
           </button>
+
+          <a href="checkout.html" class="btn-secondary" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: none; font-size: 0.85rem; padding: 0.65rem;">
+            📦 Prefer Pay on Delivery or Full Checkout Page? Click Here
+          </a>
 
           <div class="paystack-accepted-cards">
             <span class="paystack-cards-label">Accepted Cards & Channels:</span>
@@ -800,37 +809,49 @@
   </dialog>
 
   <!-- ==========================================================================
-       MODAL: APOTHECARY SETTINGS & INVENTORY OWNER (<dialog>)
+       MODAL: BATCH & LAB CERTIFICATE OF ANALYSIS (COA) VERIFIER (<dialog>)
        ========================================================================== -->
-  <dialog id="settingsModal">
-    <div class="modal-box" style="max-width: 580px;">
+  <dialog id="batchModal">
+    <div class="modal-box" style="max-width: 780px;">
       <div class="modal-header">
-        <h3 style="font-family: var(--font-serif); color: var(--gold-glow); font-size: 1.35rem;">Apothecary Settings (No Database)</h3>
-        <button class="modal-close-btn" onclick="document.getElementById('settingsModal').close()">&times;</button>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="font-size: 1.5rem;">🛡️</span>
+          <div>
+            <h3 style="font-family: var(--font-serif); color: var(--gold-glow); font-size: 1.35rem; margin: 0;">Soil-to-Shelf Lab Verification</h3>
+            <span style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Official Certificate of Analysis (CoA) Registry</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="document.getElementById('batchModal').close()">&times;</button>
       </div>
       <div class="modal-body">
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-          This web application operates 100% client-side with zero database requirements. You can customize your store keys directly:
-        </p>
-
-        <div class="form-group">
-          <label class="form-label" for="settingPaystackKey">Paystack Public Key (pk_test_... or pk_live_...)</label>
-          <input type="text" id="settingPaystackKey" class="form-input" value="pk_live_fb70c442b890ed7467719e6771a0766b16894aae">
+        <!-- Search bar for Lot Number -->
+        <div style="margin-bottom: 1.5rem; background: rgba(14, 41, 27, 0.4); padding: 1.25rem; border-radius: 10px; border: 1px solid var(--border-subtle);">
+          <label style="display: block; font-size: 0.85rem; color: var(--gold-primary); font-weight: 600; margin-bottom: 0.5rem;" for="batchLotInput">
+            Enter Lot Number from your Bottle or Box:
+          </label>
+          <div style="display: flex; gap: 0.5rem;">
+            <input type="text" id="batchLotInput" class="form-input" placeholder="e.g. NAB-2026-MOR-001 or Moringa" style="flex: 1;" onkeydown="if(event.key==='Enter'){event.preventDefault(); app.searchBatchLot();}">
+            <button class="btn-primary" onclick="app.searchBatchLot()" style="padding: 0.6rem 1.25rem; white-space: nowrap;">Verify CoA</button>
+          </div>
+          <!-- Quick Lot Pill Buttons -->
+          <div style="margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center;">
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Quick verify sample batches:</span>
+            <button type="button" class="card-pill" style="cursor: pointer; background: rgba(196, 154, 69, 0.15); border-color: rgba(196, 154, 69, 0.4); color: var(--gold-glow);" onclick="app.openBatchModal('NAB-2026-MOR-001')">Moringa (NAB-2026-MOR-001)</button>
+            <button type="button" class="card-pill" style="cursor: pointer; background: rgba(196, 154, 69, 0.15); border-color: rgba(196, 154, 69, 0.4); color: var(--gold-glow);" onclick="app.openBatchModal('NAB-2026-BAO-001')">Baobab (NAB-2026-BAO-001)</button>
+            <button type="button" class="card-pill" style="cursor: pointer; background: rgba(196, 154, 69, 0.15); border-color: rgba(196, 154, 69, 0.4); color: var(--gold-glow);" onclick="app.openBatchModal('NAB-2026-MAR-001')">Marula (NAB-2026-MAR-001)</button>
+            <button type="button" class="card-pill" style="cursor: pointer; background: rgba(196, 154, 69, 0.15); border-color: rgba(196, 154, 69, 0.4); color: var(--gold-glow);" onclick="app.openBatchModal('NAB-2026-TUR-001')">Turmeric (NAB-2026-TUR-001)</button>
+            <button type="button" class="card-pill" style="cursor: pointer; background: rgba(196, 154, 69, 0.15); border-color: rgba(196, 154, 69, 0.4); color: var(--gold-glow);" onclick="app.openBatchModal('NAB-2026-HIB-001')">Hibiscus (NAB-2026-HIB-001)</button>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label class="form-label" for="settingWhatsApp">Store WhatsApp Hotline</label>
-          <input type="text" id="settingWhatsApp" class="form-input" value="+254700123456">
-        </div>
-
-        <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap;">
-          <button class="btn-primary" onclick="app.saveSettings()">Save Settings</button>
-          <button class="btn-secondary" onclick="app.exportCatalogJSON()">Export Catalog JSON</button>
-          <a class="btn-secondary" href="products.csv" download="products.csv" style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none; padding: 0.6rem 1rem; border-radius: 4px; font-size: 0.85rem; border: 1px solid var(--border-subtle); color: var(--gold-glow); background: rgba(255,255,255,0.05);">Download Products CSV</a>
+        <!-- Result Container -->
+        <div id="batchResultContainer">
+          <!-- Injected via JavaScript -->
         </div>
       </div>
     </div>
   </dialog>
+
 
   <!-- ==========================================================================
        AI HERBALIST CONSULTATION WIDGET (PUTER.JS)
@@ -896,6 +917,7 @@
   <script src="js/config.js"></script>
   <script src="js/geo-currency.js"></script>
   <script src="js/data/products.js"></script>
+  <script src="js/data/batch-registry.js"></script>
   <script src="js/data/blog-posts.js"></script>
   <script src="js/data/portfolios.js"></script>
   <script src="js/paystack-service.js"></script>

@@ -1,0 +1,729 @@
+/* NewAge Botanicals — Product Discovery & Stack Command Center Stylesheet */
+:root {
+  --primary-forest: #0F281E;
+  --primary-deep: #081711;
+  --secondary-sage: #2E5A44;
+  --accent-gold: #C49A45;
+  --accent-gold-light: #E0BA6A;
+  --parchment-bg: #F8F6F2;
+  --card-bg: #FFFFFF;
+  --surface-alt: #EFECE6;
+  --text-charcoal: #1A2421;
+  --text-muted: #5C7067;
+  --border-soft: rgba(15, 40, 30, 0.12);
+  --border-active: rgba(196, 154, 69, 0.4);
+  --success-green: #1E7E45;
+  --warning-amber: #D97706;
+  --danger-red: #DC2626;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --shadow-sm: 0 2px 8px rgba(15, 40, 30, 0.05);
+  --shadow-md: 0 6px 20px rgba(15, 40, 30, 0.08);
+  --shadow-lg: 0 12px 36px rgba(15, 40, 30, 0.12);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--parchment-bg);
+  color: var(--text-charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header & Command Bar */
+.top-nav {
+  background: var(--primary-forest);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--accent-gold);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+}
+
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-logo-icon {
+  font-size: 1.8rem;
+  background: rgba(196, 154, 69, 0.2);
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent-gold);
+}
+
+.brand-title h1 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
+}
+
+.brand-title p {
+  font-size: 0.78rem;
+  color: var(--accent-gold-light);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+.nav-btn:hover {
+  background: var(--accent-gold);
+  color: var(--primary-deep);
+  border-color: var(--accent-gold);
+}
+
+/* Tech Stack Health Monitor */
+.stack-bar {
+  background: #15382B;
+  color: #fff;
+  padding: 0.6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-x: auto;
+}
+
+.stack-title {
+  color: var(--accent-gold-light);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.stack-badges {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: nowrap;
+}
+
+.stack-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.stack-pill .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+}
+
+/* 10-Gate Pipeline Navigator */
+.gate-navigator {
+  background: var(--card-bg);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+}
+
+.gate-headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.gate-headline h2 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--primary-forest);
+}
+
+.gate-steps {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.4rem;
+}
+
+.gate-step {
+  flex: 1;
+  min-width: 100px;
+  background: var(--surface-alt);
+  padding: 0.5rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-soft);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.gate-step.completed {
+  background: #ECFDF5;
+  border-color: #A7F3D0;
+  color: #065F46;
+}
+
+.gate-step.active {
+  background: #FEF3C7;
+  border-color: #FCD34D;
+  color: #92400E;
+  box-shadow: 0 0 0 2px rgba(196, 154, 69, 0.2);
+}
+
+.gate-step .gate-num {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.gate-step .gate-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Main Workspace Layout */
+.workspace-container {
+  max-width: 1540px;
+  margin: 1.5rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 1.5rem;
+}
+
+/* Candidate Matrix Sidebar */
+.candidate-sidebar {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 200px);
+  position: sticky;
+  top: 150px;
+}
+
+.sidebar-header {
+  padding: 1.2rem;
+  border-bottom: 1px solid var(--border-soft);
+  background: #FAF8F5;
+}
+
+.sidebar-header h2 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--primary-forest);
+  margin-bottom: 0.5rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 2px rgba(196, 154, 69, 0.15);
+}
+
+.filter-pills {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--surface-alt);
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--primary-forest);
+  color: #fff;
+}
+
+.candidate-list {
+  overflow-y: auto;
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.candidate-item {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #FFF;
+}
+
+.candidate-item:hover {
+  background: #F4F8F6;
+  border-color: rgba(46, 90, 68, 0.2);
+}
+
+.candidate-item.selected {
+  background: #F1F6F3;
+  border-color: var(--secondary-sage);
+  box-shadow: 0 2px 6px rgba(46, 90, 68, 0.1);
+}
+
+.item-main h3 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--primary-forest);
+}
+
+.item-main .latin-name {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.item-main .indigenous-badge {
+  font-size: 0.7rem;
+  color: #854D0E;
+  background: #FEF9C3;
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  margin-top: 0.3rem;
+}
+
+.item-score-badge {
+  text-align: right;
+}
+
+.score-num {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: block;
+}
+
+.score-num.pass { color: var(--success-green); }
+.score-num.conditional { color: var(--warning-amber); }
+.score-num.rejected { color: var(--danger-red); }
+
+.grade-tag {
+  font-size: 0.68rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 0.2rem;
+}
+
+.grade-tag.GRADE_A { background: #DCFCE7; color: #166534; }
+.grade-tag.GRADE_B { background: #E0E7FF; color: #3730A3; }
+.grade-tag.GRADE_C { background: #FEF3C7; color: #92400E; }
+.grade-tag.GRADE_D { background: #F3F4F6; color: #4B5563; }
+.grade-tag.GRADE_E { background: #FEE2E2; color: #991B1B; }
+
+/* Main Inspector Panel */
+.inspector-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+}
+
+.card-title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.card-title-bar h2 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--primary-forest);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Botanical Header Banner */
+.botanical-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, #FAF8F4 0%, #F1EDE4 100%);
+  border: 1px solid rgba(196, 154, 69, 0.25);
+}
+
+.hero-left h2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--primary-forest);
+}
+
+.hero-left .hero-binomial {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--secondary-sage);
+  margin-bottom: 0.5rem;
+}
+
+.hero-left .hero-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.hero-left .hero-meta strong {
+  color: var(--text-charcoal);
+}
+
+.hero-score-card {
+  background: #FFF;
+  border: 2px solid var(--accent-gold);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  min-width: 170px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-score-card .score-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+}
+
+.hero-score-card .score-big {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0.2rem 0;
+}
+
+.hero-score-card .status-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+}
+
+.status-pill.APPROVED_FOR_PIPELINE { background: #DEF7EC; color: #03543F; }
+.status-pill.CONDITIONAL { background: #FDF6B2; color: #723B13; }
+.status-pill.REJECTED { background: #FDE8E8; color: #9B1C1C; }
+
+/* 11 Criteria Grid */
+.criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.criterion-box {
+  background: var(--surface-alt);
+  padding: 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-soft);
+}
+
+.criterion-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.criterion-weight {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.criterion-bar-track {
+  height: 6px;
+  background: rgba(15, 40, 30, 0.1);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.criterion-bar-fill {
+  height: 100%;
+  background: var(--secondary-sage);
+  border-radius: var(--radius-pill);
+}
+
+/* Bifurcation: Tradition vs Science */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.tradition-box {
+  background: #FFFDF8;
+  border: 1px solid #F3E8D6;
+  border-left: 4px solid var(--accent-gold);
+  padding: 1.2rem;
+  border-radius: var(--radius-sm);
+}
+
+.science-box {
+  background: #F8FBFA;
+  border: 1px solid #D6E8E1;
+  border-left: 4px solid var(--secondary-sage);
+  padding: 1.2rem;
+  border-radius: var(--radius-sm);
+}
+
+.box-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tradition-box .box-title { color: #854D0E; }
+.science-box .box-title { color: #166534; }
+
+.box-text {
+  font-size: 0.88rem;
+  color: var(--text-charcoal);
+  margin-bottom: 0.8rem;
+}
+
+.claim-tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.claim-tag.valid { background: #DCFCE7; color: #15803D; }
+.claim-tag.unverified { background: #FEE2E2; color: #B91C1C; }
+
+/* Unit Economics Calculator */
+.econ-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.econ-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.slider-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.slider-input {
+  width: 100%;
+  accent-color: var(--accent-gold);
+  cursor: pointer;
+}
+
+.econ-results-panel {
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--border-soft);
+}
+
+.econ-metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(15, 40, 30, 0.08);
+  font-size: 0.85rem;
+}
+
+.econ-metric-row.highlight {
+  font-weight: 700;
+  font-size: 1rem;
+  border-bottom: 2px solid var(--primary-forest);
+  color: var(--primary-forest);
+}
+
+.econ-metric-val {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.action-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background: var(--primary-forest);
+  color: #fff;
+  border: 1px solid var(--accent-gold);
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  background: var(--accent-gold);
+  color: var(--primary-deep);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: #FFF;
+  color: var(--primary-forest);
+  border: 1px solid var(--border-soft);
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-alt);
+}
+
+/* Modal and Alert styling */
+.toast-msg {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--primary-deep);
+  color: #fff;
+  border-left: 4px solid var(--accent-gold);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.9rem;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.toast-msg.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive queries */
+@media (max-width: 1080px) {
+  .workspace-container {
+    grid-template-columns: 1fr;
+  }
+  .candidate-sidebar {
+    height: auto;
+    position: static;
+  }
+  .comparison-grid, .econ-grid {
+    grid-template-columns: 1fr;
+  }
+}

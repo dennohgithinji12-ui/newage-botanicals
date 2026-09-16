@@ -1,0 +1,58 @@
+{
+  "lotNumber": "NAB-2026-TUR-001",
+  "sku": "NAB-SKU-TUR-100",
+  "productId": "turmeric-ginger-golden-blend",
+  "productName": "Highland Volcanic Turmeric & Wild Ginger Elixir",
+  "botanicalName": "Curcuma longa & Zingiber officinale",
+  "batchSizeUnits": 500,
+  "netWeightPerUnit": "100g / 3.5 oz",
+  "manufactureDate": "2026-09-16",
+  "bestBeforeDate": "2028-09-05",
+  "originTraceability": {
+    "supplierId": "sup-005",
+    "supplierName": "Mount Kenya Highland Herbs",
+    "harvestRegion": "Meru & Tharaka Nithi, Volcanic Foothills of Mount Kenya",
+    "rawBatchRef": "RM-601499"
+  },
+  "labTesting": {
+    "accreditedLabName": "SGS Kenya Phytochemical Laboratory",
+    "labReportNumber": "LAB-REPORT-202902",
+    "testDate": "2026-09-16",
+    "heavyMetals": {
+      "leadPpm": 0.9,
+      "arsenicPpm": 0.22,
+      "cadmiumPpm": 0.07,
+      "mercuryPpm": 0.03
+    },
+    "microbiology": {
+      "tamcCfuPerG": 2100,
+      "tymcCfuPerG": 85,
+      "eColi": "absent",
+      "salmonella": "absent"
+    },
+    "activePhytochemicalAssay": {
+      "marker": "Curcuminoids & Gingerols",
+      "measuredValue": "5.8% Curcuminoids, 2.1% 6-Gingerol",
+      "standardSpecification": "≥ 5.2% Curcuminoids"
+    },
+    "moisturePercentage": 6.4
+  },
+  "complianceEvaluation": {
+    "passed": true,
+    "qcDecision": "RELEASE_FOR_SALE",
+    "errors": [],
+    "warnings": [],
+    "evaluatedAt": "2026-09-16T16:53:21.499Z"
+  },
+  "digitalVerification": {
+    "cryptographicHash": "20c7ed6e6f81ddcf75d175f7985adef48a95e520ca9cb6c2a538b4404fe0d9a0",
+    "shortHash": "20c7ed6e6f81ddcf",
+    "atlasVerificationUrl": "https://omnicorehub.app/atlas?sku=turmeric-ginger-golden-blend&lot=NAB-2026-TUR-001&verify=20c7ed6e6f81ddcf",
+    "qrPayload": {
+      "brand": "NewAge Botanicals",
+      "sku": "NAB-SKU-TUR-100",
+      "lot": "NAB-2026-TUR-001",
+      "url": "https://omnicorehub.app/atlas?sku=turmeric-ginger-golden-blend&lot=NAB-2026-TUR-001&verify=20c7ed6e6f81ddcf"
+    }
+  }
+}
