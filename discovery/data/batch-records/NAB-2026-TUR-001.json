@@ -12,11 +12,11 @@
     "supplierId": "sup-005",
     "supplierName": "Mount Kenya Highland Herbs",
     "harvestRegion": "Meru & Tharaka Nithi, Volcanic Foothills of Mount Kenya",
-    "rawBatchRef": "RM-767143"
+    "rawBatchRef": "RM-586673"
   },
   "labTesting": {
     "accreditedLabName": "SGS Kenya Phytochemical Laboratory",
-    "labReportNumber": "LAB-REPORT-315445",
+    "labReportNumber": "LAB-REPORT-231040",
     "testDate": "2026-09-17",
     "heavyMetals": {
       "leadPpm": 0.9,
@@ -42,7 +42,7 @@
     "qcDecision": "RELEASE_FOR_SALE",
     "errors": [],
     "warnings": [],
-    "evaluatedAt": "2026-09-17T16:16:07.143Z"
+    "evaluatedAt": "2026-09-17T16:29:46.672Z"
   },
   "digitalVerification": {
     "cryptographicHash": "20c7ed6e6f81ddcf75d175f7985adef48a95e520ca9cb6c2a538b4404fe0d9a0",

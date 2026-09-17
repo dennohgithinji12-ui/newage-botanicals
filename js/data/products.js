@@ -1047,7 +1047,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 65,
     "tag": "Sacred Craft",
-    "image": "assets/images/products/sacred-relaxation-bath-soak.jpg",
+    "image": "assets/images/products/sacred-relaxation-bath-soak-photo.jpg",
     "herbs": [
       "lavender",
       "chamomile",
@@ -1082,7 +1082,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Dissolve 1/2 cup into a warm running bath. Light a candle, immerse for 25 minutes, and visualize all tension dissolving into the water.",
     "inStock": true,
     "images": [
-      "assets/images/products/sacred-relaxation-bath-soak.jpg"
+      "assets/images/products/sacred-relaxation-bath-soak-photo.jpg"
     ],
     "whatItDoes": "Dead Sea magnesium flakes, pink Himalayan mineral salt, organic lavender blossoms, and clary sage. Melts away the heavy electromagnetic and emotional residue of the day. Transdermal magnesium replenishes depleted mineral stores. Relieves stiff spinal and shoulder knots from sitting and stress"
   },
@@ -1096,7 +1096,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 132,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/warming-muscle-recovery-balm.jpg",
+    "image": "assets/images/products/warming-muscle-recovery-balm-photo.jpg",
     "herbs": [
       "ginger",
       "cayenne pepper",
@@ -1137,7 +1137,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Scoop a nickel-sized amount with fingertips. Warm between palms and knead firmly into achy shoulders, lower back, or calves in circular motions.",
     "inStock": true,
     "images": [
-      "assets/images/products/warming-muscle-recovery-balm.jpg"
+      "assets/images/products/warming-muscle-recovery-balm-photo.jpg"
     ],
     "whatItDoes": "A potent thermal botanical salve combining organic Kenyan ginger, warming cayenne resin, arnica montana extract, and clove bud oil in unrefined yellow beeswax. Generates deep penetrating, comforting warmth to relax tight myofascial tissue. Increases localized microcirculation to flush lactic acid from sore muscles"
   },
@@ -1151,7 +1151,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 64,
     "tag": "Apothecary Pick",
-    "image": "assets/images/products/sports-post-exercise-massage-oil.jpg",
+    "image": "assets/images/products/sports-post-exercise-massage-oil-photo.jpg",
     "herbs": [
       "arnica",
       "peppermint",
@@ -1187,7 +1187,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Apply liberally to damp skin after hot shower or bath. Stroke firmly upwards toward the heart to aid lymphatic venous return.",
     "inStock": true,
     "images": [
-      "assets/images/products/sports-post-exercise-massage-oil.jpg"
+      "assets/images/products/sports-post-exercise-massage-oil-photo.jpg"
     ],
     "whatItDoes": "Lightweight, rapid-absorbing botanical massage oil infused with wild arnica, cooling peppermint, and circulatory black pepper to revitalize exhausted limbs after physical exertion. Relieves the burning sensation and heaviness of fatigued muscles. Enhances lymphatic fluid return and speeds workout recovery"
   },
