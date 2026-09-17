@@ -9,14 +9,14 @@
 - **SKU Code:** `NAB-SKU-MAR-050`
 - **Lot / Batch Number:** `NAB-2026-MAR-001`
 - **Net Quantity:** 50ml / 1.7 fl oz
-- **Manufacture Date:** 2026-09-16
-- **Best Before / Expiry:** 2028-09-05
+- **Manufacture Date:** 2026-09-17
+- **Best Before / Expiry:** 2028-09-06
 
 ### Harvest & Farm Traceability
 - **Origin Region:** Kitui County, Semi-Arid Eastern Kenya
 - **Vetted Supplier:** Savannah Harvest Oils
 - **Testing Laboratory:** AfriCert Analytical Laboratories
-- **Lab Assay Report ID:** `LAB-REPORT-626977`
+- **Lab Assay Report ID:** `LAB-REPORT-437844`
 
 ---
 

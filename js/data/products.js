@@ -585,9 +585,9 @@ const PRODUCTS_DATA = [
     ],
     "ritualGuide": "Take 25 drops morning and evening with food. Pair with an alkaline anti-inflammatory organic whole food diet.",
     "inStock": true,
-    "image": "assets/images/products/autoimmune-harmony-immuno-reset-suite.jpg",
+    "image": "assets/images/products/autoimmune-harmony-immuno-reset-suite-photo.jpg",
     "images": [
-      "assets/images/products/autoimmune-harmony-immuno-reset-suite.jpg"
+      "assets/images/products/autoimmune-harmony-immuno-reset-suite-photo.jpg"
     ]
   },
   {
@@ -633,9 +633,9 @@ const PRODUCTS_DATA = [
     ],
     "ritualGuide": "Place 30 drops in 100ml cold water every morning. Savor the earthy pine flavor and visualize absolute mental clarity.",
     "inStock": true,
-    "image": "assets/images/products/neuro-regenerative-brain-longevity-matrix.jpg",
+    "image": "assets/images/products/neuro-regenerative-brain-longevity-matrix-photo.jpg",
     "images": [
-      "assets/images/products/neuro-regenerative-brain-longevity-matrix.jpg"
+      "assets/images/products/neuro-regenerative-brain-longevity-matrix-photo.jpg"
     ]
   },
   {
@@ -682,9 +682,9 @@ const PRODUCTS_DATA = [
     ],
     "ritualGuide": "Take 1 teaspoon of resin elixir in warm water 30 minutes before strenuous physical training or intimate connection.",
     "inStock": true,
-    "image": "assets/images/products/sacred-kundalini-virility-master-formula.jpg",
+    "image": "assets/images/products/sacred-kundalini-virility-master-formula-photo.jpg",
     "images": [
-      "assets/images/products/sacred-kundalini-virility-master-formula.jpg"
+      "assets/images/products/sacred-kundalini-virility-master-formula-photo.jpg"
     ]
   },
   {
@@ -730,9 +730,9 @@ const PRODUCTS_DATA = [
     ],
     "ritualGuide": "Take 30 drops in 250ml warm water with fresh lemon juice first thing in the morning for 30 consecutive days.",
     "inStock": true,
-    "image": "assets/images/products/hepatic-renal-cellular-detox-protocol.jpg",
+    "image": "assets/images/products/hepatic-renal-cellular-detox-protocol-photo.jpg",
     "images": [
-      "assets/images/products/hepatic-renal-cellular-detox-protocol.jpg"
+      "assets/images/products/hepatic-renal-cellular-detox-protocol-photo.jpg"
     ]
   },
   {
@@ -797,7 +797,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 92,
     "tag": "Bestseller",
-    "image": "assets/images/products/baobab-fruit-powder.jpg",
+    "image": "assets/images/products/baobab-fruit-powder-photo.jpg",
     "herbs": [
       "baobab",
       "adansonia digitata",
@@ -831,7 +831,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Stir 1 tablespoon into cold spring water, coconut water, or yogurt bowls. Sip slowly while visualizing root grounding.",
     "inStock": true,
     "images": [
-      "assets/images/products/baobab-fruit-powder.jpg"
+      "assets/images/products/baobab-fruit-powder-photo.jpg"
     ],
     "whatItDoes": "Harvested directly from ancient wild African Baobab trees ('The Tree of Life'). Naturally dehydrates on the branch into a tangy citrus prebiotic powder containing 6x more Vitamin C than oranges. 50% soluble and prebiotic dietary fibre to feed healthy gut bacteria. Elevated Vitamin C for collagen formation and luminous skin glow"
   },
@@ -894,7 +894,7 @@ const PRODUCTS_DATA = [
     "rating": 4.7,
     "reviewCount": 78,
     "tag": "Apothecary Pick",
-    "image": "assets/images/products/ginger-lemon-wellness-blend.jpg",
+    "image": "assets/images/products/ginger-lemon-wellness-blend-photo.jpg",
     "herbs": [
       "ginger",
       "lemon peel",
@@ -930,7 +930,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Simmer in boiling water for 10 minutes. Inhale the aromatic lemon-ginger steam to open nasal passages before drinking.",
     "inStock": true,
     "images": [
-      "assets/images/products/ginger-lemon-wellness-blend.jpg"
+      "assets/images/products/ginger-lemon-wellness-blend-photo.jpg"
     ],
     "whatItDoes": "Sun-dried fiery ginger root intertwined with citrus lemon peel and raw turmeric slices. Activates digestive agni (internal metabolic fire) and dispels throat dampness. Stimulates gastric motility and quickly quells stomach nausea. Warms extremities and boosts blood circulation throughout the body"
   },
@@ -944,7 +944,7 @@ const PRODUCTS_DATA = [
     "rating": 5,
     "reviewCount": 204,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/bedtime-dream-tea.jpg",
+    "image": "assets/images/products/bedtime-dream-tea-photo.jpg",
     "herbs": [
       "chamomile",
       "valerian root",
@@ -985,7 +985,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep 1 tablespoon in freshly boiled spring water for 10 minutes covered. Sip in dim candlelight 45 minutes before sleep with your phone placed away.",
     "inStock": true,
     "images": [
-      "assets/images/products/bedtime-dream-tea.jpg"
+      "assets/images/products/bedtime-dream-tea-photo.jpg"
     ],
     "whatItDoes": "An ethereal sedative tisane formulated with whole German chamomile flowers, potent valerian root, passionflower vine, and calming French lavender. Calms the central nervous system into delta-wave slumber. Significantly reduces sleep latency (time to fall asleep) naturally. Promotes prolonged, restorative REM and deep sleep cycles"
   },
@@ -999,7 +999,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 88,
     "tag": "Bestseller",
-    "image": "assets/images/products/lavender-stress-relief-rollon.jpg",
+    "image": "assets/images/products/lavender-stress-relief-rollon-photo.jpg",
     "herbs": [
       "lavender",
       "frankincense",
@@ -1033,7 +1033,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Glide over wrists, temples, and neck nape. Cup your palms over your nose and take four deep 4-7-8 grounding breaths.",
     "inStock": true,
     "images": [
-      "assets/images/products/lavender-stress-relief-rollon.jpg"
+      "assets/images/products/lavender-stress-relief-rollon-photo.jpg"
     ],
     "whatItDoes": "Pure steam-distilled French lavender essential oil and sacred frankincense infused into golden organic jojoba oil. Designed for immediate nervous system grounding on the go. Inhalation of linalool rapidly soothes the amygdala stress response. Frankincense helps deepen shallow, anxious breathing patterns"
   },
