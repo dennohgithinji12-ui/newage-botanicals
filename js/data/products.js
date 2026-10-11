@@ -1201,7 +1201,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 77,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/natural-energy-vitality-powder.jpg",
+    "image": "assets/images/products/natural-energy-vitality-powder-photo.jpg",
     "herbs": [
       "moringa",
       "baobab",
@@ -1236,7 +1236,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Blend 1 rounded scoop with almond milk or fresh coconut water 30 minutes before training or deep work sessions.",
     "inStock": true,
     "images": [
-      "assets/images/products/natural-energy-vitality-powder.jpg"
+      "assets/images/products/natural-energy-vitality-powder-photo.jpg"
     ],
     "whatItDoes": "A synergistic blend of wild Kenyan moringa, high-potency baobab, raw Peruvian maca root, and ceremonial criollo cacao to ignite clean, jitter-free vitality and athletic endurance. Provides sustained cellular stamina without heart palpitations or adrenal exhaustion. Adaptogenic botanicals help physical body resist physical and mental stress"
   },
@@ -1250,7 +1250,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 162,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/digestive-tea-blend.jpg",
+    "image": "assets/images/products/digestive-tea-blend-photo.jpg",
     "herbs": [
       "fennel",
       "peppermint",
@@ -1289,7 +1289,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep 1 tablespoon in boiling water for 7 minutes immediately following heavy meals. Sip slowly while resting in an upright, relaxed posture.",
     "inStock": true,
     "images": [
-      "assets/images/products/digestive-tea-blend.jpg"
+      "assets/images/products/digestive-tea-blend-photo.jpg"
     ],
     "whatItDoes": "A time-tested herbalist formulation of crushed sweet fennel seeds, crisp Egyptian peppermint, warming ginger, and licorice root. Alleviates post-meal abdominal distension and soothes the intestinal lining. Relaxes intestinal smooth muscle to expel trapped gas and reduce bloating. Supports healthy gastric acid secretion and digestive enzyme activity"
   },
@@ -1303,7 +1303,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 84,
     "tag": "Apothecary Pick",
-    "image": "assets/images/products/peppermint-digestive-comfort.jpg",
+    "image": "assets/images/products/peppermint-digestive-comfort-photo.jpg",
     "herbs": [
       "peppermint",
       "mentha piperita",
@@ -1334,7 +1334,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep for 5 minutes in freshly boiled water. Inhale the crisp vapor deeply before each soothing sip.",
     "inStock": true,
     "images": [
-      "assets/images/products/peppermint-digestive-comfort.jpg"
+      "assets/images/products/peppermint-digestive-comfort-photo.jpg"
     ],
     "whatItDoes": "Whole dried peppermint leaves bursting with pure natural menthol essential oil. Offers immediate gastrointestinal antispasmodic comfort and crisp respiratory invigoration. Natural antispasmodic effect on digestive tract muscles. Cooling sensation soothes irritable bowel sensations and nausea"
   },
@@ -1348,7 +1348,7 @@ const PRODUCTS_DATA = [
     "rating": 5,
     "reviewCount": 220,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/shea-butter-cream-calendula.jpg",
+    "image": "assets/images/products/shea-butter-cream-calendula-photo.jpg",
     "herbs": [
       "shea butter",
       "calendula",
@@ -1387,7 +1387,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Warm a dime-sized dollop between hands. Massage gently into damp skin after showering, speaking words of gratitude and reverence over your body.",
     "inStock": true,
     "images": [
-      "assets/images/products/shea-butter-cream-calendula.jpg"
+      "assets/images/products/shea-butter-cream-calendula-photo.jpg"
     ],
     "whatItDoes": "Rare East African Nilotica shea butter cold-whipped into a velvety cloud with organic calendula flower extract and soothing German chamomile. Rich in oleic acids for deep cellular skin nourishment. Melts effortlessly at body temperature without waxy or gritty residue. Intensely hydrates severely dry skin, cracked heels, and peeling cuticles"
   },
@@ -1401,7 +1401,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 96,
     "tag": "Bestseller",
-    "image": "assets/images/products/aloe-vera-soothing-gel.jpg",
+    "image": "assets/images/products/aloe-vera-soothing-gel-photo.jpg",
     "herbs": [
       "aloe vera",
       "aloe barbadensis",
@@ -1435,7 +1435,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Smooth a thin layer over cleansed skin or sunburned areas. Keep refrigerated for an ultra-refreshing cryogenic skin ritual.",
     "inStock": true,
     "images": [
-      "assets/images/products/aloe-vera-soothing-gel.jpg"
+      "assets/images/products/aloe-vera-soothing-gel-photo.jpg"
     ],
     "whatItDoes": "Cold-pressed inner fillet aloe vera gel harvested from dry-climate Kenyan aloe farms. Quenches thirsty skin cells, alleviates heat inflammation, and soothes razor irritation without stickiness. Instant cooling relief for sunburn, heat rash, and shaving irritation. Lightweight non-comedogenic hydration suitable for acne-prone skin"
   },
@@ -1449,7 +1449,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 71,
     "tag": "Apothecary Pick",
-    "image": "assets/images/products/scar-appearance-botanical-oil.jpg",
+    "image": "assets/images/products/scar-appearance-botanical-oil-photo.jpg",
     "herbs": [
       "rosehip seed",
       "frankincense",
@@ -1485,7 +1485,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Dispense 3-4 drops onto clean fingers. Press into scars or areas of pigmentation twice daily with mindful intention of healing.",
     "inStock": true,
     "images": [
-      "assets/images/products/scar-appearance-botanical-oil.jpg"
+      "assets/images/products/scar-appearance-botanical-oil-photo.jpg"
     ],
     "whatItDoes": "Unrefined cold-pressed virgin rosehip seed oil infused with sacred Somali frankincense and everlasting helichrysum blossoms. Rich in trans-retinoic acid to fade stubborn dark spots and soften scar tissue. Encourages healthy collagen alignment to soften raised fibrous scar tissue. Fades hyperpigmentation and post-inflammatory acne marks"
   },
@@ -1499,7 +1499,7 @@ const PRODUCTS_DATA = [
     "rating": 5,
     "reviewCount": 310,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/rosemary-scalp-hair-oil.jpg",
+    "image": "assets/images/products/rosemary-scalp-hair-oil-photo.jpg",
     "herbs": [
       "rosemary",
       "black castor oil",
@@ -1539,7 +1539,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Part hair into sections. Apply 2-3 dropperfuls directly to the scalp. Massage deeply with fingertips for 5 minutes using circular motions. Leave for 1-3 hours or overnight before washing.",
     "inStock": true,
     "images": [
-      "assets/images/products/rosemary-scalp-hair-oil.jpg"
+      "assets/images/products/rosemary-scalp-hair-oil-photo.jpg"
     ],
     "whatItDoes": "Clinical-grade organic rosemary essential oil blended into dark cold-pressed black castor oil, golden jojoba, and fenugreek seeds. Stimulates microcapillary blood flow directly to hair follicles. Shown in herbalist studies to rival conventional minoxidil for hair thickness. Reduces DHT accumulation on the scalp and slows follicle miniaturization"
   },
