@@ -1553,7 +1553,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 82,
     "tag": "Bestseller",
-    "image": "assets/images/products/botanical-beard-conditioning-oil.jpg",
+    "image": "assets/images/products/botanical-beard-conditioning-oil-photo.jpg",
     "herbs": [
       "baobab oil",
       "cedarwood",
@@ -1589,7 +1589,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Rub 4-6 drops into palms and distribute thoroughly through damp beard down to the skin roots. Comb through with a wooden beard comb.",
     "inStock": true,
     "images": [
-      "assets/images/products/botanical-beard-conditioning-oil.jpg"
+      "assets/images/products/botanical-beard-conditioning-oil-photo.jpg"
     ],
     "whatItDoes": "A masculine grounding elixir crafted with ultra-absorbent wild baobab seed oil, Moroccan argan oil, and aromatic Atlas cedarwood. Tames coarse facial hair and hydrates the underlying skin. Softens stubborn bristly whiskers without leaving an oily grease trail. Stops underneath beard itching and eliminates flaking dry skin"
   },
@@ -1603,7 +1603,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 140,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/mens-vitality-botanical-tea.jpg",
+    "image": "assets/images/products/mens-vitality-botanical-tea-photo.jpg",
     "herbs": [
       "mondia whitei (mukombero)",
       "ginseng",
@@ -1642,7 +1642,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Boil 1 generous tablespoon in water for 10-15 minutes. Drink warm in the early morning or 1 hour before intimacy to center masculine power.",
     "inStock": true,
     "images": [
-      "assets/images/products/mens-vitality-botanical-tea.jpg"
+      "assets/images/products/mens-vitality-botanical-tea-photo.jpg"
     ],
     "whatItDoes": "Centuries-old African aphrodisiac Mondia Whitei (Mukombero root) synergized with Korean red ginseng and adaptogenic ashwagandha. Supports male hormonal health, physical vigor, and vitality. Traditional East African root revered for enhancing male stamina and desire. Supports healthy nitric oxide production and cardiovascular blood flow"
   },
@@ -1656,7 +1656,7 @@ const PRODUCTS_DATA = [
     "rating": 5,
     "reviewCount": 95,
     "tag": "Sacred Craft",
-    "image": "assets/images/products/couples-botanical-massage-oil.jpg",
+    "image": "assets/images/products/couples-botanical-massage-oil-photo.jpg",
     "herbs": [
       "amyris",
       "cardamom",
@@ -1693,7 +1693,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Warm the amber bottle in a bowl of warm water. Dim the lights, take synchronous deep breaths together, and massage slowly into shoulders, back, and limbs.",
     "inStock": true,
     "images": [
-      "assets/images/products/couples-botanical-massage-oil.jpg"
+      "assets/images/products/couples-botanical-massage-oil-photo.jpg"
     ],
     "whatItDoes": "An intoxicating sensory external massage oil featuring aphrodisiac West Indian sandalwood (amyris), warming green cardamom, erotic ylang-ylang, and golden sweet almond oil. Subtle botanical thermal effect stimulates cutaneous nerve endings and intimacy. Creates an exotic, warm sensual sanctuary of aroma and physical presence"
   },
@@ -1707,7 +1707,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 188,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/womens-hormonal-wellness-tea.jpg",
+    "image": "assets/images/products/womens-hormonal-wellness-tea-photo.jpg",
     "herbs": [
       "red raspberry leaf",
       "chaste tree berry (vitex)",
@@ -1746,7 +1746,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep 1 tablespoon covered for 10-15 minutes. Drink 1-2 cups daily, especially in the luteal and menstrual phases of your monthly cycle.",
     "inStock": true,
     "images": [
-      "assets/images/products/womens-hormonal-wellness-tea.jpg"
+      "assets/images/products/womens-hormonal-wellness-tea-photo.jpg"
     ],
     "whatItDoes": "Uterine tonic red raspberry leaf blended with chasteberry (vitex), organic stinging nettle, and fragrant Damascus rose petals. Restores rhythmic harmony to female endocrine and reproductive cycles. Red raspberry leaf tones pelvic and uterine muscles, reducing severe cramping. Vitex promotes healthy progesterone-to-estrogen balance across the cycle"
   },
@@ -1760,7 +1760,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 104,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/external-intimate-moisturizer.jpg",
+    "image": "assets/images/products/external-intimate-moisturizer-photo.jpg",
     "herbs": [
       "calendula",
       "organic coconut oil",
@@ -1795,7 +1795,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "With clean hands, warm a small amount between fingers and apply externally to the vulvar tissue as needed for comfort.",
     "inStock": true,
     "images": [
-      "assets/images/products/external-intimate-moisturizer.jpg"
+      "assets/images/products/external-intimate-moisturizer-photo.jpg"
     ],
     "whatItDoes": "Gynecologically formulated 100% natural external comfort balm. Hypoallergenic, free from fragrances, glycerin, or synthetic preservatives to soothe delicate external intimate skin. Restores protective lipid barrier to prevent uncomfortable chafing and friction. Soothes external tissue following child birth, menopause, or vigorous activity"
   },
@@ -1809,7 +1809,7 @@ const PRODUCTS_DATA = [
     "rating": 5,
     "reviewCount": 119,
     "tag": "Sacred Craft",
-    "image": "assets/images/products/sacred-smudge-wand-altar-kit.jpg",
+    "image": "assets/images/products/sacred-smudge-wand-altar-kit-photo.jpg",
     "herbs": [
       "white sage",
       "african wormwood (artemisia afra / umhlonyane)",
@@ -1845,7 +1845,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Light the tip of the herbal wand until embers glow. Gently wave the fragrant smoke in clockwise motions around room doorways and corners while reciting your blessings.",
     "inStock": true,
     "images": [
-      "assets/images/products/sacred-smudge-wand-altar-kit.jpg"
+      "assets/images/products/sacred-smudge-wand-altar-kit-photo.jpg"
     ],
     "whatItDoes": "Ethically wildcrafted African wormwood (Umhlonyane) bundled with mountain white sage, sweetgrass, aromatic cedar, a natural raw selenite wand, and an unrefined beeswax candle. Traditional smoke medicine scientifically shown to clear airborne microbes and stagnant energy. Purifies living spaces before meditation, creative projects, or sleep"
   },
@@ -1859,7 +1859,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 76,
     "tag": "Sacred Craft",
-    "image": "assets/images/products/solstice-grounding-anointing-oil.jpg",
+    "image": "assets/images/products/solstice-grounding-anointing-oil-photo.jpg",
     "herbs": [
       "frankincense",
       "myrrh",
@@ -1895,7 +1895,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Anoint 1 drop on the third eye between brows, palms, and soles of feet before prayer, meditation, or entering crowded environments.",
     "inStock": true,
     "images": [
-      "assets/images/products/solstice-grounding-anointing-oil.jpg"
+      "assets/images/products/solstice-grounding-anointing-oil-photo.jpg"
     ],
     "whatItDoes": "Sun-infused during the solar zenith with holy Somalian frankincense tears, bitter red myrrh, and East African sandalwood, charged over raw black tourmaline crystals for deep energetic protection. Deepens prayer, meditation, and intuitive dream recall. Clears discordant emotional energy and protects the psychic perimeter"
   },
@@ -1909,7 +1909,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 94,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/turmeric-ginger-golden-blend.jpg",
+    "image": "assets/images/products/turmeric-ginger-golden-blend-photo.jpg",
     "herbs": [
       "turmeric",
       "ginger",
@@ -1948,7 +1948,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Simmer 1 level teaspoon in warm coconut or oat milk with raw acacia honey for 5 minutes. Sip mindfully before bed to soothe aching joints.",
     "inStock": true,
     "images": [
-      "assets/images/products/turmeric-ginger-golden-blend.jpg"
+      "assets/images/products/turmeric-ginger-golden-blend-photo.jpg"
     ],
     "whatItDoes": "Ethically farmed high-altitude Kenyan turmeric with 5.5% active curcumin, married with spicy dried ginger root and a pinch of black pepper piperine to maximize cellular bioavailability by 2000%. Potent systemic antioxidant quenching inflammatory pathways in joints and tissues. Stimulates bile flow and gastric vitality for enhanced nutrient assimilation"
   },
@@ -1962,7 +1962,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 62,
     "tag": "Apothecary Essential",
-    "image": "assets/images/products/sun-dried-ginger-powder.jpg",
+    "image": "assets/images/products/sun-dried-ginger-powder-photo.jpg",
     "herbs": [
       "ginger",
       "zingiber",
@@ -1994,7 +1994,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Stir 1/2 teaspoon into hot water with fresh lemon juice upon waking, or incorporate into sacred soups and curries.",
     "inStock": true,
     "images": [
-      "assets/images/products/sun-dried-ginger-powder.jpg"
+      "assets/images/products/sun-dried-ginger-powder-photo.jpg"
     ],
     "whatItDoes": "Stone-ground from wild mountain-grown Kenyan ginger rhizomes. Deeply pungent, warming, and packed with active gingerols to ignite systemic circulation and soothe gastric distress. Rapidly alleviates travel nausea and post-meal stomach heaviness. Warms cold extremities by stimulating peripheral micro-circulation"
   },
@@ -2008,7 +2008,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 58,
     "tag": "Bestseller",
-    "image": "assets/images/products/golden-curcumin-turmeric-powder.jpg",
+    "image": "assets/images/products/golden-curcumin-turmeric-powder-photo.jpg",
     "herbs": [
       "turmeric",
       "curcuma longa",
@@ -2039,7 +2039,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Combine 1 teaspoon with a dash of healthy plant fats (coconut oil or ghee) in warm milk, or mix with raw yogurt for a weekly glowing face mask.",
     "inStock": true,
     "images": [
-      "assets/images/products/golden-curcumin-turmeric-powder.jpg"
+      "assets/images/products/golden-curcumin-turmeric-powder-photo.jpg"
     ],
     "whatItDoes": "Single-origin vibrant golden-orange turmeric grown in nutrient-dense volcanic Kenyan soils. Stone-milled slowly at low temperatures to protect delicate aromatic essential oils. High natural curcuminoid concentration supporting healthy joint flexibility. Assists natural liver phase-2 enzymatic detox pathways"
   },
