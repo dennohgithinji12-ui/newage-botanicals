@@ -2552,7 +2552,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 112,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/herbal-hair-conditioning-oil.jpg",
+    "image": "assets/images/products/herbal-hair-conditioning-oil-photo.jpg",
     "herbs": [
       "argan oil",
       "jojoba oil",
@@ -2589,7 +2589,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Warm 3-4 drops between palms. Smooth through mid-lengths to ends of damp or dry hair. For deep treatment, saturate strands, wrap with warm towel for 30 minutes, then rinse.",
     "inStock": true,
     "images": [
-      "assets/images/products/herbal-hair-conditioning-oil.jpg"
+      "assets/images/products/herbal-hair-conditioning-oil-photo.jpg"
     ],
     "whatItDoes": "A lightweight, silicone-free botanical hair nectar combining cold-pressed Moroccan argan, Kenyan wild marula, and ayurvedic amla fruit. Seals moisture into the hair cuticle and imparts luminous, glassy shine. Protects hair cuticles from heat styling and harsh sun UV oxidation. Instantly tames unruly flyaways and frizz without weighing down fine curls"
   },
@@ -2603,7 +2603,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 66,
     "tag": "Sulfate-Free",
-    "image": "assets/images/products/rosemary-mint-clarifying-shampoo.jpg",
+    "image": "assets/images/products/rosemary-mint-clarifying-shampoo-photo.jpg",
     "herbs": [
       "rosemary",
       "peppermint",
@@ -2641,7 +2641,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Apply to wet hair. Massage into scalp using firm circular pads of fingers for 2 minutes to stimulate blood flow. Rinse with cool water.",
     "inStock": true,
     "images": [
-      "assets/images/products/rosemary-mint-clarifying-shampoo.jpg"
+      "assets/images/products/rosemary-mint-clarifying-shampoo-photo.jpg"
     ],
     "whatItDoes": "Sulfate-free, pH-balanced botanical shampoo infused with steam-distilled rosemary, tingly peppermint, and organic stinging nettle. Deeply cleanses excess sebum and styling buildup while energizing hair roots. Cleanses thoroughly without stripping the scalp's natural lipid protective barrier. Rosemary and menthol invigorate follicular microcirculation for accelerated growth"
   },
@@ -2655,7 +2655,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 97,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/mens-vitality-nutrition-blend.jpg",
+    "image": "assets/images/products/mens-vitality-nutrition-blend-photo.jpg",
     "herbs": [
       "mukombero (mondia whitei)",
       "black maca root",
@@ -2692,7 +2692,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Blend 1 rounded tablespoon into morning oatmeal, black coffee, or a banana smoothie. Consume daily for cumulative botanical nourishment.",
     "inStock": true,
     "images": [
-      "assets/images/products/mens-vitality-nutrition-blend.jpg"
+      "assets/images/products/mens-vitality-nutrition-blend-photo.jpg"
     ],
     "whatItDoes": "An authentic East African masculine tonic powder uniting wildcrafted Mukombero (Mondia Whitei), Peruvian black maca, adaptogenic ashwagandha, and pumpkin seed zinc to nourish male hormonal endocrine vitality. Supplies vital micronutrients (zinc, magnesium, plant sterols) for male stamina. Traditional Mukombero root supports healthy cardiovascular endurance and vitality"
   },
@@ -2706,7 +2706,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 81,
     "tag": "Gynecologically Tested",
-    "image": "assets/images/products/gentle-botanical-external-wash.jpg",
+    "image": "assets/images/products/gentle-botanical-external-wash-photo.jpg",
     "herbs": [
       "chamomile hydrosol",
       "rose water",
@@ -2743,7 +2743,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Lather a quarter-sized amount in hands with warm water. Gently cleanse external intimate vulvar areas only and rinse thoroughly.",
     "inStock": true,
     "images": [
-      "assets/images/products/gentle-botanical-external-wash.jpg"
+      "assets/images/products/gentle-botanical-external-wash-photo.jpg"
     ],
     "whatItDoes": "A mildly foaming, pH-balanced (pH 4.2) external botanical intimate wash. Formulated with soothing German chamomile hydrosol, pure Damask rose water, and organic aloe. Free from sulfates, harsh perfumes, and parabens. Maintains the delicate acidic microbiome pH of external intimate skin. Calendula and chamomile soothe friction irritation and post-shaving sensitivity"
   },
@@ -2757,7 +2757,7 @@ const PRODUCTS_DATA = [
     "rating": 5,
     "reviewCount": 43,
     "tag": "Sacred Craft",
-    "image": "assets/images/products/sacred-postpartum-comfort-kit.jpg",
+    "image": "assets/images/products/sacred-postpartum-comfort-kit-photo.jpg",
     "herbs": [
       "calendula",
       "witch hazel",
@@ -2794,7 +2794,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep sitz herbs in warm bath or peri bottle for soothing cleansing. Drink 1 cup of recovery tea daily while resting skin-to-skin with your newborn.",
     "inStock": true,
     "images": [
-      "assets/images/products/sacred-postpartum-comfort-kit.jpg"
+      "assets/images/products/sacred-postpartum-comfort-kit-photo.jpg"
     ],
     "whatItDoes": "A compassionate, midwife-approved botanical recovery care package for the Fourth Trimester. Includes: (1) Herbal Perineal Sitz Bath Blend, (2) Soothing Witch Hazel & Calendula Mist, (3) Nipple Comfort Balm, and (4) Uterine Recovery Moon Tea. Sitz bath herbs promote rapid soothing of perineal swelling and tenderness. Calendula mist provides instant, touch-free comfort after using the restroom"
   },
@@ -2808,7 +2808,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 64,
     "tag": "Highland Harvest",
-    "image": "assets/images/products/kenyan-wild-harvest-honeybush-tea.jpg",
+    "image": "assets/images/products/kenyan-wild-harvest-honeybush-tea-photo.jpg",
     "herbs": [
       "honeybush",
       "cyclopia",
@@ -2840,7 +2840,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Simmer 1 tablespoon in 350ml boiling water for 8 minutes. Savor warm as twilight falls over your sanctuary.",
     "inStock": true,
     "images": [
-      "assets/images/products/kenyan-wild-harvest-honeybush-tea.jpg"
+      "assets/images/products/kenyan-wild-harvest-honeybush-tea-photo.jpg"
     ],
     "whatItDoes": "Naturally sweet and caffeine-free, this wild mountain Honeybush is hand-harvested from high-altitude mist slopes and subtly harmonized with Madagascar bourbon vanilla bean. Rich in mangiferin and hesperidin for cellular antioxidant shielding. Contains natural pinitol supporting healthy blood glucose balance"
   },
@@ -2854,7 +2854,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 88,
     "tag": "Bestseller",
-    "image": "assets/images/products/organic-red-rooibos-high-potency.jpg",
+    "image": "assets/images/products/organic-red-rooibos-high-potency-photo.jpg",
     "herbs": [
       "rooibos",
       "aspalathus linearis",
@@ -2885,7 +2885,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep 1 heaping teaspoon in boiling water for 5 to 7 minutes. Sip freely day and night.",
     "inStock": true,
     "images": [
-      "assets/images/products/organic-red-rooibos-high-potency.jpg"
+      "assets/images/products/organic-red-rooibos-high-potency-photo.jpg"
     ],
     "whatItDoes": "Fermented under the equatorial sun, this premium long-cut Red Bush rooibos yields a deep copper liquor rich in rare polyphenols not found in any other plant species. Exclusive source of the rare bioflavonoid aspalathin. Exceptionally low tannin profile; will never turn bitter even if steeped long"
   },
