@@ -2248,7 +2248,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 89,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/cooling-muscle-menthol-gel.jpg",
+    "image": "assets/images/products/cooling-muscle-menthol-gel-photo.jpg",
     "herbs": [
       "natural menthol",
       "aloe vera",
@@ -2286,7 +2286,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Smooth generously over sore quads, calves, or shoulders immediately following high-intensity training. Wash hands after applying.",
     "inStock": true,
     "images": [
-      "assets/images/products/cooling-muscle-menthol-gel.jpg"
+      "assets/images/products/cooling-muscle-menthol-gel-photo.jpg"
     ],
     "whatItDoes": "An instant-acting botanical cryo-gel that delivers an icy thermal sensation to rapidly calm inflammation, extinguish burning post-exercise heat, and relieve swollen, overworked athletic joints. Natural plant menthol crystals trigger cold-receptors (TRPM8) for instant analgesic relief. Aloe vera base delivers deep cooling moisture without sticky residue"
   },
@@ -2300,7 +2300,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 73,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/wild-plant-protein-blend.jpg",
+    "image": "assets/images/products/wild-plant-protein-blend-photo.jpg",
     "herbs": [
       "moringa",
       "baobab",
@@ -2337,7 +2337,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Shake 2 level scoops with 350ml of plant milk or water within 45 minutes of training, or blend with frozen bananas for a sacred recovery bowl.",
     "inStock": true,
     "images": [
-      "assets/images/products/wild-plant-protein-blend.jpg"
+      "assets/images/products/wild-plant-protein-blend-photo.jpg"
     ],
     "whatItDoes": "A complete multi-source vegan protein powder combining sprouted yellow pea, golden rice protein, wild Kenyan moringa greens, and prebiotic baobab fruit. Provides 22g of clean, bioavailable protein per serving with zero bloating. Delivers all 9 essential amino acids plus natural BCAAs for muscle protein synthesis. Prebiotic baobab eliminates the digestive heaviness common in dairy whey proteins"
   },
@@ -2351,7 +2351,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 51,
     "tag": "Digestive Comfort",
-    "image": "assets/images/products/sweet-fennel-digestive-comfort.jpg",
+    "image": "assets/images/products/sweet-fennel-digestive-comfort-photo.jpg",
     "herbs": [
       "sweet fennel",
       "caraway seed",
@@ -2386,7 +2386,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Crush 1 tablespoon of seeds lightly with the back of a spoon to release essential oils. Steep in boiling water for 8 minutes covered.",
     "inStock": true,
     "images": [
-      "assets/images/products/sweet-fennel-digestive-comfort.jpg"
+      "assets/images/products/sweet-fennel-digestive-comfort-photo.jpg"
     ],
     "whatItDoes": "A sweet, aromatic Mediterranean & African seeds formulation that relaxes smooth muscles of the digestive tract, expels trapped intestinal air, and gently encourages digestive enzyme secretion. Volatile anethole oils act as a gentle carminative to defuse abdominal bloating. Relaxes intestinal spasms and soothes crampy feelings after rich meals"
   },
@@ -2400,7 +2400,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 88,
     "tag": "Bestseller",
-    "image": "assets/images/products/prebiotic-baobab-high-fibre-blend.jpg",
+    "image": "assets/images/products/prebiotic-baobab-high-fibre-blend-photo.jpg",
     "herbs": [
       "baobab fruit",
       "psyllium husk",
@@ -2436,7 +2436,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Stir 1 level tablespoon vigorously into 250ml of cold water or fresh fruit juice. Drink immediately followed by a second glass of pure spring water.",
     "inStock": true,
     "images": [
-      "assets/images/products/prebiotic-baobab-high-fibre-blend.jpg"
+      "assets/images/products/prebiotic-baobab-high-fibre-blend-photo.jpg"
     ],
     "whatItDoes": "Combines the natural soluble prebiotic pectin of ancient Kenyan baobab trees with organic golden psyllium husks and cold-milled flaxseeds. Nourishes bifidobacteria and promotes effortless daily digestive regularity. Provides 8 grams of gentle soluble and insoluble dietary fiber per tablespoon. Forms a soothing gel that sweeps the intestinal wall without harsh cramping"
   },
@@ -2450,7 +2450,7 @@ const PRODUCTS_DATA = [
     "rating": 5,
     "reviewCount": 164,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/african-black-soap-artisan-bar.jpg",
+    "image": "assets/images/products/african-black-soap-artisan-bar-photo.jpg",
     "herbs": [
       "plantain skin ash",
       "cocoa pod ash",
@@ -2488,7 +2488,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Work bar into a creamy lather in hands or on a natural loofah. Wash body in circular motions, allowing lather to sit on skin for 60 seconds before rinsing.",
     "inStock": true,
     "images": [
-      "assets/images/products/african-black-soap-artisan-bar.jpg"
+      "assets/images/products/african-black-soap-artisan-bar-photo.jpg"
     ],
     "whatItDoes": "Handcrafted according to ancestral West and East African recipes using roasted plantain skin ash, cocoa pod ash, and generous cold-whipped Nilotica shea butter. Purifies pores deeply without stripping skin moisture. Natural plant ash provides gentle enzymatic exfoliation and clears breakout-causing bacteria. Rich in natural Vitamins A and E to fade blemishes and dark marks"
   },
@@ -2502,7 +2502,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 78,
     "tag": "Exfoliation",
-    "image": "assets/images/products/baobab-coffee-revitalizing-scrub.jpg",
+    "image": "assets/images/products/baobab-coffee-revitalizing-scrub-photo.jpg",
     "herbs": [
       "kenyan arabica coffee",
       "baobab oil",
@@ -2538,7 +2538,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Massage in vigorous circular motions onto damp skin in the shower, paying special attention to hips, thighs, and elbows. Rinse thoroughly with warm water.",
     "inStock": true,
     "images": [
-      "assets/images/products/baobab-coffee-revitalizing-scrub.jpg"
+      "assets/images/products/baobab-coffee-revitalizing-scrub-photo.jpg"
     ],
     "whatItDoes": "Freshly roasted, finely ground Kenyan Arabica highland coffee blended with unrefined brown sugar crystals, cold-pressed baobab oil, and wild sweet orange. Sloughs away dead skin cells and stimulates microcirculation. Topical caffeine stimulates lymphatic drainage and temporarily tightens skin texture. Baobab seed oil infuses fatty acids deep into dermal layers during exfoliation"
   },

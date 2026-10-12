@@ -89,9 +89,12 @@ def run_batch(start_idx, count):
             
             if result.generated_images:
                 img_bytes = result.generated_images[0].image.image_bytes
+                out_photo_jpg = PRODUCTS_DIR / f"{pid}-photo.jpg"
                 with open(out_jpg, 'wb') as img_f:
                     img_f.write(img_bytes)
-                print(f"      [OK] Saved {out_jpg.name} ({len(img_bytes)} bytes)")
+                with open(out_photo_jpg, 'wb') as img_f:
+                    img_f.write(img_bytes)
+                print(f"      [OK] Saved {out_jpg.name} & {out_photo_jpg.name} ({len(img_bytes)} bytes)")
                 success += 1
             else:
                 print("      [FAIL] No images returned in response.")
@@ -102,7 +105,20 @@ def run_batch(start_idx, count):
         if i < len(batch) - 1:
             time.sleep(2)
             
+    # Sync products.js
+    if success > 0:
+        sync_catalog()
+
     print(f"\n[SUMMARY] Successfully generated {success}/{len(batch)} studio JPG photographs.")
+
+def sync_catalog():
+    try:
+        import subprocess
+        subprocess.run([sys.executable, str(BASE_DIR / 'scripts' / 'convert_to_jpg.py')], check=True)
+        print("      [OK] Synced products.js via convert_to_jpg.py")
+    except Exception as e:
+        print(f"      [WARN] Catalog sync error: {e}")
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
