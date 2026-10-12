@@ -6,18 +6,18 @@
   "botanicalName": "Curcuma longa & Zingiber officinale",
   "batchSizeUnits": 500,
   "netWeightPerUnit": "100g / 3.5 oz",
-  "manufactureDate": "2026-09-17",
-  "bestBeforeDate": "2028-09-06",
+  "manufactureDate": "2026-10-12",
+  "bestBeforeDate": "2028-10-01",
   "originTraceability": {
     "supplierId": "sup-005",
     "supplierName": "Mount Kenya Highland Herbs",
     "harvestRegion": "Meru & Tharaka Nithi, Volcanic Foothills of Mount Kenya",
-    "rawBatchRef": "RM-586673"
+    "rawBatchRef": "RM-818512"
   },
   "labTesting": {
     "accreditedLabName": "SGS Kenya Phytochemical Laboratory",
-    "labReportNumber": "LAB-REPORT-231040",
-    "testDate": "2026-09-17",
+    "labReportNumber": "LAB-REPORT-191964",
+    "testDate": "2026-10-12",
     "heavyMetals": {
       "leadPpm": 0.9,
       "arsenicPpm": 0.22,
@@ -42,7 +42,7 @@
     "qcDecision": "RELEASE_FOR_SALE",
     "errors": [],
     "warnings": [],
-    "evaluatedAt": "2026-09-17T16:29:46.672Z"
+    "evaluatedAt": "2026-10-12T17:23:38.511Z"
   },
   "digitalVerification": {
     "cryptographicHash": "20c7ed6e6f81ddcf75d175f7985adef48a95e520ca9cb6c2a538b4404fe0d9a0",

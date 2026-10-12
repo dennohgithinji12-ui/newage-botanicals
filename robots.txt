@@ -1,6 +1,16 @@
-# robots.txt for https://omnicorehub.app
+# NewAge Health Botanicals & Rituals — Robots.txt
+# Comprehensive Indexing Rules for Googlebot, Bingbot, Applebot, and AI Web Crawlers
 User-agent: *
 Allow: /
+Allow: /shop.html
+Allow: /product.html
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+Disallow: /scratch/
+Disallow: /discovery/
+Disallow: /scripts/
+Disallow: /node_modules/
 
-# Sitemaps
+# Search Engine XML Sitemap
 Sitemap: https://omnicorehub.app/sitemap.xml

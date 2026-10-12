@@ -9,14 +9,14 @@
 - **SKU Code:** `NAB-SKU-MOR-250`
 - **Lot / Batch Number:** `NAB-2026-MOR-001`
 - **Net Quantity:** 250g / 8.8 oz
-- **Manufacture Date:** 2026-09-17
-- **Best Before / Expiry:** 2028-09-06
+- **Manufacture Date:** 2026-10-12
+- **Best Before / Expiry:** 2028-10-01
 
 ### Harvest & Farm Traceability
 - **Origin Region:** Nanyuki, Laikipia County, Kenya (Highland Volcanic Soil)
 - **Vetted Supplier:** Rift Valley Botanicals
 - **Testing Laboratory:** SGS Kenya Phytochemical Laboratory
-- **Lab Assay Report ID:** `LAB-REPORT-487529`
+- **Lab Assay Report ID:** `LAB-REPORT-736282`
 
 ---
 

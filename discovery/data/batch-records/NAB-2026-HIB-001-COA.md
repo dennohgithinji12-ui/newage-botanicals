@@ -9,14 +9,14 @@
 - **SKU Code:** `NAB-SKU-HIB-150`
 - **Lot / Batch Number:** `NAB-2026-HIB-001`
 - **Net Quantity:** 150g / 5.3 oz
-- **Manufacture Date:** 2026-09-17
-- **Best Before / Expiry:** 2028-09-06
+- **Manufacture Date:** 2026-10-12
+- **Best Before / Expiry:** 2028-10-01
 
 ### Harvest & Farm Traceability
 - **Origin Region:** Taita Taveta Hills & Tsavo Borderland, Kenya
 - **Vetted Supplier:** Taita Hills Herbal Collective
 - **Testing Laboratory:** KEBS National Metrology & Analytical Lab
-- **Lab Assay Report ID:** `LAB-REPORT-543287`
+- **Lab Assay Report ID:** `LAB-REPORT-406332`
 
 ---
 

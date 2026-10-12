@@ -6,18 +6,18 @@
   "botanicalName": "Adansonia digitata",
   "batchSizeUnits": 500,
   "netWeightPerUnit": "200g / 7.0 oz",
-  "manufactureDate": "2026-09-17",
-  "bestBeforeDate": "2028-09-06",
+  "manufactureDate": "2026-10-12",
+  "bestBeforeDate": "2028-10-01",
   "originTraceability": {
     "supplierId": "sup-002",
     "supplierName": "Baobab Swahili Coast Coop",
     "harvestRegion": "Kilifi & Kwale Coastal Lowlands, Kenya",
-    "rawBatchRef": "RM-586668"
+    "rawBatchRef": "RM-818507"
   },
   "labTesting": {
     "accreditedLabName": "KEBS National Metrology & Analytical Lab",
-    "labReportNumber": "LAB-REPORT-514297",
-    "testDate": "2026-09-17",
+    "labReportNumber": "LAB-REPORT-994271",
+    "testDate": "2026-10-12",
     "heavyMetals": {
       "leadPpm": 0.6,
       "arsenicPpm": 0.15,
@@ -42,7 +42,7 @@
     "qcDecision": "RELEASE_FOR_SALE",
     "errors": [],
     "warnings": [],
-    "evaluatedAt": "2026-09-17T16:29:46.668Z"
+    "evaluatedAt": "2026-10-12T17:23:38.506Z"
   },
   "digitalVerification": {
     "cryptographicHash": "4048ccd2a96163033ff7ae2d1e7506871b2d675ed3ca1e767b736e62f6559c25",

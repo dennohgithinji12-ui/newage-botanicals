@@ -699,11 +699,13 @@ button {
   cursor: pointer;
 }
 
-/* Product Grid */
+/* Product Grid - Performance Optimized with content-visibility */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1200px;
 }
 
 /* Product Card */
@@ -2523,12 +2525,6 @@ dialog::backdrop {
 
 .product-card:hover .card-img-primary {
   transform: scale(1.05);
-}
-  z-index: 4;
-  background: rgba(0, 0, 0, 0.55);
-  padding: 3px 8px;
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
 }
 
 .img-dot {
