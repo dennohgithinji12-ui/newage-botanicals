@@ -2053,7 +2053,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 83,
     "tag": "Caffeine-Free",
-    "image": "assets/images/products/pure-kenyan-lemongrass-tea.jpg",
+    "image": "assets/images/products/pure-kenyan-lemongrass-tea-photo.jpg",
     "herbs": [
       "lemongrass",
       "cymbopogon",
@@ -2085,7 +2085,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep 1 tablespoon in freshly boiled water for 6-8 minutes covered. Enjoy hot or iced with a crushed sprig of garden mint.",
     "inStock": true,
     "images": [
-      "assets/images/products/pure-kenyan-lemongrass-tea.jpg"
+      "assets/images/products/pure-kenyan-lemongrass-tea-photo.jpg"
     ],
     "whatItDoes": "Crisp, aromatic cut lemongrass stalks sustainably harvested from highland regenerative family farms in Rift Valley. Naturally sweet with vibrant citrus notes and zero caffeine. Gentle diuretic action flushes excess fluid and reduces puffiness. Rich in citral, a terpene that uplifts the spirits and eases nervous tension"
   },
@@ -2099,7 +2099,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 128,
     "tag": "High-Priority Launch",
-    "image": "assets/images/products/calming-herbal-relaxation-tea.jpg",
+    "image": "assets/images/products/calming-herbal-relaxation-tea-photo.jpg",
     "herbs": [
       "chamomile",
       "passionflower",
@@ -2136,7 +2136,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep 1 tablespoon in 90°C water for 7-10 minutes covered. Sip slowly while practicing gentle diaphragmatic breathing.",
     "inStock": true,
     "images": [
-      "assets/images/products/calming-herbal-relaxation-tea.jpg"
+      "assets/images/products/calming-herbal-relaxation-tea-photo.jpg"
     ],
     "whatItDoes": "A calming daytime and twilight herbal infusion designed to melt away mental overwhelm, quiet an overactive sympathetic nervous system, and restore inner equilibrium without inducing heavy drowsiness. Natural apigenin and flavonoids gently bind GABA neuroreceptors to ease panic. Dissolves stress-related physical tightness in the solar plexus and diaphragm"
   },
@@ -2150,7 +2150,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 47,
     "tag": "Aromatic Wellness",
-    "image": "assets/images/products/lavender-cedar-pillow-sachet.jpg",
+    "image": "assets/images/products/lavender-cedar-pillow-sachet-photo.jpg",
     "herbs": [
       "french lavender",
       "atlas cedar shavings",
@@ -2184,7 +2184,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Gently squeeze the sachet between your hands to crush the botanicals and release fresh terpenes. Slip beneath your pillow or beside your headboard before sleeping.",
     "inStock": true,
     "images": [
-      "assets/images/products/lavender-cedar-pillow-sachet.jpg"
+      "assets/images/products/lavender-cedar-pillow-sachet-photo.jpg"
     ],
     "whatItDoes": "Breathable natural linen pouch packed with whole French lavender buds, fragrant Atlas cedarwood shavings, and wild hops. Tucked inside your pillowcase, its natural plant vapors lull your mind into gentle delta waves. Passively diffuses relaxing linalool terpenes as you turn your head at night. Protects the sacred dream space and dispels stale bedroom energies"
   },
@@ -2198,7 +2198,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 68,
     "tag": "Ambient Fragrance",
-    "image": "assets/images/products/sacred-relaxation-room-spray.jpg",
+    "image": "assets/images/products/sacred-relaxation-room-spray-photo.jpg",
     "herbs": [
       "lavender",
       "frankincense",
@@ -2234,7 +2234,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Shake gently and spritz 3-4 pumps upward into the center of your bedroom, prayer space, or onto bedsheets 15 minutes before retiring.",
     "inStock": true,
     "images": [
-      "assets/images/products/sacred-relaxation-room-spray.jpg"
+      "assets/images/products/sacred-relaxation-room-spray-photo.jpg"
     ],
     "whatItDoes": "A botanical ambient mist blending high-altitude French lavender, sacred Somali frankincense tears, and sun-kissed Italian bergamot in pure volcanic spring water and alcohol-free witch hazel. Instantly shifts room atmosphere into a peaceful botanical sanctuary. Soothes sensory overload and prepares living space for relaxation or sleep"
   },
