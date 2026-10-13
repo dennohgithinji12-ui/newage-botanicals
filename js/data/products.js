@@ -3259,7 +3259,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 63,
     "tag": "Swahili Spice",
-    "image": "assets/images/products/kenyan-clove-cardamom-digestive-chai.jpg",
+    "image": "assets/images/products/kenyan-clove-cardamom-digestive-chai-photo.jpg",
     "herbs": [
       "clove",
       "cardamom",
@@ -3290,7 +3290,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Slow-simmer 1 tablespoon in equal parts water and oat milk for 8 minutes. Sweeten with raw honey.",
     "inStock": true,
     "images": [
-      "assets/images/products/kenyan-clove-cardamom-digestive-chai.jpg"
+      "assets/images/products/kenyan-clove-cardamom-digestive-chai-photo.jpg"
     ],
     "whatItDoes": "Inspired by the aromatic spice dhows of the Swahili coast. A robust, 100% caffeine-free herbal chai laden with high-eugenol organic cloves, crushed green cardamom pods, and sweet cinnamon bark. Clove eugenol acts as a revered antimicrobial and gut-warming carminative. Stimulates gastric enzymes and eliminates chilly dampness from the gut"
   },

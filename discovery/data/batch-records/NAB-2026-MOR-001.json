@@ -12,11 +12,11 @@
     "supplierId": "sup-001",
     "supplierName": "Rift Valley Botanicals",
     "harvestRegion": "Nanyuki, Laikipia County, Kenya (Highland Volcanic Soil)",
-    "rawBatchRef": "RM-268061"
+    "rawBatchRef": "RM-473577"
   },
   "labTesting": {
     "accreditedLabName": "SGS Kenya Phytochemical Laboratory",
-    "labReportNumber": "LAB-REPORT-396679",
+    "labReportNumber": "LAB-REPORT-812067",
     "testDate": "2026-10-13",
     "heavyMetals": {
       "leadPpm": 1.1,
@@ -42,7 +42,7 @@
     "qcDecision": "RELEASE_FOR_SALE",
     "errors": [],
     "warnings": [],
-    "evaluatedAt": "2026-10-13T16:17:48.059Z"
+    "evaluatedAt": "2026-10-13T16:21:13.576Z"
   },
   "digitalVerification": {
     "cryptographicHash": "96fc2c5939f4831bddd252ff100d719a18d70579f68a194e946feb68db7c0b89",

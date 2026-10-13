@@ -16,7 +16,7 @@
 - **Origin Region:** Nanyuki, Laikipia County, Kenya (Highland Volcanic Soil)
 - **Vetted Supplier:** Rift Valley Botanicals
 - **Testing Laboratory:** SGS Kenya Phytochemical Laboratory
-- **Lab Assay Report ID:** `LAB-REPORT-396679`
+- **Lab Assay Report ID:** `LAB-REPORT-812067`
 
 ---
 
