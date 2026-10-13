@@ -16,7 +16,7 @@ const WHATSAPP_CONFIG = {
   tagline: "Modern Botanical Wellness · Grounded in Evidence",
   supportHours: "Mon - Sat: 8:00 AM - 7:00 PM EAT",
   storeUrl: "https://omnicorehub.app",
-  paystackPublicKey: "pk_live_fb70c442b890ed7467719e6771a0766b16894aae"
+  paystackPublicKey: "pk_live_6a8b869ee1a3230aeddc2ec02504b461c9ba2ab6"
 };
 
 class WhatsAppAdvisoryEngine {

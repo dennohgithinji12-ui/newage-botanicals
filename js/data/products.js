@@ -2899,7 +2899,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 42,
     "tag": "Superfood Matrix",
-    "image": "assets/images/products/moringa-spirulina-deep-green-alkalizer.jpg",
+    "image": "assets/images/products/moringa-spirulina-deep-green-alkalizer-photo.jpg",
     "herbs": [
       "moringa",
       "spirulina",
@@ -2931,7 +2931,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Vigorously shake 1 teaspoon into pure coconut water or fresh apple juice at sunrise.",
     "inStock": true,
     "images": [
-      "assets/images/products/moringa-spirulina-deep-green-alkalizer.jpg"
+      "assets/images/products/moringa-spirulina-deep-green-alkalizer-photo.jpg"
     ],
     "whatItDoes": "A synergistic alliance of volcanic Rift Valley moringa leaf and pure artisanal Lake Turkana spirulina. Delivers bio-available plant proteins, phycocyanin, and rich chlorophyll. Over 65% bioavailable complete plant protein by dry weight. Potent phycocyanin pigment promotes natural stem cell and cellular defense"
   },
@@ -2945,7 +2945,7 @@ const PRODUCTS_DATA = [
     "rating": 4.7,
     "reviewCount": 39,
     "tag": "Wild Harvest",
-    "image": "assets/images/products/tamarind-electrolyte-vitality-paste.jpg",
+    "image": "assets/images/products/tamarind-electrolyte-vitality-paste-photo.jpg",
     "herbs": [
       "tamarind",
       "tamarindus indica",
@@ -2976,7 +2976,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Dissolve 1 tablespoon in 300ml cold spring water with a pinch of mineral salt and raw honey.",
     "inStock": true,
     "images": [
-      "assets/images/products/tamarind-electrolyte-vitality-paste.jpg"
+      "assets/images/products/tamarind-electrolyte-vitality-paste-photo.jpg"
     ],
     "whatItDoes": "Raw deseeded pods from coastal Kenyan tamarind trees. Packed with natural tartaric acid, potassium, and magnesium for deep cellular osmolyte hydration. Natural isotonic electrolyte balancer for tropical heat and endurance. Gently stimulates liver bile excretion for post-meal lightness"
   },
@@ -2990,7 +2990,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 51,
     "tag": "Deep Nourishment",
-    "image": "assets/images/products/wild-nettle-horsetail-mineral-infusion.jpg",
+    "image": "assets/images/products/wild-nettle-horsetail-mineral-infusion-photo.jpg",
     "herbs": [
       "stinging nettle",
       "horsetail",
@@ -3022,7 +3022,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep 2 tablespoons in a 500ml French press overnight. Strain and drink at room temperature.",
     "inStock": true,
     "images": [
-      "assets/images/products/wild-nettle-horsetail-mineral-infusion.jpg"
+      "assets/images/products/wild-nettle-horsetail-mineral-infusion-photo.jpg"
     ],
     "whatItDoes": "Harvested from Aberdare mountain glades, fresh nettle tops and wild silica-rich horsetail combine into our deepest nutritive herbal infusion. Natural plant silica bio-enhances collagen for hair, nail, and joint integrity. Dense in bioavailable iron, potassium, sulfur, and boron"
   },
@@ -3036,7 +3036,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 33,
     "tag": "Digital Eye Relief",
-    "image": "assets/images/products/african-marigold-lutein-eye-nectar.jpg",
+    "image": "assets/images/products/african-marigold-lutein-eye-nectar-photo.jpg",
     "herbs": [
       "marigold",
       "tagetes erecta",
@@ -3068,7 +3068,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep 1 tablespoon for 6 minutes. Rest warm damp tea bags gently over closed eyelids for 3 minutes.",
     "inStock": true,
     "images": [
-      "assets/images/products/african-marigold-lutein-eye-nectar.jpg"
+      "assets/images/products/african-marigold-lutein-eye-nectar-photo.jpg"
     ],
     "whatItDoes": "Formulated for the modern digital nomad. High-altitude Kenyan marigold petals packed with lutein esters meet wild mountain berries to shield ocular tissues from blue-spectrum screen strain. Supplies clinically recognized lutein and zeaxanthin optical carotenoids. Strengthens fine retinal capillary micro-circulation"
   },
@@ -3082,7 +3082,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 46,
     "tag": "Live Chlorophyll",
-    "image": "assets/images/products/barley-grass-wheatgrass-pure-chlorophyll.jpg",
+    "image": "assets/images/products/barley-grass-wheatgrass-pure-chlorophyll-photo.jpg",
     "herbs": [
       "wheatgrass",
       "barley grass",
@@ -3112,7 +3112,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Whisk 1 teaspoon into 100ml pure spring water first thing upon rising. Drink like an elixir of life.",
     "inStock": true,
     "images": [
-      "assets/images/products/barley-grass-wheatgrass-pure-chlorophyll.jpg"
+      "assets/images/products/barley-grass-wheatgrass-pure-chlorophyll-photo.jpg"
     ],
     "whatItDoes": "Cold-press juiced and low-temperature dried at farm-level in Timau, Mount Kenya. Zero indigestible cellulose grass fibers; 100% instantly soluble living enzymes and raw chlorophyll. Concentrated living chlorophyll molecule mirrors human hemoglobin. Packed with active superoxide dismutase (SOD) cellular defense enzyme"
   },
@@ -3126,7 +3126,7 @@ const PRODUCTS_DATA = [
     "rating": 4.7,
     "reviewCount": 28,
     "tag": "Highland Forest",
-    "image": "assets/images/products/wild-kenyan-blackberry-leaf-astringent.jpg",
+    "image": "assets/images/products/wild-kenyan-blackberry-leaf-astringent-photo.jpg",
     "herbs": [
       "blackberry leaf",
       "rosehips",
@@ -3156,7 +3156,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep 1 tablespoon in 250ml boiling water for 10 minutes covered. Sip mindfully or use warm as a throat tonic.",
     "inStock": true,
     "images": [
-      "assets/images/products/wild-kenyan-blackberry-leaf-astringent.jpg"
+      "assets/images/products/wild-kenyan-blackberry-leaf-astringent-photo.jpg"
     ],
     "whatItDoes": "Hand-plucked wild blackberry bramble leaves from high mountain forests paired with vitamin-C packed wild rosehips. Naturally astringent and cellular toning. Rich in ellagic acid and plant tannins that tighten slack mucosal tissues. Traditional mouth and gum tissue strengthening rinse"
   },
@@ -3170,7 +3170,7 @@ const PRODUCTS_DATA = [
     "rating": 5,
     "reviewCount": 77,
     "tag": "Kenyan Exclusive",
-    "image": "assets/images/products/kenyan-purple-tea-anthocyanin-reserve.jpg",
+    "image": "assets/images/products/kenyan-purple-tea-anthocyanin-reserve-photo.jpg",
     "herbs": [
       "purple tea",
       "camellia sinensis",
@@ -3200,7 +3200,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Infuse in 85°C water for 3 minutes. Add a wedge of fresh lemon and watch the royal color alchemy reveal itself.",
     "inStock": true,
     "images": [
-      "assets/images/products/kenyan-purple-tea-anthocyanin-reserve.jpg"
+      "assets/images/products/kenyan-purple-tea-anthocyanin-reserve-photo.jpg"
     ],
     "whatItDoes": "Grown exclusively at 7,000+ feet on the slopes of Mount Kenya where intense UV light triggers the tea leaf to synthesize massive anthocyanin defense shields. Shifts color from violet to ruby with a drop of lemon. Contains GHG, an exclusive polyphenol clinically shown to support healthy lipid metabolism. Significantly more anthocyanin antioxidants than blueberries or standard green tea"
   },
@@ -3214,7 +3214,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 39,
     "tag": "Essential Omegas",
-    "image": "assets/images/products/organic-flax-chia-golden-sprout-powder.jpg",
+    "image": "assets/images/products/organic-flax-chia-golden-sprout-powder-photo.jpg",
     "herbs": [
       "flaxseed",
       "chia",
@@ -3245,7 +3245,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Sprinkle 2 tablespoons into your daily porridge, warm soup, or green shake.",
     "inStock": true,
     "images": [
-      "assets/images/products/organic-flax-chia-golden-sprout-powder.jpg"
+      "assets/images/products/organic-flax-chia-golden-sprout-powder-photo.jpg"
     ],
     "whatItDoes": "Bio-sprouted to deactivate anti-nutrients, then cold-milled to protect fragile polyunsaturated ALA Omega-3 fatty acids from oxidation. Rich source of plant-based Alpha-Linolenic Acid (ALA) for cell membrane suppleness. Plant lignans act as gentle hormonal balancers"
   },

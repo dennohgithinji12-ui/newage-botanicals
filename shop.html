@@ -82,9 +82,14 @@
         <a href="shop.html" class="nav-link active">Dispensary</a>
         <a href="index.html#portfolio" class="nav-link">Sacred Rituals</a>
         <a href="javascript:void(0)" class="nav-link" onclick="app.openBatchModal()">Verify CoA 🛡️</a>
+        <a href="javascript:void(0)" class="nav-link" onclick="metaCatalogService.openConnectModal()" title="Connect Catalog to Facebook & WhatsApp" style="color: #25D366; font-weight: 600;">Meta & WA Sync 🌐</a>
       </nav>
 
       <div class="header-actions">
+        <button class="icon-btn" onclick="metaCatalogService.openConnectModal()" title="Connect Catalog to Facebook & WhatsApp" aria-label="Meta & WhatsApp Catalog Connect" style="border:1px solid rgba(37,211,102,0.35); background:rgba(37,211,102,0.08); color:#25D366; font-size:0.8rem; font-weight:600; padding:6px 12px; border-radius:8px; display:inline-flex; align-items:center; gap:6px;">
+          <span>🌐</span>
+          <span class="hide-mobile">Meta / WA</span>
+        </button>
         <button class="icon-btn" onclick="aiHerbalist.open()" title="Ask AI Master Herbalist" aria-label="AI Herbalist">
           <span class="sparkle-icon">✨</span>
           <span class="hide-mobile">AI Herbalist</span>
@@ -264,6 +269,7 @@
   <script src="js/paystack-service.js" defer></script>
   <script src="js/app.js" defer></script>
   <script src="js/ai-herbalist.js" defer></script>
+  <script src="js/meta-catalog-service.js" defer></script>
   <script src="js/seo-engine.js" defer></script>
 </body>
 </html>

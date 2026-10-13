@@ -18,7 +18,7 @@ const CONFIG = {
   },
   paystack: {
     // Live Paystack public key
-    publicKey: "pk_live_fb70c442b890ed7467719e6771a0766b16894aae",
+    publicKey: "pk_live_6a8b869ee1a3230aeddc2ec02504b461c9ba2ab6",
     testMode: false,
     channels: ["card", "mobile_money", "bank", "ussd", "qr"]
   },

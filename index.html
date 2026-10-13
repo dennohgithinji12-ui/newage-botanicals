@@ -183,12 +183,18 @@
         <a href="shop.html" class="nav-link">Dispensary 🌿</a>
         <a href="checkout.html" class="nav-link" style="color: var(--gold-glow); font-weight: 600;">Easy Checkout ⚡</a>
         <a href="javascript:void(0)" class="nav-link" onclick="app.openBatchModal()" title="Verify Soil-to-Shelf Laboratory CoA" style="color: #C49A45;">Verify CoA 🛡️</a>
+        <a href="javascript:void(0)" class="nav-link" onclick="metaCatalogService.openConnectModal()" title="Connect Catalog to Facebook & WhatsApp" style="color: #25D366; font-weight: 600;">Meta & WA Sync 🌐</a>
         <a href="#portfolio" class="nav-link">Rituals</a>
         <a href="#about" class="nav-link">Philosophy</a>
       </nav>
 
       <!-- Actions: Currency & Cart -->
       <div class="header-actions">
+        <button class="cart-toggle-btn" onclick="metaCatalogService.openConnectModal()" title="Connect Catalog to Facebook & WhatsApp" aria-label="Meta & WhatsApp Catalog Connect" style="border:1px solid rgba(37,211,102,0.35); background:rgba(37,211,102,0.08); color:#25D366; font-size:0.8rem; font-weight:600; padding:6px 12px; border-radius:8px; display:inline-flex; align-items:center; gap:6px;">
+          <span>🌐</span>
+          <span>Meta / WA</span>
+        </button>
+
         <!-- Location & Currency Dropdown -->
         <div class="currency-selector-wrap" title="Auto-detected by location. Click to override currency.">
           <select id="currencySelector" class="currency-select" aria-label="Select Currency" onchange="geoCurrency.setCurrency(this.value, true)">
@@ -564,6 +570,7 @@
             <li><a href="#omnisearch">Search by Ailment</a></li>
             <li><a href="javascript:void(0)" onclick="app.openBatchModal()" style="color: var(--gold-glow); font-weight: 600;">Verify Batch &amp; Lab CoA 🛡️</a></li>
             <li><a href="shop.html">Full Dispensary Catalog</a></li>
+            <li><a href="javascript:void(0)" onclick="metaCatalogService.openConnectModal()" style="color: #25D366; font-weight: 600;">Meta &amp; WhatsApp Catalog Sync 🌐</a></li>
           </ul>
         </div>
 
@@ -924,6 +931,7 @@
   <script src="js/cart.js" defer></script>
   <script src="js/app.js" defer></script>
   <script src="js/ai-herbalist.js" defer></script>
+  <script src="js/meta-catalog-service.js" defer></script>
   <script src="js/seo-engine.js" defer></script>
 </body>
 </html>

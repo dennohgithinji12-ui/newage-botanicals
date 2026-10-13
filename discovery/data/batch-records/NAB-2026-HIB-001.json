@@ -6,18 +6,18 @@
   "botanicalName": "Hibiscus sabdariffa & Cymbopogon citratus",
   "batchSizeUnits": 500,
   "netWeightPerUnit": "150g / 5.3 oz",
-  "manufactureDate": "2026-10-12",
-  "bestBeforeDate": "2028-10-01",
+  "manufactureDate": "2026-10-13",
+  "bestBeforeDate": "2028-10-02",
   "originTraceability": {
     "supplierId": "sup-003",
     "supplierName": "Taita Hills Herbal Collective",
     "harvestRegion": "Taita Taveta Hills & Tsavo Borderland, Kenya",
-    "rawBatchRef": "RM-818516"
+    "rawBatchRef": "RM-665384"
   },
   "labTesting": {
     "accreditedLabName": "KEBS National Metrology & Analytical Lab",
-    "labReportNumber": "LAB-REPORT-406332",
-    "testDate": "2026-10-12",
+    "labReportNumber": "LAB-REPORT-382478",
+    "testDate": "2026-10-13",
     "heavyMetals": {
       "leadPpm": 0.8,
       "arsenicPpm": 0.18,
@@ -42,7 +42,7 @@
     "qcDecision": "RELEASE_FOR_SALE",
     "errors": [],
     "warnings": [],
-    "evaluatedAt": "2026-10-12T17:23:38.516Z"
+    "evaluatedAt": "2026-10-13T08:04:25.384Z"
   },
   "digitalVerification": {
     "cryptographicHash": "0d781b00ff8186f189097c61c77b4c9f50f3571c296ab7d393e5ff443f95e0d4",

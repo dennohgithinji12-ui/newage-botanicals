@@ -1,0 +1,32 @@
+{
+  "feedName": "NewAge Botanicals Meta & WhatsApp Product Catalog",
+  "version": "1.0.0",
+  "generatedAt": "2026-10-13T07:51:58.579Z",
+  "catalogUrl": "https://omnicorehub.app",
+  "feedUrls": {
+    "csv": "https://omnicorehub.app/meta-catalog-feed.csv",
+    "xml": "https://omnicorehub.app/meta-catalog-feed.xml"
+  },
+  "metaCommerceManagerUrl": "https://business.facebook.com/commerce_manager/catalogs/",
+  "whatsappBusinessCatalogUrl": "https://wa.me/c/254141270112",
+  "whatsappDirectHotline": "+254141270112",
+  "stats": {
+    "totalProducts": 164,
+    "inStockCount": 164,
+    "currency": "KES",
+    "priceRange": {
+      "min": 950,
+      "max": 35000
+    },
+    "categoriesCount": 10
+  },
+  "integrationSpecs": {
+    "metaPlatform": "Meta Commerce Manager (Facebook, Instagram, WhatsApp)",
+    "syncFrequencyRecommended": "Hourly or Daily (Scheduled Feed)",
+    "supportedChannels": [
+      "Facebook Shop",
+      "Instagram Shopping",
+      "WhatsApp Business Catalog"
+    ]
+  }
+}

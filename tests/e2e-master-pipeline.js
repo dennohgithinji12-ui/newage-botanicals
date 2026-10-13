@@ -154,6 +154,22 @@ const aiHerbalist = new AIHerbalistController();
 const retrieved = aiHerbalist.buildCatalogContext("sleep and insomnia");
 assert(retrieved.length > 0 && retrieved.length <= 25, `Dynamic retrieval returned ${retrieved.length} relevant remedies for sleep query`);
 
+// Check Meta Product Catalog & WhatsApp Commerce Feeds
+const metaCsv = fs.readFileSync(path.join(__dirname, '../meta-catalog-feed.csv'), 'utf8');
+const metaCsvLines = metaCsv.trim().split('\n');
+assert(metaCsvLines.length >= 165, `Meta Catalog CSV feed has >= 165 lines (Found: ${metaCsvLines.length})`);
+assert(metaCsvLines[0].startsWith('id,title,description,availability,condition,price,link,image_link'), 'Meta CSV feed has valid Meta Commerce Manager headers');
+
+const metaXml = fs.readFileSync(path.join(__dirname, '../meta-catalog-feed.xml'), 'utf8');
+assert(metaXml.includes('<rss xmlns:g="http://base.google.com/ns/1.0"'), 'Meta XML feed has valid RSS 2.0 schema namespace');
+const itemCount = (metaXml.match(/<item>/g) || []).length;
+assert(itemCount === 164, `Meta XML feed has all 164 products exported as items (Found: ${itemCount})`);
+
+const MetaCatalogConnectService = require('../js/meta-catalog-service.js');
+const metaService = new MetaCatalogConnectService();
+assert(metaService.getLiveFeedUrl('csv').includes('meta-catalog-feed.csv'), 'MetaCatalogConnectService live CSV feed URL is correct');
+assert(metaService.getWhatsAppCatalogUrl().includes('wa.me/c/254141270112'), 'MetaCatalogConnectService WhatsApp catalog deep link is correct');
+
 // -----------------------------------------------------------------------------
 // 7. GATE 9: Audience Building, Google Flow & WhatsApp Commerce
 // -----------------------------------------------------------------------------
