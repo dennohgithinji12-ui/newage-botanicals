@@ -98,6 +98,22 @@ class PaystackPaymentService {
               orderData.paystackResponse = response;
               orderData.reference = response.reference || reference;
               this.saveOrderHistory(orderData);
+
+              // Meta Pixel Purchase Event
+              if (window.fbq) {
+                try {
+                  fbq('track', 'Purchase', {
+                    content_ids: (items || []).map(i => i.id),
+                    content_type: 'product',
+                    value: amountInKES,
+                    currency: 'KES',
+                    num_items: (items || []).reduce((sum, item) => sum + (item.quantity || 1), 0)
+                  });
+                } catch (err) {
+                  console.warn('Meta Pixel Purchase error:', err);
+                }
+              }
+
               if (onSuccess) onSuccess(orderData);
             },
             onClose: () => {

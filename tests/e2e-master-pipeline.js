@@ -170,6 +170,17 @@ const metaService = new MetaCatalogConnectService();
 assert(metaService.getLiveFeedUrl('csv').includes('meta-catalog-feed.csv'), 'MetaCatalogConnectService live CSV feed URL is correct');
 assert(metaService.getWhatsAppCatalogUrl().includes('wa.me/c/254141270112'), 'MetaCatalogConnectService WhatsApp catalog deep link is correct');
 
+// Check Meta Pixel Configuration & Storefront Embeds
+assert(stackConfig.metaPixel && stackConfig.metaPixel.id === '1453582713300853', 'Stack config contains Meta Pixel ID 1453582713300853');
+
+const pagesWithPixel = ['index.html', 'shop.html', 'product.html', 'checkout.html'];
+pagesWithPixel.forEach(page => {
+  const pageHtml = fs.readFileSync(path.join(__dirname, '..', page), 'utf8');
+  assert(pageHtml.includes('1453582713300853'), `${page} contains Meta Pixel tracking ID 1453582713300853`);
+  assert(pageHtml.includes("fbq('init', '1453582713300853')"), `${page} initializes Meta Pixel via fbq init`);
+  assert(pageHtml.includes("fbq('track', 'PageView')"), `${page} tracks standard PageView event`);
+});
+
 // -----------------------------------------------------------------------------
 // 7. GATE 9: Audience Building, Google Flow & WhatsApp Commerce
 // -----------------------------------------------------------------------------

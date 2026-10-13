@@ -122,6 +122,11 @@ const STACK_CONFIG = {
     channels: ["mobile_money", "card", "bank", "ussd", "qr"]
   },
 
+  metaPixel: {
+    id: "1453582713300853",
+    events: ["PageView", "ViewContent", "AddToCart", "InitiateCheckout", "Purchase", "Contact"]
+  },
+
   customerChannels: {
     whatsapp: {
       number: "+254141270112",

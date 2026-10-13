@@ -67,6 +67,21 @@ class ShoppingCart {
       this.openDrawer();
     }
     this.showToast(`🌿 Added "${product.name}" to your basket!`);
+
+    // Meta Pixel AddToCart Event
+    if (window.fbq) {
+      try {
+        fbq('track', 'AddToCart', {
+          content_name: product.name,
+          content_ids: [product.id],
+          content_type: 'product',
+          value: product.priceKES * quantity,
+          currency: 'KES'
+        });
+      } catch (err) {
+        console.warn('Meta Pixel AddToCart error:', err);
+      }
+    }
   }
 
   removeItem(productId) {

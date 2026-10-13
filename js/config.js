@@ -22,6 +22,10 @@ const CONFIG = {
     testMode: false,
     channels: ["card", "mobile_money", "bank", "ussd", "qr"]
   },
+  metaPixel: {
+    id: "1453582713300853",
+    enabled: true
+  },
   // Base currency of the catalog is KES (Kenyan Shillings)
   baseCurrency: "KES",
   currencies: {

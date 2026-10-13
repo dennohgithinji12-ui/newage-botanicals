@@ -16,7 +16,7 @@
 - **Origin Region:** Kitui County, Semi-Arid Eastern Kenya
 - **Vetted Supplier:** Savannah Harvest Oils
 - **Testing Laboratory:** AfriCert Analytical Laboratories
-- **Lab Assay Report ID:** `LAB-REPORT-178203`
+- **Lab Assay Report ID:** `LAB-REPORT-635551`
 
 ---
 

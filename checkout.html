@@ -10,6 +10,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1453582713300853');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1453582713300853&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -282,6 +300,22 @@
       } catch (e) {}
 
       renderCheckoutSummary();
+
+      // Meta Pixel InitiateCheckout Event
+      if (window.fbq && checkoutItems && checkoutItems.length > 0) {
+        try {
+          const subtotalKES = checkoutItems.reduce((sum, item) => sum + (item.priceKES * item.quantity), 0);
+          fbq('track', 'InitiateCheckout', {
+            content_ids: checkoutItems.map(i => i.id),
+            content_type: 'product',
+            num_items: checkoutItems.reduce((sum, item) => sum + item.quantity, 0),
+            value: subtotalKES,
+            currency: 'KES'
+          });
+        } catch (err) {
+          console.warn('Meta Pixel InitiateCheckout error:', err);
+        }
+      }
     }
 
     function renderCheckoutSummary() {
@@ -379,6 +413,16 @@
         if (notes) msg += `*Notes:* ${notes}\n`;
         msg += `\nPlease confirm dispatch!`;
 
+        if (window.fbq) {
+          try {
+            fbq('track', 'Contact', {
+              content_name: 'WhatsApp Express Order',
+              value: totalKES,
+              currency: 'KES'
+            });
+          } catch (err) {}
+        }
+
         window.open(`https://wa.me/${cleanStorePhone}?text=${encodeURIComponent(msg)}`, '_blank');
         cart.clearCart();
         showSuccessScreen(orderData);
@@ -428,6 +472,21 @@
       const waText = `🌿 Hi Apothecary Team! My order ref is *${orderData.reference}*. Please provide tracking details for delivery to *${orderData.customerAddress}*.`;
       document.getElementById('successWhatsAppLink').href = `https://wa.me/${cleanStorePhone}?text=${encodeURIComponent(waText)}`;
       window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Meta Pixel Purchase Event
+      if (window.fbq) {
+        try {
+          fbq('track', 'Purchase', {
+            content_ids: (orderData.items || []).map(i => i.id),
+            content_type: 'product',
+            value: orderData.amountInKES,
+            currency: 'KES',
+            num_items: (orderData.items || []).reduce((sum, item) => sum + (item.quantity || 1), 0)
+          });
+        } catch (err) {
+          console.warn('Meta Pixel Purchase error:', err);
+        }
+      }
     }
 
     window.addEventListener('DOMContentLoaded', initCheckoutPage);

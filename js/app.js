@@ -592,6 +592,16 @@ class ApothecaryApp {
   checkoutWhatsApp() {
     const url = cart.generateWhatsAppOrderUrl();
     if (url) {
+      if (window.fbq) {
+        try {
+          const totals = cart.getTotals();
+          fbq('track', 'Contact', {
+            content_name: 'WhatsApp Cart Order',
+            value: totals.totalKES,
+            currency: 'KES'
+          });
+        } catch (err) {}
+      }
       window.open(url, "_blank");
     } else {
       alert("Your basket is empty. Please add botanicals first.");
