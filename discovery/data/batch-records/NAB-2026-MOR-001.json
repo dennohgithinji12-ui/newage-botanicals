@@ -6,18 +6,18 @@
   "botanicalName": "Moringa oleifera",
   "batchSizeUnits": 500,
   "netWeightPerUnit": "250g / 8.8 oz",
-  "manufactureDate": "2026-10-13",
-  "bestBeforeDate": "2028-10-02",
+  "manufactureDate": "2026-10-14",
+  "bestBeforeDate": "2028-10-03",
   "originTraceability": {
     "supplierId": "sup-001",
     "supplierName": "Rift Valley Botanicals",
     "harvestRegion": "Nanyuki, Laikipia County, Kenya (Highland Volcanic Soil)",
-    "rawBatchRef": "RM-473577"
+    "rawBatchRef": "RM-814362"
   },
   "labTesting": {
     "accreditedLabName": "SGS Kenya Phytochemical Laboratory",
-    "labReportNumber": "LAB-REPORT-812067",
-    "testDate": "2026-10-13",
+    "labReportNumber": "LAB-REPORT-431339",
+    "testDate": "2026-10-14",
     "heavyMetals": {
       "leadPpm": 1.1,
       "arsenicPpm": 0.35,
@@ -42,7 +42,7 @@
     "qcDecision": "RELEASE_FOR_SALE",
     "errors": [],
     "warnings": [],
-    "evaluatedAt": "2026-10-13T16:21:13.576Z"
+    "evaluatedAt": "2026-10-14T13:50:14.361Z"
   },
   "digitalVerification": {
     "cryptographicHash": "96fc2c5939f4831bddd252ff100d719a18d70579f68a194e946feb68db7c0b89",

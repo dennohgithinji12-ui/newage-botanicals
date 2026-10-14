@@ -96,6 +96,11 @@
       </div>
     </div>
 
+    <!-- Dynamic Alert Box for Meta Checkout (Out of Stock / Invalid Coupons) -->
+    <div id="checkoutNoticeBanner" style="display: none; background: rgba(230, 57, 70, 0.15); border: 1px solid rgba(230, 57, 70, 0.4); border-radius: 8px; padding: 0.85rem 1.25rem; margin-bottom: 1.5rem; color: #ffb4a2; font-size: 0.9rem;">
+      <span id="checkoutNoticeText"></span>
+    </div>
+
     <div class="checkout-grid" id="checkoutMainGrid">
       <!-- Left Column: Fast Form & Payment Selection -->
       <div class="checkout-card">
@@ -171,6 +176,10 @@
           <div style="display:flex; justify-content:space-between; margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-muted);">
             <span>Subtotal</span>
             <strong id="summarySubtotal" style="color: var(--text-parchment);">KSh 0</strong>
+          </div>
+          <div id="summaryDiscountRow" style="display:none; justify-content:space-between; margin-bottom: 0.5rem; font-size: 0.95rem; color: #2a9d8f; font-weight: 600;">
+            <span id="summaryDiscountLabel">Coupon Discount</span>
+            <strong id="summaryDiscount">-KSh 0</strong>
           </div>
           <div style="display:flex; justify-content:space-between; margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-muted);">
             <span>Discreet Courier Dispatch</span>
@@ -248,32 +257,93 @@
   <script>
     let checkoutItems = [];
     let selectedPayment = 'mpesa';
+    let appliedCoupon = null;
+    let urlUtmParams = {};
 
     function initCheckoutPage() {
-      // Check if buying a specific single product via URL ?buy=...
+      // Check query parameters for single product, multi-product, coupon, and Meta tracking
       const params = new URLSearchParams(window.location.search);
+      const rawProductsParam = params.get('products');
       const buyId = params.get('buy');
+      const qtyParam = parseInt(params.get('qty') || '1', 10);
+      const couponParam = params.get('coupon');
+      const cartOrigin = params.get('cart_origin');
+      const clearCartParam = params.get('clear');
 
-      if (buyId) {
+      // Capture all Meta tracking & UTM parameters
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'cart_origin'].forEach(key => {
+        const val = params.get(key);
+        if (val) urlUtmParams[key] = val;
+      });
+
+      const notices = [];
+
+      // If clear=true or coming directly from Meta Shop cart, don't mix old basket items
+      if (clearCartParam === 'true' || cartOrigin || rawProductsParam) {
+        checkoutItems = [];
+      }
+
+      // 1. Multi-product format from Meta Commerce URL: ?products=productId:qty,productId:qty
+      if (rawProductsParam) {
+        let decodedParam = rawProductsParam;
+        try {
+          decodedParam = decodeURIComponent(rawProductsParam);
+        } catch (e) {}
+
+        const parsedItems = [];
+        for (const entry of decodedParam.split(',')) {
+          if (!entry.trim()) continue;
+          const parts = entry.split(':');
+          const pId = parts[0] ? parts[0].trim() : '';
+          const pQty = parts[1] ? parseInt(parts[1], 10) : 1;
+          const product = PRODUCTS_DATA.find(p => p.id === pId);
+          if (product) {
+            if (product.inStock === false) {
+              notices.push(`⚠️ "${product.name}" is currently out of stock.`);
+            } else {
+              parsedItems.push({
+                id: product.id,
+                name: product.name,
+                botanicalName: product.botanicalName,
+                priceKES: product.priceKES,
+                image: product.image,
+                quantity: isNaN(pQty) || pQty < 1 ? 1 : pQty
+              });
+            }
+          } else {
+            notices.push(`⚠️ Selected item ("${pId}") was not found in our live catalog.`);
+          }
+        }
+        if (parsedItems.length > 0) {
+          checkoutItems = parsedItems;
+        }
+      } else if (buyId) {
+        // 2. Single-product shortcut: ?buy=productId&qty=1
         const product = PRODUCTS_DATA.find(p => p.id === buyId);
         if (product) {
-          checkoutItems = [{
-            id: product.id,
-            name: product.name,
-            botanicalName: product.botanicalName,
-            priceKES: product.priceKES,
-            image: product.image,
-            quantity: 1
-          }];
+          if (product.inStock === false) {
+            notices.push(`⚠️ "${product.name}" is currently out of stock.`);
+          } else {
+            checkoutItems = [{
+              id: product.id,
+              name: product.name,
+              botanicalName: product.botanicalName,
+              priceKES: product.priceKES,
+              image: product.image,
+              quantity: isNaN(qtyParam) || qtyParam < 1 ? 1 : qtyParam
+            }];
+          }
+        } else {
+          notices.push(`⚠️ Product "${buyId}" was not found in our catalog.`);
         }
       }
 
-      // If no URL single product, use basket items
-      if (checkoutItems.length === 0) {
+      // 3. Fallback to cart basket items if no URL products specified
+      if (checkoutItems.length === 0 && !rawProductsParam && !buyId) {
         checkoutItems = [...cart.items];
       }
 
-      // If still empty, default to premier launch item for demonstration
+      // 4. Default to premier launch product if still completely empty
       if (checkoutItems.length === 0) {
         const defaultProduct = PRODUCTS_DATA[0];
         checkoutItems = [{
@@ -284,6 +354,28 @@
           image: defaultProduct.image,
           quantity: 1
         }];
+      }
+
+      // 5. Handle Coupon discount
+      if (couponParam) {
+        const code = couponParam.toUpperCase().trim();
+        if (CONFIG.promos && CONFIG.promos[code]) {
+          appliedCoupon = { code, ...CONFIG.promos[code] };
+        } else {
+          notices.push(`ℹ️ Promo code "${couponParam}" is invalid or expired.`);
+        }
+      }
+
+      // Display notices if any
+      const noticeBanner = document.getElementById('checkoutNoticeBanner');
+      const noticeText = document.getElementById('checkoutNoticeText');
+      if (noticeBanner && noticeText) {
+        if (notices.length > 0) {
+          noticeText.innerHTML = notices.join('<br>');
+          noticeBanner.style.display = 'block';
+        } else {
+          noticeBanner.style.display = 'none';
+        }
       }
 
       // Auto-fill customer info from localStorage if previously entered
@@ -305,11 +397,17 @@
       if (window.fbq && checkoutItems && checkoutItems.length > 0) {
         try {
           const subtotalKES = checkoutItems.reduce((sum, item) => sum + (item.priceKES * item.quantity), 0);
+          let discountKES = 0;
+          if (appliedCoupon && appliedCoupon.discountPercent) {
+            discountKES = Math.round(subtotalKES * (appliedCoupon.discountPercent / 100));
+          }
+          const finalValKES = Math.max(0, subtotalKES - discountKES);
+
           fbq('track', 'InitiateCheckout', {
             content_ids: checkoutItems.map(i => i.id),
             content_type: 'product',
             num_items: checkoutItems.reduce((sum, item) => sum + item.quantity, 0),
-            value: subtotalKES,
+            value: finalValKES,
             currency: 'KES'
           });
         } catch (err) {
@@ -323,8 +421,13 @@
       if (!listEl) return;
 
       const subtotalKES = checkoutItems.reduce((sum, item) => sum + (item.priceKES * item.quantity), 0);
-      const shippingKES = subtotalKES >= CONFIG.shipping.freeThresholdKES ? 0 : CONFIG.shipping.standardRateKES;
-      const totalKES = subtotalKES + shippingKES;
+      let discountKES = 0;
+      if (appliedCoupon && appliedCoupon.discountPercent) {
+        discountKES = Math.round(subtotalKES * (appliedCoupon.discountPercent / 100));
+      }
+      const discountedSubtotal = Math.max(0, subtotalKES - discountKES);
+      const shippingKES = discountedSubtotal >= CONFIG.shipping.freeThresholdKES ? 0 : CONFIG.shipping.standardRateKES;
+      const totalKES = discountedSubtotal + shippingKES;
 
       listEl.innerHTML = checkoutItems.map(item => `
         <div style="display:flex; gap:1rem; align-items:center; margin-bottom: 0.85rem; padding-bottom: 0.85rem; border-bottom: 1px solid rgba(212,175,55,0.1);">
@@ -340,6 +443,18 @@
       `).join('');
 
       document.getElementById('summarySubtotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(subtotalKES) : `KSh ${subtotalKES}`;
+
+      const discountRow = document.getElementById('summaryDiscountRow');
+      if (discountRow) {
+        if (discountKES > 0) {
+          discountRow.style.display = 'flex';
+          document.getElementById('summaryDiscountLabel').textContent = `🎟️ ${appliedCoupon.label || appliedCoupon.code}`;
+          document.getElementById('summaryDiscount').textContent = `-${window.geoCurrency ? window.geoCurrency.formatPrice(discountKES) : `KSh ${discountKES}`}`;
+        } else {
+          discountRow.style.display = 'none';
+        }
+      }
+
       document.getElementById('summaryShipping').textContent = shippingKES === 0 ? 'FREE (Blessing Threshold)' : (window.geoCurrency ? window.geoCurrency.formatPrice(shippingKES) : `KSh ${shippingKES}`);
       document.getElementById('summaryTotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(totalKES) : `KSh ${totalKES}`;
     }
@@ -381,9 +496,22 @@
       } catch (e) {}
 
       const subtotalKES = checkoutItems.reduce((sum, item) => sum + (item.priceKES * item.quantity), 0);
-      const shippingKES = subtotalKES >= CONFIG.shipping.freeThresholdKES ? 0 : CONFIG.shipping.standardRateKES;
-      const totalKES = subtotalKES + shippingKES;
+      let discountKES = 0;
+      if (appliedCoupon && appliedCoupon.discountPercent) {
+        discountKES = Math.round(subtotalKES * (appliedCoupon.discountPercent / 100));
+      }
+      const discountedSubtotal = Math.max(0, subtotalKES - discountKES);
+      const shippingKES = discountedSubtotal >= CONFIG.shipping.freeThresholdKES ? 0 : CONFIG.shipping.standardRateKES;
+      const totalKES = discountedSubtotal + shippingKES;
       const reference = `NAH-${Date.now().toString().slice(-6)}-${Math.floor(Math.random() * 899 + 100)}`;
+
+      let completeNotes = notes;
+      if (appliedCoupon) {
+        completeNotes += ` [Coupon: ${appliedCoupon.code} (-${appliedCoupon.discountPercent}%)]`;
+      }
+      if (urlUtmParams.utm_source) {
+        completeNotes += ` [Source: ${urlUtmParams.utm_source} | Campaign: ${urlUtmParams.utm_campaign || 'direct'}]`;
+      }
 
       const orderData = {
         reference,
@@ -391,10 +519,13 @@
         customerPhone: phone,
         customerAddress: town,
         customerEmail: email,
-        orderNotes: notes,
+        orderNotes: completeNotes,
         items: checkoutItems,
+        coupon: appliedCoupon ? appliedCoupon.code : null,
+        discountKES,
         amountInKES: totalKES,
         paymentMethod: selectedPayment,
+        utm: urlUtmParams,
         date: new Date().toLocaleString()
       };
 
@@ -406,8 +537,11 @@
         msg += `*Customer:* ${name}\n*Phone:* ${phone}\n*Delivery Location:* ${town}\n\n`;
         msg += `*Items Ordered:*\n`;
         checkoutItems.forEach((it, i) => {
-          msg += `${i + 1}. *${it.name}* (x${it.quantity}) - KSh ${it.priceKES * it.quantity}\n`;
+          msg += `${i + 1}. *${it.name}* (x${it.quantity}) - KSh ${(it.priceKES * it.quantity).toLocaleString()}\n`;
         });
+        if (discountKES > 0) {
+          msg += `*Discount (${appliedCoupon.code}):* -KSh ${discountKES.toLocaleString()}\n`;
+        }
         msg += `\n*Total Due:* KSh ${totalKES.toLocaleString()}\n`;
         msg += `*Packaging:* 100% Plain & Discreet Courier Dispatch\n`;
         if (notes) msg += `*Notes:* ${notes}\n`;
@@ -444,7 +578,7 @@
         customerEmail: email,
         customerPhone: phone,
         customerAddress: town,
-        orderNotes: notes,
+        orderNotes: completeNotes,
         amountInKES: totalKES,
         items: checkoutItems,
         onSuccess: (resData) => {

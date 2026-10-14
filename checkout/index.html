@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting to Checkout | NewAge Health Botanicals & Rituals</title>
+  <script>
+    // Seamlessly forward query string from /checkout to /checkout.html
+    const targetUrl = '../checkout.html' + window.location.search;
+    window.location.replace(targetUrl);
+  </script>
+  <meta http-equiv="refresh" content="0; url=../checkout.html">
+</head>
+<body style="font-family: sans-serif; background: #07150e; color: #d4af37; text-align: center; padding: 3rem;">
+  <h2>🌿 Connecting to Secure Checkout...</h2>
+  <p style="color: #a3b899;">If you are not redirected automatically, <a href="../checkout.html" style="color: #d4af37;">click here to proceed to checkout</a>.</p>
+</body>
+</html>
