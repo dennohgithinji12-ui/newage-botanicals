@@ -9,14 +9,14 @@
 - **SKU Code:** `NAB-SKU-TUR-100`
 - **Lot / Batch Number:** `NAB-2026-TUR-001`
 - **Net Quantity:** 100g / 3.5 oz
-- **Manufacture Date:** 2026-10-14
-- **Best Before / Expiry:** 2028-10-03
+- **Manufacture Date:** 2026-10-28
+- **Best Before / Expiry:** 2028-10-17
 
 ### Harvest & Farm Traceability
 - **Origin Region:** Meru & Tharaka Nithi, Volcanic Foothills of Mount Kenya
 - **Vetted Supplier:** Mount Kenya Highland Herbs
 - **Testing Laboratory:** SGS Kenya Phytochemical Laboratory
-- **Lab Assay Report ID:** `LAB-REPORT-666037`
+- **Lab Assay Report ID:** `LAB-REPORT-568108`
 
 ---
 

@@ -3304,7 +3304,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 45,
     "tag": "Microbiome Food",
-    "image": "assets/images/products/wild-kenyan-acacia-fiber-prebiotic.jpg",
+    "image": "assets/images/products/wild-kenyan-acacia-fiber-prebiotic-photo.jpg",
     "herbs": [
       "acacia fiber",
       "gum arabic",
@@ -3335,7 +3335,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Stir 1 scoop (10g) into any liquid. Completely tasteless and grit-free.",
     "inStock": true,
     "images": [
-      "assets/images/products/wild-kenyan-acacia-fiber-prebiotic.jpg"
+      "assets/images/products/wild-kenyan-acacia-fiber-prebiotic-photo.jpg"
     ],
     "whatItDoes": "Sustainably tapped from wild Acacia senegal trees across northern Kenya's dry savannahs. A totally odorless, gentle soluble fiber that feeds beneficial Bifidobacteria without causing gas or bloating. Proven FODMAP-friendly prebiotic that does not ferment rapidly or cause painful cramping. Promotes the biological production of anti-inflammatory butyrate in the colon"
   },
@@ -3349,7 +3349,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 112,
     "tag": "Adaptogen Reserve",
-    "image": "assets/images/products/ashwagandha-holy-basil-tincture.jpg",
+    "image": "assets/images/products/ashwagandha-holy-basil-tincture-photo.jpg",
     "herbs": [
       "ashwagandha",
       "holy basil",
@@ -3382,7 +3382,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Drop 30 to 40 drops under the tongue or in 50ml warm water twice daily.",
     "inStock": true,
     "images": [
-      "assets/images/products/ashwagandha-holy-basil-tincture.jpg"
+      "assets/images/products/ashwagandha-holy-basil-tincture-photo.jpg"
     ],
     "whatItDoes": "Full-spectrum dual ethanolic and water extraction of organically cultivated Kenyan ashwagandha root paired with fresh aromatic Krishna holy basil. Down-regulates elevated evening cortisol to prevent midnight awakenings. Shields nervous system synapses from chronic oxidative burnout"
   },
@@ -3396,7 +3396,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 89,
     "tag": "Cognitive Alchemy",
-    "image": "assets/images/products/lions-mane-memory-tincture.jpg",
+    "image": "assets/images/products/lions-mane-memory-tincture-photo.jpg",
     "herbs": [
       "lions mane",
       "gotu kola",
@@ -3429,7 +3429,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Take 2 full droppers before beginning your most demanding mental creative work.",
     "inStock": true,
     "images": [
-      "assets/images/products/lions-mane-memory-tincture.jpg"
+      "assets/images/products/lions-mane-memory-tincture-photo.jpg"
     ],
     "whatItDoes": "Combines wood-grown Lion's Mane fruiting bodies with high-altitude Kenyan Gotu Kola. Formulated to nourish Nerve Growth Factor (NGF) and enhance mental recall. Stimulates natural Nerve Growth Factor (NGF) synthesis. Gotu Kola promotes microvascular blood flow to the cerebral cortex"
   },
@@ -3443,7 +3443,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 73,
     "tag": "Spiritual Grounding",
-    "image": "assets/images/products/reishi-zen-evening-elixir-powder.jpg",
+    "image": "assets/images/products/reishi-zen-evening-elixir-powder-photo.jpg",
     "herbs": [
       "reishi",
       "ganoderma",
@@ -3474,7 +3474,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Whisk 1 tablespoon into 200ml warm oat milk 45 minutes before sleep. Drink mindfully by candlelight.",
     "inStock": true,
     "images": [
-      "assets/images/products/reishi-zen-evening-elixir-powder.jpg"
+      "assets/images/products/reishi-zen-evening-elixir-powder-photo.jpg"
     ],
     "whatItDoes": "Revered in Daoist and traditional herbalism as the 'Mushroom of Immortality'. Paired with minimally processed raw ceremonial African cacao and gentle cinnamon. Triterpenes deeply settle an overactive sympathetic 'fight-or-flight' state. Rich in anandamide and magnesium for heart-centered physical ease"
   },
@@ -3488,7 +3488,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 96,
     "tag": "Insomnia Relief",
-    "image": "assets/images/products/passionflower-valerian-deep-rest-drops.jpg",
+    "image": "assets/images/products/passionflower-valerian-deep-rest-drops-photo.jpg",
     "herbs": [
       "passionflower",
       "valerian root",
@@ -3519,7 +3519,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Place 1 full dropper under the tongue 20 minutes before lights out.",
     "inStock": true,
     "images": [
-      "assets/images/products/passionflower-valerian-deep-rest-drops.jpg"
+      "assets/images/products/passionflower-valerian-deep-rest-drops-photo.jpg"
     ],
     "whatItDoes": "A traditional herbalist's heavy-nervine knockout synergy. Clinically validated herbs modulate GABA receptors to quiet repetitive mental loops and relax the skeletal musculature. Enhances natural brain GABA levels to switch off nervous mental chatter. Relaxes nocturnal jaw clenching and physical muscle tension"
   },
@@ -3533,7 +3533,7 @@ const PRODUCTS_DATA = [
     "rating": 4.7,
     "reviewCount": 54,
     "tag": "Mood Lift",
-    "image": "assets/images/products/lemon-balm-st-johns-sunny-mood-tea.jpg",
+    "image": "assets/images/products/lemon-balm-st-johns-sunny-mood-tea-photo.jpg",
     "herbs": [
       "lemon balm",
       "st johns wort",
@@ -3563,7 +3563,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep 1 tablespoon in covered mug for 8 minutes. Inhale the citrus vapors deeply before drinking.",
     "inStock": true,
     "images": [
-      "assets/images/products/lemon-balm-st-johns-sunny-mood-tea.jpg"
+      "assets/images/products/lemon-balm-st-johns-sunny-mood-tea-photo.jpg"
     ],
     "whatItDoes": "Brings sunny illumination to heavy emotional clouds. Lemon balm soothes nervous stomach butterflies while St. John's golden flowers elevate emotional tone. Naturally encourages positive emotional outlook and optimism. Calms nervous cardiac flutter and epigastric tension"
   },
@@ -3577,7 +3577,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 68,
     "tag": "Anti-Burnout",
-    "image": "assets/images/products/rhodiola-schisandra-executive-stamina.jpg",
+    "image": "assets/images/products/rhodiola-schisandra-executive-stamina-photo.jpg",
     "herbs": [
       "rhodiola",
       "schisandra",
@@ -3608,7 +3608,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Take 1 to 2 capsules with morning breakfast during high-stress project cycles.",
     "inStock": true,
     "images": [
-      "assets/images/products/rhodiola-schisandra-executive-stamina.jpg"
+      "assets/images/products/rhodiola-schisandra-executive-stamina-photo.jpg"
     ],
     "whatItDoes": "Designed for high-intensity thinkers and leaders. Rhodiola prevents dopamine/serotonin depletion under high mental pressure, while Schisandra protects the adrenals and liver. Standardized to 3% rosavins and 1% salidroside for physical & cognitive stamina. Suppresses exercise and deadline-induced mental exhaustion"
   },
@@ -3622,7 +3622,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 37,
     "tag": "Aroma Alchemy",
-    "image": "assets/images/products/african-wild-sage-focus-mist.jpg",
+    "image": "assets/images/products/african-wild-sage-focus-mist-photo.jpg",
     "herbs": [
       "african sage",
       "rosemary",
@@ -3654,7 +3654,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Mist 3 to 4 pumps around your head and workspace before demanding intellectual tasks.",
     "inStock": true,
     "images": [
-      "assets/images/products/african-wild-sage-focus-mist.jpg"
+      "assets/images/products/african-wild-sage-focus-mist-photo.jpg"
     ],
     "whatItDoes": "Hydro-distilled wild African sage combined with highland rosemary rich in 1,8-cineole. Instantly clears heavy stagnant mental energy and awakens alert sensory focus. 1,8-Cineole vapor clinically observed to support working memory speed. Purifies indoor room vibrations and disperses mental lethargy"
   },
@@ -3668,7 +3668,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 82,
     "tag": "Lucid Dreaming",
-    "image": "assets/images/products/blue-lotus-sacred-dream-tea.jpg",
+    "image": "assets/images/products/blue-lotus-sacred-dream-tea-photo.jpg",
     "herbs": [
       "blue lotus",
       "nymphaea caerulea",
@@ -3700,7 +3700,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep 2 whole lotus flowers in hot (not boiling) spring water for 7 minutes. Sip slowly in absolute stillness.",
     "inStock": true,
     "images": [
-      "assets/images/products/blue-lotus-sacred-dream-tea.jpg"
+      "assets/images/products/blue-lotus-sacred-dream-tea-photo.jpg"
     ],
     "whatItDoes": "The sacred flower of ancient Nile temples. Contains natural alkaloids apomorphine and nuciferine that instill profound physical tranquilization, euphoric calm, and lucid vivid dreams. Gently activates dopamine pathways for serene euphoria and mental quietude. Intensifies dream lucidity, visual clarity, and emotional insight"
   },
@@ -3714,7 +3714,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 44,
     "tag": "Tension Tamer",
-    "image": "assets/images/products/skullcap-chamomile-nervine-elixir.jpg",
+    "image": "assets/images/products/skullcap-chamomile-nervine-elixir-photo.jpg",
     "herbs": [
       "skullcap",
       "roman chamomile",
@@ -3744,7 +3744,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Take 30 drops in a small glass of warm water when sensory overwhelm peaks.",
     "inStock": true,
     "images": [
-      "assets/images/products/skullcap-chamomile-nervine-elixir.jpg"
+      "assets/images/products/skullcap-chamomile-nervine-elixir-photo.jpg"
     ],
     "whatItDoes": "Fresh-harvested flowering skullcap is the herbalist's classic remedy for an 'exhausted yet wired' nervous system. Relaxes involuntary muscular tremors and sensory over-stimulation. Binds gently to central benzodiazepine receptor sites without dependency. Releases clenching in the neck, jaw, and shoulder muscle fibers"
   },
@@ -3758,7 +3758,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 52,
     "tag": "Neuro Vitality",
-    "image": "assets/images/products/ginkgo-biloba-bacopa-synapse-tonic.jpg",
+    "image": "assets/images/products/ginkgo-biloba-bacopa-synapse-tonic-photo.jpg",
     "herbs": [
       "ginkgo biloba",
       "bacopa",
@@ -3788,7 +3788,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Take 1 capsule twice daily with meals. Best results compound over 4 to 8 continuous weeks.",
     "inStock": true,
     "images": [
-      "assets/images/products/ginkgo-biloba-bacopa-synapse-tonic.jpg"
+      "assets/images/products/ginkgo-biloba-bacopa-synapse-tonic-photo.jpg"
     ],
     "whatItDoes": "Ancient Ginkgo biloba leaf extract paired with Ayurvedic water hyssop (Brahmi). Enhances micro-capillary cerebral perfusion and protects neurotransmitter longevity. Improves cerebral arterial and peripheral blood flow. Bacosides promote synaptic transmission and learning acquisition"
   },
@@ -3802,7 +3802,7 @@ const PRODUCTS_DATA = [
     "rating": 4.7,
     "reviewCount": 38,
     "tag": "Physical Release",
-    "image": "assets/images/products/california-poppy-cramp-bark-night-elixir.jpg",
+    "image": "assets/images/products/california-poppy-cramp-bark-night-elixir-photo.jpg",
     "herbs": [
       "california poppy",
       "cramp bark",
@@ -3832,7 +3832,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Take 40 drops in warm water right as you tuck into bed.",
     "inStock": true,
     "images": [
-      "assets/images/products/california-poppy-cramp-bark-night-elixir.jpg"
+      "assets/images/products/california-poppy-cramp-bark-night-elixir-photo.jpg"
     ],
     "whatItDoes": "When emotional stress manifests as physical muscle gripping and cramping that prevents sleep. California poppy calms neurological pain pathways while Cramp Bark releases smooth muscle contractions. Non-narcotic neurological relaxant for nighttime aches. Eases both smooth (uterine/intestinal) and skeletal muscle spasms"
   },
@@ -3846,7 +3846,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 61,
     "tag": "Dream Alchemy",
-    "image": "assets/images/products/wild-kenyan-mugwort-dream-incense.jpg",
+    "image": "assets/images/products/wild-kenyan-mugwort-dream-incense-photo.jpg",
     "herbs": [
       "mugwort",
       "artemisia vulgaris",
@@ -3876,7 +3876,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Light tip, gently blow out flame, and waft aromatic smoke across your bed linens 30 minutes before sleep.",
     "inStock": true,
     "images": [
-      "assets/images/products/wild-kenyan-mugwort-dream-incense.jpg"
+      "assets/images/products/wild-kenyan-mugwort-dream-incense-photo.jpg"
     ],
     "whatItDoes": "Hand-tied bundles of mountain mugwort dried with aromatic African cedar shavings. Traditionally smudged through sleeping chambers to disperse restless spirits and invite lucid, prophetic visions. Mugwort volatile aromas have a venerated historical association with lucid dreaming. African cedar resin clears stagnant ambient air and imparts mountain forest tranquility"
   },
@@ -3890,7 +3890,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 81,
     "tag": "Social Ease",
-    "image": "assets/images/products/kava-kava-pacific-serenity-tincture.jpg",
+    "image": "assets/images/products/kava-kava-pacific-serenity-tincture-photo.jpg",
     "herbs": [
       "kava",
       "piper methysticum",
@@ -3921,7 +3921,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Take 1 full dropper in 100ml water or coconut milk. Enjoy the tingling sensation as worries dissolve.",
     "inStock": true,
     "images": [
-      "assets/images/products/kava-kava-pacific-serenity-tincture.jpg"
+      "assets/images/products/kava-kava-pacific-serenity-tincture-photo.jpg"
     ],
     "whatItDoes": "Extracted exclusively from pure Noble kava lateral roots. Delivers a distinct mild tongue-numbing sensation followed by a profound wave of social relaxation and physical ease. Promotes deep tranquil relaxation without dulling mental alertness. Wonderful alcohol-free ritual for unwinding at dusk with loved ones"
   },
@@ -3935,7 +3935,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 47,
     "tag": "Vital Oxygen",
-    "image": "assets/images/products/cordyceps-adaptogen-respiratory-vigor.jpg",
+    "image": "assets/images/products/cordyceps-adaptogen-respiratory-vigor-photo.jpg",
     "herbs": [
       "cordyceps",
       "cordycepin",
@@ -3966,7 +3966,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Take 1/2 teaspoon in warm water before your morning meditation or physical run.",
     "inStock": true,
     "images": [
-      "assets/images/products/cordyceps-adaptogen-respiratory-vigor.jpg"
+      "assets/images/products/cordyceps-adaptogen-respiratory-vigor-photo.jpg"
     ],
     "whatItDoes": "High-cordycepin cultivated fruiting bodies. Supports cellular ATP energy production and increases oxygen assimilation in bronchial tissues without adrenal burnout. Increases cellular ATP production by up to 28% for sustained physical vitality. Enhances oxygen utilization and VO2 kinetics during physical demands"
   },
@@ -3980,7 +3980,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 78,
     "tag": "Deep Heat",
-    "image": "assets/images/products/african-ginger-arnica-pain-salve.jpg",
+    "image": "assets/images/products/african-ginger-arnica-pain-salve-photo.jpg",
     "herbs": [
       "ginger",
       "arnica",
@@ -4012,7 +4012,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Massage firmly into aching muscles using thumb circles directly after a hot bath or shower.",
     "inStock": true,
     "images": [
-      "assets/images/products/african-ginger-arnica-pain-salve.jpg"
+      "assets/images/products/african-ginger-arnica-pain-salve-photo.jpg"
     ],
     "whatItDoes": "Infused with sun-dried Mount Kenya ginger resin, arnica flowers, and wild clove bud in unrefined Kenyan beeswax. Melts upon skin contact for penetrating warmth. Arnica helenalin accelerates resorption of exercise-induced hematomas and bruising. Pungent gingerols stimulate local micro-circulation to carry away lactic acid"
   },
@@ -4026,7 +4026,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 88,
     "tag": "Recovery Butter",
-    "image": "assets/images/products/magnesium-blue-tansy-sleep-recovery-cream.jpg",
+    "image": "assets/images/products/magnesium-blue-tansy-sleep-recovery-cream-photo.jpg",
     "herbs": [
       "magnesium",
       "blue tansy",
@@ -4056,7 +4056,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Smooth a dollop across calves, shoulders, and feet before sleeping.",
     "inStock": true,
     "images": [
-      "assets/images/products/magnesium-blue-tansy-sleep-recovery-cream.jpg"
+      "assets/images/products/magnesium-blue-tansy-sleep-recovery-cream-photo.jpg"
     ],
     "whatItDoes": "High-concentration elemental magnesium chloride blended into raw whipped East African Nilotica shea butter, tinted deep indigo by Moroccan Blue Tansy chamazulene. Delivers transdermal magnesium directly to tight, cramped muscle fibers. Blue Tansy chamazulene calms cutaneous inflammation and soothes tight nerves"
   },
@@ -4070,7 +4070,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 49,
     "tag": "Joint Warmth",
-    "image": "assets/images/products/cayenne-eucalyptus-joint-flex-oil.jpg",
+    "image": "assets/images/products/cayenne-eucalyptus-joint-flex-oil-photo.jpg",
     "herbs": [
       "cayenne",
       "capsaicin",
@@ -4100,7 +4100,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Apply 6 to 8 drops directly over stiff joints. Wash hands thoroughly with soap after application.",
     "inStock": true,
     "images": [
-      "assets/images/products/cayenne-eucalyptus-joint-flex-oil.jpg"
+      "assets/images/products/cayenne-eucalyptus-joint-flex-oil-photo.jpg"
     ],
     "whatItDoes": "Infuses fiery Kenyan bird's eye chilies into cold-pressed sesame oil alongside crisp highland blue gum eucalyptus. Depletes substance P to ease persistent joint creakiness. Natural capsaicin soothes deep persistent sensory joint signals. Eucalyptus vapors open local breathing pathways while cooling the surface"
   },
@@ -4114,7 +4114,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 62,
     "tag": "Cartilage Support",
-    "image": "assets/images/products/devil-claw-harpagophytum-mobility-tea.jpg",
+    "image": "assets/images/products/devil-claw-harpagophytum-mobility-tea-photo.jpg",
     "herbs": [
       "devils claw",
       "harpagophytum",
@@ -4144,7 +4144,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Simmer 1 tablespoon in 400ml water for 12 minutes. Drink 1 warm cup morning and evening.",
     "inStock": true,
     "images": [
-      "assets/images/products/devil-claw-harpagophytum-mobility-tea.jpg"
+      "assets/images/products/devil-claw-harpagophytum-mobility-tea-photo.jpg"
     ],
     "whatItDoes": "Wildcrafted secondary tubers of southern African Devil's Claw married with Indian frankincense resin. A bitter, potent herbal tea revered for joint lubrication. Harpagoside compounds clinically verified for supporting joint range of motion. Boswellic acids inhibit 5-LOX enzyme inflammatory pathways"
   },
@@ -4158,7 +4158,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 94,
     "tag": "Instant Relief",
-    "image": "assets/images/products/peppermint-wintergreen-headache-temple-balm.jpg",
+    "image": "assets/images/products/peppermint-wintergreen-headache-temple-balm-photo.jpg",
     "herbs": [
       "peppermint",
       "wintergreen",
@@ -4188,7 +4188,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Dab a tiny amount onto temples, forehead, and nape of neck. Keep well away from eyes.",
     "inStock": true,
     "images": [
-      "assets/images/products/peppermint-wintergreen-headache-temple-balm.jpg"
+      "assets/images/products/peppermint-wintergreen-headache-temple-balm-photo.jpg"
     ],
     "whatItDoes": "A pocket-sized botanical lifesaver. High-menthol peppermint crystals combined with natural plant-derived methyl salicylate (wintergreen) to produce an instant icy-hot sensory distraction. Triggers cutaneous cold receptors (TRPM8) to block head tension signals. Relaxes tight occipital and neck musculature within minutes"
   },
@@ -4202,7 +4202,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 41,
     "tag": "Indigenous Medicine",
-    "image": "assets/images/products/african-wormwood-recovery-bath-soak.jpg",
+    "image": "assets/images/products/african-wormwood-recovery-bath-soak-photo.jpg",
     "herbs": [
       "artemisia afra",
       "lengana",
@@ -4233,7 +4233,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Dissolve 1 cup into a steaming hot bath. Soak for 20 minutes while sweating out heavy tension.",
     "inStock": true,
     "images": [
-      "assets/images/products/african-wormwood-recovery-bath-soak.jpg"
+      "assets/images/products/african-wormwood-recovery-bath-soak-photo.jpg"
     ],
     "whatItDoes": "One of Africa's most sacred traditional panaceas. Aromatic Lengana leaves blended with mineral-dense Lake Magadi soda ash and pure Dead Sea magnesium salts. Draws heavy lactic metabolic toxins through transdermal skin osmosis. Penetrating medicinal vapors clear chest congestion while soaking"
   },

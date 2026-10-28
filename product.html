@@ -318,7 +318,7 @@
       // Render Related Products
       const relatedGrid = document.getElementById('relatedGrid');
       const related = PRODUCTS_DATA
-        .filter(p => p.id !== currentProduct.id && (p.category === currentProduct.category || p.tag === 'Master Clinical Formulation'))
+        .filter(p => !p.commerceOnly && !p.hiddenFromUI && p.id !== currentProduct.id && (p.category === currentProduct.category || p.tag === 'Master Clinical Formulation'))
         .slice(0, 4);
 
       relatedGrid.innerHTML = related.map(p => `

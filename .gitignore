@@ -26,3 +26,14 @@ scratch/
 .env.local
 .env.*.local
 
+# AI agent configurations & tools
+.agents/
+.adal/
+.claude/
+.continue/
+.devin/
+.roo/
+.windsurf/
+skills-lock.json
+
+

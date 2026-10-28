@@ -57,7 +57,7 @@ class ApothecaryApp {
   // =========================================================================
 
   getFilteredProducts() {
-    let list = [...PRODUCTS_DATA];
+    let list = PRODUCTS_DATA.filter(p => !p.commerceOnly && !p.hiddenFromUI);
 
     // 1. Category filter
     if (this.currentCategory !== "all") {
