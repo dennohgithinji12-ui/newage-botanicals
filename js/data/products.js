@@ -4247,7 +4247,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 58,
     "tag": "Nitric Oxide",
-    "image": "assets/images/products/organic-beetroot-tart-cherry-stamina-shot.jpg",
+    "image": "assets/images/products/organic-beetroot-tart-cherry-stamina-shot-photo.jpg",
     "herbs": [
       "beetroot",
       "tart cherry",
@@ -4278,7 +4278,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Mix 1 scoop in cold water 60 minutes before physical training or immediately post-workout.",
     "inStock": true,
     "images": [
-      "assets/images/products/organic-beetroot-tart-cherry-stamina-shot.jpg"
+      "assets/images/products/organic-beetroot-tart-cherry-stamina-shot-photo.jpg"
     ],
     "whatItDoes": "Highland volcanic red beets rich in dietary nitrates paired with freeze-dried tart cherries. Enhances natural nitric oxide vasodilation and slashes delayed onset muscle soreness (DOMS). Boosts plasma nitric oxide for oxygen delivery during aerobic exercise. Tart cherry anthocyanins speed muscular force recovery following intense strain"
   },
@@ -4292,7 +4292,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 37,
     "tag": "Tendon Support",
-    "image": "assets/images/products/comfrey-calendula-tendon-mend-salve.jpg",
+    "image": "assets/images/products/comfrey-calendula-tendon-mend-salve-photo.jpg",
     "herbs": [
       "comfrey",
       "allantoin",
@@ -4322,7 +4322,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Apply generously over sprained ligaments and cover with a warm cotton wrap. Do not apply on open broken skin.",
     "inStock": true,
     "images": [
-      "assets/images/products/comfrey-calendula-tendon-mend-salve.jpg"
+      "assets/images/products/comfrey-calendula-tendon-mend-salve-photo.jpg"
     ],
     "whatItDoes": "Traditional European herbalism's venerated 'Knitbone'. Comfrey root packed with cell-proliferating allantoin is slow-infused with bright marigold petals to assist ligament restoration. Allantoin stimulates rapid cellular mitosis and connective tissue repair. Calendula minimizes local tissue swelling and capillary bruising"
   },
@@ -4336,7 +4336,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 71,
     "tag": "Pure Power",
-    "image": "assets/images/products/maca-tribulus-physical-power-powder.jpg",
+    "image": "assets/images/products/maca-tribulus-physical-power-powder-photo.jpg",
     "herbs": [
       "black maca",
       "tribulus",
@@ -4367,7 +4367,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Add 1 tablespoon to your morning oatmeal or plant-protein shake before training.",
     "inStock": true,
     "images": [
-      "assets/images/products/maca-tribulus-physical-power-powder.jpg"
+      "assets/images/products/maca-tribulus-physical-power-powder-photo.jpg"
     ],
     "whatItDoes": "Gelatinized high-potency Black Maca root from the high Andes harmonized with wild East African Tribulus (Gokshura). Designed to enhance explosive athletic output. Gelatinized for effortless absorption without digestive starch bloating. Fosters optimal natural testosterone utilization and physical stamina"
   },
@@ -4381,7 +4381,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 46,
     "tag": "Foot Sanctuary",
-    "image": "assets/images/products/african-wild-lavender-athletic-foot-rub.jpg",
+    "image": "assets/images/products/african-wild-lavender-athletic-foot-rub-photo.jpg",
     "herbs": [
       "wild lavender",
       "tea tree",
@@ -4411,7 +4411,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Massage deeply into toes, arches, and heels before putting on clean cotton socks for bed.",
     "inStock": true,
     "images": [
-      "assets/images/products/african-wild-lavender-athletic-foot-rub.jpg"
+      "assets/images/products/african-wild-lavender-athletic-foot-rub-photo.jpg"
     ],
     "whatItDoes": "Tired runner's feet carry thousands of pounds of impact. Tea tree and lavender essential oils eliminate odor-causing bacteria while rich shea heals dry, cracked skin. Strong antimicrobial protection against communal gym fungi and moisture. Melts painful skin calluses and softens cracked heel fissures"
   },
@@ -4425,7 +4425,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 59,
     "tag": "Zero Crash",
-    "image": "assets/images/products/guarana-yerba-mate-clean-energy-shot.jpg",
+    "image": "assets/images/products/guarana-yerba-mate-clean-energy-shot-photo.jpg",
     "herbs": [
       "guarana",
       "yerba mate",
@@ -4456,7 +4456,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Whisk 1 teaspoon into warm water with a squeeze of fresh lime juice for immediate clarity.",
     "inStock": true,
     "images": [
-      "assets/images/products/guarana-yerba-mate-clean-energy-shot.jpg"
+      "assets/images/products/guarana-yerba-mate-clean-energy-shot-photo.jpg"
     ],
     "whatItDoes": "Unlike commercial energy drinks packed with artificial caffeine and sugar, seed-bound guaranine releases slowly into the bloodstream over 6 hours thanks to natural plant tannins. Smooth 6-hour sustained physical and cognitive energy curve. Theobromine stimulates cardiac output and vasodilation gently without jitters"
   },
@@ -4470,7 +4470,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 65,
     "tag": "Athletic Massage",
-    "image": "assets/images/products/capsicum-clove-warming-massage-oil.jpg",
+    "image": "assets/images/products/capsicum-clove-warming-massage-oil-photo.jpg",
     "herbs": [
       "capsicum",
       "clove bud",
@@ -4500,7 +4500,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Warm 1 tablespoon between palms and apply with firm, long strokes toward the heart.",
     "inStock": true,
     "images": [
-      "assets/images/products/capsicum-clove-warming-massage-oil.jpg"
+      "assets/images/products/capsicum-clove-warming-massage-oil-photo.jpg"
     ],
     "whatItDoes": "Crafted for deep tissue therapists and athletic recovery. Golden sesame oil infused with gentle capsicum resin and clove bud to generate a pleasant, lasting subcutaneous warmth. Permeates deep beneath the fascia to melt stubborn muscle knots. Stimulates lymphatic return and speeds toxic metabolic drainage"
   },
@@ -4514,7 +4514,7 @@ const PRODUCTS_DATA = [
     "rating": 5,
     "reviewCount": 79,
     "tag": "Sacred Resins",
-    "image": "assets/images/products/wild-frankincense-myrrh-injury-liniment.jpg",
+    "image": "assets/images/products/wild-frankincense-myrrh-injury-liniment-photo.jpg",
     "herbs": [
       "frankincense",
       "myrrh",
@@ -4544,7 +4544,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Apply 10 to 15 drops directly over injured muscle attachments and massage gently twice daily.",
     "inStock": true,
     "images": [
-      "assets/images/products/wild-frankincense-myrrh-injury-liniment.jpg"
+      "assets/images/products/wild-frankincense-myrrh-injury-liniment-photo.jpg"
     ],
     "whatItDoes": "An ancient martial liniment formula utilized for millennia by desert warriors. Hydro-distilled and alcohol-extracted resins of pure Somali Frankincense and Red Myrrh penetrate deep into injured tissues. Inhibits pro-inflammatory leukotriene synthesis at the cellular site. Reduces micro-swelling and revitalizes stagnant bruise pathways"
   },
@@ -4558,7 +4558,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 97,
     "tag": "Bestseller",
-    "image": "assets/images/products/digestive-fire-brew.jpg",
+    "image": "assets/images/products/digestive-fire-brew-photo.jpg",
     "herbs": [
       "ginger",
       "fennel",
@@ -4589,7 +4589,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Drink 1 warm cup 15 to 20 minutes following heavy or celebratory meals.",
     "inStock": true,
     "images": [
-      "assets/images/products/digestive-fire-brew.jpg"
+      "assets/images/products/digestive-fire-brew-photo.jpg"
     ],
     "whatItDoes": "A traditional Ayurvedic and East African carminative master blend. Combines sun-dried ginger, crushed sweet fennel seeds, and peppermint leaves to ignite digestive fire and dissipate painful trapped gas. Sweet fennel anethole relaxes intestinal smooth muscle spasms within 15 minutes. Ginger stimulates natural proteolytic and lipase digestive enzyme secretions"
   },
@@ -4603,7 +4603,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 114,
     "tag": "Liver Support",
-    "image": "assets/images/products/milk-thistle-liver-cleanse.jpg",
+    "image": "assets/images/products/milk-thistle-liver-cleanse-photo.jpg",
     "herbs": [
       "milk thistle",
       "silymarin",
@@ -4633,7 +4633,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Take 30 drops in warm water 15 minutes prior to morning breakfast.",
     "inStock": true,
     "images": [
-      "assets/images/products/milk-thistle-liver-cleanse.jpg"
+      "assets/images/products/milk-thistle-liver-cleanse-photo.jpg"
     ],
     "whatItDoes": "Standardized to 80% silymarin flavonolignans. Paired with roasted wild dandelion root and burdock to stimulate healthy bile output and support phase-2 hepatic cellular detoxification. Silymarin protects hepatocytes from environmental toxins and alcohol metabolites. Stimulates bile acid flow to emulsify dietary fats cleanly"
   },
@@ -4647,7 +4647,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 58,
     "tag": "Traditional Heritage",
-    "image": "assets/images/products/aloe-secundiflora-gut-bitters.jpg",
+    "image": "assets/images/products/aloe-secundiflora-gut-bitters-photo.jpg",
     "herbs": [
       "aloe secundiflora",
       "aloin",
@@ -4677,7 +4677,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Take 5 to 10 drops directly on the back of the tongue 10 minutes before eating.",
     "inStock": true,
     "images": [
-      "assets/images/products/aloe-secundiflora-gut-bitters.jpg"
+      "assets/images/products/aloe-secundiflora-gut-bitters-photo.jpg"
     ],
     "whatItDoes": "Sustainably harvested from wild indigenous Aloe secundiflora growing across Kenya's Great Rift Valley. A drop on the tongue instantly awakens salivary and gastric juices. Bitters trigger the vagus nerve to ignite whole digestive tract secretions. Natural anthraquinones gently encourage natural peristaltic bowel movement"
   },
