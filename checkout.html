@@ -390,12 +390,17 @@
         }
       }
 
-      // Auto-fill customer info from localStorage if previously entered
+      // Auto-fill customer info from URL parameters or localStorage
       try {
-        const savedName = localStorage.getItem('nah_cust_name');
-        const savedPhone = localStorage.getItem('nah_cust_phone');
-        const savedTown = localStorage.getItem('nah_cust_town');
-        const savedEmail = localStorage.getItem('nah_cust_email');
+        const urlName = params.get('name') || params.get('customerName');
+        const urlPhone = params.get('phone') || params.get('customerPhone');
+        const urlTown = params.get('town') || params.get('customerTown') || params.get('city');
+        const urlEmail = params.get('email') || params.get('customerEmail');
+
+        const savedName = urlName || localStorage.getItem('nah_cust_name');
+        const savedPhone = urlPhone || localStorage.getItem('nah_cust_phone');
+        const savedTown = urlTown || localStorage.getItem('nah_cust_town');
+        const savedEmail = urlEmail || localStorage.getItem('nah_cust_email');
 
         if (savedName) document.getElementById('checkoutName').value = savedName;
         if (savedPhone) document.getElementById('checkoutPhone').value = savedPhone;

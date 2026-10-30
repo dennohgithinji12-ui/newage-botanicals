@@ -341,7 +341,12 @@
 
     function buyNowCurrentProduct() {
       if (!currentProduct) return;
-      window.location.href = `checkout.html?buy=${currentProduct.id}`;
+      try {
+        const hasSaved = localStorage.getItem('nah_cust_name') && localStorage.getItem('nah_cust_phone');
+        window.location.href = `checkout.html?buy=${currentProduct.id}${hasSaved ? '&instant=true' : ''}`;
+      } catch (e) {
+        window.location.href = `checkout.html?buy=${currentProduct.id}`;
+      }
     }
 
     function addToBasketCurrentProduct() {
