@@ -4691,7 +4691,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 83,
     "tag": "Acid Comfort",
-    "image": "assets/images/products/slippery-elm-marshmallow-mucosal-shield.jpg",
+    "image": "assets/images/products/slippery-elm-marshmallow-mucosal-shield-photo.jpg",
     "herbs": [
       "slippery elm",
       "marshmallow root",
@@ -4722,7 +4722,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Mix 1 teaspoon briskly into 150ml room temperature water. Drink immediately before it thickens.",
     "inStock": true,
     "images": [
-      "assets/images/products/slippery-elm-marshmallow-mucosal-shield.jpg"
+      "assets/images/products/slippery-elm-marshmallow-mucosal-shield-photo.jpg"
     ],
     "whatItDoes": "When stomach acid burns sensitive tissues, demulcent herbs coat and protect. Rich in gentle plant mucilages that form a physical protective gel over irritated stomach lining. Instantly forms a slippery protective barrier across esophagus and stomach walls. Neutralizes the burning sensation of acid reflux without shutting down natural digestive acid"
   },
@@ -4736,7 +4736,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 91,
     "tag": "Daily Regularity",
-    "image": "assets/images/products/triphala-ayurvedic-colon-harmony.jpg",
+    "image": "assets/images/products/triphala-ayurvedic-colon-harmony-photo.jpg",
     "herbs": [
       "triphala",
       "amla",
@@ -4767,7 +4767,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Stir 1/2 teaspoon into warm water right before bed. Allow the mild bitter taste to signal healing.",
     "inStock": true,
     "images": [
-      "assets/images/products/triphala-ayurvedic-colon-harmony.jpg"
+      "assets/images/products/triphala-ayurvedic-colon-harmony-photo.jpg"
     ],
     "whatItDoes": "Ayurveda's most celebrated digestive rasayana: Amla (Emblica officinalis), Bibhitaki, and Haritaki. Gently tones the muscular walls of the colon without creating dependency. Encourages soft, regular morning bowel movements without harsh laxative cramping. High natural Vitamin C content fortifies intestinal epithelial junctions"
   },
@@ -4781,7 +4781,7 @@ const PRODUCTS_DATA = [
     "rating": 4.7,
     "reviewCount": 36,
     "tag": "Breath & Belly",
-    "image": "assets/images/products/wild-kenyan-cardamom-digestive-chews.jpg",
+    "image": "assets/images/products/wild-kenyan-cardamom-digestive-chews-photo.jpg",
     "herbs": [
       "cardamom",
       "candied ginger",
@@ -4811,7 +4811,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Chew 1 or 2 small nuggets slowly after meals or whenever feelings of nausea strike.",
     "inStock": true,
     "images": [
-      "assets/images/products/wild-kenyan-cardamom-digestive-chews.jpg"
+      "assets/images/products/wild-kenyan-cardamom-digestive-chews-photo.jpg"
     ],
     "whatItDoes": "Crushed aromatic green cardamom seeds gently rolled with sun-dried Mount Kenya ginger and raw sugarcane molasses. Naturally freshens breath while dispelling gut gasses. Neutralizes pungent mouth odors and supports oral cavity microbiome balance. Rapidly relieves motion and travel nausea during rough car or flight journeys"
   },
@@ -4825,7 +4825,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 42,
     "tag": "Living Culture",
-    "image": "assets/images/products/probiotic-fermented-baobab-kombucha-tea.jpg",
+    "image": "assets/images/products/probiotic-fermented-baobab-kombucha-tea-photo.jpg",
     "herbs": [
       "baobab",
       "hibiscus",
@@ -4855,7 +4855,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Whisk 1 tablespoon into cold spring water. Allow to effervesce for 2 minutes before enjoying.",
     "inStock": true,
     "images": [
-      "assets/images/products/probiotic-fermented-baobab-kombucha-tea.jpg"
+      "assets/images/products/probiotic-fermented-baobab-kombucha-tea-photo.jpg"
     ],
     "whatItDoes": "Naturally dehydrated active kombucha vinegar ferments combined with soluble baobab prebiotic fiber. Reconstitutes in cold water into a tangy probiotic elixer. Supplies beneficial lactic and acetic acid bacteria to re-seed depleted microbiomes. Baobab fiber provides immediate substrate nourishment for newly seeded bacteria"
   },
@@ -4869,7 +4869,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 51,
     "tag": "Tight Junctions",
-    "image": "assets/images/products/cat-claw-uncaria-intestinal-barrier-tea.jpg",
+    "image": "assets/images/products/cat-claw-uncaria-intestinal-barrier-tea-photo.jpg",
     "herbs": [
       "cats claw",
       "uncaria tomentosa",
@@ -4899,7 +4899,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Simmer 1 tablespoon in 350ml water for 15 minutes. Strain and drink once daily between meals.",
     "inStock": true,
     "images": [
-      "assets/images/products/cat-claw-uncaria-intestinal-barrier-tea.jpg"
+      "assets/images/products/cat-claw-uncaria-intestinal-barrier-tea-photo.jpg"
     ],
     "whatItDoes": "Combines the sacred inner bark of Amazonian Cat's Claw (Uncaria tomentosa) with European meadowsweet. Formulated to calm inflammatory cascades in the intestinal lining. Pentacyclic oxindole alkaloids soothe hyperactive mucosal immune reactions. Meadowsweet protects delicate epithelial barrier junctions from acid erosion"
   },
@@ -4913,7 +4913,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 39,
     "tag": "Fat Digestion",
-    "image": "assets/images/products/artichoke-leaf-boldo-bile-flow-tincture.jpg",
+    "image": "assets/images/products/artichoke-leaf-boldo-bile-flow-tincture-photo.jpg",
     "herbs": [
       "artichoke leaf",
       "cynarin",
@@ -4943,7 +4943,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Take 25 drops in 50ml water 10 minutes prior to heavy, rich, or fatty meals.",
     "inStock": true,
     "images": [
-      "assets/images/products/artichoke-leaf-boldo-bile-flow-tincture.jpg"
+      "assets/images/products/artichoke-leaf-boldo-bile-flow-tincture-photo.jpg"
     ],
     "whatItDoes": "Cynarin from globe artichoke leaves is one of nature's most proven choleretic agents, stimulating the liver to produce fresh, free-flowing bile. Increases liver bile production and flow to effortlessly digest heavy fats. Helps prevent sluggish, stagnant bile sludge in the gallbladder"
   },
@@ -4957,7 +4957,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 67,
     "tag": "Family Gentle",
-    "image": "assets/images/products/chamomile-catnip-children-tummy-tea.jpg",
+    "image": "assets/images/products/chamomile-catnip-children-tummy-tea-photo.jpg",
     "herbs": [
       "chamomile",
       "catnip",
@@ -4987,7 +4987,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep 1 teaspoon in hot water for 5 minutes. Serve warm or room temperature with a splash of apple juice.",
     "inStock": true,
     "images": [
-      "assets/images/products/chamomile-catnip-children-tummy-tea.jpg"
+      "assets/images/products/chamomile-catnip-children-tummy-tea-photo.jpg"
     ],
     "whatItDoes": "A profoundly gentle, sweet herbal infusion safe for children and nursing mothers. Catnip and chamomile soothe both the nervous system and intestinal gas pockets simultaneously. Safe and non-toxic for young children, toddlers, and sensitive elderly constitutions. Relieves colicky spasms and nervous stomach distress before bed"
   },
@@ -5001,7 +5001,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 79,
     "tag": "Gut Microbiome",
-    "image": "assets/images/products/berberine-barberry-microbial-balance.jpg",
+    "image": "assets/images/products/berberine-barberry-microbial-balance-photo.jpg",
     "herbs": [
       "berberine",
       "barberry",
@@ -5031,7 +5031,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Take 1 capsule 20 minutes before your two main meals of the day for 4 to 6 weeks.",
     "inStock": true,
     "images": [
-      "assets/images/products/berberine-barberry-microbial-balance.jpg"
+      "assets/images/products/berberine-barberry-microbial-balance-photo.jpg"
     ],
     "whatItDoes": "Pure botanical berberine alkaloid extracted from wild barberry roots. Renowned in functional medicine for balancing problematic gut microbial overgrowths and supporting insulin receptor sensitivity. Promotes a healthy, balanced microbial ecology in the small and large intestines. Curtails stubborn yeast and fungal overgrowths such as Candida"
   },
@@ -5045,7 +5045,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 55,
     "tag": "Oral Demulcent",
-    "image": "assets/images/products/marshmallow-plantain-soothing-lozenge.jpg",
+    "image": "assets/images/products/marshmallow-plantain-soothing-lozenge-photo.jpg",
     "herbs": [
       "marshmallow",
       "plantain leaf",
@@ -5075,7 +5075,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Allow 1 lozenge to dissolve slowly in the mouth without chewing.",
     "inStock": true,
     "images": [
-      "assets/images/products/marshmallow-plantain-soothing-lozenge.jpg"
+      "assets/images/products/marshmallow-plantain-soothing-lozenge-photo.jpg"
     ],
     "whatItDoes": "Hard artisanal herbal lozenges made with wild plantain leaf extract, marshmallow root mucilage, and raw acacia honey. Dissolves slowly to coat irritated vocal cords and esophageal tissues. Immediately lubricates raw, scratchy vocal cords and throat lining. Cools acidic burning sensation caused by nighttime silent reflux"
   },
@@ -5089,7 +5089,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 63,
     "tag": "Seasonal Cleanse",
-    "image": "assets/images/products/kenyan-clove-parasite-cleanse-formula.jpg",
+    "image": "assets/images/products/kenyan-clove-parasite-cleanse-formula-photo.jpg",
     "herbs": [
       "clove",
       "black walnut",
@@ -5120,7 +5120,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Take 30 drops in a splash of water twice daily on an empty stomach for a 14-day protocol.",
     "inStock": true,
     "images": [
-      "assets/images/products/kenyan-clove-parasite-cleanse-formula.jpg"
+      "assets/images/products/kenyan-clove-parasite-cleanse-formula-photo.jpg"
     ],
     "whatItDoes": "The classic herbalist's triumvirate: freshly ground Zanzibar clove buds (which eliminate microbial eggs), green black walnut hulls, and bitter wormwood. Traditional herbal protocol for clearing unwanted microbial and parasitic travelers. Encourages deep intestinal detox and restores healthy bowel tone"
   },
