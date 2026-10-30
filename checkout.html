@@ -28,6 +28,7 @@
   src="https://www.facebook.com/tr?id=1453582713300853&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
 <body>
 
@@ -104,30 +105,35 @@
     <div class="checkout-grid" id="checkoutMainGrid">
       <!-- Left Column: Fast Form & Payment Selection -->
       <div class="checkout-card">
-        <h2 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--gold-primary); margin-bottom: 1rem;">
-          1. Select How You Would Like to Pay & Receive:
-        </h2>
-
-        <div class="payment-method-selector">
-          <div class="pay-choice-btn active" id="methodMpesa" onclick="selectPaymentMethod('mpesa')">
-            <span class="choice-icon">⚡</span>
-            <span class="choice-title">M-Pesa / Card</span>
-            <span class="choice-sub">Instant Paystack</span>
-          </div>
-          <div class="pay-choice-btn" id="methodCod" onclick="selectPaymentMethod('cod')">
-            <span class="choice-icon">📦</span>
-            <span class="choice-title">Pay on Delivery</span>
-            <span class="choice-sub">Cash / M-Pesa on Arrival</span>
-          </div>
-          <div class="pay-choice-btn" id="methodWhatsapp" onclick="selectPaymentMethod('whatsapp')">
-            <span class="choice-icon">💬</span>
-            <span class="choice-title">WhatsApp Order</span>
-            <span class="choice-sub">1-Click Concierge</span>
+        <!-- Fast 1-Click Checkout Banner for Returning Customers -->
+        <div id="fastCheckoutBanner" style="display: none; background: linear-gradient(135deg, rgba(9, 165, 219, 0.12) 0%, rgba(0, 195, 137, 0.12) 100%); border: 1px solid rgba(0, 195, 137, 0.35); border-radius: 8px; padding: 1rem; margin-bottom: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <div>
+              <span style="color: var(--gold-glow); font-weight: 700; font-size: 0.95rem; display: block;">⚡ Welcome back, <span id="fastName"></span>!</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Delivering to <strong id="fastTown" style="color: var(--text-parchment);"></strong> • <strong id="fastPhone" style="color: var(--text-parchment);"></strong></span>
+            </div>
+            <button type="button" class="btn-paystack" onclick="triggerFastPaystack()" style="padding: 0.65rem 1.25rem; font-size: 0.9rem; font-weight: 700; cursor: pointer; border: none; border-radius: 6px;">
+              ⚡ 1-Click Pay with Paystack
+            </button>
           </div>
         </div>
 
-        <h2 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--gold-primary); margin-bottom: 1.25rem;">
-          2. Delivery Information:
+        <!-- Official Paystack Security & Channel Banner -->
+        <div style="background: rgba(9, 165, 219, 0.08); border: 1px solid rgba(0, 195, 137, 0.3); border-radius: 8px; padding: 0.9rem 1.1rem; margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="font-size: 1.5rem;">🔒</span>
+            <div>
+              <strong style="display: block; color: var(--gold-glow); font-size: 0.95rem;">Paystack Official Secure Gateway</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Instant M-Pesa STK Push • Visa • Mastercard • Apple Pay</span>
+            </div>
+          </div>
+          <span class="card-pill" style="background: rgba(0, 195, 137, 0.15); border-color: rgba(0, 195, 137, 0.4); color: #00c389; font-size: 0.75rem;">
+            256-bit SSL
+          </span>
+        </div>
+
+        <h2 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--gold-primary); margin-bottom: 1.25rem;">
+          Discreet Delivery & Contact Information:
         </h2>
 
         <form id="expressCheckoutForm" onsubmit="handleCheckoutSubmission(event)">
@@ -156,9 +162,15 @@
             <input type="text" id="checkoutNotes" class="form-input" placeholder="e.g. Call upon arrival, leave at reception, discreet delivery">
           </div>
 
-          <button type="submit" class="btn-paystack" id="submitOrderBtn" style="width: 100%; margin-top: 1rem; font-size: 1.1rem; padding: 1rem;">
-            Proceed to Secure Payment
+          <button type="submit" class="btn-paystack" id="submitOrderBtn" style="width: 100%; margin-top: 1.25rem; font-size: 1.1rem; padding: 1.1rem; font-weight: 700; letter-spacing: 0.5px; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem; box-shadow: 0 4px 20px rgba(0, 195, 137, 0.35);">
+            <span>🔒</span>
+            <span id="submitBtnText">Pay Now via Paystack (M-Pesa / Card)</span>
           </button>
+          <div style="text-align: center; margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+            <span>🛡️ Official Paystack PCI-DSS Level 1 Gateway</span>
+            <span>•</span>
+            <span>Instant M-Pesa STK Prompt</span>
+          </div>
         </form>
       </div>
 
@@ -389,6 +401,22 @@
         if (savedPhone) document.getElementById('checkoutPhone').value = savedPhone;
         if (savedTown) document.getElementById('checkoutTown').value = savedTown;
         if (savedEmail) document.getElementById('checkoutEmail').value = savedEmail;
+
+        if (savedName && savedPhone && savedTown) {
+          const fastBanner = document.getElementById('fastCheckoutBanner');
+          if (fastBanner) {
+            document.getElementById('fastName').textContent = savedName.split(' ')[0] || savedName;
+            document.getElementById('fastPhone').textContent = savedPhone;
+            document.getElementById('fastTown').textContent = savedTown;
+            fastBanner.style.display = 'block';
+          }
+
+          if (params.get('instant') === 'true' || params.get('autopop') === 'true') {
+            setTimeout(() => {
+              triggerFastPaystack();
+            }, 350);
+          }
+        }
       } catch (e) {}
 
       renderCheckoutSummary();
@@ -459,23 +487,19 @@
       document.getElementById('summaryTotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(totalKES) : `KSh ${totalKES}`;
     }
 
-    function selectPaymentMethod(method) {
-      selectedPayment = method;
-      document.getElementById('methodMpesa').classList.toggle('active', method === 'mpesa');
-      document.getElementById('methodCod').classList.toggle('active', method === 'cod');
-      document.getElementById('methodWhatsapp').classList.toggle('active', method === 'whatsapp');
-
-      const submitBtn = document.getElementById('submitOrderBtn');
-      if (method === 'mpesa') {
-        submitBtn.textContent = '⚡ Pay Now via Paystack (M-Pesa / Card)';
-        submitBtn.className = 'btn-paystack';
-      } else if (method === 'cod') {
-        submitBtn.textContent = '📦 Confirm Order (Pay on Delivery)';
-        submitBtn.className = 'btn-primary';
-      } else {
-        submitBtn.textContent = '💬 Place Order via 1-Click WhatsApp';
-        submitBtn.className = 'btn-whatsapp';
+    function triggerFastPaystack() {
+      const form = document.getElementById('expressCheckoutForm');
+      if (form) {
+        if (typeof form.requestSubmit === 'function') {
+          form.requestSubmit();
+        } else {
+          form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+        }
       }
+    }
+
+    function selectPaymentMethod(method = 'mpesa') {
+      selectedPayment = 'mpesa';
     }
 
     function handleCheckoutSubmission(e) {
@@ -487,13 +511,13 @@
       const email = document.getElementById('checkoutEmail').value.trim() || `${phone.replace(/[^0-9]/g, '')}@orders.omnicorehub.app`;
       const notes = document.getElementById('checkoutNotes').value.trim();
 
-      // Persist customer details for next time (0-friction reorders)
+      // Persist customer details for 0-friction 1-click reorders
       try {
         localStorage.setItem('nah_cust_name', name);
         localStorage.setItem('nah_cust_phone', phone);
         localStorage.setItem('nah_cust_town', town);
         if (email) localStorage.setItem('nah_cust_email', email);
-      } catch (e) {}
+      } catch (err) {}
 
       const subtotalKES = checkoutItems.reduce((sum, item) => sum + (item.priceKES * item.quantity), 0);
       let discountKES = 0;
@@ -524,55 +548,20 @@
         coupon: appliedCoupon ? appliedCoupon.code : null,
         discountKES,
         amountInKES: totalKES,
-        paymentMethod: selectedPayment,
+        paymentMethod: 'mpesa',
         utm: urlUtmParams,
         date: new Date().toLocaleString()
       };
 
-      if (selectedPayment === 'whatsapp') {
-        // Direct WhatsApp order
-        const cleanStorePhone = CONFIG.contact.whatsapp.replace(/[^0-9]/g, '');
-        let msg = `🌿 *CONFIDENTIAL EXPRESS ORDER - NEWAGE HEALTH BOTANICALS*\n\n`;
-        msg += `*Order Ref:* ${reference}\n`;
-        msg += `*Customer:* ${name}\n*Phone:* ${phone}\n*Delivery Location:* ${town}\n\n`;
-        msg += `*Items Ordered:*\n`;
-        checkoutItems.forEach((it, i) => {
-          msg += `${i + 1}. *${it.name}* (x${it.quantity}) - KSh ${(it.priceKES * it.quantity).toLocaleString()}\n`;
-        });
-        if (discountKES > 0) {
-          msg += `*Discount (${appliedCoupon.code}):* -KSh ${discountKES.toLocaleString()}\n`;
-        }
-        msg += `\n*Total Due:* KSh ${totalKES.toLocaleString()}\n`;
-        msg += `*Packaging:* 100% Plain & Discreet Courier Dispatch\n`;
-        if (notes) msg += `*Notes:* ${notes}\n`;
-        msg += `\nPlease confirm dispatch!`;
-
-        if (window.fbq) {
-          try {
-            fbq('track', 'Contact', {
-              content_name: 'WhatsApp Express Order',
-              value: totalKES,
-              currency: 'KES'
-            });
-          } catch (err) {}
-        }
-
-        window.open(`https://wa.me/${cleanStorePhone}?text=${encodeURIComponent(msg)}`, '_blank');
-        cart.clearCart();
-        showSuccessScreen(orderData);
-        return;
+      const submitBtn = document.getElementById('submitOrderBtn');
+      const submitText = document.getElementById('submitBtnText');
+      if (submitBtn && submitText) {
+        submitBtn.disabled = true;
+        if (submitText) submitText.textContent = 'Launching Paystack Gateway...';
+        else submitBtn.textContent = 'Launching Paystack Gateway...';
       }
 
-      if (selectedPayment === 'cod') {
-        // Pay on delivery
-        orderData.paystackResponse = { status: 'pending_cod', message: 'Pay on Delivery Approved' };
-        window.paystackService.saveOrderHistory(orderData);
-        cart.clearCart();
-        showSuccessScreen(orderData);
-        return;
-      }
-
-      // Online Paystack (M-Pesa / Card / Apple Pay)
+      // Launch Paystack Secure Popup Modal
       window.paystackService.initiatePayment({
         customerName: name,
         customerEmail: email,
@@ -582,11 +571,21 @@
         amountInKES: totalKES,
         items: checkoutItems,
         onSuccess: (resData) => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            if (submitText) submitText.textContent = 'Payment Verified';
+            else submitBtn.textContent = 'Payment Verified';
+          }
           cart.clearCart();
           showSuccessScreen({ ...orderData, reference: resData.reference || reference });
         },
         onClose: () => {
-          console.log('Payment window closed');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            if (submitText) submitText.textContent = 'Pay Now via Paystack (M-Pesa / Card)';
+            else submitBtn.textContent = 'Pay Now via Paystack (M-Pesa / Card)';
+          }
+          console.log('Paystack popup closed');
         }
       });
     }
@@ -599,7 +598,7 @@
       document.getElementById('successOrderRef').textContent = orderData.reference;
       document.getElementById('successName').textContent = orderData.customerName;
       document.getElementById('successTown').textContent = orderData.customerAddress;
-      document.getElementById('successPayment').textContent = orderData.paymentMethod === 'cod' ? '📦 Pay on Delivery (Cash/M-Pesa)' : '⚡ Paid via M-Pesa / Card';
+      document.getElementById('successPayment').textContent = '⚡ Verified via Paystack (M-Pesa / Card)';
       document.getElementById('successTotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(orderData.amountInKES) : `KSh ${orderData.amountInKES.toLocaleString()}`;
 
       const cleanStorePhone = CONFIG.contact.whatsapp.replace(/[^0-9]/g, '');
