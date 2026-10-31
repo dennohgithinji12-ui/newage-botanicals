@@ -437,7 +437,7 @@ ${catalog}`;
     // 2. STORE POLICIES & SHIPPING
     if (/(shipping|deliver|delivery|location|nairobi|kenya|dhl|wells fargo|pay|payment|mpesa|m-pesa|cost|price|order)/i.test(q) && !/(herb|tea|oil|remedy|sleep|ache|pain)/i.test(q)) {
       return {
-        text: `Here is our apothecary's sacred fulfillment guide: 📦\n\n- **Nairobi Deliveries:** Same-day & Next-day courier dispatch (KSh 300 flat, or **FREE** on orders over KSh 5,000).\n- **Kenya Nationwide:** 24-48 hour secure delivery via Wells Fargo / G4S door-to-door.\n- **Worldwide Shipping:** Express international delivery via DHL Express (3-7 business days).\n- **Sacred Payments:** 100% secured via Paystack supporting **M-Pesa Express**, Visa, Mastercard, and Apple Pay.\n\nEvery order is packed in eco-conscious parchment with wild botanical protection herbs.`,
+        text: `Here is our apothecary's sacred fulfillment guide: 📦\n\n- **Nairobi Deliveries:** Same-day & Next-day courier dispatch (KSh 300 flat, or **FREE** on orders over KSh 5,000).\n- **Kenya Nationwide:** 24-48 hour secure delivery via Wells Fargo / G4S door-to-door.\n- **Worldwide Shipping:** Express international delivery via DHL Express (3-7 business days).\n- **Sacred Payments:** 100% secured online via Paystack supporting **M-Pesa Express**, Visa, Mastercard, and Apple Pay. (Prepayment is strictly required; we do not accept cash/payment on delivery to guarantee tamper-proof courier security and discretion).\n\nEvery order is packed in eco-conscious parchment with wild botanical protection herbs.`,
         productIds: ["moringa-powder-organic", "bedtime-dream-tea"],
         suggestions: [
           "What are your bestsellers?",
