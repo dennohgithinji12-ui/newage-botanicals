@@ -1,8 +1,7 @@
 /**
- * NewAge Health Botanicals & Rituals - Structured Product Catalog
- * High-Efficacy Evidence-Backed African & Global Botanical Remedies
- * Zero-database, client-side catalog indexed by Category, Herb, Illness, and Ritual
- * Official Hotline: +254141270112 | Socials: @newagebotanicals
+ * NewAge Health Botanicals & Rituals - Master Product Catalog
+ * Complete Pharmacopoeia Database (Zero-Database Architecture)
+ * Total Remedies: 168
  */
 
 const PRODUCTS_DATA = [
@@ -7633,6 +7632,216 @@ const PRODUCTS_DATA = [
       "assets/images/products/damar-gum-golden-sun-incense-resin.jpg"
     ],
     "whatItDoes": "Clear golden glass-like resin tears tapped from dipterocarp trees. When burned on charcoal, it yields an airy, light, lemon-pine translucent smoke that disperses depressive gloom. Known in incense lore as the resin that 'brings light to the darkest corners of the mind'. Fosters laser mental focus without the heavy cloying thickness of lower-grade incenses"
+  },
+  {
+    "id": "acne-clear-neem-tea-tree-blemish-elixir",
+    "name": "AcneClear Rapid Blemish & Cystic Breakout Botanical Elixir",
+    "botanicalName": "Azadirachta indica, Melaleuca alternifolia & Nigella sativa",
+    "category": "skin-body",
+    "categoryName": "Skin, Body & Radiant Aging",
+    "priceKES": 2850,
+    "rating": 4.9,
+    "reviewCount": 84,
+    "tag": "Rapid Blemish Clarifier",
+    "image": "assets/images/products/acne-clear-neem-tea-tree-blemish-elixir.jpg",
+    "images": [
+      "assets/images/products/acne-clear-neem-tea-tree-blemish-elixir.jpg"
+    ],
+    "herbs": [
+      "kenyan neem",
+      "tea tree oil",
+      "black seed oil",
+      "clove bud",
+      "frankincense resin",
+      "salicylic willow bark"
+    ],
+    "illnesses": [
+      "cystic acne breakouts",
+      "hormonal chin & jaw blemishes",
+      "stubborn dark spots (post-inflammatory hyperpigmentation)",
+      "excessive oily sebum",
+      "clogged pores"
+    ],
+    "rituals": [
+      "nightly targeted spot ritual",
+      "post-cleansing clarifying serum",
+      "blemish emergency drop"
+    ],
+    "description": "Potent fast-acting herbal clarifying elixir fusing cold-pressed Kenyan Neem, antimicrobial Australian Tea Tree, cold-pressed Ethiopian Black Seed (Nigella sativa), and bio-active Salicylic Willow Bark. Formulated specifically for African skin types prone to stubborn hormonal acne and dark spots, it neutralizes deep cystic inflammation overnight while promoting dermal repair without flaking or stinging.",
+    "benefits": [
+      "Fast-acting targeted action against deep cystic bumps and hormonal breakouts",
+      "Dissolves hardened pore sebum and unclogs congestion without drying surrounding skin",
+      "Fades dark hyperpigmentation marks (madoa) left behind by previous blemishes",
+      "Restores clear, calm, and balanced skin microbiome"
+    ],
+    "ingredients": [
+      "Cold-Pressed Kenyan Azadirachta Indica (Neem) Seed Oil",
+      "Pure Steam-Distilled Melaleuca Alternifolia (Tea Tree) Leaf Oil",
+      "Cold-Pressed Ethiopian Nigella Sativa (Black Seed) Oil",
+      "Wild Salix Alba (White Willow Bark) Extract",
+      "Hydro-Distilled Boswellia Carterii (Frankincense) Oil",
+      "Golden Jojoba Carrier Base"
+    ],
+    "ritualGuide": "After evening cleansing, apply 2-3 drops directly onto blemish-prone areas or active spots. Gently tap with clean fingertips until absorbed. Use nightly for clear, glowing skin.",
+    "inStock": true,
+    "whatItDoes": "Penetrates deep into pores to dissolve stubborn cystic sebum, clear acne-causing bacteria, and fade dark spots without chemical peeling or flaking. Delivers visible blemish reduction within 24 to 48 hours."
+  },
+  {
+    "id": "mjulubeng-xl-mashine-pro-enlargement-balm",
+    "name": "Mjulubeng XL (Mashine Pro) Sacred Virility & Tissue Expansion Balm",
+    "botanicalName": "Mondia whitei, Kigelia africana & Butea superba",
+    "category": "mens-wellness",
+    "categoryName": "Men's Stamina & Intimacy",
+    "priceKES": 4500,
+    "rating": 5,
+    "reviewCount": 142,
+    "tag": "Kifimbo Max · Machine & Rounds",
+    "image": "assets/images/products/mjulubeng-xl-mashine-pro-enlargement-balm.jpg",
+    "images": [
+      "assets/images/products/mjulubeng-xl-mashine-pro-enlargement-balm.jpg"
+    ],
+    "herbs": [
+      "wild mukombero (mondia whitei)",
+      "kigelia africana (sausage tree fruit)",
+      "butea superba",
+      "epimedium",
+      "african ginger",
+      "capsicum micro-vasodilator"
+    ],
+    "illnesses": [
+      "inadequate size and girth self-consciousness",
+      "soft or collapsing erections (nanga lock)",
+      "short rounds and premature climax",
+      "poor pelvic circulation",
+      "performance anxiety"
+    ],
+    "rituals": [
+      "nightly tissue conditioning massage",
+      "pre-intimacy stamina preparation",
+      "sacred virility massage"
+    ],
+    "description": "The definitive indigenous male performance matrix. Known across street culture as 'Kifimbo Max / Mashine Pro', this concentrated transdermal balm combines concentrated Western Kenya Mukombero (Mondia whitei), steroidal saponins from wild Kigelia africana (Sausage Tree), and Thai Butea superba. Formulated for regular bedtime tissue massage ('kushika nanga'), its natural nitric oxide vasodilators stimulate deep microvascular blood pooling to maximize tissue fullness, girth, rigidity, and bedroom stamina without chemical numbness.",
+    "benefits": [
+      "Promotes maximum blood flow and microvascular tissue expansion ('kuongeza machine & girth')",
+      "Fortifies tissue rigidity to prevent mid-session collapse ('kushika nanga')",
+      "Natural carminative botanical blend aids endurance and stops premature release ('kuongeza rounds')",
+      "Nourishing Nilotica shea and marula base absorbs cleanly without greasy residue"
+    ],
+    "ingredients": [
+      "Wild Western Kenya Mondia Whitei (Mukombero) Root Extract",
+      "Kigelia Africana (Sausage Tree) Fruit Sterol Resin",
+      "Butea Superba Root Extract",
+      "Epimedium (Horny Goat Weed) Flavonoids",
+      "Zingiber Officinale (African Ginger) CO2 Extract",
+      "Raw Nilotica Shea Butter & Marula Oil Base"
+    ],
+    "ritualGuide": "Apply a pea-sized amount onto the shaft and massage gently in long, firm strokes from base to tip for 5–10 minutes before bed or 30 minutes before intimacy. Do not rinse immediately.",
+    "inStock": true,
+    "whatItDoes": "Stimulates local microvascular blood flow, conditions spongy penile tissue for enhanced girth and firmness, and delays premature release for extended endurance rounds."
+  },
+  {
+    "id": "bana-tight-floragrip-intimate-gel",
+    "name": "Bana Tight (FloraGrip) Pelvic Toning & Intimate Firming Gel",
+    "botanicalName": "Quercus infectoria, Hamamelis virginiana & Aloe barbadensis",
+    "category": "womens-wellness",
+    "categoryName": "Women's Moon Cycles & Sacred Flora",
+    "priceKES": 3950,
+    "rating": 4.9,
+    "reviewCount": 118,
+    "tag": "Finyo Drop · Pelvic Grip & Tone",
+    "image": "assets/images/products/bana-tight-floragrip-intimate-gel.jpg",
+    "images": [
+      "assets/images/products/bana-tight-floragrip-intimate-gel.jpg"
+    ],
+    "herbs": [
+      "manjakani oak gall tannins",
+      "coastal swahili mafundo herbs",
+      "witch hazel",
+      "pure aloe vera inner fillet",
+      "damask rose hydrosol"
+    ],
+    "illnesses": [
+      "postpartum pelvic muscle laxity",
+      "loss of intimate friction and grip (kufinya/kubana)",
+      "vaginal wall dryness or irritation",
+      "intimate flora imbalance and odor",
+      "reduced sensation during intimacy"
+    ],
+    "rituals": [
+      "pre-intimacy toning ritual (15 mins prior)",
+      "daily postpartum pelvic restorative",
+      "fresh flora morning ritual"
+    ],
+    "description": "Formulated for modern women who demand instant intimate tightness and pelvic vitality. Derived from ancient Swahili coastal sitting-steam traditions and high-potency Manjakani (Quercus infectoria) tannins, 'Bana Tight / FloraGrip' provides a rapid, natural astringent toning effect on intimate muscular walls ('kufinya na kubana'). Enriched with soothing Aloe vera, Witch Hazel, and Damask Rose, it restores tight elasticity, enhances sensation, balances vaginal pH, and leaves a fresh, clean intimate flora.",
+    "benefits": [
+      "Fast-acting natural astringency firms and tones intimate walls ('kubana & kufinya')",
+      "Dramatically heightens mutual intimate friction, grip, and pleasure",
+      "Balances delicate pH 4.0 intimate flora to prevent discharge and odor",
+      "Gentle, water-based, non-staining formula free from synthetic fragrances or parabens"
+    ],
+    "ingredients": [
+      "Pure Quercus Infectoria (Manjakani) Gall Tannin Extract",
+      "Coastal Swahili Mafundo Herbal Infusion",
+      "Organic Hamamelis Virginiana (Witch Hazel) Distillate",
+      "Cold-Pressed Aloe Barbadensis Inner Leaf Gel",
+      "Organic Rosa Damascena (Rose) Flower Hydrosol",
+      "Plant-Derived Vegetable Glycerin"
+    ],
+    "ritualGuide": "Cleanse intimate area. Apply 1–2 drops or a small pearl of gel internally using clean fingertips 15–20 minutes before intimacy or daily as a postpartum toning ritual. Feel the gentle firming contraction take effect within minutes.",
+    "inStock": true,
+    "whatItDoes": "Rapidly contracts and tones intimate mucosal walls, restores natural elastic grip, balances intimate pH, and eliminates unwanted odor."
+  },
+  {
+    "id": "mwake-tonic-shugli-shot",
+    "name": "Mwake Tonic (Shugli Shot) African Forest Honey & Mũteta Virility Fuel",
+    "botanicalName": "Strychnos henningsii, Mondia whitei & Apis mellifera",
+    "category": "mens-wellness",
+    "categoryName": "Men's Stamina & Intimacy",
+    "priceKES": 3200,
+    "rating": 5,
+    "reviewCount": 96,
+    "tag": "Vayolens Fuel · Instant Energy & Libido",
+    "image": "assets/images/products/mwake-tonic-shugli-shot.jpg",
+    "images": [
+      "assets/images/products/mwake-tonic-shugli-shot.jpg"
+    ],
+    "herbs": [
+      "wild mũteta bark",
+      "mukombero root",
+      "raw mount kenya black honey",
+      "korean panax ginseng",
+      "cardamom",
+      "clove"
+    ],
+    "illnesses": [
+      "chronic work fatigue & low physical drive",
+      "weak bedroom libido and sluggish stamina",
+      "sluggish morning motivation",
+      "burnout from daily stress",
+      "lack of vitality (mwaki)"
+    ],
+    "rituals": [
+      "afternoon vitality booster",
+      "pre-intimacy energy shot (shugli)",
+      "morning power teaspoon"
+    ],
+    "description": "Inspired by Kenyan matatu energy and traditional Central Kenyan forest medicine, 'Mwake Tonic / Shugli Shot' is an uncompromising raw herbal aphrodisiac brew. Crafted with wild bitter Mũteta bark (Strychnos henningsii)—celebrated by Maasai and Kikuyu elders for centuries as the ultimate spinal stamina tonic—infused into raw Mount Kenya stingless bee black honey with Mukombero and warming spices. Delivers instant full-body warmth, unwavering vitality, and mental drive ('kuamsha mwake na kufanya shugli').",
+    "benefits": [
+      "Fast-acting adaptogenic boost dispels mental fatigue and physical lethargy",
+      "Traditional Mũteta & Mukombero blend sparks intense libido and bedroom stamina ('mwake')",
+      "Raw forest black honey provides clean, sustained cellular glycogen without sugar crashes",
+      "Supports healthy testosterone levels and spinal nerve vitality"
+    ],
+    "ingredients": [
+      "Wild Central Kenya Strychnos Henningsii (Mũteta) Decoction",
+      "Raw Wild Mount Kenya Forest Black Honey",
+      "Wild Mondia Whitei (Mukombero) Root Extract",
+      "Korean Panax Ginseng Extract (5% Ginsenosides)",
+      "Zanzibar Clove & Cardamom Essential Oils"
+    ],
+    "ritualGuide": "Take 1–2 teaspoons directly or mix into warm water or tea 30 minutes before intense work, exercise, or bedroom activity ('shugli'). Feel the warming surge of stamina.",
+    "inStock": true,
+    "whatItDoes": "Ignites full-body circulation, overcomes mental exhaustion, and unleashes instant physical endurance and libido."
   }
 ];
 

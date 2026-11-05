@@ -163,7 +163,7 @@ assert(metaCsvLines[0].startsWith('id,title,description,availability,condition,p
 const metaXml = fs.readFileSync(path.join(__dirname, '../meta-catalog-feed.xml'), 'utf8');
 assert(metaXml.includes('<rss xmlns:g="http://base.google.com/ns/1.0"'), 'Meta XML feed has valid RSS 2.0 schema namespace');
 const itemCount = (metaXml.match(/<item>/g) || []).length;
-assert(itemCount === 164, `Meta XML feed has all 164 products exported as items (Found: ${itemCount})`);
+assert(itemCount === productsData.length, `Meta XML feed has all ${productsData.length} products exported as items (Found: ${itemCount})`);
 
 const MetaCatalogConnectService = require('../js/meta-catalog-service.js');
 const metaService = new MetaCatalogConnectService();
