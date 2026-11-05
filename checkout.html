@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Easy & Discreet Checkout | NewAge Health Botanicals & Rituals</title>
-  <meta name="description" content="Effortless, frictionless checkout with instant M-Pesa, Card via Paystack, and 100% discreet plain-box packaging guarantee.">
+  <title>Discreet Secure Checkout | NewAge Health Botanicals</title>
+  <meta name="description" content="Fast, 100% confidential checkout with instant M-Pesa, Card via Paystack, and unbranded plain packaging.">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
 
   <!-- Meta Pixel Code -->
@@ -30,165 +30,108 @@
   <!-- End Meta Pixel Code -->
   <script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
-<body>
+<body style="background: var(--bg-primary); color: var(--text-parchment); font-family: var(--font-sans); min-height: 100vh;">
 
-  <!-- Top Announcement Bar -->
-  <div class="announcement-bar">
-    <div class="container announcement-content">
-      <span>🔒 100% Confidential & Plain Packaging | Same-Day & 24h Countrywide Courier Dispatch</span>
-      <div class="currency-selector-wrap">
-        <label for="currencySelect" class="sr-only">Currency</label>
-        <select id="currencySelect" class="currency-select" aria-label="Select Currency" onchange="geoCurrency.setCurrency(this.value)">
-          <option value="KES">🇰🇪 KES (KSh)</option>
-          <option value="USD">🇺🇸 USD ($)</option>
-          <option value="GBP">🇬🇧 GBP (£)</option>
-          <option value="EUR">🇪🇺 EUR (€)</option>
-          <option value="NGN">🇳🇬 NGN (₦)</option>
-          <option value="GHS">🇬🇭 GHS (GH₵)</option>
-          <option value="ZAR">🇿🇦 ZAR (R)</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <!-- Header Navigation -->
-  <header class="site-header">
-    <div class="container header-container">
-      <a href="index.html" class="brand-logo" aria-label="NewAge Health Home">
-        <span class="logo-symbol">🌿</span>
-        <div class="logo-text">
-          <span class="brand-name">NewAge Health</span>
-          <span class="brand-subtitle">Botanicals & Rituals</span>
+  <!-- Minimal Header -->
+  <header style="padding: 1.1rem 0; border-bottom: 1px solid rgba(212, 175, 55, 0.2); background: rgba(5, 14, 9, 0.95); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 1.25rem;">
+      <a href="index.html" style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+        <span style="font-size: 1.6rem;">🌿</span>
+        <div>
+          <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--gold-glow); display: block; letter-spacing: 0.5px;">NewAge Botanicals</span>
+          <span style="font-size: 0.72rem; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase;">Apothecary Dispensary</span>
         </div>
       </a>
-
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="shop.html" class="nav-link">Dispensary</a>
-      </nav>
-
-      <div class="header-actions">
-        <span class="card-pill" style="background: rgba(42, 157, 143, 0.15); border-color: #2a9d8f; color: #32b5a5;">
-          🛡️ 256-bit Encrypted Checkout
-        </span>
+      <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(0, 195, 137, 0.12); padding: 0.4rem 0.85rem; border-radius: 20px; border: 1px solid rgba(0, 195, 137, 0.35);">
+        <span style="font-size: 0.85rem;">🔒</span>
+        <span style="font-size: 0.78rem; color: #00c389; font-weight: 600;">256-Bit SSL Encrypted</span>
       </div>
     </div>
   </header>
 
   <!-- Main Checkout Content -->
-  <main class="checkout-page-wrap container">
-    <div style="margin-bottom: 2rem;">
-      <h1 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--gold-glow); margin-bottom: 0.35rem;">
-        Easy & Confidential Checkout
-      </h1>
-      <p style="color: var(--text-muted); font-size: 0.95rem;">
-        Complete your botanical order in under 30 seconds with instant, 100% secure Paystack payment (M-Pesa / Card).
-      </p>
-    </div>
-
-    <!-- 100% Discreet Packaging Guarantee -->
-    <div class="discreet-guarantee-badge" style="margin-bottom: 2rem;">
-      <span class="icon">📦</span>
-      <div>
-        <strong style="color: var(--gold-glow); display: block; font-size: 1rem;">100% Discreet & Confidential Packaging Guarantee</strong>
-        <span style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.5;">
-          All packages arrive in plain, unbranded security boxes. There are zero product names, illness references, or medical descriptions on the shipping label. Your privacy is 100% protected.
-        </span>
-      </div>
-    </div>
-
-    <!-- Dynamic Alert Box for Meta Checkout (Out of Stock / Invalid Coupons) -->
+  <main class="container" style="max-width: 1100px; margin: 2rem auto; padding: 0 1.25rem;">
+    <!-- Dynamic Alert Box (Out of Stock / Invalid Coupons) -->
     <div id="checkoutNoticeBanner" style="display: none; background: rgba(230, 57, 70, 0.15); border: 1px solid rgba(230, 57, 70, 0.4); border-radius: 8px; padding: 0.85rem 1.25rem; margin-bottom: 1.5rem; color: #ffb4a2; font-size: 0.9rem;">
       <span id="checkoutNoticeText"></span>
     </div>
 
-    <div class="checkout-grid" id="checkoutMainGrid">
-      <!-- Left Column: Fast Form & Payment Selection -->
-      <div class="checkout-card">
-        <!-- Fast 1-Click Checkout Banner for Returning Customers -->
-        <div id="fastCheckoutBanner" style="display: none; background: linear-gradient(135deg, rgba(9, 165, 219, 0.12) 0%, rgba(0, 195, 137, 0.12) 100%); border: 1px solid rgba(0, 195, 137, 0.35); border-radius: 8px; padding: 1rem; margin-bottom: 1.25rem;">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
-            <div>
-              <span style="color: var(--gold-glow); font-weight: 700; font-size: 0.95rem; display: block;">⚡ Welcome back, <span id="fastName"></span>!</span>
-              <span style="font-size: 0.82rem; color: var(--text-muted);">Delivering to <strong id="fastTown" style="color: var(--text-parchment);"></strong> • <strong id="fastPhone" style="color: var(--text-parchment);"></strong></span>
-            </div>
-            <button type="button" class="btn-paystack" onclick="triggerFastPaystack()" style="padding: 0.65rem 1.25rem; font-size: 0.9rem; font-weight: 700; cursor: pointer; border: none; border-radius: 6px;">
-              ⚡ 1-Click Pay with Paystack
-            </button>
-          </div>
-        </div>
-
-        <!-- Official Paystack Security & Channel Banner -->
-        <div style="background: rgba(9, 165, 219, 0.08); border: 1px solid rgba(0, 195, 137, 0.3); border-radius: 8px; padding: 0.9rem 1.1rem; margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: space-between;">
-          <div style="display: flex; align-items: center; gap: 0.75rem;">
-            <span style="font-size: 1.5rem;">🔒</span>
-            <div>
-              <strong style="display: block; color: var(--gold-glow); font-size: 0.95rem;">Paystack Official Secure Gateway</strong>
-              <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Instant M-Pesa STK Push • Visa • Mastercard • Apple Pay</span>
-              <span style="font-size: 0.75rem; color: #00c389; display: block; margin-top: 0.2rem;">🔒 100% Prepayment Required (No Payment on Delivery Accepted)</span>
-            </div>
-          </div>
-          <span class="card-pill" style="background: rgba(0, 195, 137, 0.15); border-color: rgba(0, 195, 137, 0.4); color: #00c389; font-size: 0.75rem;">
-            256-bit SSL
+    <div class="checkout-grid" id="checkoutMainGrid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: start;">
+      
+      <!-- Left Column: Streamlined Express Form -->
+      <div class="checkout-card" style="background: rgba(14, 41, 27, 0.5); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 12px; padding: 1.75rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(212, 175, 55, 0.15);">
+          <h2 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--gold-glow); margin: 0;">
+            1. Delivery & Contact Details
+          </h2>
+          <span style="font-size: 0.78rem; color: var(--gold-primary); background: rgba(212, 175, 55, 0.12); padding: 0.25rem 0.6rem; border-radius: 4px;">
+            📦 Plain Box Guarantee
           </span>
         </div>
 
-        <h2 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--gold-primary); margin-bottom: 1.25rem;">
-          Discreet Delivery & Contact Information:
-        </h2>
-
         <form id="expressCheckoutForm" onsubmit="handleCheckoutSubmission(event)">
-          <div class="form-group">
-            <label class="form-label" for="checkoutName">Full Name *</label>
-            <input type="text" id="checkoutName" class="form-input" placeholder="e.g. Samuel Maina" required>
+          <div class="form-group" style="margin-bottom: 1.1rem;">
+            <label class="form-label" for="checkoutName" style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-parchment);">Full Name *</label>
+            <input type="text" id="checkoutName" class="form-input" placeholder="e.g. Samuel Maina" required style="width: 100%; box-sizing: border-box;">
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="checkoutPhone">Mobile Phone Number (M-Pesa & Courier SMS) *</label>
-            <input type="tel" id="checkoutPhone" class="form-input" placeholder="e.g. 0712 345 678 or +254 7..." required>
+          <div class="form-group" style="margin-bottom: 1.1rem;">
+            <label class="form-label" for="checkoutPhone" style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-parchment);">M-Pesa Phone Number *</label>
+            <input type="tel" id="checkoutPhone" class="form-input" placeholder="e.g. 0712 345 678" required style="width: 100%; box-sizing: border-box;">
+            <span style="font-size: 0.76rem; color: var(--text-muted); display: block; margin-top: 0.25rem;">Used to trigger your instant M-Pesa STK push prompt and courier SMS.</span>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="checkoutTown">Town / City & Delivery Location *</label>
-            <input type="text" id="checkoutTown" class="form-input" placeholder="e.g. Nairobi, Westlands / Mombasa / Kisumu / Nakuru" required>
+          <!-- Kenya Nationwide Regional Courier Selector -->
+          <div class="form-group" style="margin-bottom: 1.1rem;">
+            <label class="form-label" for="checkoutRegion" style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-parchment);">Kenya Region / Courier Destination *</label>
+            <select id="checkoutRegion" class="form-input" onchange="onRegionChange(this.value)" required style="width: 100%; box-sizing: border-box; background: rgba(5, 14, 9, 0.85); color: var(--gold-glow); font-weight: 600;">
+              <option value="nairobi">🇰🇪 Nairobi & Environs (Same-Day Rider) — KSh 300</option>
+              <option value="nairobi_metro">🇰🇪 Nairobi Metro (Rongai, Ruiru, Thika, Kitengela, Ngong) — KSh 400</option>
+              <option value="mt_kenya">🇰🇪 Mount Kenya & Central (Nyeri, Murang'a, Embu, Meru) — KSh 450</option>
+              <option value="rift_valley">🇰🇪 Rift Valley (Nakuru, Naivasha, Eldoret, Kericho) — KSh 450</option>
+              <option value="coast">🇰🇪 Coast (Mombasa, Diani, Malindi, Kilifi) — KSh 500</option>
+              <option value="western_nyanza">🇰🇪 Western & Nyanza (Kisumu, Kakamega, Kisii, Bungoma) — KSh 500</option>
+              <option value="eastern">🇰🇪 Eastern Region (Machakos, Kitui, Makueni) — KSh 450</option>
+              <option value="northern_frontier">🇰🇪 Northern Frontier (Garissa, Isiolo, Lodwar, Marsabit) — KSh 850</option>
+            </select>
+            <span id="regionTransitNote" style="font-size: 0.78rem; color: #00c389; display: block; margin-top: 0.3rem;">⚡ Same-Day / Next Morning Doorstep Rider Dispatch</span>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="checkoutEmail">Email Address (Optional)</label>
-            <input type="email" id="checkoutEmail" class="form-input" placeholder="you@example.com (Optional for receipt)">
+          <div class="form-group" style="margin-bottom: 1.1rem;">
+            <label class="form-label" for="checkoutTown" style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-parchment);">Town, Estate or Specific Drop-off Point *</label>
+            <input type="text" id="checkoutTown" class="form-input" placeholder="e.g. Westlands, Mpaka Rd / Kisumu CBD near Mega City" required style="width: 100%; box-sizing: border-box;">
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="checkoutNotes">Special Delivery / Gate Instructions (Optional)</label>
-            <input type="text" id="checkoutNotes" class="form-input" placeholder="e.g. Call upon arrival, leave at reception, discreet delivery">
+          <!-- Hidden / Optional Fields kept for data integrity -->
+          <div class="form-group" style="margin-bottom: 1.1rem;">
+            <label class="form-label" for="checkoutNotes" style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-muted);">Special Delivery Instructions (Optional)</label>
+            <input type="text" id="checkoutNotes" class="form-input" placeholder="e.g. Call before arrival, leave at reception" style="width: 100%; box-sizing: border-box;">
           </div>
+          <input type="hidden" id="checkoutEmail" value="">
 
-          <button type="submit" class="btn-paystack" id="submitOrderBtn" style="width: 100%; margin-top: 1.25rem; font-size: 1.1rem; padding: 1.1rem; font-weight: 700; letter-spacing: 0.5px; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem; box-shadow: 0 4px 20px rgba(0, 195, 137, 0.35);">
+          <button type="submit" class="btn-paystack" id="submitOrderBtn" style="width: 100%; margin-top: 1.25rem; font-size: 1.1rem; padding: 1.15rem; font-weight: 700; letter-spacing: 0.5px; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem; box-shadow: 0 4px 20px rgba(0, 195, 137, 0.35); background: linear-gradient(135deg, #09a5db 0%, #00c389 100%); color: #ffffff;">
             <span>🔒</span>
             <span id="submitBtnText">Pay Now via Paystack (M-Pesa / Card)</span>
           </button>
-          <div style="text-align: center; margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; gap: 0.3rem;">
-            <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-              <span>🛡️ Official Paystack PCI-DSS Level 1 Gateway</span>
-              <span>•</span>
-              <span>Instant M-Pesa STK Prompt</span>
-            </div>
-            <span style="font-size: 0.74rem; color: rgba(255, 255, 255, 0.5);">Direct sealed courier dispatch upon payment · No payments on delivery</span>
+          
+          <div style="text-align: center; margin-top: 0.85rem; font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">
+            <span>🛡️ Official Paystack PCI-DSS Level 1 Gateway · Instant M-Pesa STK Prompt</span><br>
+            <span style="color: rgba(255, 255, 255, 0.55);">All orders prepaid online · Plain unbranded parcel with zero product names on label</span>
           </div>
         </form>
       </div>
 
       <!-- Right Column: Order Summary -->
-      <div class="checkout-card">
-        <h2 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--gold-primary); margin-bottom: 1rem;">
-          Order Summary
+      <div class="checkout-card" style="background: rgba(14, 41, 27, 0.5); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 12px; padding: 1.75rem;">
+        <h2 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--gold-glow); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(212, 175, 55, 0.15);">
+          2. Order Summary
         </h2>
 
         <div id="checkoutItemsList" style="margin-bottom: 1.5rem;">
           <!-- Populated dynamically -->
         </div>
 
-        <div style="border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+        <div style="border-top: 1px solid rgba(212, 175, 55, 0.15); padding-top: 1rem;">
           <div style="display:flex; justify-content:space-between; margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-muted);">
             <span>Subtotal</span>
             <strong id="summarySubtotal" style="color: var(--text-parchment);">KSh 0</strong>
@@ -198,37 +141,35 @@
             <strong id="summaryDiscount">-KSh 0</strong>
           </div>
           <div style="display:flex; justify-content:space-between; margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-muted);">
-            <span>Discreet Courier Dispatch</span>
-            <span id="summaryShipping" style="color: var(--gold-primary);">KSh 350</span>
+            <span>Courier Dispatch</span>
+            <span id="summaryShipping" style="color: var(--gold-primary); font-weight: 600;">KSh 300</span>
           </div>
-          <div style="display:flex; justify-content:space-between; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--border-subtle); font-size: 1.3rem;">
-            <strong style="color: var(--gold-glow); font-family: var(--font-serif);">Total Amount:</strong>
+          <div style="display:flex; justify-content:space-between; margin-top: 1rem; padding-top: 0.85rem; border-top: 1px dashed rgba(212, 175, 55, 0.25); font-size: 1.35rem;">
+            <strong style="color: var(--gold-glow); font-family: var(--font-serif);">Total Due:</strong>
             <strong id="summaryTotal" style="color: var(--gold-glow); font-family: var(--font-serif);">KSh 0</strong>
           </div>
         </div>
 
-        <div style="margin-top: 1.5rem; background: rgba(5, 14, 9, 0.6); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-subtle); font-size: 0.85rem; color: var(--text-muted);">
-          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem; color: var(--gold-primary); font-weight: 600;">
-            <span>🛡️ Buyer Protection & Verification</span>
-          </div>
-          Every botanical remedy is tested by KEBS / SGS accredited labs. Certificate of Analysis (CoA) lot number included in every package.
+        <div style="margin-top: 1.5rem; padding: 0.85rem 1rem; background: rgba(5, 14, 9, 0.6); border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.15); font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.6rem;">
+          <span style="font-size: 1.2rem;">📦</span>
+          <span><strong>100% Plain Packaging:</strong> Neutral box with zero mention of herbal remedies or intimate wellness on exterior.</span>
         </div>
       </div>
     </div>
 
     <!-- Order Success Receipt Screen (Initially Hidden) -->
-    <div id="orderSuccessScreen" style="display: none; max-width: 680px; margin: 0 auto; text-align: center;">
-      <div class="checkout-card" style="padding: 3rem 2rem;">
-        <div style="font-size: 4rem; margin-bottom: 1rem;">🌿</div>
+    <div id="orderSuccessScreen" style="display: none; max-width: 650px; margin: 2rem auto; text-align: center;">
+      <div class="checkout-card" style="background: rgba(14, 41, 27, 0.7); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 3rem 2rem;">
+        <div style="font-size: 3.5rem; margin-bottom: 1rem;">🌿</div>
         <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--gold-glow); margin-bottom: 0.5rem;">
-          Order Confirmed & Received!
+          Order Verified & Confirmed!
         </h2>
-        <p style="color: var(--text-linen); font-size: 1.05rem; margin-bottom: 1.5rem;" id="successSubtitle">
-          Your order has been logged with the apothecary dispensary.
+        <p style="color: var(--text-linen); font-size: 1rem; margin-bottom: 1.5rem;" id="successSubtitle">
+          Your payment has been received and your sealed package has entered our fulfillment queue.
         </p>
 
-        <div style="background: rgba(14, 41, 27, 0.6); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-subtle); text-align: left; margin-bottom: 2rem;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; border-bottom: 1px dashed var(--border-subtle); padding-bottom: 0.5rem;">
+        <div style="background: rgba(5, 14, 9, 0.7); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.15); text-align: left; margin-bottom: 2rem; font-size: 0.95rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; border-bottom: 1px dashed rgba(212, 175, 55, 0.2); padding-bottom: 0.5rem;">
             <span style="color: var(--text-muted);">Order Tracking Code:</span>
             <strong id="successOrderRef" style="color: var(--gold-glow); font-family: monospace; font-size: 1.1rem;">NAH-12345</strong>
           </div>
@@ -237,24 +178,24 @@
             <span id="successName" style="color: var(--text-parchment);"></span>
           </div>
           <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <span style="color: var(--text-muted);">Delivery Town:</span>
+            <span style="color: var(--text-muted);">Delivery Town / Region:</span>
             <span id="successTown" style="color: var(--text-parchment);"></span>
           </div>
           <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <span style="color: var(--text-muted);">Payment Method:</span>
-            <span id="successPayment" style="color: var(--gold-primary); font-weight: 600;"></span>
+            <span style="color: var(--text-muted);">Payment Channel:</span>
+            <span id="successPayment" style="color: var(--gold-primary); font-weight: 600;">⚡ Verified via Paystack (M-Pesa / Card)</span>
           </div>
-          <div style="display: flex; justify-content: space-between; margin-top: 0.75rem; padding-top: 0.5rem; border-top: 1px dashed var(--border-subtle);">
-            <strong style="color: var(--text-parchment);">Total Order Value:</strong>
+          <div style="display: flex; justify-content: space-between; margin-top: 0.75rem; padding-top: 0.5rem; border-top: 1px dashed rgba(212, 175, 55, 0.2);">
+            <strong style="color: var(--text-parchment);">Total Paid:</strong>
             <strong id="successTotal" style="color: var(--gold-glow); font-size: 1.2rem;"></strong>
           </div>
         </div>
 
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a id="successWhatsAppLink" href="#" target="_blank" class="btn-whatsapp" style="text-decoration: none; padding: 0.85rem 1.5rem;">
-            💬 Track Order on WhatsApp
+          <a id="successWhatsAppLink" href="#" target="_blank" class="btn-whatsapp" style="text-decoration: none; padding: 0.85rem 1.5rem; font-weight: 600; border-radius: 8px;">
+            💬 Track Dispatch on WhatsApp
           </a>
-          <a href="shop.html" class="btn-primary" style="text-decoration: none; padding: 0.85rem 1.5rem;">
+          <a href="shop.html" class="btn-primary" style="text-decoration: none; padding: 0.85rem 1.5rem; font-weight: 600; border-radius: 8px;">
             Return to Dispensary
           </a>
         </div>
@@ -262,22 +203,40 @@
     </div>
   </main>
 
-  <!-- Scripts -->
+  <!-- Core Scripts (No app.js bloat on checkout) -->
   <script src="js/config.js"></script>
   <script src="js/geo-currency.js"></script>
   <script src="js/data/products.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/paystack-service.js"></script>
-  <script src="js/app.js"></script>
 
   <script>
+    const KENYA_REGIONS = {
+      nairobi: { name: "Nairobi & Environs", rateKES: 300, transit: "⚡ Same-Day / Next Morning Doorstep Rider Dispatch" },
+      nairobi_metro: { name: "Nairobi Metro", rateKES: 400, transit: "⚡ Next-Day Doorstep Courier Dispatch" },
+      mt_kenya: { name: "Mount Kenya & Central", rateKES: 450, transit: "⚡ 24h Wells Fargo / Fargo Courier" },
+      rift_valley: { name: "Rift Valley", rateKES: 450, transit: "⚡ 24h Express Courier Dispatch" },
+      coast: { name: "Coast Region", rateKES: 500, transit: "⚡ 24h G4S / Wells Fargo Doorstep" },
+      western_nyanza: { name: "Western & Nyanza", rateKES: 500, transit: "⚡ 24-48h Express Courier Dispatch" },
+      eastern: { name: "Eastern Region", rateKES: 450, transit: "⚡ 24h Express Parcel Dispatch" },
+      northern_frontier: { name: "Northern Frontier", rateKES: 850, transit: "⚡ 48-72h Air / Secure Parcel Dispatch" }
+    };
+
     let checkoutItems = [];
     let selectedPayment = 'mpesa';
     let appliedCoupon = null;
     let urlUtmParams = {};
+    let selectedRegionKey = 'nairobi';
+
+    function onRegionChange(regionKey) {
+      selectedRegionKey = regionKey;
+      const reg = KENYA_REGIONS[regionKey] || KENYA_REGIONS.nairobi;
+      const noteEl = document.getElementById('regionTransitNote');
+      if (noteEl) noteEl.textContent = reg.transit;
+      renderCheckoutSummary();
+    }
 
     function initCheckoutPage() {
-      // Check query parameters for single product, multi-product, coupon, and Meta tracking
       const params = new URLSearchParams(window.location.search);
       const rawProductsParam = params.get('products');
       const buyId = params.get('buy');
@@ -286,7 +245,7 @@
       const cartOrigin = params.get('cart_origin');
       const clearCartParam = params.get('clear');
 
-      // Capture all Meta tracking & UTM parameters
+      // Capture UTM tracking
       ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'cart_origin'].forEach(key => {
         const val = params.get(key);
         if (val) urlUtmParams[key] = val;
@@ -294,18 +253,13 @@
 
       const notices = [];
 
-      // If clear=true or coming directly from Meta Shop cart, don't mix old basket items
       if (clearCartParam === 'true' || cartOrigin || rawProductsParam) {
         checkoutItems = [];
       }
 
-      // 1. Multi-product format from Meta Commerce URL: ?products=productId:qty,productId:qty
       if (rawProductsParam) {
         let decodedParam = rawProductsParam;
-        try {
-          decodedParam = decodeURIComponent(rawProductsParam);
-        } catch (e) {}
-
+        try { decodedParam = decodeURIComponent(rawProductsParam); } catch (e) {}
         const parsedItems = [];
         for (const entry of decodedParam.split(',')) {
           if (!entry.trim()) continue;
@@ -314,52 +268,37 @@
           const pQty = parts[1] ? parseInt(parts[1], 10) : 1;
           const product = PRODUCTS_DATA.find(p => p.id === pId);
           if (product) {
-            if (product.inStock === false) {
-              notices.push(`⚠️ "${product.name}" is currently out of stock.`);
-            } else {
-              parsedItems.push({
-                id: product.id,
-                name: product.name,
-                botanicalName: product.botanicalName,
-                priceKES: product.priceKES,
-                image: product.image,
-                quantity: isNaN(pQty) || pQty < 1 ? 1 : pQty
-              });
-            }
-          } else {
-            notices.push(`⚠️ Selected item ("${pId}") was not found in our live catalog.`);
-          }
-        }
-        if (parsedItems.length > 0) {
-          checkoutItems = parsedItems;
-        }
-      } else if (buyId) {
-        // 2. Single-product shortcut: ?buy=productId&qty=1
-        const product = PRODUCTS_DATA.find(p => p.id === buyId);
-        if (product) {
-          if (product.inStock === false) {
-            notices.push(`⚠️ "${product.name}" is currently out of stock.`);
-          } else {
-            checkoutItems = [{
+            parsedItems.push({
               id: product.id,
               name: product.name,
               botanicalName: product.botanicalName,
               priceKES: product.priceKES,
               image: product.image,
-              quantity: isNaN(qtyParam) || qtyParam < 1 ? 1 : qtyParam
-            }];
+              quantity: isNaN(pQty) || pQty < 1 ? 1 : pQty
+            });
           }
+        }
+        if (parsedItems.length > 0) checkoutItems = parsedItems;
+      } else if (buyId) {
+        const product = PRODUCTS_DATA.find(p => p.id === buyId);
+        if (product) {
+          checkoutItems = [{
+            id: product.id,
+            name: product.name,
+            botanicalName: product.botanicalName,
+            priceKES: product.priceKES,
+            image: product.image,
+            quantity: isNaN(qtyParam) || qtyParam < 1 ? 1 : qtyParam
+          }];
         } else {
           notices.push(`⚠️ Product "${buyId}" was not found in our catalog.`);
         }
       }
 
-      // 3. Fallback to cart basket items if no URL products specified
       if (checkoutItems.length === 0 && !rawProductsParam && !buyId) {
         checkoutItems = [...cart.items];
       }
 
-      // 4. Default to premier launch product if still completely empty
       if (checkoutItems.length === 0) {
         const defaultProduct = PRODUCTS_DATA[0];
         checkoutItems = [{
@@ -372,7 +311,6 @@
         }];
       }
 
-      // 5. Handle Coupon discount
       if (couponParam) {
         const code = couponParam.toUpperCase().trim();
         if (CONFIG.promos && CONFIG.promos[code]) {
@@ -382,7 +320,6 @@
         }
       }
 
-      // Display notices if any
       const noticeBanner = document.getElementById('checkoutNoticeBanner');
       const noticeText = document.getElementById('checkoutNoticeText');
       if (noticeBanner && noticeText) {
@@ -394,38 +331,19 @@
         }
       }
 
-      // Auto-fill customer info from URL parameters or localStorage
+      // Pre-fill from URL params or localStorage
       try {
         const urlName = params.get('name') || params.get('customerName');
         const urlPhone = params.get('phone') || params.get('customerPhone');
         const urlTown = params.get('town') || params.get('customerTown') || params.get('city');
-        const urlEmail = params.get('email') || params.get('customerEmail');
 
         const savedName = urlName || localStorage.getItem('nah_cust_name');
         const savedPhone = urlPhone || localStorage.getItem('nah_cust_phone');
         const savedTown = urlTown || localStorage.getItem('nah_cust_town');
-        const savedEmail = urlEmail || localStorage.getItem('nah_cust_email');
 
         if (savedName) document.getElementById('checkoutName').value = savedName;
         if (savedPhone) document.getElementById('checkoutPhone').value = savedPhone;
         if (savedTown) document.getElementById('checkoutTown').value = savedTown;
-        if (savedEmail) document.getElementById('checkoutEmail').value = savedEmail;
-
-        if (savedName && savedPhone && savedTown) {
-          const fastBanner = document.getElementById('fastCheckoutBanner');
-          if (fastBanner) {
-            document.getElementById('fastName').textContent = savedName.split(' ')[0] || savedName;
-            document.getElementById('fastPhone').textContent = savedPhone;
-            document.getElementById('fastTown').textContent = savedTown;
-            fastBanner.style.display = 'block';
-          }
-
-          if (params.get('instant') === 'true' || params.get('autopop') === 'true') {
-            setTimeout(() => {
-              triggerFastPaystack();
-            }, 350);
-          }
-        }
       } catch (e) {}
 
       renderCheckoutSummary();
@@ -434,22 +352,14 @@
       if (window.fbq && checkoutItems && checkoutItems.length > 0) {
         try {
           const subtotalKES = checkoutItems.reduce((sum, item) => sum + (item.priceKES * item.quantity), 0);
-          let discountKES = 0;
-          if (appliedCoupon && appliedCoupon.discountPercent) {
-            discountKES = Math.round(subtotalKES * (appliedCoupon.discountPercent / 100));
-          }
-          const finalValKES = Math.max(0, subtotalKES - discountKES);
-
           fbq('track', 'InitiateCheckout', {
             content_ids: checkoutItems.map(i => i.id),
             content_type: 'product',
             num_items: checkoutItems.reduce((sum, item) => sum + item.quantity, 0),
-            value: finalValKES,
+            value: subtotalKES,
             currency: 'KES'
           });
-        } catch (err) {
-          console.warn('Meta Pixel InitiateCheckout error:', err);
-        }
+        } catch (err) {}
       }
     }
 
@@ -463,48 +373,39 @@
         discountKES = Math.round(subtotalKES * (appliedCoupon.discountPercent / 100));
       }
       const discountedSubtotal = Math.max(0, subtotalKES - discountKES);
-      const shippingKES = discountedSubtotal >= CONFIG.shipping.freeThresholdKES ? 0 : CONFIG.shipping.standardRateKES;
+      
+      const regionData = KENYA_REGIONS[selectedRegionKey] || KENYA_REGIONS.nairobi;
+      const shippingKES = discountedSubtotal >= (CONFIG.shipping?.freeThresholdKES || 15000) ? 0 : regionData.rateKES;
       const totalKES = discountedSubtotal + shippingKES;
 
       listEl.innerHTML = checkoutItems.map(item => `
-        <div style="display:flex; gap:1rem; align-items:center; margin-bottom: 0.85rem; padding-bottom: 0.85rem; border-bottom: 1px solid rgba(212,175,55,0.1);">
-          <img src="${item.image}" alt="${item.name}" style="width: 55px; height: 55px; object-fit: cover; border-radius: 6px;" onerror="this.src='assets/images/hero-apothecary.jpg'">
+        <div style="display:flex; gap:0.9rem; align-items:center; margin-bottom: 0.85rem; padding-bottom: 0.85rem; border-bottom: 1px solid rgba(212,175,55,0.12);">
+          <img src="${item.image}" alt="${item.name}" style="width: 52px; height: 52px; object-fit: cover; border-radius: 6px; border: 1px solid rgba(212,175,55,0.2);" onerror="this.src='assets/images/hero-apothecary.jpg'">
           <div style="flex:1;">
-            <strong style="display:block; font-size: 0.92rem; color: var(--text-parchment);">${item.name}</strong>
-            <span style="font-size: 0.8rem; color: var(--text-muted);">${item.botanicalName || ''} (Qty: ${item.quantity})</span>
+            <strong style="display:block; font-size: 0.9rem; color: var(--text-parchment);">${item.name}</strong>
+            <span style="font-size: 0.78rem; color: var(--text-muted);">${item.botanicalName || ''} (Qty: ${item.quantity})</span>
           </div>
           <div style="font-weight: 700; color: var(--gold-glow); font-size: 0.95rem;">
-            ${window.geoCurrency ? window.geoCurrency.formatPrice(item.priceKES * item.quantity) : `KSh ${item.priceKES * item.quantity}`}
+            ${window.geoCurrency ? window.geoCurrency.formatPrice(item.priceKES * item.quantity) : 'KSh ' + (item.priceKES * item.quantity).toLocaleString()}
           </div>
         </div>
       `).join('');
 
-      document.getElementById('summarySubtotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(subtotalKES) : `KSh ${subtotalKES}`;
+      document.getElementById('summarySubtotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(subtotalKES) : 'KSh ' + subtotalKES.toLocaleString();
 
       const discountRow = document.getElementById('summaryDiscountRow');
       if (discountRow) {
         if (discountKES > 0) {
           discountRow.style.display = 'flex';
           document.getElementById('summaryDiscountLabel').textContent = `🎟️ ${appliedCoupon.label || appliedCoupon.code}`;
-          document.getElementById('summaryDiscount').textContent = `-${window.geoCurrency ? window.geoCurrency.formatPrice(discountKES) : `KSh ${discountKES}`}`;
+          document.getElementById('summaryDiscount').textContent = `-${window.geoCurrency ? window.geoCurrency.formatPrice(discountKES) : 'KSh ' + discountKES.toLocaleString()}`;
         } else {
           discountRow.style.display = 'none';
         }
       }
 
-      document.getElementById('summaryShipping').textContent = shippingKES === 0 ? 'FREE (Blessing Threshold)' : (window.geoCurrency ? window.geoCurrency.formatPrice(shippingKES) : `KSh ${shippingKES}`);
-      document.getElementById('summaryTotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(totalKES) : `KSh ${totalKES}`;
-    }
-
-    function triggerFastPaystack() {
-      const form = document.getElementById('expressCheckoutForm');
-      if (form) {
-        if (typeof form.requestSubmit === 'function') {
-          form.requestSubmit();
-        } else {
-          form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
-        }
-      }
+      document.getElementById('summaryShipping').textContent = shippingKES === 0 ? 'FREE (Threshold)' : (window.geoCurrency ? window.geoCurrency.formatPrice(shippingKES) : 'KSh ' + shippingKES.toLocaleString());
+      document.getElementById('summaryTotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(totalKES) : 'KSh ' + totalKES.toLocaleString();
     }
 
     function selectPaymentMethod(method = 'mpesa') {
@@ -517,15 +418,14 @@
       const name = document.getElementById('checkoutName').value.trim();
       const phone = document.getElementById('checkoutPhone').value.trim();
       const town = document.getElementById('checkoutTown').value.trim();
-      const email = document.getElementById('checkoutEmail').value.trim() || `${phone.replace(/[^0-9]/g, '')}@orders.omnicorehub.app`;
-      const notes = document.getElementById('checkoutNotes').value.trim();
+      const notes = document.getElementById('checkoutNotes') ? document.getElementById('checkoutNotes').value.trim() : '';
+      const email = `${phone.replace(/[^0-9]/g, '')}@orders.omnicorehub.app`;
 
-      // Persist customer details for 0-friction 1-click reorders
+      // Persist customer details
       try {
         localStorage.setItem('nah_cust_name', name);
         localStorage.setItem('nah_cust_phone', phone);
         localStorage.setItem('nah_cust_town', town);
-        if (email) localStorage.setItem('nah_cust_email', email);
       } catch (err) {}
 
       const subtotalKES = checkoutItems.reduce((sum, item) => sum + (item.priceKES * item.quantity), 0);
@@ -534,23 +434,19 @@
         discountKES = Math.round(subtotalKES * (appliedCoupon.discountPercent / 100));
       }
       const discountedSubtotal = Math.max(0, subtotalKES - discountKES);
-      const shippingKES = discountedSubtotal >= CONFIG.shipping.freeThresholdKES ? 0 : CONFIG.shipping.standardRateKES;
+      const regionData = KENYA_REGIONS[selectedRegionKey] || KENYA_REGIONS.nairobi;
+      const shippingKES = discountedSubtotal >= (CONFIG.shipping?.freeThresholdKES || 15000) ? 0 : regionData.rateKES;
       const totalKES = discountedSubtotal + shippingKES;
       const reference = `NAH-${Date.now().toString().slice(-6)}-${Math.floor(Math.random() * 899 + 100)}`;
 
-      let completeNotes = notes;
-      if (appliedCoupon) {
-        completeNotes += ` [Coupon: ${appliedCoupon.code} (-${appliedCoupon.discountPercent}%)]`;
-      }
-      if (urlUtmParams.utm_source) {
-        completeNotes += ` [Source: ${urlUtmParams.utm_source} | Campaign: ${urlUtmParams.utm_campaign || 'direct'}]`;
-      }
+      let completeNotes = `[Region: ${regionData.name}] ${notes}`.trim();
+      if (appliedCoupon) completeNotes += ` [Coupon: ${appliedCoupon.code}]`;
 
       const orderData = {
         reference,
         customerName: name,
         customerPhone: phone,
-        customerAddress: town,
+        customerAddress: `${town} (${regionData.name})`,
         customerEmail: email,
         orderNotes: completeNotes,
         items: checkoutItems,
@@ -566,35 +462,30 @@
       const submitText = document.getElementById('submitBtnText');
       if (submitBtn && submitText) {
         submitBtn.disabled = true;
-        if (submitText) submitText.textContent = 'Launching Paystack Gateway...';
-        else submitBtn.textContent = 'Launching Paystack Gateway...';
+        submitText.textContent = '⏳ Launching Paystack Gateway...';
       }
 
-      // Launch Paystack Secure Popup Modal
       window.paystackService.initiatePayment({
         customerName: name,
         customerEmail: email,
         customerPhone: phone,
-        customerAddress: town,
+        customerAddress: orderData.customerAddress,
         orderNotes: completeNotes,
         amountInKES: totalKES,
         items: checkoutItems,
         onSuccess: (resData) => {
-          if (submitBtn) {
+          if (submitBtn && submitText) {
             submitBtn.disabled = false;
-            if (submitText) submitText.textContent = 'Payment Verified';
-            else submitBtn.textContent = 'Payment Verified';
+            submitText.textContent = '✅ Payment Verified';
           }
           cart.clearCart();
           showSuccessScreen({ ...orderData, reference: resData.reference || reference });
         },
         onClose: () => {
-          if (submitBtn) {
+          if (submitBtn && submitText) {
             submitBtn.disabled = false;
-            if (submitText) submitText.textContent = 'Pay Now via Paystack (M-Pesa / Card)';
-            else submitBtn.textContent = 'Pay Now via Paystack (M-Pesa / Card)';
+            submitText.textContent = 'Pay Now via Paystack (M-Pesa / Card)';
           }
-          console.log('Paystack popup closed');
         }
       });
     }
@@ -608,14 +499,13 @@
       document.getElementById('successName').textContent = orderData.customerName;
       document.getElementById('successTown').textContent = orderData.customerAddress;
       document.getElementById('successPayment').textContent = '⚡ Verified via Paystack (M-Pesa / Card)';
-      document.getElementById('successTotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(orderData.amountInKES) : `KSh ${orderData.amountInKES.toLocaleString()}`;
+      document.getElementById('successTotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(orderData.amountInKES) : 'KSh ' + orderData.amountInKES.toLocaleString();
 
       const cleanStorePhone = CONFIG.contact.whatsapp.replace(/[^0-9]/g, '');
       const waText = `🌿 Hi Apothecary Team! My order ref is *${orderData.reference}*. Please provide tracking details for delivery to *${orderData.customerAddress}*.`;
       document.getElementById('successWhatsAppLink').href = `https://wa.me/${cleanStorePhone}?text=${encodeURIComponent(waText)}`;
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      // Meta Pixel Purchase Event
       if (window.fbq) {
         try {
           fbq('track', 'Purchase', {
@@ -625,9 +515,7 @@
             currency: 'KES',
             num_items: (orderData.items || []).reduce((sum, item) => sum + (item.quantity || 1), 0)
           });
-        } catch (err) {
-          console.warn('Meta Pixel Purchase error:', err);
-        }
+        } catch (err) {}
       }
     }
 

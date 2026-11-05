@@ -2802,4 +2802,496 @@ dialog::backdrop {
   color: var(--text-muted);
 }
 
+/* ==========================================================================
+   STORYTELLING & HIGH-CONVERTING LANDING EXTENSIONS
+   - Video Creative Container
+   - Solution Portals (Men, Women, Clear Skin)
+   - Flagship Breakthroughs Showcase
+   - Kenya Regional Shipping Matrix & Plain Packaging Protocol
+   ========================================================================== */
+
+.video-creative-section {
+  padding: 4.5rem 0 3.5rem;
+  background: radial-gradient(circle at 50% 20%, rgba(20, 60, 40, 0.4) 0%, rgba(5, 14, 9, 0.95) 75%);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.video-container-card {
+  max-width: 960px;
+  margin: 0 auto;
+  background: var(--bg-forest);
+  border: 1px solid var(--border-active);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 175, 55, 0.15);
+  position: relative;
+}
+
+.video-screen-aspect {
+  position: relative;
+  width: 100%;
+  padding-top: 52%;
+  background: #020603;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .video-screen-aspect {
+    padding-top: 75%;
+  }
+}
+
+.video-poster-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  transition: transform 0.6s ease;
+}
+
+.video-container-card:hover .video-poster-img {
+  transform: scale(1.02);
+}
+
+.video-screen-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(3, 8, 5, 0.25) 0%, rgba(3, 8, 5, 0.85) 90%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  z-index: 2;
+}
+
+.video-badge-tag {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(14, 41, 27, 0.85);
+  border: 1px solid var(--gold-glow);
+  color: var(--gold-glow);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.4rem 0.9rem;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.video-center-play {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.play-pulsing-btn {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #050e09;
+  font-size: 2.2rem;
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.75);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.play-pulsing-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 50px rgba(212, 175, 55, 1);
+}
+
+.video-narrative-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.9);
+  max-width: 680px;
+}
+
+.video-bottom-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.video-chapters-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.video-chip {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f4ebd9;
+  font-size: 0.72rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.video-chip:hover, .video-chip.active {
+  background: var(--gold-primary);
+  color: #050e09;
+  font-weight: 700;
+  border-color: var(--gold-glow);
+}
+
+/* Solution Portals Grid */
+.portals-section {
+  padding: 4.5rem 0 3.5rem;
+  background: var(--bg-abyss);
+}
+
+.solution-portals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .solution-portals-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.portal-card {
+  background: var(--bg-emerald-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.portal-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-glow);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.18);
+}
+
+.portal-img-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: #020804;
+}
+
+.portal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portal-card:hover .portal-img {
+  transform: scale(1.05);
+}
+
+.portal-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(5, 14, 9, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-glow);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.portal-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.portal-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.portal-desc {
+  font-size: 0.9rem;
+  color: var(--text-linen);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.portal-benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.portal-benefit-item {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.portal-benefit-item strong {
+  color: var(--gold-glow);
+}
+
+.portal-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--gold-gradient);
+  color: #050e09;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portal-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Flagship Breakthroughs Showcase */
+.flagship-section {
+  padding: 4.5rem 0;
+  background: radial-gradient(circle at 50% 10%, rgba(14, 41, 27, 0.6) 0%, rgba(5, 14, 9, 1) 85%);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.flagship-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 1100px) {
+  .flagship-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .flagship-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.flagship-card {
+  background: var(--bg-emerald-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.flagship-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-primary);
+}
+
+.flagship-img-box {
+  position: relative;
+  height: 220px;
+  background: #020603;
+  overflow: hidden;
+}
+
+.flagship-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.flagship-card:hover .flagship-img-box img {
+  transform: scale(1.05);
+}
+
+.flagship-price-tag {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(5, 14, 9, 0.9);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-glow);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+}
+
+.flagship-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.flagship-tag {
+  font-size: 0.72rem;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.flagship-name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.flagship-botanical {
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.flagship-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn-instant-buy {
+  background: var(--gold-gradient);
+  color: #050e09;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.65rem;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.btn-instant-buy:hover {
+  transform: translateY(-2px);
+}
+
+/* Shipping Matrix & Transparent Logistics */
+.shipping-matrix-section {
+  padding: 4.5rem 0;
+  background: var(--bg-abyss);
+}
+
+.shipping-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: rgba(14, 41, 27, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin: 2rem 0;
+}
+
+.shipping-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.shipping-table th {
+  background: rgba(14, 41, 27, 0.85);
+  color: var(--gold-primary);
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.shipping-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  color: var(--text-linen);
+}
+
+.shipping-table tr:hover td {
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.shipping-rate-badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--gold-glow);
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+.privacy-banner-card {
+  background: linear-gradient(135deg, rgba(14, 41, 27, 0.85) 0%, rgba(20, 60, 40, 0.6) 100%);
+  border: 1px dashed var(--gold-primary);
+  border-radius: 14px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .privacy-banner-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+
 

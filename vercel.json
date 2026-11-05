@@ -5,7 +5,10 @@
   "rewrites": [
     { "source": "/checkout", "destination": "/checkout.html" },
     { "source": "/shop", "destination": "/shop.html" },
-    { "source": "/product", "destination": "/product.html" }
+    { "source": "/product", "destination": "/product.html" },
+    { "source": "/men", "destination": "/men.html" },
+    { "source": "/women", "destination": "/women.html" },
+    { "source": "/clear-skin", "destination": "/clear-skin.html" }
   ],
   "headers": [
     {
