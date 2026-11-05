@@ -86,7 +86,7 @@
             <label class="form-label" for="checkoutRegion" style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-parchment);">Kenya Region / Courier Destination *</label>
             <select id="checkoutRegion" class="form-input" onchange="onRegionChange(this.value)" required style="width: 100%; box-sizing: border-box; background: rgba(5, 14, 9, 0.85); color: var(--gold-glow); font-weight: 600;">
               <option value="nairobi">🇰🇪 Nairobi & Environs (Same-Day Rider) — KSh 300</option>
-              <option value="nairobi_metro">🇰🇪 Nairobi Metro (Rongai, Ruiru, Thika, Kitengela, Ngong) — KSh 400</option>
+              <option value="nairobi_metro">🇰🇪 Thika & Nairobi Metro (Thika Town, Section 9, Makongeni, Ruiru, Juja, Kitengela, Rongai) — KSh 400</option>
               <option value="mt_kenya">🇰🇪 Mount Kenya & Central (Nyeri, Murang'a, Embu, Meru) — KSh 450</option>
               <option value="rift_valley">🇰🇪 Rift Valley (Nakuru, Naivasha, Eldoret, Kericho) — KSh 450</option>
               <option value="coast">🇰🇪 Coast (Mombasa, Diani, Malindi, Kilifi) — KSh 500</option>
@@ -99,7 +99,14 @@
 
           <div class="form-group" style="margin-bottom: 1.1rem;">
             <label class="form-label" for="checkoutTown" style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-parchment);">Town, Estate or Specific Drop-off Point *</label>
-            <input type="text" id="checkoutTown" class="form-input" placeholder="e.g. Westlands, Mpaka Rd / Kisumu CBD near Mega City" required style="width: 100%; box-sizing: border-box;">
+            <input type="text" id="checkoutTown" class="form-input" placeholder="e.g. Thika Section 9, near Cravers / Makongeni Ananas / Westlands" required style="width: 100%; box-sizing: border-box;">
+            <div style="display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.45rem;">
+              <button type="button" class="card-pill" style="font-size: 0.72rem; padding: 0.2rem 0.55rem; cursor: pointer; background: rgba(212,175,55,0.12); border-color: rgba(212,175,55,0.4); color: var(--gold-glow);" onclick="setQuickLocation('Thika Section 9', 'nairobi_metro')">📍 Thika Section 9</button>
+              <button type="button" class="card-pill" style="font-size: 0.72rem; padding: 0.2rem 0.55rem; cursor: pointer; background: rgba(212,175,55,0.12); border-color: rgba(212,175,55,0.4); color: var(--gold-glow);" onclick="setQuickLocation('Thika Town CBD', 'nairobi_metro')">📍 Thika CBD</button>
+              <button type="button" class="card-pill" style="font-size: 0.72rem; padding: 0.2rem 0.55rem; cursor: pointer; background: rgba(212,175,55,0.12); border-color: rgba(212,175,55,0.4); color: var(--gold-glow);" onclick="setQuickLocation('Makongeni, Thika', 'nairobi_metro')">📍 Makongeni</button>
+              <button type="button" class="card-pill" style="font-size: 0.72rem; padding: 0.2rem 0.55rem; cursor: pointer; background: rgba(212,175,55,0.12); border-color: rgba(212,175,55,0.4); color: var(--gold-glow);" onclick="setQuickLocation('Ruiru / Juja', 'nairobi_metro')">📍 Ruiru / Juja</button>
+              <button type="button" class="card-pill" style="font-size: 0.72rem; padding: 0.2rem 0.55rem; cursor: pointer; background: rgba(212,175,55,0.12); border-color: rgba(212,175,55,0.4); color: var(--gold-glow);" onclick="setQuickLocation('Westlands / CBD', 'nairobi')">📍 Nairobi CBD</button>
+            </div>
           </div>
 
           <!-- Hidden / Optional Fields kept for data integrity -->
@@ -213,7 +220,7 @@
   <script>
     const KENYA_REGIONS = {
       nairobi: { name: "Nairobi & Environs", rateKES: 300, transit: "⚡ Same-Day / Next Morning Doorstep Rider Dispatch" },
-      nairobi_metro: { name: "Nairobi Metro", rateKES: 400, transit: "⚡ Next-Day Doorstep Courier Dispatch" },
+      nairobi_metro: { name: "Thika & Nairobi Metro", rateKES: 400, transit: "⚡ Express Same-Day / 24h Doorstep Courier (Thika Superhighway & Metro)" },
       mt_kenya: { name: "Mount Kenya & Central", rateKES: 450, transit: "⚡ 24h Wells Fargo / Fargo Courier" },
       rift_valley: { name: "Rift Valley", rateKES: 450, transit: "⚡ 24h Express Courier Dispatch" },
       coast: { name: "Coast Region", rateKES: 500, transit: "⚡ 24h G4S / Wells Fargo Doorstep" },
@@ -236,6 +243,19 @@
       renderCheckoutSummary();
     }
 
+    function setQuickLocation(town, regionKey) {
+      const townEl = document.getElementById('checkoutTown');
+      if (townEl) {
+        townEl.value = town;
+        townEl.focus();
+      }
+      if (regionKey) {
+        const regEl = document.getElementById('checkoutRegion');
+        if (regEl) regEl.value = regionKey;
+        onRegionChange(regionKey);
+      }
+    }
+
     function initCheckoutPage() {
       const params = new URLSearchParams(window.location.search);
       const rawProductsParam = params.get('products');
@@ -244,6 +264,25 @@
       const couponParam = params.get('coupon');
       const cartOrigin = params.get('cart_origin');
       const clearCartParam = params.get('clear');
+      const regionParam = params.get('region');
+      const townParam = params.get('town');
+
+      if (regionParam) {
+        const norm = regionParam.toLowerCase();
+        if (norm.includes('thika') || norm === 'nairobi_metro') {
+          selectedRegionKey = 'nairobi_metro';
+          const regEl = document.getElementById('checkoutRegion');
+          if (regEl) regEl.value = 'nairobi_metro';
+        } else if (KENYA_REGIONS[norm]) {
+          selectedRegionKey = norm;
+          const regEl = document.getElementById('checkoutRegion');
+          if (regEl) regEl.value = norm;
+        }
+      }
+      if (townParam) {
+        const townEl = document.getElementById('checkoutTown');
+        if (townEl) townEl.value = townParam;
+      }
 
       // Capture UTM tracking
       ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'cart_origin'].forEach(key => {

@@ -5133,7 +5133,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 71,
     "tag": "Refreshing Brew",
-    "image": "assets/images/products/kenyan-lemongrass-ginger-digestive-cooler.jpg",
+    "image": "assets/images/products/kenyan-lemongrass-ginger-digestive-cooler-photo.jpg",
     "herbs": [
       "lemongrass",
       "ginger",
@@ -5162,7 +5162,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Steep 1 tablespoon in 500ml boiling water for 10 minutes. Chill in refrigerator and pour over ice.",
     "inStock": true,
     "images": [
-      "assets/images/products/kenyan-lemongrass-ginger-digestive-cooler.jpg"
+      "assets/images/products/kenyan-lemongrass-ginger-digestive-cooler-photo.jpg"
     ],
     "whatItDoes": "Fragrant cut lemongrass stalks from the foothills of Mount Kenya paired with warming ginger slices. Brew hot, chill with ice cubes and fresh mint leaves for the ultimate tropical digestive tonic. Citral and gingerols synergize to stimulate sluggish digestion without generating excess body heat. Gently dispels post-lunch food coma and mental fog"
   },
@@ -5222,7 +5222,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 89,
     "tag": "Luxury Reserve",
-    "image": "assets/images/products/frankincense-glow-serum.jpg",
+    "image": "assets/images/products/frankincense-glow-serum-photo.jpg",
     "herbs": [
       "frankincense",
       "marula",
@@ -5252,7 +5252,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Smooth 4 drops over clean skin before bed. Perform gentle upward lifting motions along jawline.",
     "inStock": true,
     "images": [
-      "assets/images/products/frankincense-glow-serum.jpg"
+      "assets/images/products/frankincense-glow-serum-photo.jpg"
     ],
     "whatItDoes": "Steam-distilled Somaliland Frankincense resin infused into wild Kenyan Marula oil. Formulated to speed cellular turnover, soften fine lines, and impart a luminous royal glow. Boswellic terpenes visibly smooth expression wrinkles and firm slack dermal contours. Diminishes the appearance of sun spots and post-inflammatory hyperpigmentation"
   },
@@ -5266,7 +5266,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 94,
     "tag": "Firming Wonder",
-    "image": "assets/images/products/kigelia-africana-firming-bust-body-butter.jpg",
+    "image": "assets/images/products/kigelia-africana-firming-bust-body-butter-photo.jpg",
     "herbs": [
       "kigelia africana",
       "sausage tree",
@@ -5296,7 +5296,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Massage in circular upward motions across neck, décolleté, and bustline twice daily.",
     "inStock": true,
     "images": [
-      "assets/images/products/kigelia-africana-firming-bust-body-butter.jpg"
+      "assets/images/products/kigelia-africana-firming-bust-body-butter-photo.jpg"
     ],
     "whatItDoes": "The indigenous African secret for skin firmness and elasticity. Extract of the wild Sausage Tree fruit rich in steroidal saponins and kigelin blended into raw Nilotica shea butter. Clinically researched for tightening skin matrix fibers and improving bust & neck firmness. Strengthens collagen bundles in areas prone to gravity and post-pregnancy laxity"
   },
@@ -5310,7 +5310,7 @@ const PRODUCTS_DATA = [
     "rating": 5,
     "reviewCount": 168,
     "tag": "Pure Silk",
-    "image": "assets/images/products/raw-nilotica-shea-body-melt.jpg",
+    "image": "assets/images/products/raw-nilotica-shea-body-melt-photo.jpg",
     "herbs": [
       "nilotica shea",
       "vitellaria nilotica",
@@ -5342,7 +5342,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Scoop a marble-sized amount and melt into hands. Smooth over damp skin directly after bathing.",
     "inStock": true,
     "images": [
-      "assets/images/products/raw-nilotica-shea-body-melt.jpg"
+      "assets/images/products/raw-nilotica-shea-body-melt-photo.jpg"
     ],
     "whatItDoes": "Unlike West African shea which is hard and waxy, East African Nilotica shea has a naturally soft, creamy, buttery texture that melts at skin temperature with a delicate nutty aroma. Contains 25% more olein than standard shea butter, yielding instant skin absorption. Safe for sensitive eczema-prone infants, children, and fragile skin"
   },
@@ -5356,7 +5356,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 52,
     "tag": "Acne-Friendly",
-    "image": "assets/images/products/kalahari-melon-seed-balancing-oil.jpg",
+    "image": "assets/images/products/kalahari-melon-seed-balancing-oil-photo.jpg",
     "herbs": [
       "kalahari melon",
       "citrullus lanatus",
@@ -5386,7 +5386,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Apply 2 to 3 drops to clean damp face morning and night as your lightweight moisturizer.",
     "inStock": true,
     "images": [
-      "assets/images/products/kalahari-melon-seed-balancing-oil.jpg"
+      "assets/images/products/kalahari-melon-seed-balancing-oil-photo.jpg"
     ],
     "whatItDoes": "Harvested from wild desert watermelons. Exceptionally high in linoleic acid (Omega-6) up to 70%, which unclogs sticky facial sebum and clears blemish-prone complexions. Restores the crucial linoleic-to-oleic ratio in acne-prone facial sebum. Feather-light dry-touch oil that sinks into pores without clogging"
   },
@@ -5400,7 +5400,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 76,
     "tag": "Mom & Belly",
-    "image": "assets/images/products/baobab-seed-stretch-mark-elixir.jpg",
+    "image": "assets/images/products/baobab-seed-stretch-mark-elixir-photo.jpg",
     "herbs": [
       "baobab seed oil",
       "helichrysum",
@@ -5430,7 +5430,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Massage twice daily into belly, hips, thighs, and breasts throughout and after pregnancy.",
     "inStock": true,
     "images": [
-      "assets/images/products/baobab-seed-stretch-mark-elixir.jpg"
+      "assets/images/products/baobab-seed-stretch-mark-elixir-photo.jpg"
     ],
     "whatItDoes": "Pressed from the hard seeds hidden inside baobab fruit pods. Deeply elasticizing oil blended with Corsican Immortelle (Helichrysum) to stimulate dermal micro-repair. Rich in phytosterols, Vitamins A, D, E, and F to support rapid skin expansion. Helichrysum regenerates damaged collagen bundles and fades purple/red marks"
   },
@@ -5444,7 +5444,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 118,
     "tag": "Bestseller",
-    "image": "assets/images/products/african-black-soap-liquid-body-wash.jpg",
+    "image": "assets/images/products/african-black-soap-liquid-body-wash-photo.jpg",
     "herbs": [
       "african black soap",
       "cocoa pod ash",
@@ -5474,7 +5474,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Lather a small pump onto a sisal washcloth or sponge. Wash body and rinse thoroughly with warm water.",
     "inStock": true,
     "images": [
-      "assets/images/products/african-black-soap-liquid-body-wash.jpg"
+      "assets/images/products/african-black-soap-liquid-body-wash-photo.jpg"
     ],
     "whatItDoes": "Handcrafted using traditional Ghanaian & Kenyan saponification methods with roasted cocoa pod ash, plantain skin potash, and wild forest honey. All the benefits of black soap in an easy liquid pump bottle. Natural potash gently exfoliates dead surface cells and clears congested pores. Wild raw acacia honey retains vital skin moisture so skin never feels stripped"
   },
@@ -5488,7 +5488,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 68,
     "tag": "Exfoliation",
-    "image": "assets/images/products/kenyan-coffee-cacao-cellulite-polish.jpg",
+    "image": "assets/images/products/kenyan-coffee-cacao-cellulite-polish-photo.jpg",
     "herbs": [
       "coffee grounds",
       "caffeine",
@@ -5518,7 +5518,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Apply to wet skin in the shower. Scrub vigorously in circular motions upward toward the heart for 5 minutes.",
     "inStock": true,
     "images": [
-      "assets/images/products/kenyan-coffee-cacao-cellulite-polish.jpg"
+      "assets/images/products/kenyan-coffee-cacao-cellulite-polish-photo.jpg"
     ],
     "whatItDoes": "Crafted with freshly ground single-estate Mount Kenya Arabica coffee beans and raw cacao. Caffeine stimulates local lymphatic drainage while fine particles slough off rough skin. Topical caffeine temporarily tightens and tones areas with fluid retention and cellulite. Stimulates micro-circulation for an immediate rosy, radiant body glow"
   },
@@ -5532,7 +5532,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 47,
     "tag": "UV Defense",
-    "image": "assets/images/products/mongongo-manketti-sun-shield-oil.jpg",
+    "image": "assets/images/products/mongongo-manketti-sun-shield-oil-photo.jpg",
     "herbs": [
       "manketti oil",
       "mongongo",
@@ -5562,7 +5562,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Smooth 4 to 6 drops across face, shoulders, and hair before outdoor excursions.",
     "inStock": true,
     "images": [
-      "assets/images/products/mongongo-manketti-sun-shield-oil.jpg"
+      "assets/images/products/mongongo-manketti-sun-shield-oil-photo.jpg"
     ],
     "whatItDoes": "Harvested from wild Manketti tree nuts across the Kalahari desert. Naturally contains eleostearic acid, which polymerizes under sunlight to form an invisible, breathable protective barrier on skin and hair. Natural botanical ally that absorbs UV rays and minimizes environmental radiation damage. Shields skin barrier from harsh equatorial sun, sea breeze, and dust storms"
   },
@@ -5576,7 +5576,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 63,
     "tag": "Lip Sanctuary",
-    "image": "assets/images/products/ximenia-wild-plum-barrier-balm.jpg",
+    "image": "assets/images/products/ximenia-wild-plum-barrier-balm-photo.jpg",
     "herbs": [
       "ximenia",
       "wild plum",
@@ -5605,7 +5605,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Apply liberally to dry lips, cuticles, or wind-burned skin patches throughout the day.",
     "inStock": true,
     "images": [
-      "assets/images/products/ximenia-wild-plum-barrier-balm.jpg"
+      "assets/images/products/ximenia-wild-plum-barrier-balm-photo.jpg"
     ],
     "whatItDoes": "Wild sour plum kernel oil known for its unique viscosity and content of rare ximenynic acid. Forms a protective sealing wax over damaged lips that lasts through wind, cold, and meals. Ximenynic acid stimulates cutaneous microvascular blood circulation to restore plumpness. Longest-lasting lip barrier adhesion; does not wipe away or evaporate quickly"
   },

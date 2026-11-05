@@ -12,11 +12,11 @@
     "supplierId": "sup-003",
     "supplierName": "Taita Hills Herbal Collective",
     "harvestRegion": "Taita Taveta Hills & Tsavo Borderland, Kenya",
-    "rawBatchRef": "RM-103878"
+    "rawBatchRef": "RM-757463"
   },
   "labTesting": {
     "accreditedLabName": "KEBS National Metrology & Analytical Lab",
-    "labReportNumber": "LAB-REPORT-638466",
+    "labReportNumber": "LAB-REPORT-411045",
     "testDate": "2026-11-05",
     "heavyMetals": {
       "leadPpm": 0.8,
@@ -42,7 +42,7 @@
     "qcDecision": "RELEASE_FOR_SALE",
     "errors": [],
     "warnings": [],
-    "evaluatedAt": "2026-11-05T15:38:23.878Z"
+    "evaluatedAt": "2026-11-05T16:22:37.463Z"
   },
   "digitalVerification": {
     "cryptographicHash": "0d781b00ff8186f189097c61c77b4c9f50f3571c296ab7d393e5ff443f95e0d4",
