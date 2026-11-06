@@ -287,6 +287,22 @@
     </section>
   </main>
 
+  <!-- Mobile Sticky Bottom Buy Bar (Shows on <= 768px) -->
+  <div class="mobile-sticky-pdp-bar" id="mobileStickyBar">
+    <div class="mobile-sticky-info">
+      <div class="mobile-sticky-price" id="mobileStickyPrice">KSh ...</div>
+      <div class="mobile-sticky-badge">✓ In Stock &amp; Fresh</div>
+    </div>
+    <div class="mobile-sticky-actions">
+      <button class="mobile-sticky-cart-btn" onclick="addToBasketCurrentProduct()" title="Add to Basket" aria-label="Add to Basket">
+        🛒
+      </button>
+      <button class="mobile-sticky-buy-btn" onclick="buyNowCurrentProduct()">
+        ⚡ Instant Buy
+      </button>
+    </div>
+  </div>
+
   <!-- Cart Drawer & Backdrop -->
   <div class="cart-backdrop" id="cartBackdrop" onclick="if(window.cart) cart.closeDrawer()"></div>
   <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Basket">
@@ -390,6 +406,8 @@
       if (prEl) prEl.textContent = formattedPrice;
       const baseEl = document.getElementById('pdpBasePrice');
       if (baseEl) baseEl.textContent = `(KSh ${currentProduct.priceKES.toLocaleString()})`;
+      const mobilePrEl = document.getElementById('mobileStickyPrice');
+      if (mobilePrEl) mobilePrEl.textContent = formattedPrice;
 
       // 3. Main Product Image (Priority #1 Viewport Asset)
       const mainImg = document.getElementById('pdpActiveImage');
@@ -598,6 +616,8 @@
       if (currentProduct && window.geoCurrency) {
         const prEl = document.getElementById('pdpPrice');
         if (prEl) prEl.textContent = window.geoCurrency.formatPrice(currentProduct.priceKES);
+        const mobilePrEl = document.getElementById('mobileStickyPrice');
+        if (mobilePrEl) mobilePrEl.textContent = window.geoCurrency.formatPrice(currentProduct.priceKES);
       }
     });
   </script>
