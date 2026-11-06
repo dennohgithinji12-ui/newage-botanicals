@@ -8,6 +8,11 @@ class ApothecaryApp {
     this.currentCategory = "all";
     this.searchQuery = "";
     this.currentSort = "featured";
+    this.displayLimit = 16;
+    this.hasHydratedProducts = false;
+    this.hasHydratedBlog = false;
+    this.hasHydratedPortfolios = false;
+    this.sentinelObserver = null;
     this.timerSeconds = 600;
     this.timerInitialSeconds = 600;
     this.timerInterval = null;
@@ -16,14 +21,115 @@ class ApothecaryApp {
   }
 
   init() {
-    // Initial renders
-    this.renderProducts();
-    this.renderBlogPosts();
-    this.renderPortfolios();
+    // Viewport-First Progressive Hydration:
+    // Determine whether the user landed directly on the shop grid (e.g. shop.html, #shop, or query params)
+    const urlParams = new URLSearchParams(window.location.search);
+    const isDirectToShop = window.location.pathname.includes("shop") || 
+                           window.location.hash === "#shop" || 
+                           urlParams.has("category") || 
+                           urlParams.has("search");
+
+    if (isDirectToShop) {
+      // User opened dispensary directly: render products immediately (top 16)
+      this.hasHydratedProducts = true;
+      this.renderProducts();
+    } else {
+      // User opened at the top of home page (Hero / Portals):
+      // Keep hero paint instant (0ms blocking), observe #shop entry
+      const shopEl = document.getElementById("shop") || document.getElementById("productsGrid");
+      if (shopEl && "IntersectionObserver" in window) {
+        const shopObserver = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !this.hasHydratedProducts) {
+              this.hasHydratedProducts = true;
+              this.renderProducts();
+              obs.disconnect();
+            }
+          });
+        }, { rootMargin: "450px 0px" });
+        shopObserver.observe(shopEl);
+
+        // Background idle fallback: hydrate during idle time if user stays at top
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(() => {
+            if (!this.hasHydratedProducts) {
+              this.hasHydratedProducts = true;
+              this.renderProducts();
+            }
+          }, { timeout: 1200 });
+        } else {
+          setTimeout(() => {
+            if (!this.hasHydratedProducts) {
+              this.hasHydratedProducts = true;
+              this.renderProducts();
+            }
+          }, 800);
+        }
+      } else {
+        this.hasHydratedProducts = true;
+        this.renderProducts();
+      }
+    }
+
+    // Lazy load Blog Posts on viewport approach or idle
+    const blogEl = document.getElementById("blog") || document.getElementById("blogGrid");
+    if (blogEl && "IntersectionObserver" in window) {
+      const blogObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !this.hasHydratedBlog) {
+            this.hasHydratedBlog = true;
+            this.renderBlogPosts();
+            obs.disconnect();
+          }
+        });
+      }, { rootMargin: "350px 0px" });
+      blogObserver.observe(blogEl);
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(() => {
+          if (!this.hasHydratedBlog) {
+            this.hasHydratedBlog = true;
+            this.renderBlogPosts();
+          }
+        }, { timeout: 2200 });
+      }
+    } else if (blogEl) {
+      this.hasHydratedBlog = true;
+      this.renderBlogPosts();
+    }
+
+    // Lazy load Sacred Portfolios on viewport approach or idle
+    const portEl = document.getElementById("portfolio") || document.getElementById("portfolioGrid");
+    if (portEl && "IntersectionObserver" in window) {
+      const portObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !this.hasHydratedPortfolios) {
+            this.hasHydratedPortfolios = true;
+            this.renderPortfolios();
+            obs.disconnect();
+          }
+        });
+      }, { rootMargin: "350px 0px" });
+      portObserver.observe(portEl);
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(() => {
+          if (!this.hasHydratedPortfolios) {
+            this.hasHydratedPortfolios = true;
+            this.renderPortfolios();
+          }
+        }, { timeout: 2600 });
+      }
+    } else if (portEl) {
+      this.hasHydratedPortfolios = true;
+      this.renderPortfolios();
+    }
 
     // Listen to currency changes to refresh prices live
     window.addEventListener("currencyChanged", () => {
-      this.renderProducts();
+      if (this.hasHydratedProducts) {
+        this.renderProducts();
+      }
     });
 
     // Setup omnisearch live listener
@@ -32,13 +138,14 @@ class ApothecaryApp {
     if (searchInput) {
       searchInput.addEventListener("input", (e) => {
         this.searchQuery = e.target.value.trim().toLowerCase();
+        this.displayLimit = 16;
+        this.hasHydratedProducts = true;
         if (clearBtn) clearBtn.style.display = this.searchQuery ? "block" : "none";
         this.renderProducts();
       });
     }
 
     // Check URL parameters for search or category
-    const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has("category")) {
       this.filterByCategory(urlParams.get("category"));
     }
@@ -113,12 +220,18 @@ class ApothecaryApp {
     return list;
   }
 
+  loadMoreProducts() {
+    this.displayLimit += 16;
+    this.renderProducts();
+  }
+
   renderProducts() {
     const grid = document.getElementById("productsGrid");
     const countEl = document.getElementById("resultsCount");
     if (!grid) return;
 
     const filtered = this.getFilteredProducts();
+    const visibleItems = filtered.slice(0, this.displayLimit);
 
     // Update result count label
     if (countEl) {
@@ -127,9 +240,9 @@ class ApothecaryApp {
       } else if (this.currentCategory !== "all") {
         const catBtn = document.querySelector(`.cat-tab-btn[data-category="${this.currentCategory}"]`);
         const catName = catBtn ? catBtn.textContent.replace(/^[0-9.]+\s*/, '') : this.currentCategory;
-        countEl.innerHTML = `Showing <strong>${filtered.length}</strong> products in <strong>${catName}</strong>`;
+        countEl.innerHTML = `Showing <strong>${visibleItems.length}</strong> of <strong>${filtered.length}</strong> in <strong>${catName}</strong>`;
       } else {
-        countEl.innerHTML = `Showing all <strong>${filtered.length}</strong> botanical remedies`;
+        countEl.innerHTML = `Showing <strong>${visibleItems.length}</strong> of <strong>${filtered.length}</strong> botanical remedies`;
       }
     }
 
@@ -148,23 +261,22 @@ class ApothecaryApp {
       return;
     }
 
-    grid.innerHTML = filtered.map((product, idx) => {
+    const cardsHtml = visibleItems.map((product, idx) => {
       const formattedPrice = window.geoCurrency ? window.geoCurrency.formatPrice(product.priceKES) : `KSh ${product.priceKES}`;
       const basePriceKES = `KSh ${product.priceKES.toLocaleString()}`;
       const isAboveFold = idx < 4;
       const loadingAttr = isAboveFold ? 'loading="eager"' : 'loading="lazy"';
-      const priorityAttr = isAboveFold ? 'fetchpriority="high"' : '';
+      const priorityAttr = isAboveFold ? (idx < 2 ? 'fetchpriority="high"' : '') : '';
 
       // Pick top 2 illness tags and top 1 herb tag
       const illnessPills = (product.illnesses || []).slice(0, 2).map(ill => `<span class="card-pill">🎯 ${ill}</span>`).join("");
       const herbPill = (product.herbs || []).slice(0, 1).map(h => `<span class="card-pill">🌿 ${h}</span>`).join("");
       const img1 = product.image || 'assets/images/hero-apothecary.jpg';
-      const img2 = product.imageSecondary || product.images?.[1] || img1;
 
       return `
         <article class="product-card" data-id="${product.id}">
           <div class="card-image-wrap">
-            <img src="${img1}" alt="${product.name}" class="card-img-primary" ${loadingAttr} ${priorityAttr} decoding="async" width="380" height="280" onerror="this.src='assets/images/hero-apothecary.jpg'">
+            <img src="${img1}" alt="${product.name}" class="card-img-primary" ${loadingAttr} ${priorityAttr} decoding="async" width="380" height="280" onerror="this.src='assets/images/hero-apothecary.webp'">
             ${product.tag ? `<span class="card-badge">${product.tag}</span>` : ""}
             <button class="quick-view-trigger" onclick="app.showQuickView('${product.id}')" title="Quick View Botanical Details" aria-label="Quick View ${product.name}">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
@@ -204,10 +316,51 @@ class ApothecaryApp {
         </article>
       `;
     }).join("");
+
+    // Append progressive load more sentinel or all-remedies badge
+    let footerHtml = "";
+    if (this.displayLimit < filtered.length) {
+      footerHtml = `
+        <div id="loadMoreSentinel" class="load-more-sentinel" style="grid-column: 1 / -1; text-align: center; padding: 2.5rem 1rem 1rem;">
+          <button id="loadMoreBtn" class="btn-secondary" onclick="app.loadMoreProducts()" style="padding: 0.85rem 2.2rem; border-color: var(--gold-primary); color: var(--gold-glow); background: rgba(14, 41, 27, 0.7); border-radius: 30px; cursor: pointer; font-size: 0.95rem; font-family: var(--font-serif); transition: all 0.3s ease;">
+            🌿 Discover More Remedies (${visibleItems.length} of ${filtered.length} loaded)
+          </button>
+        </div>
+      `;
+    } else {
+      footerHtml = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 2.5rem 1rem 1rem; color: var(--gold-glow); font-size: 0.92rem; font-family: var(--font-serif);">
+          ✨ All ${filtered.length} authentic remedies displayed
+        </div>
+      `;
+    }
+
+    grid.innerHTML = cardsHtml + footerHtml;
+
+    // Attach IntersectionObserver to automatically load more on scroll
+    if (this.displayLimit < filtered.length && "IntersectionObserver" in window) {
+      const sentinel = document.getElementById("loadMoreSentinel");
+      if (sentinel) {
+        if (this.sentinelObserver) {
+          this.sentinelObserver.disconnect();
+        }
+        this.sentinelObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              this.sentinelObserver.disconnect();
+              this.loadMoreProducts();
+            }
+          });
+        }, { rootMargin: "350px 0px" });
+        this.sentinelObserver.observe(sentinel);
+      }
+    }
   }
 
   filterByCategory(categoryId) {
     this.currentCategory = categoryId;
+    this.displayLimit = 16;
+    this.hasHydratedProducts = true;
     // Update active tab buttons
     document.querySelectorAll(".cat-tab-btn").forEach(btn => {
       if (btn.dataset.category === categoryId) {
@@ -226,6 +379,8 @@ class ApothecaryApp {
     if (input) {
       input.value = query;
       this.searchQuery = query.toLowerCase();
+      this.displayLimit = 16;
+      this.hasHydratedProducts = true;
       if (clearBtn) clearBtn.style.display = "block";
       this.renderProducts();
       // Scroll to shop section
@@ -240,6 +395,8 @@ class ApothecaryApp {
     if (input) {
       input.value = "";
       this.searchQuery = "";
+      this.displayLimit = 16;
+      this.hasHydratedProducts = true;
       if (clearBtn) clearBtn.style.display = "none";
       this.renderProducts();
     }
@@ -247,7 +404,10 @@ class ApothecaryApp {
 
   sortProducts(sortOption) {
     this.currentSort = sortOption;
+    this.displayLimit = 16;
+    this.hasHydratedProducts = true;
     this.renderProducts();
+  }
   }
 
   // =========================================================================

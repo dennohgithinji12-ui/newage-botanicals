@@ -2,8 +2,18 @@
 # Comprehensive Indexing Rules for Googlebot, Bingbot, Applebot, and AI Web Crawlers
 User-agent: *
 Allow: /
+Allow: /shop
 Allow: /shop.html
+Allow: /product
 Allow: /product.html
+Allow: /men
+Allow: /men.html
+Allow: /women
+Allow: /women.html
+Allow: /clear-skin
+Allow: /clear-skin.html
+Allow: /checkout
+Allow: /checkout.html
 Allow: /css/
 Allow: /js/
 Allow: /assets/

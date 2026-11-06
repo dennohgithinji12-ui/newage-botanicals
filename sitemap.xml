@@ -23,9 +23,39 @@
   </url>
   <url>
     <loc>https://omnicorehub.app/checkout.html</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omnicorehub.app/men.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://omnicorehub.app/assets/images/products/mjulubeng-xl-mashine-pro-enlargement-balm-photo.jpg</image:loc>
+      <image:title>Apex Men's Virility &amp; Performance Matrix</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://omnicorehub.app/women.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://omnicorehub.app/assets/images/products/bana-tight-floragrip-intimate-gel-photo.jpg</image:loc>
+      <image:title>FloraGrip Pelvic Firming &amp; Intimate Restorative</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://omnicorehub.app/clear-skin.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://omnicorehub.app/assets/images/products/acne-clear-neem-tea-tree-blemish-elixir-photo.jpg</image:loc>
+      <image:title>AcneClear Rapid Blemish &amp; Cystic Clarifying Elixir</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://omnicorehub.app/shop.html?category=clinical-protocols</loc>
