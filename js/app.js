@@ -289,7 +289,8 @@ class ApothecaryApp {
               <a href="product.html?id=${product.id}" style="color:inherit; text-decoration:none;" title="View Clinical Dossier">${product.name}</a>
             </h3>
             <p class="card-botanical">${product.botanicalName}</p>
-            <p class="card-snippet" style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.75rem;">
+            <span class="card-handwritten-tag">~ Small-batch wildcrafted ~</span>
+            <p class="card-snippet" style="font-size: 0.85rem; line-height: 1.5; margin: 0.35rem 0 0.75rem;">
               <strong>Action:</strong> ${product.whatItDoes ? product.whatItDoes.substring(0, 115) + '...' : product.description}
             </p>
 
@@ -408,7 +409,6 @@ class ApothecaryApp {
     this.hasHydratedProducts = true;
     this.renderProducts();
   }
-  }
 
   // =========================================================================
   // QUICK VIEW MODAL
@@ -443,7 +443,10 @@ class ApothecaryApp {
         <div>
           <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--gold-primary); letter-spacing: 0.1em;">${product.categoryName}</span>
           <h2 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--text-parchment); margin-bottom: 0.25rem;">${product.name}</h2>
-          <p style="font-style: italic; color: var(--text-muted); margin-bottom: 0.75rem;">${product.botanicalName}</p>
+          <p style="font-style: italic; color: var(--text-muted); margin-bottom: 0.4rem;">${product.botanicalName}</p>
+          <div class="handwritten-stamp" style="font-size: 1.15rem; margin-bottom: 0.85rem;">
+            🌿 "Master Herbalist Formulated · 100% active plant medicine"
+          </div>
           
           <div style="font-size: 1.6rem; font-weight: 700; color: var(--gold-glow); margin-bottom: 1rem;">
             ${formattedPrice}

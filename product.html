@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Botanical Remedy Dossier | NewAge Health Botanicals & Rituals</title>
-  <meta name="description" content="Detailed botanical pharmacopoeia, clinical mechanisms, active ingredients, and sacred preparation ritual guide.">
+  <meta name="description"
+    content="Detailed botanical pharmacopoeia, clinical mechanisms, active ingredients, and sacred preparation ritual guide.">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
 
   <!-- Meta Pixel Code -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1453582713300853');
-  fbq('track', 'PageView');
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1453582713300853');
+    fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1453582713300853&ev=PageView&noscript=1"
-  /></noscript>
+      src="https://www.facebook.com/tr?id=1453582713300853&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel Code -->
 
   <style>
-    /* Instant Viewport Performance Optimization */
+    /* Instant Viewport Performance Optimization & Modern Styling */
     .pdp-main-img {
-      transition: opacity 0.25s ease-in;
+      transition: opacity 0.25s ease-in, transform 0.3s ease;
       content-visibility: auto;
+      border-radius: 12px;
+    }
+    .pdp-main-img:hover {
+      transform: scale(1.015);
     }
     .skeleton-text {
       background: rgba(255, 255, 255, 0.08);
@@ -42,8 +53,23 @@
       min-width: 140px;
       min-height: 1.2em;
     }
+    .discreet-guarantee-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      background: rgba(14, 41, 27, 0.65);
+      border: 1px dashed rgba(212, 175, 55, 0.35);
+      border-radius: 10px;
+      padding: 0.85rem 1.15rem;
+      margin-top: 1.25rem;
+      backdrop-filter: blur(10px);
+    }
+    .discreet-guarantee-badge .icon {
+      font-size: 1.4rem;
+    }
   </style>
 </head>
+
 <body>
 
   <!-- Top Announcement Bar -->
@@ -52,7 +78,8 @@
       <span>✨ Free Courier Delivery on orders above KSh 4,500 | 100% Discreet Plain Box Guarantee</span>
       <div class="currency-selector-wrap">
         <label for="currencySelect" class="sr-only">Currency</label>
-        <select id="currencySelect" class="currency-select" aria-label="Select Currency" onchange="if(window.geoCurrency) geoCurrency.setCurrency(this.value)">
+        <select id="currencySelect" class="currency-select" aria-label="Select Currency"
+          onchange="if(window.geoCurrency) geoCurrency.setCurrency(this.value)">
           <option value="KES">🇰🇪 KES (KSh)</option>
           <option value="USD">🇺🇸 USD ($)</option>
           <option value="GBP">🇬🇧 GBP (£)</option>
@@ -105,14 +132,16 @@
   <!-- Dedicated Product Detail Container (Rendered Priority #1) -->
   <main class="pdp-page-container container" id="pdpMain">
     <nav class="pdp-breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a> &gt; <a href="shop.html">Dispensary</a> &gt; <span id="pdpBreadcrumbTitle">Remedy Details</span>
+      <a href="index.html">Home</a> &gt; <a href="shop.html">Dispensary</a> &gt; <span id="pdpBreadcrumbTitle">Remedy
+        Details</span>
     </nav>
 
     <div class="pdp-grid" id="pdpGrid">
       <!-- Left: Dual Image Interactive Gallery -->
       <div class="pdp-gallery-wrap">
         <div class="pdp-main-image-container">
-          <img id="pdpActiveImage" src="assets/images/hero-apothecary.webp" alt="Botanical Medicine" class="pdp-main-img" fetchpriority="high" loading="eager" decoding="async">
+          <img id="pdpActiveImage" src="assets/images/hero-apothecary.webp" alt="Botanical Medicine"
+            class="pdp-main-img" fetchpriority="high" loading="eager" decoding="async">
           <span id="pdpTagBadge" class="card-badge" style="top: 15px; left: 15px; display: none;"></span>
         </div>
 
@@ -120,9 +149,11 @@
         <div class="discreet-guarantee-badge">
           <span class="icon">🔒</span>
           <div>
-            <strong style="color: var(--gold-glow); display: block; font-size: 0.92rem;">100% Confidential & Discreet Delivery</strong>
+            <strong style="color: var(--gold-glow); display: block; font-size: 0.92rem;">100% Confidential & Discreet
+              Delivery</strong>
             <span style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
-              All remedies are dispatched in plain, unbranded security packaging with zero product names or medical details on the exterior.
+              All remedies are dispatched in plain, unbranded security packaging with zero product names or medical
+              details on the exterior.
             </span>
           </div>
         </div>
@@ -130,38 +161,66 @@
 
       <!-- Right: Product Clinical & Ritual Dossier -->
       <div class="pdp-details-wrap">
-        <span class="card-cat-label" id="pdpCategory">Remedy Category</span>
-        <h1 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--gold-glow); margin: 0.35rem 0;" id="pdpTitle">Loading Botanical...</h1>
-        <p style="font-style: italic; color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.25rem;" id="pdpBotanical">Botanical Species</p>
-
-        <div class="pdp-price-row">
-          <span class="pdp-price-current" id="pdpPrice">KSh ...</span>
-          <span style="color: var(--text-muted); font-size: 0.9rem;" id="pdpBasePrice"></span>
-          <span class="card-pill" style="background: rgba(42, 157, 143, 0.2); border-color: #2a9d8f; color: #32b5a5;">✓ In Stock &amp; Freshly Formulated</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+          <span class="card-cat-label" id="pdpCategory">Remedy Category</span>
+          <span class="handwritten-annotation" style="font-size: 1.18rem; color: #f9d976;">~ Small-Batch Cold Maceration ~</span>
         </div>
 
-        <!-- WHAT THIS MEDICINE DOES SECTION -->
-        <div class="what-it-does-box">
-          <h4>🔬 What This Medicine Does &amp; How It Works</h4>
-          <p id="pdpWhatItDoes" style="margin-bottom: 0.75rem;">Loading active therapeutic mechanisms...</p>
-          <p id="pdpDescription" style="color: var(--text-muted); font-size: 0.88rem;"></p>
+        <h1 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: var(--gold-glow); margin: 0.35rem 0;"
+          id="pdpTitle">Loading Botanical...</h1>
+        <p style="font-style: italic; color: var(--text-muted); font-size: 1.05rem; margin-bottom: 0.75rem;"
+          id="pdpBotanical">Botanical Species</p>
+
+        <!-- Traditional Apothecary Batch Stamp -->
+        <div class="apothecary-batch-seal" id="pdpApothecarySeal">
+          <div class="apothecary-seal-icon">🌿</div>
+          <div class="apothecary-seal-text">
+            <span>Indigenous African Pharmacopoeia:</span>
+            <strong>"Wildcrafted small-lot compounding · Verified by Master Herbalist"</strong>
+          </div>
+        </div>
+
+        <div class="pdp-price-row" style="align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+          <span class="pdp-price-current" id="pdpPrice">KSh ...</span>
+          <span style="color: var(--text-muted); font-size: 0.9rem;" id="pdpBasePrice"></span>
+          <span class="card-pill" style="background: rgba(42, 157, 143, 0.2); border-color: #2a9d8f; color: #32b5a5;">✓
+            In Stock &amp; Freshly Formulated</span>
+          <span class="handwritten-stamp" style="margin-left: auto;">🔒 100% Plain Unbranded Box</span>
+        </div>
+
+        <!-- WHAT THIS MEDICINE DOES SECTION (Modern Glassmorphic Card + Traditional Note) -->
+        <div class="what-it-does-box modern-card-glow" style="margin: 1.25rem 0; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+            <h4 style="margin: 0; font-family: var(--font-serif); font-size: 1.15rem; color: var(--gold-glow);">🔬 Pharmacological Action &amp; Active Mechanisms</h4>
+            <span class="handwritten-annotation" style="font-size: 1.15rem; color: #f9d976;">~ Direct Cellular Uptake ~</span>
+          </div>
+          <p id="pdpWhatItDoes" style="margin-bottom: 0.75rem; font-size: 0.96rem; line-height: 1.65; color: var(--text-parchment);">Loading active therapeutic mechanisms...</p>
+          <div class="handwritten-margin-note" id="pdpHandwrittenNote">
+            ✍️ Herbalist Dossier: Pure bio-active herbal decoction — zero talc, zero synthetic binders, zero fillers.
+          </div>
+          <p id="pdpDescription" style="color: var(--text-muted); font-size: 0.88rem; margin-top: 0.5rem;"></p>
         </div>
 
         <!-- Action Buttons / Frictionless Checkout (Visible Viewport Target) -->
         <div class="pdp-actions-row">
           <div class="pdp-btn-group">
-            <button class="btn-primary" style="flex: 2; justify-content: center; font-size: 1.05rem; padding: 0.9rem 1.5rem;" onclick="buyNowCurrentProduct()">
+            <button class="btn-primary"
+              style="flex: 2; justify-content: center; font-size: 1.05rem; padding: 0.9rem 1.5rem;"
+              onclick="buyNowCurrentProduct()">
               ⚡ Instant 1-Click Checkout
             </button>
-            <button class="btn-secondary" style="flex: 1.5; justify-content: center; font-size: 0.95rem;" onclick="addToBasketCurrentProduct()">
+            <button class="btn-secondary" style="flex: 1.5; justify-content: center; font-size: 0.95rem;"
+              onclick="addToBasketCurrentProduct()">
               🛒 Add to Basket
             </button>
           </div>
           <div class="pdp-btn-group">
-            <button class="btn-whatsapp" style="flex: 1; justify-content: center; font-size: 0.9rem; padding: 0.75rem;" onclick="orderWhatsAppCurrentProduct()">
+            <button class="btn-whatsapp" style="flex: 1; justify-content: center; font-size: 0.9rem; padding: 0.75rem;"
+              onclick="orderWhatsAppCurrentProduct()">
               💬 Order via Confidential WhatsApp Concierge
             </button>
-            <button class="btn-secondary" style="flex: 0.8; justify-content: center; font-size: 0.85rem;" onclick="openBatchModalFromPdp()">
+            <button class="btn-secondary" style="flex: 0.8; justify-content: center; font-size: 0.85rem;"
+              onclick="openBatchModalFromPdp()">
               🔬 Verify Batch CoA
             </button>
           </div>
@@ -171,26 +230,44 @@
         <div id="pdpSecondaryDetails" style="margin-top: 2rem;">
           <!-- Target Illnesses & Symptoms -->
           <div style="margin-bottom: 1.5rem;">
-            <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Targeted Illnesses &amp; Symptoms:</h4>
+            <h4
+              style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">
+              Targeted Illnesses &amp; Symptoms:</h4>
             <div id="pdpIllnessTags" style="display: flex; flex-wrap: wrap; gap: 0.4rem;"></div>
           </div>
 
           <!-- Holistic Benefits -->
           <div style="margin-bottom: 1.5rem;">
-            <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Documented Therapeutic Actions:</h4>
-            <ul id="pdpBenefitsList" style="padding-left: 1.25rem; font-size: 0.92rem; line-height: 1.7; color: var(--text-linen);"></ul>
+            <h4
+              style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">
+              Documented Therapeutic Actions:</h4>
+            <ul id="pdpBenefitsList"
+              style="padding-left: 1.25rem; font-size: 0.92rem; line-height: 1.7; color: var(--text-linen);"></ul>
           </div>
 
           <!-- Active Herbal Ingredients -->
           <div style="margin-bottom: 1.5rem;">
-            <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Pharmacological Ingredients:</h4>
-            <p id="pdpIngredients" style="font-size: 0.88rem; line-height: 1.6; color: var(--text-muted); background: rgba(5, 14, 9, 0.6); padding: 0.85rem; border-radius: 6px; border: 1px solid var(--border-subtle);"></p>
+            <h4
+              style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">
+              Pharmacological Ingredients:</h4>
+            <p id="pdpIngredients"
+              style="font-size: 0.88rem; line-height: 1.6; color: var(--text-muted); background: rgba(5, 14, 9, 0.6); padding: 0.85rem; border-radius: 6px; border: 1px solid var(--border-subtle);">
+            </p>
           </div>
 
           <!-- Sacred Preparation & Ritual Dosage -->
           <div style="margin-bottom: 2rem;">
-            <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Preparation &amp; Mindful Ritual Guide:</h4>
-            <div id="pdpRitualGuide" style="background: rgba(14, 41, 27, 0.6); padding: 1rem 1.25rem; border-radius: 6px; border-left: 3px solid var(--gold-primary); font-style: italic; font-size: 0.9rem; line-height: 1.6;"></div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+              <h4 style="font-family: var(--font-serif); color: var(--gold-primary); font-size: 1.05rem; margin: 0;">
+                Preparation &amp; Mindful Ritual Guide:</h4>
+              <span class="handwritten-annotation" style="font-size: 1.15rem; color: var(--gold-glow);">~ Traditional Ceremony ~</span>
+            </div>
+            <div id="pdpRitualGuide"
+              style="background: rgba(14, 41, 27, 0.6); padding: 1.1rem 1.25rem; border-radius: 8px; border-left: 3px solid var(--gold-primary); font-style: italic; font-size: 0.92rem; line-height: 1.65;">
+            </div>
+            <div class="handwritten-stamp" style="margin-top: 0.85rem; font-size: 1.15rem;">
+              🍃 "Infuse mindfully in silence. Allow the volatile herbal vapors to awaken cellular healing."
+            </div>
           </div>
         </div>
 
@@ -200,8 +277,9 @@
     <!-- Related Remedies Section (Lazy loaded as user scrolls) -->
     <section id="relatedSection" style="margin-top: 5rem; min-height: 200px;">
       <div class="section-header-center">
-        <span class="section-subtitle">Synergistic Formulations</span>
+        <span class="handwritten-flourish" style="display: block; margin-bottom: 0.25rem;">~ Sacred Synergy Formulations ~</span>
         <h2 class="section-title">Related Botanical Therapies</h2>
+        <span class="section-subtitle">Complementary botanical protocols frequently paired by our herbalists</span>
       </div>
       <div class="products-grid" id="relatedGrid" style="margin-top: 2rem;">
         <!-- Populated progressively via IntersectionObserver -->
@@ -215,7 +293,8 @@
     <div class="cart-drawer-header">
       <div class="cart-title-row">
         <h3>Sacred Botanical Basket</h3>
-        <button class="cart-close-btn" onclick="if(window.cart) cart.closeDrawer()" aria-label="Close basket">&times;</button>
+        <button class="cart-close-btn" onclick="if(window.cart) cart.closeDrawer()"
+          aria-label="Close basket">&times;</button>
       </div>
     </div>
     <div class="cart-items-list" id="cartItemsList"></div>
@@ -226,22 +305,30 @@
     <div class="cart-drawer-footer" id="cartDrawerFooter">
       <div class="cart-totals-group">
         <div class="cart-total-row"><span>Subtotal</span><strong id="cartSubtotalAmount">KSh 0</strong></div>
-        <div class="cart-total-row" id="cartDiscountRow" style="display:none;"><span>Promo Discount</span><strong id="cartDiscountAmount" style="color:#2a9d8f;">-KSh 0</strong></div>
-        <div class="cart-total-row"><span>Discreet Courier Delivery</span><span id="cartShippingAmount">KSh 300</span></div>
-        <div class="cart-total-row grand-total"><span>Total Due</span><strong id="cartTotalAmount" style="color:var(--gold-glow); font-size:1.3rem;">KSh 0</strong></div>
+        <div class="cart-total-row" id="cartDiscountRow" style="display:none;"><span>Promo Discount</span><strong
+            id="cartDiscountAmount" style="color:#2a9d8f;">-KSh 0</strong></div>
+        <div class="cart-total-row"><span>Discreet Courier Delivery</span><span id="cartShippingAmount">KSh 300</span>
+        </div>
+        <div class="cart-total-row grand-total"><span>Total Due</span><strong id="cartTotalAmount"
+            style="color:var(--gold-glow); font-size:1.3rem;">KSh 0</strong></div>
       </div>
       <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.25rem;">
-        <a href="checkout.html" class="btn-paystack" style="text-align:center; text-decoration:none;">Proceed to Easy Checkout</a>
+        <a href="checkout.html" class="btn-paystack" style="text-align:center; text-decoration:none;">Proceed to Easy
+          Checkout</a>
         <button class="btn-whatsapp" onclick="checkoutWhatsAppPdp()">Order via WhatsApp</button>
       </div>
     </div>
   </aside>
 
   <!-- Batch CoA Verification Dialog Modal -->
-  <dialog id="batchModal" style="border: 1px solid var(--border-active); background: var(--bg-forest); color: #f4ebd9; border-radius: 12px; padding: 1.5rem; max-width: 600px; width: 90%;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
-      <h3 style="font-family: var(--font-serif); color: var(--gold-glow); margin: 0;">Soil-to-Shelf Lab Verification</h3>
-      <button onclick="document.getElementById('batchModal').close()" style="background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;">&times;</button>
+  <dialog id="batchModal"
+    style="border: 1px solid var(--border-active); background: var(--bg-forest); color: #f4ebd9; border-radius: 12px; padding: 1.5rem; max-width: 600px; width: 90%;">
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+      <h3 style="font-family: var(--font-serif); color: var(--gold-glow); margin: 0;">Soil-to-Shelf Lab Verification
+      </h3>
+      <button onclick="document.getElementById('batchModal').close()"
+        style="background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;">&times;</button>
     </div>
     <div id="batchResultContainer" style="font-size: 0.9rem; line-height: 1.6;">
       <p>Loading laboratory certificate of analysis (CoA)...</p>
@@ -283,7 +370,7 @@
             value: currentProduct.priceKES,
             currency: 'KES'
           });
-        } catch (err) {}
+        } catch (err) { }
       }
 
       // 1. Critical text & identity in the viewport
@@ -467,7 +554,7 @@
             value: currentProduct.priceKES,
             currency: 'KES'
           });
-        } catch (err) {}
+        } catch (err) { }
       }
 
       window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
@@ -515,4 +602,5 @@
     });
   </script>
 </body>
+
 </html>

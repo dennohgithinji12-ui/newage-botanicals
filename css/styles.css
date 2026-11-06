@@ -35,9 +35,10 @@
   --shadow-gold: 0 0 25px rgba(212, 175, 55, 0.22);
   
   /* Typography */
-  --font-display: 'Cinzel Decorative', serif;
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cinzel', 'Cinzel Decorative', serif;
+  --font-serif: 'Cormorant Garamond', 'Cinzel', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-handwriting: 'Caveat', 'Segoe Script', 'Brush Script MT', cursive;
   
   /* Transitions */
   --tr-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3292,6 +3293,168 @@ dialog::backdrop {
     text-align: center;
   }
 }
+
+/* ==========================================================================
+   MODERN STYLING & HANDWRITING APOTHECARY TRADITIONAL BLEND
+   ========================================================================== */
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+/* Handwritten Herbalist Annotations & Quotes */
+.handwritten-annotation {
+  font-family: var(--font-handwriting);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--gold-glow);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.handwritten-stamp {
+  font-family: var(--font-handwriting);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f6e27a;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px dashed rgba(212, 175, 55, 0.45);
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  transform: rotate(-1.2deg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform var(--tr-fast);
+}
+
+.handwritten-stamp:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.apothecary-batch-seal {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: linear-gradient(135deg, rgba(14, 41, 27, 0.75), rgba(20, 60, 40, 0.45));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 10px;
+  padding: 0.75rem 1.15rem;
+  margin: 1rem 0 1.25rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.apothecary-seal-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  color: var(--gold-glow);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+}
+
+.apothecary-seal-text {
+  font-family: var(--font-handwriting);
+  font-size: 1.32rem;
+  color: var(--text-parchment);
+  line-height: 1.35;
+}
+
+.apothecary-seal-text strong {
+  color: var(--gold-glow);
+  font-weight: 700;
+}
+
+.handwritten-flourish {
+  font-family: var(--font-handwriting);
+  font-size: 1.45rem;
+  color: #f9d976;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+  letter-spacing: 0.03em;
+}
+
+.handwritten-margin-note {
+  font-family: var(--font-handwriting);
+  font-size: 1.25rem;
+  color: #cfded1;
+  font-weight: 500;
+  margin-top: 0.65rem;
+  padding-left: 0.85rem;
+  border-left: 2px solid rgba(212, 175, 55, 0.45);
+  line-height: 1.4;
+}
+
+.card-handwritten-tag {
+  font-family: var(--font-handwriting);
+  font-size: 1.12rem;
+  color: var(--gold-glow);
+  letter-spacing: 0.02em;
+}
+
+/* Modernized Glassmorphism & High-End Micro-Interactions */
+.modern-card-glow {
+  background: var(--bg-emerald-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.08);
+  border-radius: 14px;
+  transition: transform var(--tr-smooth), box-shadow var(--tr-smooth), border-color var(--tr-smooth);
+}
+
+.modern-card-glow:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 24px 50px -15px rgba(0, 0, 0, 0.7), 0 0 35px rgba(212, 175, 55, 0.18);
+  transform: translateY(-3px);
+}
+
+/* Traditional Parchment Wax Seal */
+.wax-seal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #040d07;
+  background: var(--gold-gradient);
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
+}
+
+/* Polished Modern Buttons with Traditional Gold Accent */
+.btn-primary {
+  transition: all var(--tr-fast);
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.4);
+}
+
+.btn-buy-instant {
+  transition: all var(--tr-fast);
+  box-shadow: 0 3px 12px rgba(212, 175, 55, 0.2);
+}
+
+.btn-buy-instant:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 5px 18px rgba(212, 175, 55, 0.35);
+}
+
 
 
 
