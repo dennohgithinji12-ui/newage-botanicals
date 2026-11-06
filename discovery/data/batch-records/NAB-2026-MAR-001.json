@@ -12,11 +12,11 @@
     "supplierId": "sup-004",
     "supplierName": "Savannah Harvest Oils",
     "harvestRegion": "Kitui County, Semi-Arid Eastern Kenya",
-    "rawBatchRef": "RM-548176"
+    "rawBatchRef": "RM-216088"
   },
   "labTesting": {
     "accreditedLabName": "AfriCert Analytical Laboratories",
-    "labReportNumber": "LAB-REPORT-986945",
+    "labReportNumber": "LAB-REPORT-576695",
     "testDate": "2026-11-06",
     "heavyMetals": {
       "leadPpm": 0.05,
@@ -42,7 +42,7 @@
     "qcDecision": "RELEASE_FOR_SALE",
     "errors": [],
     "warnings": [],
-    "evaluatedAt": "2026-11-06T07:35:48.176Z"
+    "evaluatedAt": "2026-11-06T09:26:56.088Z"
   },
   "digitalVerification": {
     "cryptographicHash": "da591519035d13f7219d3d2febb9ad3c7da0432f26e1e644f8add84b007e9627",

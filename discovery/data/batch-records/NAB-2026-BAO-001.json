@@ -12,11 +12,11 @@
     "supplierId": "sup-002",
     "supplierName": "Baobab Swahili Coast Coop",
     "harvestRegion": "Kilifi & Kwale Coastal Lowlands, Kenya",
-    "rawBatchRef": "RM-548174"
+    "rawBatchRef": "RM-216084"
   },
   "labTesting": {
     "accreditedLabName": "KEBS National Metrology & Analytical Lab",
-    "labReportNumber": "LAB-REPORT-616897",
+    "labReportNumber": "LAB-REPORT-878055",
     "testDate": "2026-11-06",
     "heavyMetals": {
       "leadPpm": 0.6,
@@ -42,7 +42,7 @@
     "qcDecision": "RELEASE_FOR_SALE",
     "errors": [],
     "warnings": [],
-    "evaluatedAt": "2026-11-06T07:35:48.174Z"
+    "evaluatedAt": "2026-11-06T09:26:56.084Z"
   },
   "digitalVerification": {
     "cryptographicHash": "4048ccd2a96163033ff7ae2d1e7506871b2d675ed3ca1e767b736e62f6559c25",
