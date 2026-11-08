@@ -5,6 +5,7 @@ desktop.ini
 
 # Editor / IDE
 .vscode/
+.cursor/
 .idea/
 *.swp
 *.swo
