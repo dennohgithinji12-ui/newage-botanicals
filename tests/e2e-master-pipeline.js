@@ -213,6 +213,46 @@ assert(feedbackTelemetry.nps >= 80, `Cohort NPS is +${feedbackTelemetry.nps} (Pr
 assert(feedbackTelemetry.newCandidateIntakeQueue.length > 0, "Retention feedback successfully piped into Gate 3 intake queue");
 
 // -----------------------------------------------------------------------------
+// 9. GATE 11: Cloudflare D1 (SQLite at the Edge) Database
+// -----------------------------------------------------------------------------
+console.log(`\n${YELLOW}▶ Testing Gate 11: Cloudflare D1 (SQLite) Edge Database...${RESET}`);
+const wranglerContent = fs.readFileSync(path.join(__dirname, '../wrangler.toml'), 'utf8');
+assert(wranglerContent.includes('[[d1_databases]]'), 'wrangler.toml must configure [[d1_databases]]');
+assert(wranglerContent.includes('binding = "DB"'), 'wrangler.toml must define binding = "DB"');
+assert(wranglerContent.includes('newage-botanicals-db'), 'wrangler.toml must name database newage-botanicals-db');
+
+const schemaPath = path.join(__dirname, '../migrations/0001_initial_schema.sql');
+assert(fs.existsSync(schemaPath), 'migrations/0001_initial_schema.sql must exist');
+const schemaContent = fs.readFileSync(schemaPath, 'utf8');
+assert(schemaContent.includes('CREATE TABLE IF NOT EXISTS products'), 'Schema must create products table');
+assert(schemaContent.includes('CREATE TABLE IF NOT EXISTS orders'), 'Schema must create orders table');
+assert(schemaContent.includes('CREATE TABLE IF NOT EXISTS batch_records'), 'Schema must create batch_records table');
+
+const seedPath = path.join(__dirname, '../migrations/0002_seed_data.sql');
+assert(fs.existsSync(seedPath), 'migrations/0002_seed_data.sql must exist');
+const seedContent = fs.readFileSync(seedPath, 'utf8');
+const d1ProductInserts = seedContent.match(/INSERT OR REPLACE INTO products/g) || [];
+assert(d1ProductInserts.length >= 168, `Seed must insert >= 168 remedies into D1 SQLite (Found: ${d1ProductInserts.length})`);
+
+const d1Functions = [
+  'functions/api/products/index.js',
+  'functions/api/products/[id].js',
+  'functions/api/orders.js',
+  'functions/api/batch.js',
+  'functions/api/reviews.js',
+  'functions/api/db-status.js'
+];
+d1Functions.forEach(f => {
+  const fPath = path.join(__dirname, '..', f);
+  assert(fs.existsSync(fPath), `Cloudflare Pages function ${f} must exist`);
+  const fContent = fs.readFileSync(fPath, 'utf8');
+  assert(fContent.includes('env.DB'), `${f} must integrate with env.DB D1 binding`);
+});
+
+const clientSdkPath = path.join(__dirname, '../js/api-client.js');
+assert(fs.existsSync(clientSdkPath), 'js/api-client.js must exist');
+
+// -----------------------------------------------------------------------------
 // SUITE COMPLETION
 // -----------------------------------------------------------------------------
 console.log(`\n${GREEN}================================================================================${RESET}`);

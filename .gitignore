@@ -36,4 +36,9 @@ scratch/
 .windsurf/
 skills-lock.json
 
+# Cloudflare & Runtime Artifacts
+.wrangler/
+.tmp-screenshots/
+
+
 

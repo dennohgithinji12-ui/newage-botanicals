@@ -16,7 +16,7 @@
 - **Origin Region:** Taita Taveta Hills & Tsavo Borderland, Kenya
 - **Vetted Supplier:** Taita Hills Herbal Collective
 - **Testing Laboratory:** KEBS National Metrology & Analytical Lab
-- **Lab Assay Report ID:** `LAB-REPORT-525033`
+- **Lab Assay Report ID:** `LAB-REPORT-886051`
 
 ---
 

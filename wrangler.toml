@@ -2,5 +2,12 @@ name = "newage-botanicals"
 compatibility_date = "2026-11-05"
 pages_build_output_dir = "."
 
-[site]
-bucket = "."
+# ==============================================================================
+# Cloudflare D1 (SQLite at the Edge) Database Binding
+# Available inside Cloudflare Pages Functions as env.DB
+# ==============================================================================
+[[d1_databases]]
+binding = "DB"
+database_name = "newage-botanicals-db"
+database_id = "49fa7e26-88b1-4bb2-b6be-e4d0cb5a0026"
+migrations_dir = "migrations"
