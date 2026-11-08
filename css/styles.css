@@ -1606,9 +1606,30 @@ dialog::backdrop {
 /* Quick View Specifics */
 .quickview-container {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: 2rem;
   max-width: 820px;
+  align-items: center;
+}
+
+.quickview-container > div:first-child {
+  order: 2; /* Image placed on the right */
+}
+
+.quickview-container > div:last-child {
+  order: 1; /* Details & actions on the left */
+}
+
+@media (max-width: 768px) {
+  .quickview-container {
+    grid-template-columns: 1fr;
+  }
+  .quickview-container > div:first-child {
+    order: -1;
+  }
+  .quickview-container > div:last-child {
+    order: 2;
+  }
 }
 
 .qv-image {
@@ -2703,9 +2724,19 @@ dialog::backdrop {
 
 .pdp-grid {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 3.5rem;
   align-items: start;
+}
+
+.pdp-details-wrap {
+  order: 1;
+}
+
+.pdp-gallery-wrap {
+  order: 2;
+  position: sticky;
+  top: 100px;
 }
 
 @media (max-width: 900px) {
@@ -2713,11 +2744,13 @@ dialog::backdrop {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-}
-
-.pdp-gallery-wrap {
-  position: sticky;
-  top: 100px;
+  .pdp-gallery-wrap {
+    order: -1;
+    position: static;
+  }
+  .pdp-details-wrap {
+    order: 2;
+  }
 }
 
 .pdp-main-image-container {
@@ -3533,9 +3566,17 @@ dialog::backdrop {
 
 .campaign-product-card {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 2.5rem;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2.75rem;
   align-items: center;
+}
+
+.campaign-product-card .card-copy-col {
+  order: 1;
+}
+
+.campaign-product-card .card-image-col {
+  order: 2;
 }
 
 @media (max-width: 768px) {
@@ -3543,6 +3584,12 @@ dialog::backdrop {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 1.5rem !important;
+  }
+  .campaign-product-card .card-image-col {
+    order: -1;
+  }
+  .campaign-product-card .card-copy-col {
+    order: 2;
   }
 }
 

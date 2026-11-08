@@ -137,29 +137,7 @@
     </nav>
 
     <div class="pdp-grid" id="pdpGrid">
-      <!-- Left: Dual Image Interactive Gallery -->
-      <div class="pdp-gallery-wrap">
-        <div class="pdp-main-image-container">
-          <img id="pdpActiveImage" src="assets/images/hero-apothecary.webp" alt="Botanical Medicine"
-            class="pdp-main-img" fetchpriority="high" loading="eager" decoding="async">
-          <span id="pdpTagBadge" class="card-badge" style="top: 15px; left: 15px; display: none;"></span>
-        </div>
-
-        <!-- 100% Discreet Packaging Assurance -->
-        <div class="discreet-guarantee-badge">
-          <span class="icon">🔒</span>
-          <div>
-            <strong style="color: var(--gold-glow); display: block; font-size: 0.92rem;">100% Confidential & Discreet
-              Delivery</strong>
-            <span style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
-              All remedies are dispatched in plain, unbranded security packaging with zero product names or medical
-              details on the exterior.
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: Product Clinical & Ritual Dossier -->
+      <!-- Left Column: Product Clinical & Ritual Dossier -->
       <div class="pdp-details-wrap">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
           <span class="card-cat-label" id="pdpCategory">Remedy Category</span>
@@ -272,6 +250,31 @@
         </div>
 
       </div>
+
+      <!-- Right Column: Interactive Gallery Placed Right -->
+      <div class="pdp-gallery-wrap">
+        <div class="pdp-main-image-container">
+          <img id="pdpActiveImage" src="assets/images/hero-apothecary.webp" alt="Botanical Medicine"
+            class="pdp-main-img" fetchpriority="high" loading="eager" decoding="async">
+          <span id="pdpTagBadge" class="card-badge" style="top: 15px; right: 15px; display: none;"></span>
+        </div>
+
+        <!-- Dual Image Interactive Thumbnails -->
+        <div class="pdp-thumbnails" id="pdpThumbnails" style="display: flex; gap: 0.75rem; margin-top: 1rem;"></div>
+
+        <!-- 100% Discreet Packaging Assurance -->
+        <div class="discreet-guarantee-badge">
+          <span class="icon">🔒</span>
+          <div>
+            <strong style="color: var(--gold-glow); display: block; font-size: 0.92rem;">100% Confidential & Discreet
+              Delivery</strong>
+            <span style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
+              All remedies are dispatched in plain, unbranded security packaging with zero product names or medical
+              details on the exterior.
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Related Remedies Section (Lazy loaded as user scrolls) -->
@@ -371,8 +374,8 @@
       }
 
       const params = new URLSearchParams(window.location.search);
-      const id = params.get('id') || 'glucofort-x-diabetes-pancreatic-cure';
-      currentProduct = window.PRODUCTS_DATA.find(p => p.id === id) || window.PRODUCTS_DATA[0];
+      const reqId = params.get('id') || params.get('slug') || params.get('product') || 'glucofort-x-diabetes-pancreatic-cure';
+      currentProduct = window.PRODUCTS_DATA.find(p => p.id === reqId) || window.PRODUCTS_DATA[0];
 
       if (!currentProduct) return;
 
@@ -409,11 +412,26 @@
       const mobilePrEl = document.getElementById('mobileStickyPrice');
       if (mobilePrEl) mobilePrEl.textContent = formattedPrice;
 
-      // 3. Main Product Image (Priority #1 Viewport Asset)
+      // 3. Main Product Image (Priority #1 Viewport Asset, Placed Right)
       const mainImg = document.getElementById('pdpActiveImage');
+      const primaryImgSrc = currentProduct.image || 'assets/images/hero-apothecary.webp';
       if (mainImg) {
-        mainImg.src = currentProduct.image || 'assets/images/hero-apothecary.webp';
+        mainImg.src = primaryImgSrc;
         mainImg.alt = currentProduct.name;
+      }
+
+      // Populate interactive thumbnails
+      const thumbsContainer = document.getElementById('pdpThumbnails');
+      if (thumbsContainer) {
+        const packagingImg = currentProduct.imageSecondary || (currentProduct.images && currentProduct.images[1]) || (primaryImgSrc.endsWith('-photo.jpg') ? primaryImgSrc.replace('-photo.jpg', '.jpg') : primaryImgSrc);
+        thumbsContainer.innerHTML = `
+          <button type="button" class="pdp-thumb-btn active" onclick="switchPdpImage('${primaryImgSrc}', this)" style="flex:1; border: 1.5px solid var(--gold-primary); border-radius: 8px; background: rgba(14,41,27,0.7); padding: 0.5rem 0.75rem; color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.82rem; transition: all 0.2s ease;">
+            <span>📸</span> <strong>Studio Harvest</strong>
+          </button>
+          <button type="button" class="pdp-thumb-btn" onclick="switchPdpImage('${packagingImg}', this)" style="flex:1; border: 1px solid rgba(212,175,55,0.3); border-radius: 8px; background: rgba(14,41,27,0.4); padding: 0.5rem 0.75rem; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.82rem; transition: all 0.2s ease;">
+            <span>🔒</span> <span>Discreet Box</span>
+          </button>
+        `;
       }
 
       const badge = document.getElementById('pdpTagBadge');
@@ -537,6 +555,27 @@
       s.defer = true;
       if (callback) s.onload = callback;
       document.body.appendChild(s);
+    }
+
+    function switchPdpImage(src, btn) {
+      const mainImg = document.getElementById('pdpActiveImage');
+      if (mainImg) {
+        mainImg.style.opacity = '0.35';
+        mainImg.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+          mainImg.src = src;
+          mainImg.style.opacity = '1';
+          mainImg.style.transform = 'scale(1)';
+        }, 120);
+      }
+      if (btn) {
+        document.querySelectorAll('.pdp-thumb-btn').forEach(b => {
+          b.style.borderColor = 'rgba(212,175,55,0.3)';
+          b.style.color = 'var(--text-muted)';
+        });
+        btn.style.borderColor = 'var(--gold-primary)';
+        btn.style.color = '#fff';
+      }
     }
 
     // User Action Handlers
