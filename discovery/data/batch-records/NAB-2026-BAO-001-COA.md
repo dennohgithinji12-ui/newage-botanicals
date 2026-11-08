@@ -16,7 +16,7 @@
 - **Origin Region:** Kilifi & Kwale Coastal Lowlands, Kenya
 - **Vetted Supplier:** Baobab Swahili Coast Coop
 - **Testing Laboratory:** KEBS National Metrology & Analytical Lab
-- **Lab Assay Report ID:** `LAB-REPORT-358375`
+- **Lab Assay Report ID:** `LAB-REPORT-634474`
 
 ---
 
