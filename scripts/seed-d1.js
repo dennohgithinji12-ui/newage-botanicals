@@ -144,3 +144,4 @@ initialReviews.forEach(r => {
 const outPath = path.join(__dirname, '../migrations/0002_seed_data.sql');
 fs.writeFileSync(outPath, sqlLines.join('\n'), 'utf8');
 console.log(`✓ Generated ${outPath} (${(fs.statSync(outPath).size / 1024).toFixed(1)} KB) with ${products.length} remedies!`);
+

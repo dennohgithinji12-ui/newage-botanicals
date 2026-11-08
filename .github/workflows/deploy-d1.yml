@@ -37,3 +37,4 @@ jobs:
           else
             echo "CLOUDFLARE_API_TOKEN not set in GitHub Secrets. Skipping automated remote D1 migration."
           fi
+

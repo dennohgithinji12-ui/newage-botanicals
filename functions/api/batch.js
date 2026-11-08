@@ -91,3 +91,4 @@ function formatBatch(row) {
     verifiedAt: row.created_at
   };
 }
+

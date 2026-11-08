@@ -9,5 +9,5 @@ pages_build_output_dir = "."
 [[d1_databases]]
 binding = "DB"
 database_name = "newage-botanicals-db"
-database_id = "49fa7e26-88b1-4bb2-b6be-e4d0cb5a0026"
+database_id = "a419809a-d71c-494e-9f32-6ef1c989dd28"
 migrations_dir = "migrations"

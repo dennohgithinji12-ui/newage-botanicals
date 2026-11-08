@@ -137,3 +137,4 @@
 
   window.BotanicalApi = BotanicalApi;
 })(typeof window !== 'undefined' ? window : this);
+

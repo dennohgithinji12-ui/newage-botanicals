@@ -111,3 +111,4 @@ CREATE TABLE IF NOT EXISTS reviews (
 );
 
 CREATE INDEX IF NOT EXISTS idx_reviews_product ON reviews(product_id);
+
