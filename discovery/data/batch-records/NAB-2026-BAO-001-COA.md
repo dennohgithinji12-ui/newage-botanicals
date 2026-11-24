@@ -9,14 +9,14 @@
 - **SKU Code:** `NAB-SKU-BAO-200`
 - **Lot / Batch Number:** `NAB-2026-BAO-001`
 - **Net Quantity:** 200g / 7.0 oz
-- **Manufacture Date:** 2026-11-08
-- **Best Before / Expiry:** 2028-10-28
+- **Manufacture Date:** 2026-11-24
+- **Best Before / Expiry:** 2028-11-13
 
 ### Harvest & Farm Traceability
 - **Origin Region:** Kilifi & Kwale Coastal Lowlands, Kenya
 - **Vetted Supplier:** Baobab Swahili Coast Coop
 - **Testing Laboratory:** KEBS National Metrology & Analytical Lab
-- **Lab Assay Report ID:** `LAB-REPORT-634474`
+- **Lab Assay Report ID:** `LAB-REPORT-854357`
 
 ---
 

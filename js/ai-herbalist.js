@@ -87,17 +87,6 @@ class AIHerbalistController {
       if (this.inputField) this.inputField.focus();
     }, 150);
 
-    // On-demand background load of Puter SDK only when user actually engages with chat
-    this.loadPuterSDK();
-  }
-
-  loadPuterSDK() {
-    if (window.puter || this._loadingPuter) return;
-    this._loadingPuter = true;
-    const script = document.createElement("script");
-    script.src = "https://js.puter.com/v2/";
-    script.async = true;
-    document.head.appendChild(script);
   }
 
   close() {
@@ -202,60 +191,38 @@ class AIHerbalistController {
       let matchedProductIds = [];
       let followUpSuggestions = [];
 
-      // Attempt Puter AI with strict 4.5s race timeout
-      let puterSuccess = false;
-      if (window.puter && window.puter.ai && typeof window.puter.ai.chat === "function") {
-        try {
-          const systemPrompt = this.buildSystemPrompt(userText);
-          const puterMessages = [
-            { role: "system", content: systemPrompt },
-            ...this.messages.slice(-6).map(m => ({
-              role: m.role === "assistant" ? "assistant" : "user",
+      // 1. Attempt Cloudflare Pages Gemini AI endpoint (/api/consult)
+      let consultSuccess = false;
+      try {
+        const consultPromise = fetch('/api/consult', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: userText,
+            history: this.messages.slice(-6).map(m => ({
+              role: m.role,
               content: m.content
             }))
-          ];
+          })
+        }).then(res => res.ok ? res.json() : null);
 
-          // 4.5 second race timeout so external API never hangs
-          const timeoutPromise = new Promise((_, reject) =>
-            setTimeout(() => reject(new Error("Puter AI timeout")), 4500)
-          );
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error("Gemini API timeout")), 6000)
+        );
 
-          const puterPromise = window.puter.ai.chat(puterMessages, {
-            model: "gpt-4o-mini"
-          });
-
-          const puterResult = await Promise.race([puterPromise, timeoutPromise]);
-
-          if (typeof puterResult === "string") {
-            aiResponseText = puterResult;
-          } else if (puterResult?.message?.content) {
-            aiResponseText = puterResult.message.content;
-          } else if (puterResult?.text) {
-            aiResponseText = puterResult.text;
-          }
-
-          if (aiResponseText && aiResponseText.trim().length > 10) {
-            // Extract [PRODUCT: id] tokens
-            const productRegex = /\[PRODUCT:\s*([a-zA-Z0-9-_]+)\]/g;
-            let match;
-            while ((match = productRegex.exec(aiResponseText)) !== null) {
-              const id = match[1].trim();
-              if (typeof PRODUCTS_DATA !== "undefined" && PRODUCTS_DATA.some(p => p.id === id) && !matchedProductIds.includes(id)) {
-                matchedProductIds.push(id);
-              }
-            }
-            // Clean out raw [PRODUCT: id] tokens
-            aiResponseText = aiResponseText.replace(/\[PRODUCT:\s*[a-zA-Z0-9-_]+\]/g, "").trim();
-            puterSuccess = true;
-          }
-        } catch (puterErr) {
-          // Silent fallback - no popups or delays
-          puterSuccess = false;
+        const consultResult = await Promise.race([consultPromise, timeoutPromise]);
+        if (consultResult && consultResult.success && consultResult.text) {
+          aiResponseText = consultResult.text;
+          matchedProductIds = consultResult.productIds || [];
+          followUpSuggestions = consultResult.suggestions || [];
+          consultSuccess = true;
         }
+      } catch (geminiErr) {
+        consultSuccess = false;
       }
 
-      // If Puter was not available, timed out, or had auth restrictions, use the rich local engine
-      if (!puterSuccess) {
+      // 2. If edge API was unavailable or timed out, seamlessly use rich local pharmacopoeia
+      if (!consultSuccess) {
         const localConsultation = this.generateIntelligentConsultation(userText);
         aiResponseText = localConsultation.text;
         matchedProductIds = localConsultation.productIds;

@@ -240,7 +240,8 @@ const d1Functions = [
   'functions/api/orders.js',
   'functions/api/batch.js',
   'functions/api/reviews.js',
-  'functions/api/db-status.js'
+  'functions/api/db-status.js',
+  'functions/api/verify-payment.js'
 ];
 d1Functions.forEach(f => {
   const fPath = path.join(__dirname, '..', f);
@@ -248,6 +249,8 @@ d1Functions.forEach(f => {
   const fContent = fs.readFileSync(fPath, 'utf8');
   assert(fContent.includes('env.DB'), `${f} must integrate with env.DB D1 binding`);
 });
+
+assert(fs.existsSync(path.join(__dirname, '../functions/api/consult.js')), 'functions/api/consult.js must exist');
 
 const clientSdkPath = path.join(__dirname, '../js/api-client.js');
 assert(fs.existsSync(clientSdkPath), 'js/api-client.js must exist');
