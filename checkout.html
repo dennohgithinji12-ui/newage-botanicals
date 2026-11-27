@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discreet Secure Checkout | NewAge Health Botanicals</title>
-  <meta name="description" content="Fast, 100% confidential checkout with instant M-Pesa, Card via Paystack, and unbranded plain packaging.">
+  <title>Discreet Direct Checkout | NewAge Health Botanicals</title>
+  <meta name="description" content="Fast, 100% confidential direct checkout with instant Lipa na M-Pesa, Pay on Delivery, and unbranded plain packaging.">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -304,16 +304,16 @@
               </div>
             </label>
 
-            <!-- Option 2: Paystack Gateway -->
-            <label class="payment-option-card" id="cardOptPaystack" onclick="setPaymentMethod('paystack')">
-              <input type="radio" name="paymentMethodRadio" value="paystack">
+            <!-- Option 2: Pay on Delivery -->
+            <label class="payment-option-card" id="cardOptCod" onclick="setPaymentMethod('cod')">
+              <input type="radio" name="paymentMethodRadio" value="cod">
               <div style="flex: 1;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                  <strong style="color: var(--gold-glow); font-size: 0.95rem;">💳 Card / Apple Pay via Paystack</strong>
-                  <span style="font-size: 0.72rem; background: rgba(212, 175, 55, 0.15); color: var(--gold-glow); padding: 0.15rem 0.45rem; border-radius: 4px;">Cards & Global</span>
+                  <strong style="color: #f9d976; font-size: 0.95rem;">💵 Pay on Delivery (Courier Doorstep M-Pesa / Cash)</strong>
+                  <span style="font-size: 0.72rem; background: rgba(249, 217, 118, 0.15); color: #f9d976; padding: 0.15rem 0.45rem; border-radius: 4px; font-weight: 600;">Plain Box Inspection</span>
                 </div>
                 <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0.25rem 0 0;">
-                  Visa, Mastercard, Bank Transfer, or International Cards via PCI-DSS Certified Paystack.
+                  Inspect your neutral, unbranded parcel at your doorstep first. Pay via M-Pesa or Cash directly to the dispatch rider.
                 </p>
               </div>
             </label>
@@ -335,8 +335,8 @@
           </div>
 
           <button type="submit" class="btn-paystack" id="submitOrderBtn" style="width: 100%; margin-top: 1.5rem; font-size: 1.05rem; padding: 1.15rem; font-weight: 700; letter-spacing: 0.5px; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem; box-shadow: 0 4px 20px rgba(0, 195, 137, 0.35); background: linear-gradient(135deg, #09a5db 0%, #00c389 100%); color: #ffffff;">
-            <span>🔒</span>
-            <span id="submitBtnText">Confirm Order & Request Discreet Dispatch</span>
+            <span>⚡</span>
+            <span id="submitBtnText">Confirm Direct Order & Request Plain-Box Dispatch</span>
           </button>
           
           <div style="text-align: center; margin-top: 0.85rem; font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">
@@ -464,14 +464,14 @@
     };
 
     let checkoutItems = [];
-    let selectedPayment = 'mpesa'; // 'mpesa' | 'paystack' | 'whatsapp'
+    let selectedPayment = 'mpesa'; // 'mpesa' | 'cod' | 'whatsapp'
     let appliedCoupon = null;
     let urlUtmParams = {};
     let selectedRegionKey = 'nairobi_metro';
 
     function setPaymentMethod(method) {
       selectedPayment = method;
-      ['cardOptMpesa', 'cardOptPaystack', 'cardOptWhatsApp'].forEach(id => {
+      ['cardOptMpesa', 'cardOptCod', 'cardOptWhatsApp'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.classList.remove('active');
       });
@@ -482,12 +482,12 @@
         const opt = document.getElementById('cardOptMpesa');
         if (opt) opt.classList.add('active');
         if (mpesaBox) mpesaBox.style.display = 'block';
-        if (submitBtnText) submitBtnText.textContent = 'Confirm Order & Request M-Pesa Dispatch';
-      } else if (method === 'paystack') {
-        const opt = document.getElementById('cardOptPaystack');
+        if (submitBtnText) submitBtnText.textContent = '⚡ Confirm Direct Order (Lipa na M-Pesa)';
+      } else if (method === 'cod') {
+        const opt = document.getElementById('cardOptCod');
         if (opt) opt.classList.add('active');
         if (mpesaBox) mpesaBox.style.display = 'none';
-        if (submitBtnText) submitBtnText.textContent = 'Pay Now via Paystack (Cards / Apple Pay)';
+        if (submitBtnText) submitBtnText.textContent = '⚡ Confirm Direct Order (Pay on Delivery)';
       } else if (method === 'whatsapp') {
         const opt = document.getElementById('cardOptWhatsApp');
         if (opt) opt.classList.add('active');
@@ -927,38 +927,36 @@
         return;
       }
 
-      // 3. Paystack Option
-      if (selectedPayment === 'paystack') {
+      // 3. Pay on Delivery Option
+      if (selectedPayment === 'cod') {
         if (submitBtn && submitText) {
           submitBtn.disabled = true;
-          submitText.textContent = '⏳ Launching Paystack Gateway...';
+          submitText.textContent = '⏳ Recording Order for Courier Dispatch...';
         }
 
-        window.paystackService.initiatePayment({
-          customerName: name,
-          customerEmail: email,
-          customerPhone: phone,
-          customerAddress: orderData.customerAddress,
-          orderNotes: completeNotes,
-          amountInKES: totalKES,
-          items: checkoutItems,
-          onSuccess: async (resData) => {
-            if (submitBtn && submitText) {
-              submitBtn.disabled = false;
-              submitText.textContent = '✅ Payment Verified';
-            }
-            await syncOrderToD1(resData.reference || reference, 'paid');
-            if (window.cart) window.cart.clearCart();
-            showSuccessScreen({ ...orderData, reference: resData.reference || reference });
-          },
-          onClose: () => {
-            if (submitBtn && submitText) {
-              submitBtn.disabled = false;
-              submitText.textContent = 'Pay Now via Paystack (Cards / Apple Pay)';
-            }
-          }
-        });
+        await syncOrderToD1(reference, 'pay_on_delivery');
+
+        if (window.cart) window.cart.clearCart();
+        if (submitBtn && submitText) {
+          submitBtn.disabled = false;
+          submitText.textContent = '✅ Order Confirmed';
+        }
+        showSuccessScreen({ ...orderData, paymentMethod: 'cod' });
+        return;
       }
+
+      // Fallback direct order sync (if method not explicitly caught)
+      if (submitBtn && submitText) {
+        submitBtn.disabled = true;
+        submitText.textContent = '⏳ Recording Direct Order...';
+      }
+      await syncOrderToD1(reference, 'direct_pending');
+      if (window.cart) window.cart.clearCart();
+      if (submitBtn && submitText) {
+        submitBtn.disabled = false;
+        submitText.textContent = '✅ Order Confirmed';
+      }
+      showSuccessScreen(orderData);
     }
 
     function showSuccessScreen(orderData) {
@@ -971,7 +969,7 @@
       document.getElementById('successTown').textContent = orderData.customerAddress;
 
       let paymentLabel = '📱 Lipa na M-Pesa (0141 270 112)';
-      if (orderData.paymentMethod === 'paystack') paymentLabel = '⚡ Verified via Paystack (Card / M-Pesa)';
+      if (orderData.paymentMethod === 'cod') paymentLabel = '💵 Pay on Delivery (Courier Doorstep M-Pesa / Cash)';
       if (orderData.paymentMethod === 'whatsapp') paymentLabel = '💬 Direct WhatsApp Dispatch';
       document.getElementById('successPayment').textContent = paymentLabel;
       document.getElementById('successTotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(orderData.amountInKES) : 'KSh ' + orderData.amountInKES.toLocaleString();

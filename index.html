@@ -1008,22 +1008,17 @@
       </div>
 
       <div class="cart-actions-column">
-        <a href="checkout.html" class="btn-primary" style="display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 1rem; padding: 0.85rem; background: linear-gradient(135deg, #2a9d8f 0%, #1e7066 100%);">
-          ⚡ Proceed to Instant Checkout (M-Pesa / Card)
+        <a href="checkout.html" class="btn-primary" style="display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 1.05rem; padding: 0.95rem; font-weight: 700; border-radius: 8px; background: linear-gradient(135deg, #09a5db 0%, #00c389 100%); color: #ffffff; box-shadow: 0 4px 15px rgba(0, 195, 137, 0.3);">
+          ⚡ Proceed to Direct Checkout (M-Pesa / Courier)
         </a>
-        <button class="btn-paystack" onclick="app.openCheckoutModal()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-          Pay Inline (Cards / M-Pesa / Bank)
-        </button>
         <button class="btn-whatsapp" onclick="app.checkoutWhatsApp()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
           Order via WhatsApp Dispatch
         </button>
         <div class="cart-accepted-cards">
-          <span class="pay-badge pay-visa">VISA</span>
-          <span class="pay-badge pay-mc">Mastercard</span>
           <span class="pay-badge pay-mpesa">M-PESA</span>
-          <span class="pay-badge pay-apple"> Pay</span>
+          <span class="pay-badge pay-cod" style="background: rgba(0, 195, 137, 0.2); color: #00c389; border: 1px solid rgba(0, 195, 137, 0.4); padding: 0.15rem 0.45rem; border-radius: 4px; font-size: 0.72rem; font-weight: 600;">PAY ON DELIVERY</span>
+          <span class="pay-badge pay-plain" style="background: rgba(212, 175, 55, 0.15); color: var(--gold-glow); border: 1px solid rgba(212, 175, 55, 0.3); padding: 0.15rem 0.45rem; border-radius: 4px; font-size: 0.72rem; font-weight: 600;">PLAIN BOX</span>
         </div>
       </div>
     </div>
@@ -1075,17 +1070,17 @@
   </dialog>
 
   <!-- ==========================================================================
-       MODAL: PAYSTACK CHECKOUT DETAILS (<dialog>)
+       MODAL: DIRECT APOTHECARY CHECKOUT (<dialog>)
        ========================================================================== -->
   <dialog id="checkoutModal">
     <div class="modal-box" style="max-width: 580px;">
       <div class="modal-header">
-        <h3 style="font-family: var(--font-serif); color: var(--gold-glow); font-size: 1.35rem;">Paystack Secure Checkout</h3>
+        <h3 style="font-family: var(--font-serif); color: var(--gold-glow); font-size: 1.35rem;">Direct Apothecary Checkout</h3>
         <button class="modal-close-btn" onclick="document.getElementById('checkoutModal').close()">&times;</button>
       </div>
       <div class="modal-body">
         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-          Enter your delivery details to launch the secure Paystack inline payment portal.
+          Enter your delivery details to confirm your direct order and plain-box courier dispatch.
         </p>
 
         <form id="checkoutForm" onsubmit="app.processPaystackSubmit(event)">
@@ -1123,14 +1118,14 @@
           <!-- Checkout summary snippet -->
           <div style="background: rgba(14, 41, 27, 0.6); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-subtle); margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
             <div>
-              <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Total Amount to Pay</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Total Amount Due</span>
               <strong id="checkoutTotalDisplay" style="font-size: 1.3rem; color: var(--gold-glow);">KSh 0</strong>
             </div>
-            <span class="card-pill">⚡ Paystack Inline</span>
+            <span class="card-pill">⚡ Direct Dispatch</span>
           </div>
 
-          <button type="submit" class="btn-paystack" style="width: 100%; margin-bottom: 0.75rem;">
-            Proceed to Secure Payment
+          <button type="submit" class="btn-primary" style="width: 100%; margin-bottom: 0.75rem; background: linear-gradient(135deg, #09a5db 0%, #00c389 100%); font-weight: 700; padding: 0.95rem; border: none; border-radius: 6px; color: #fff; cursor: pointer; font-size: 1rem;">
+            ⚡ Confirm Direct Order &amp; Dispatch
           </button>
 
           <a href="checkout.html" class="btn-secondary" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: none; font-size: 0.85rem; padding: 0.65rem;">
@@ -1138,17 +1133,14 @@
           </a>
 
           <div class="paystack-accepted-cards">
-            <span class="paystack-cards-label">Accepted Cards &amp; Channels:</span>
+            <span class="paystack-cards-label">Accepted Channels:</span>
             <div class="payment-badges-row">
-              <span class="pay-badge pay-visa">VISA</span>
-              <span class="pay-badge pay-mc">Mastercard</span>
               <span class="pay-badge pay-mpesa">M-PESA</span>
-              <span class="pay-badge pay-apple"> Pay</span>
-              <span class="pay-badge pay-verve">Verve</span>
+              <span class="pay-badge pay-cod" style="background: rgba(0, 195, 137, 0.2); color: #00c389; border: 1px solid rgba(0, 195, 137, 0.4); padding: 0.15rem 0.45rem; border-radius: 4px; font-size: 0.72rem; font-weight: 600;">PAY ON DELIVERY</span>
+              <span class="pay-badge pay-plain" style="background: rgba(212, 175, 55, 0.15); color: var(--gold-glow); border: 1px solid rgba(212, 175, 55, 0.3); padding: 0.15rem 0.45rem; border-radius: 4px; font-size: 0.72rem; font-weight: 600;">PLAIN BOX</span>
             </div>
             <div class="paystack-security-note">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-              <span>Secured by Paystack · 256-Bit SSL · PCI-DSS Level 1</span>
+              <span>Direct Courier Dispatch · Plain Unbranded Packaging Guarantee</span>
             </div>
           </div>
         </form>

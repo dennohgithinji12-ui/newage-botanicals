@@ -772,23 +772,10 @@ class ApothecaryApp {
   }
 
   openCheckoutModal() {
-    if (cart.items.length === 0) {
-      alert("Your basket is empty.");
-      return;
-    }
-    const totals = cart.getTotals();
-    const modal = document.getElementById("checkoutModal");
-    const totalDisplay = document.getElementById("checkoutTotalDisplay");
-
-    if (totalDisplay) {
-      totalDisplay.textContent = window.geoCurrency ? window.geoCurrency.formatPrice(totals.totalKES) : `KSh ${totals.totalKES}`;
-    }
-
-    cart.closeDrawer();
-    if (modal) modal.showModal();
+    window.location.href = "checkout.html";
   }
 
-  processPaystackSubmit(e) {
+  async processPaystackSubmit(e) {
     e.preventDefault();
     const name = document.getElementById("custName").value.trim();
     const phone = document.getElementById("custPhone").value.trim();
@@ -806,28 +793,57 @@ class ApothecaryApp {
     } catch (err) {}
 
     const totals = cart.getTotals();
+    const reference = `NAH-${Date.now().toString().slice(-6)}-${Math.floor(Math.random() * 899 + 100)}`;
+    const curr = window.geoCurrency ? window.geoCurrency.currentCurrency : "KES";
+    const formattedPrice = window.geoCurrency ? window.geoCurrency.formatPrice(totals.totalKES) : `KSh ${totals.totalKES.toLocaleString()}`;
 
-    // Close details modal
-    document.getElementById("checkoutModal").close();
-
-    // Launch Paystack Inline
-    window.paystackService.initiatePayment({
+    const orderData = {
+      reference,
       customerName: name,
       customerEmail: email,
       customerPhone: phone,
       customerAddress: address,
       orderNotes: notes,
-      amountInKES: totals.totalKES,
       items: [...cart.items],
-      promoApplied: cart.activePromo ? cart.activePromo.code : null,
-      onSuccess: (orderData) => {
-        cart.clearCart();
-        this.showDigitalReceipt(orderData);
-      },
-      onClose: () => {
-        console.log("Paystack window dismissed.");
+      amountInKES: totals.totalKES,
+      formattedPrice,
+      currency: curr,
+      date: new Date().toLocaleString(),
+      paymentMethod: 'Direct Dispatch'
+    };
+
+    // Close modal if open
+    const modal = document.getElementById("checkoutModal");
+    if (modal) modal.close();
+
+    // Record order directly in Cloudflare D1
+    if (window.apiClient && typeof window.apiClient.createOrder === 'function') {
+      try {
+        await window.apiClient.createOrder({
+          orderId: reference,
+          customerName: name,
+          customerPhone: phone,
+          customerEmail: email,
+          deliveryAddress: address,
+          items: cart.items.map(i => ({ id: i.id, name: i.name, quantity: i.quantity, priceKES: i.priceKES })),
+          subtotalKES: totals.subtotalKES,
+          shippingKES: totals.shippingKES,
+          totalKES: totals.totalKES,
+          currency: 'KES',
+          paymentMethod: 'direct_mpesa_cod',
+          paymentStatus: 'pending_dispatch',
+          paymentRef: reference,
+          fulfillmentStatus: 'dispatched_plain_box',
+          isDiscreetPackaging: 1,
+          notes: notes
+        });
+      } catch (d1Err) {
+        console.warn('D1 direct order recording:', d1Err);
       }
-    });
+    }
+
+    cart.clearCart();
+    this.showDigitalReceipt(orderData);
   }
 
   showDigitalReceipt(orderData) {
@@ -877,7 +893,7 @@ class ApothecaryApp {
             <span>${orderData.formattedPrice} (${orderData.currency})</span>
           </div>
           <div style="font-size: 0.75rem; color: #28a745; margin-top: 0.35rem;">
-            ✔ Paid via Paystack Inline Secure Gateway
+            ✔ Confirmed for Direct Plain-Box Courier Dispatch
           </div>
         </div>
 
