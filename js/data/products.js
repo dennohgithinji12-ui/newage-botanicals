@@ -5619,7 +5619,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 42,
     "tag": "Dry Oil",
-    "image": "assets/images/products/desert-date-balanites-acne-cleanser.jpg",
+    "image": "assets/images/products/desert-date-balanites-acne-cleanser-photo.jpg",
     "herbs": [
       "desert date",
       "balanites",
@@ -5649,7 +5649,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Massage 4 pumps onto dry facial skin for 60 seconds. Place a warm damp cloth over face, then gently wipe clean.",
     "inStock": true,
     "images": [
-      "assets/images/products/desert-date-balanites-acne-cleanser.jpg"
+      "assets/images/products/desert-date-balanites-acne-cleanser-photo.jpg"
     ],
     "whatItDoes": "Pressed from the kernels of the ancient desert date tree growing in Kenya's arid northern frontiers. Renowned as a 'dry oil' that dissolves stubborn pore debris and waterproof pigments effortlessly. Dissolves hardened sebum plugs and stubborn makeup without drying out skin. Rinses clean with warm water and a washcloth leaving zero greasy residue"
   },
@@ -5663,7 +5663,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 83,
     "tag": "Natural AHA",
-    "image": "assets/images/products/hibiscus-aha-radiance-peeling-mask.jpg",
+    "image": "assets/images/products/hibiscus-aha-radiance-peeling-mask-photo.jpg",
     "herbs": [
       "hibiscus",
       "papaya",
@@ -5694,7 +5694,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Smooth a thin layer over clean skin. Leave for 10 minutes (you may feel a gentle tingle). Rinse with cool water.",
     "inStock": true,
     "images": [
-      "assets/images/products/hibiscus-aha-radiance-peeling-mask.jpg"
+      "assets/images/products/hibiscus-aha-radiance-peeling-mask-photo.jpg"
     ],
     "whatItDoes": "Known as the 'Botox Plant' in botanical skincare circles. High concentrations of natural hibiscus organic acids (pyruvic, malic, and citric) blended with green papaya papain enzymes. Gently unglues dead cellular debris without abrasive scratching or micro-tearing. Evens skin tone and reveals vibrant, luminous new skin underneath"
   },
@@ -5708,7 +5708,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 92,
     "tag": "Plant Retinol",
-    "image": "assets/images/products/rosehip-seed-retinoid-night-nectar.jpg",
+    "image": "assets/images/products/rosehip-seed-retinoid-night-nectar-photo.jpg",
     "herbs": [
       "rosehip seed",
       "trans-retinoic acid",
@@ -5738,7 +5738,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Press 3 drops into targeted areas (eye contours, smile lines, scars) each night before sleeping.",
     "inStock": true,
     "images": [
-      "assets/images/products/rosehip-seed-retinoid-night-nectar.jpg"
+      "assets/images/products/rosehip-seed-retinoid-night-nectar-photo.jpg"
     ],
     "whatItDoes": "Unrefined deep orange-red oil cold-pressed from the seeds of wild mountain rosehips. Nature's richest botanical source of all-trans retinoic acid. Accelerates skin regeneration and fades stubborn scar tissue naturally. Stimulates collagen production without the peeling and redness of pharmaceutical retinoids"
   },
@@ -5752,7 +5752,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 67,
     "tag": "Sensitive Skin",
-    "image": "assets/images/products/kenyan-lavender-chamomile-soothing-body-lotion.jpg",
+    "image": "assets/images/products/kenyan-lavender-chamomile-soothing-body-lotion-photo.jpg",
     "herbs": [
       "lavender",
       "chamomile",
@@ -5782,7 +5782,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Smooth liberally over entire body following bathing or whenever skin feels dry, tight, or hot.",
     "inStock": true,
     "images": [
-      "assets/images/products/kenyan-lavender-chamomile-soothing-body-lotion.jpg"
+      "assets/images/products/kenyan-lavender-chamomile-soothing-body-lotion-photo.jpg"
     ],
     "whatItDoes": "Crafted with floral waters distilled from highland lavender and sweet chamomile, blended with wild Nilotica shea butter. Calms stressed skin within minutes of application. Instantly cools heat, redness, and inflammation from sun, shaving, or wind exposure. Lightweight non-greasy lotion absorbs fast for immediate daytime wear"
   },
@@ -5796,7 +5796,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 74,
     "tag": "Aluminum-Free",
-    "image": "assets/images/products/kenyan-lemongrass-eucalyptus-deodorant-cream.jpg",
+    "image": "assets/images/products/kenyan-lemongrass-eucalyptus-deodorant-cream-photo.jpg",
     "herbs": [
       "lemongrass",
       "eucalyptus",
@@ -5825,7 +5825,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Apply a pea-sized amount to clean, dry underarms each morning.",
     "inStock": true,
     "images": [
-      "assets/images/products/kenyan-lemongrass-eucalyptus-deodorant-cream.jpg"
+      "assets/images/products/kenyan-lemongrass-eucalyptus-deodorant-cream-photo.jpg"
     ],
     "whatItDoes": "100% natural, baking-soda-free formula. Magnesium hydroxide and organic arrowroot neutralize odor-causing bacteria without blocking your body's natural sweat glands. Free of aluminum chlorohydrate, synthetic parabens, and irritating baking soda. Highland lemongrass and eucalyptus keep underarms smelling crisp and fresh all day"
   },
@@ -5839,7 +5839,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 132,
     "tag": "Bestseller",
-    "image": "assets/images/products/african-black-soap-scalp-elixir.jpg",
+    "image": "assets/images/products/african-black-soap-scalp-elixir-photo.jpg",
     "herbs": [
       "rosemary",
       "black castor oil",
@@ -5870,7 +5870,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Part hair into quadrants. Dispense 5 to 7 drops directly onto scalp and massage with finger pads for 5 minutes.",
     "inStock": true,
     "images": [
-      "assets/images/products/african-black-soap-scalp-elixir.jpg"
+      "assets/images/products/african-black-soap-scalp-elixir-photo.jpg"
     ],
     "whatItDoes": "Traditional roasted black castor oil combined with steam-distilled Kenyan highland rosemary cineole and cedarwood. Stimulates dermal papilla blood circulation to awaken dormant hair follicles. Rosemary cineole is clinically observed to match 2% minoxidil in supporting hair density. Thick castor ricinoleic acid locks in moisture along the hair shaft to prevent breakage"
   },
@@ -5884,7 +5884,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 98,
     "tag": "Length Retention",
-    "image": "assets/images/products/chebe-fenugreek-hair-length-butter.jpg",
+    "image": "assets/images/products/chebe-fenugreek-hair-length-butter-photo.jpg",
     "herbs": [
       "chebe powder",
       "croton gratissimus",
@@ -5914,7 +5914,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Apply generously to damp hair sections before braiding, twisting, or tucking ends away.",
     "inStock": true,
     "images": [
-      "assets/images/products/chebe-fenugreek-hair-length-butter.jpg"
+      "assets/images/products/chebe-fenugreek-hair-length-butter-photo.jpg"
     ],
     "whatItDoes": "Sourced directly from the Basara women of Chad who are renowned for waist-length natural hair. Authentic Chebe seed powder blended with sprouted fenugreek mucilage and nilotica shea. Provides extreme moisture lubrication to prevent breakage and snap during detangling. Fenugreek phyto-proteins reinforce the hair keratin cortex"
   },
@@ -5928,7 +5928,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 64,
     "tag": "High Gloss",
-    "image": "assets/images/products/hibiscus-amla-gloss-hair-rinse.jpg",
+    "image": "assets/images/products/hibiscus-amla-gloss-hair-rinse-photo.jpg",
     "herbs": [
       "hibiscus",
       "amla",
@@ -5958,7 +5958,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Brew 2 tablespoons in 500ml boiling water. Cool, strain, and pour over freshly washed hair as final rinse.",
     "inStock": true,
     "images": [
-      "assets/images/products/hibiscus-amla-gloss-hair-rinse.jpg"
+      "assets/images/products/hibiscus-amla-gloss-hair-rinse-photo.jpg"
     ],
     "whatItDoes": "The natural acids in crimson hibiscus flower calyces instantly tighten open hair cuticles, reflecting light like a mirror and eliminating frizzy flyaways. Closes hair cuticle scales to lock in moisture and produce an intense mirror-like shine. Amla Vitamin C prevents premature pigment graying and nourishes roots"
   },
@@ -5972,7 +5972,7 @@ const PRODUCTS_DATA = [
     "rating": 4.8,
     "reviewCount": 47,
     "tag": "Keratin Builder",
-    "image": "assets/images/products/horsetail-bamboo-silica-hair-tonic.jpg",
+    "image": "assets/images/products/horsetail-bamboo-silica-hair-tonic-photo.jpg",
     "herbs": [
       "horsetail",
       "bamboo silica",
@@ -6002,7 +6002,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Spritz directly onto roots and hair lengths daily. Comb through with wide-tooth wooden comb.",
     "inStock": true,
     "images": [
-      "assets/images/products/horsetail-bamboo-silica-hair-tonic.jpg"
+      "assets/images/products/horsetail-bamboo-silica-hair-tonic-photo.jpg"
     ],
     "whatItDoes": "Nature's two richest sources of bio-available silica combined into a daily leave-in scalp and hair mist. Penetrates the hair shaft to reinforce internal keratin cross-links. Silica strengthens hair tensile strength by up to 30%, resisting snapping. Stimulates connective collagen tissues around follicular roots"
   },
@@ -6016,7 +6016,7 @@ const PRODUCTS_DATA = [
     "rating": 4.9,
     "reviewCount": 89,
     "tag": "Viral Tonic",
-    "image": "assets/images/products/clove-rosemary-hair-growth-tea-spray.jpg",
+    "image": "assets/images/products/clove-rosemary-hair-growth-tea-spray-photo.jpg",
     "herbs": [
       "clove spray",
       "rosemary water",
@@ -6046,7 +6046,7 @@ const PRODUCTS_DATA = [
     "ritualGuide": "Spray directly onto scalp morning and evening. Massage with fingertips for 2 minutes.",
     "inStock": true,
     "images": [
-      "assets/images/products/clove-rosemary-hair-growth-tea-spray.jpg"
+      "assets/images/products/clove-rosemary-hair-growth-tea-spray-photo.jpg"
     ],
     "whatItDoes": "The viral, centuries-old East African secret for hair density. Whole cloves and fresh rosemary leaves slow-simmered in mountain spring water to create a potent follicle tonic. Eugenol and carnosic acid promote vigorous micro-capillary flow to hair roots. Reduces daily hair fall in the brush and shower within 14 days"
   },
