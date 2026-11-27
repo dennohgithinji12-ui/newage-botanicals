@@ -47,7 +47,8 @@ const functionFiles = [
   'functions/api/batch.js',
   'functions/api/reviews.js',
   'functions/api/db-status.js',
-  'functions/api/verify-payment.js'
+  'functions/api/verify-payment.js',
+  'functions/api/charge.js'
 ];
 
 functionFiles.forEach(f => {

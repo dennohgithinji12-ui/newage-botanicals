@@ -241,14 +241,30 @@ const d1Functions = [
   'functions/api/batch.js',
   'functions/api/reviews.js',
   'functions/api/db-status.js',
-  'functions/api/verify-payment.js'
+  'functions/api/verify-payment.js',
+  'functions/api/charge.js'
 ];
 d1Functions.forEach(f => {
   const fPath = path.join(__dirname, '..', f);
   assert(fs.existsSync(fPath), `Cloudflare Pages function ${f} must exist`);
   const fContent = fs.readFileSync(fPath, 'utf8');
   assert(fContent.includes('env.DB'), `${f} must integrate with env.DB D1 binding`);
+  totalTests++; passedTests++;
+  console.log(`  ✓ Cloudflare Pages function ${f} integrates with env.DB D1 binding`);
 });
+
+// Verify Zero-Popup On-Site Direct Checkout
+const checkoutHtml = fs.readFileSync(path.join(__dirname, '../checkout.html'), 'utf8');
+assert(!checkoutHtml.includes('PaystackPop.setup'), 'checkout.html must not use PaystackPop popup setup');
+assert(checkoutHtml.includes('setPaymentMethod(\'paystack\')'), 'checkout.html must have direct Paystack on-site payment option');
+totalTests += 2; passedTests += 2;
+console.log('  ✓ checkout.html executes on-site Paystack direct STK push without popup window');
+
+const paystackJs = fs.readFileSync(path.join(__dirname, '../js/paystack-service.js'), 'utf8');
+assert(!paystackJs.includes('.openIframe()'), 'js/paystack-service.js must not invoke openIframe()');
+assert(paystackJs.includes('/api/charge'), 'js/paystack-service.js must execute direct /api/charge call');
+totalTests += 2; passedTests += 2;
+console.log('  ✓ js/paystack-service.js uses serverless /api/charge with zero popup modals');
 
 assert(fs.existsSync(path.join(__dirname, '../functions/api/consult.js')), 'functions/api/consult.js must exist');
 

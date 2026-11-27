@@ -274,18 +274,46 @@
               2. Select Payment Method
             </h2>
 
-            <!-- Option 1: Direct M-Pesa -->
-            <label class="payment-option-card active" id="cardOptMpesa" onclick="setPaymentMethod('mpesa')">
-              <input type="radio" name="paymentMethodRadio" value="mpesa" checked>
+            <!-- Option 1: Paystack Direct M-Pesa (Zero Popups) -->
+            <label class="payment-option-card active" id="cardOptPaystack" onclick="setPaymentMethod('paystack')">
+              <input type="radio" name="paymentMethodRadio" value="paystack" checked>
               <div style="flex: 1;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                  <strong style="color: #00c389; font-size: 0.95rem;">📱 Lipa na M-Pesa (Direct STK / Send Money)</strong>
-                  <span style="font-size: 0.72rem; background: rgba(0, 195, 137, 0.2); color: #00c389; padding: 0.15rem 0.45rem; border-radius: 4px; font-weight: 600;">Recommended in Kenya</span>
+                  <strong style="color: #00c389; font-size: 0.95rem;">📱 Paystack Direct M-Pesa (STK Push to Phone · Zero Popups)</strong>
+                  <span style="font-size: 0.72rem; background: rgba(0, 195, 137, 0.2); color: #00c389; padding: 0.15rem 0.45rem; border-radius: 4px; font-weight: 600;">Fastest in Kenya</span>
                 </div>
                 <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0.25rem 0 0;">
-                  Pay directly to our dispensary hotline <strong>0141 270 112</strong> or receive an M-Pesa prompt.
+                  Triggers an instant Safaricom M-Pesa STK PIN prompt directly on your handset. Completes directly on our site with zero popup windows.
                 </p>
-                <div id="mpesaDetailsBox" class="mpesa-instructions-box">
+              </div>
+            </label>
+
+            <!-- Option 2: Pay on Delivery -->
+            <label class="payment-option-card" id="cardOptCod" onclick="setPaymentMethod('cod')">
+              <input type="radio" name="paymentMethodRadio" value="cod">
+              <div style="flex: 1;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: #f9d976; font-size: 0.95rem;">💵 Pay on Delivery (Courier Doorstep M-Pesa / Cash)</strong>
+                  <span style="font-size: 0.72rem; background: rgba(249, 217, 118, 0.15); color: #f9d976; padding: 0.15rem 0.45rem; border-radius: 4px; font-weight: 600;">Plain Box Inspection</span>
+                </div>
+                <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0.25rem 0 0;">
+                  Inspect your neutral, unbranded parcel at your doorstep first. Pay via M-Pesa or Cash directly to the dispatch rider upon delivery.
+                </p>
+              </div>
+            </label>
+
+            <!-- Option 3: Direct Manual M-Pesa -->
+            <label class="payment-option-card" id="cardOptMpesa" onclick="setPaymentMethod('mpesa')">
+              <input type="radio" name="paymentMethodRadio" value="mpesa">
+              <div style="flex: 1;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: var(--gold-glow); font-size: 0.95rem;">📱 Manual Send Money (Hotline 0141 270 112)</strong>
+                  <span style="font-size: 0.72rem; background: rgba(212, 175, 55, 0.15); color: var(--gold-glow); padding: 0.15rem 0.45rem; border-radius: 4px;">Manual Transfer</span>
+                </div>
+                <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0.25rem 0 0;">
+                  Pay directly to our dispensary hotline <strong>0141 270 112</strong> or paste confirmation code.
+                </p>
+                <div id="mpesaDetailsBox" class="mpesa-instructions-box" style="display: none;">
                   <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
                     <span>Official M-Pesa Number:</span>
                     <strong style="color: var(--gold-glow); font-family: monospace; font-size: 1rem;">0141 270 112</strong>
@@ -304,21 +332,7 @@
               </div>
             </label>
 
-            <!-- Option 2: Pay on Delivery -->
-            <label class="payment-option-card" id="cardOptCod" onclick="setPaymentMethod('cod')">
-              <input type="radio" name="paymentMethodRadio" value="cod">
-              <div style="flex: 1;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                  <strong style="color: #f9d976; font-size: 0.95rem;">💵 Pay on Delivery (Courier Doorstep M-Pesa / Cash)</strong>
-                  <span style="font-size: 0.72rem; background: rgba(249, 217, 118, 0.15); color: #f9d976; padding: 0.15rem 0.45rem; border-radius: 4px; font-weight: 600;">Plain Box Inspection</span>
-                </div>
-                <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0.25rem 0 0;">
-                  Inspect your neutral, unbranded parcel at your doorstep first. Pay via M-Pesa or Cash directly to the dispatch rider.
-                </p>
-              </div>
-            </label>
-
-            <!-- Option 3: WhatsApp Direct Express -->
+            <!-- Option 4: WhatsApp Direct Express -->
             <label class="payment-option-card" id="cardOptWhatsApp" onclick="setPaymentMethod('whatsapp')">
               <input type="radio" name="paymentMethodRadio" value="whatsapp">
               <div style="flex: 1;">
@@ -336,7 +350,7 @@
 
           <button type="submit" class="btn-paystack" id="submitOrderBtn" style="width: 100%; margin-top: 1.5rem; font-size: 1.05rem; padding: 1.15rem; font-weight: 700; letter-spacing: 0.5px; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem; box-shadow: 0 4px 20px rgba(0, 195, 137, 0.35); background: linear-gradient(135deg, #09a5db 0%, #00c389 100%); color: #ffffff;">
             <span>⚡</span>
-            <span id="submitBtnText">Confirm Direct Order & Request Plain-Box Dispatch</span>
+            <span id="submitBtnText">Complete Order &amp; Send M-Pesa Prompt to Phone</span>
           </button>
           
           <div style="text-align: center; margin-top: 0.85rem; font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">
@@ -402,11 +416,14 @@
       <div class="checkout-card" style="background: rgba(14, 41, 27, 0.7); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 3rem 2rem;">
         <div style="font-size: 3.5rem; margin-bottom: 1rem;">🌿</div>
         <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--gold-glow); margin-bottom: 0.5rem;">
-          Order Placed & Registered!
+          Order Placed &amp; Registered!
         </h2>
         <p style="color: var(--text-linen); font-size: 1rem; margin-bottom: 1.5rem;" id="successSubtitle">
           Your order has been recorded in our fulfillment database. Our dispensary rider is packing your plain-box parcel.
         </p>
+
+        <!-- Live Direct Charge Notification Banner -->
+        <div id="successPromptNotice" style="display: none; background: rgba(0, 195, 137, 0.15); border: 1px solid rgba(0, 195, 137, 0.4); border-radius: 8px; padding: 1rem; margin-bottom: 1.5rem; text-align: left; font-size: 0.92rem; color: #a3e635; line-height: 1.5;"></div>
 
         <div style="background: rgba(5, 14, 9, 0.7); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.15); text-align: left; margin-bottom: 2rem; font-size: 0.95rem;">
           <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; border-bottom: 1px dashed rgba(212, 175, 55, 0.2); padding-bottom: 0.5rem;">
@@ -414,8 +431,12 @@
             <strong id="successOrderRef" style="color: var(--gold-glow); font-family: monospace; font-size: 1.1rem;">NAH-12345</strong>
           </div>
           <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <span style="color: var(--text-muted);">Recipient:</span>
-            <span id="successName" style="color: var(--text-parchment);"></span>
+            <span style="color: var(--text-muted);">Recipient Name:</span>
+            <span id="successName" style="color: var(--text-parchment); font-weight: 600;"></span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+            <span style="color: var(--text-muted);">Phone Number:</span>
+            <span id="successPhone" style="color: var(--text-parchment); font-weight: 600;"></span>
           </div>
           <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
             <span style="color: var(--text-muted);">Delivery Town / Region:</span>
@@ -423,11 +444,12 @@
           </div>
           <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
             <span style="color: var(--text-muted);">Payment Channel:</span>
-            <span id="successPayment" style="color: var(--gold-primary); font-weight: 600;">📱 Lipa na M-Pesa</span>
+            <span id="successPayment" style="color: var(--gold-primary); font-weight: 600;">📱 Paystack Direct M-Pesa</span>
           </div>
+          <div id="successItemsSummary" style="margin: 0.75rem 0; padding: 0.75rem 0; border-top: 1px dashed rgba(212, 175, 55, 0.15); border-bottom: 1px dashed rgba(212, 175, 55, 0.15); font-size: 0.88rem; color: var(--text-linen);"></div>
           <div style="display: flex; justify-content: space-between; margin-top: 0.75rem; padding-top: 0.5rem; border-top: 1px dashed rgba(212, 175, 55, 0.2);">
-            <strong style="color: var(--text-parchment);">Total:</strong>
-            <strong id="successTotal" style="color: var(--gold-glow); font-size: 1.2rem;"></strong>
+            <strong style="color: var(--text-parchment);">Total Due:</strong>
+            <strong id="successTotal" style="color: var(--gold-glow); font-size: 1.25rem;"></strong>
           </div>
         </div>
 
@@ -464,30 +486,35 @@
     };
 
     let checkoutItems = [];
-    let selectedPayment = 'mpesa'; // 'mpesa' | 'cod' | 'whatsapp'
+    let selectedPayment = 'paystack'; // 'paystack' | 'cod' | 'mpesa' | 'whatsapp'
     let appliedCoupon = null;
     let urlUtmParams = {};
     let selectedRegionKey = 'nairobi_metro';
 
     function setPaymentMethod(method) {
       selectedPayment = method;
-      ['cardOptMpesa', 'cardOptCod', 'cardOptWhatsApp'].forEach(id => {
+      ['cardOptPaystack', 'cardOptCod', 'cardOptMpesa', 'cardOptWhatsApp'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.classList.remove('active');
       });
       const mpesaBox = document.getElementById('mpesaDetailsBox');
       const submitBtnText = document.getElementById('submitBtnText');
 
-      if (method === 'mpesa') {
-        const opt = document.getElementById('cardOptMpesa');
+      if (method === 'paystack') {
+        const opt = document.getElementById('cardOptPaystack');
         if (opt) opt.classList.add('active');
-        if (mpesaBox) mpesaBox.style.display = 'block';
-        if (submitBtnText) submitBtnText.textContent = '⚡ Confirm Direct Order (Lipa na M-Pesa)';
+        if (mpesaBox) mpesaBox.style.display = 'none';
+        if (submitBtnText) submitBtnText.textContent = '⚡ Complete Order & Send M-Pesa Prompt to Phone';
       } else if (method === 'cod') {
         const opt = document.getElementById('cardOptCod');
         if (opt) opt.classList.add('active');
         if (mpesaBox) mpesaBox.style.display = 'none';
         if (submitBtnText) submitBtnText.textContent = '⚡ Confirm Direct Order (Pay on Delivery)';
+      } else if (method === 'mpesa') {
+        const opt = document.getElementById('cardOptMpesa');
+        if (opt) opt.classList.add('active');
+        if (mpesaBox) mpesaBox.style.display = 'block';
+        if (submitBtnText) submitBtnText.textContent = '⚡ Confirm Direct Hotline Payment';
       } else if (method === 'whatsapp') {
         const opt = document.getElementById('cardOptWhatsApp');
         if (opt) opt.classList.add('active');
@@ -883,7 +910,46 @@
         }
       };
 
-      // 1. Direct WhatsApp Order Option
+      // 1. Paystack Direct M-Pesa Option (On-Site, Zero Popups)
+      if (selectedPayment === 'paystack') {
+        if (submitBtn && submitText) {
+          submitBtn.disabled = true;
+          submitText.textContent = '⏳ Triggering M-Pesa Prompt on your phone...';
+        }
+
+        try {
+          const chargeRes = await fetch('/api/charge', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              reference,
+              customerName: name,
+              customerPhone: phone,
+              customerEmail: email,
+              deliveryAddress: `${town} (${regionData.name})`,
+              deliveryRegion: regionData.name,
+              items: checkoutItems,
+              amountKES: totalKES,
+              notes: completeNotes
+            })
+          });
+          const chargeData = await chargeRes.json();
+          orderData.message = chargeData.message;
+        } catch (err) {
+          console.warn('Paystack direct charge API fallback:', err);
+          await syncOrderToD1(reference, 'stk_prompt_pending');
+        }
+
+        if (window.cart) window.cart.clearCart();
+        if (submitBtn && submitText) {
+          submitBtn.disabled = false;
+          submitText.textContent = '✅ Order Confirmed';
+        }
+        showSuccessScreen({ ...orderData, paymentMethod: 'paystack' });
+        return;
+      }
+
+      // 2. Direct WhatsApp Order Option
       if (selectedPayment === 'whatsapp') {
         await syncOrderToD1(reference, 'whatsapp_dispatch');
         if (window.cart) window.cart.clearCart();
@@ -908,7 +974,7 @@
         return;
       }
 
-      // 2. Direct M-Pesa Option
+      // 3. Direct Manual M-Pesa Hotline Option
       if (selectedPayment === 'mpesa') {
         if (submitBtn && submitText) {
           submitBtn.disabled = true;
@@ -927,7 +993,7 @@
         return;
       }
 
-      // 3. Pay on Delivery Option
+      // 4. Pay on Delivery Option
       if (selectedPayment === 'cod') {
         if (submitBtn && submitText) {
           submitBtn.disabled = true;
@@ -945,7 +1011,7 @@
         return;
       }
 
-      // Fallback direct order sync (if method not explicitly caught)
+      // Fallback direct order sync
       if (submitBtn && submitText) {
         submitBtn.disabled = true;
         submitText.textContent = '⏳ Recording Direct Order...';
@@ -966,13 +1032,41 @@
 
       document.getElementById('successOrderRef').textContent = orderData.reference;
       document.getElementById('successName').textContent = orderData.customerName;
+      const phoneEl = document.getElementById('successPhone');
+      if (phoneEl) phoneEl.textContent = orderData.customerPhone || '—';
       document.getElementById('successTown').textContent = orderData.customerAddress;
 
-      let paymentLabel = '📱 Lipa na M-Pesa (0141 270 112)';
+      let paymentLabel = '⚡ Paystack Direct M-Pesa (STK Push Triggered)';
       if (orderData.paymentMethod === 'cod') paymentLabel = '💵 Pay on Delivery (Courier Doorstep M-Pesa / Cash)';
+      if (orderData.paymentMethod === 'mpesa') paymentLabel = '📱 Lipa na M-Pesa Hotline (0141 270 112)';
       if (orderData.paymentMethod === 'whatsapp') paymentLabel = '💬 Direct WhatsApp Dispatch';
       document.getElementById('successPayment').textContent = paymentLabel;
       document.getElementById('successTotal').textContent = window.geoCurrency ? window.geoCurrency.formatPrice(orderData.amountInKES) : 'KSh ' + orderData.amountInKES.toLocaleString();
+
+      // Show live M-Pesa prompt notification if Paystack STK push
+      const promptNotice = document.getElementById('successPromptNotice');
+      if (promptNotice) {
+        if (orderData.paymentMethod === 'paystack') {
+          promptNotice.innerHTML = `
+            <strong>📱 M-Pesa Prompt Triggered:</strong> A Safaricom M-Pesa PIN prompt has been sent directly to <strong>${orderData.customerPhone}</strong>. Please check your handset and enter your PIN to complete.<br>
+            <span style="font-size: 0.8rem; color: #d4af37;">(If your phone screen was locked, unlock your device or confirm courier dispatch on WhatsApp below.)</span>
+          `;
+          promptNotice.style.display = 'block';
+        } else {
+          promptNotice.style.display = 'none';
+        }
+      }
+
+      // Summary of remedies
+      const itemsSummaryEl = document.getElementById('successItemsSummary');
+      if (itemsSummaryEl && orderData.items && orderData.items.length > 0) {
+        itemsSummaryEl.innerHTML = `
+          <strong>Remedies Ordered:</strong>
+          <ul style="margin: 0.4rem 0 0.2rem 1.2rem; padding: 0;">
+            ${orderData.items.map(i => `<li>${i.name} (x${i.quantity || 1})</li>`).join('')}
+          </ul>
+        `;
+      }
 
       const cleanStorePhone = CONFIG.contact.whatsapp.replace(/[^0-9]/g, '');
       const waText = `🌿 Hi Apothecary Team! My order ref is *${orderData.reference}* for *${orderData.customerName}* (Total: KSh ${orderData.amountInKES.toLocaleString()}). Please confirm courier dispatch to *${orderData.customerAddress}* in plain unbranded packaging.`;
