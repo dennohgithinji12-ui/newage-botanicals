@@ -16,7 +16,7 @@
 - **Origin Region:** Meru & Tharaka Nithi, Volcanic Foothills of Mount Kenya
 - **Vetted Supplier:** Mount Kenya Highland Herbs
 - **Testing Laboratory:** SGS Kenya Phytochemical Laboratory
-- **Lab Assay Report ID:** `LAB-REPORT-410469`
+- **Lab Assay Report ID:** `LAB-REPORT-691153`
 
 ---
 

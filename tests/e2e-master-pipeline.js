@@ -253,12 +253,14 @@ d1Functions.forEach(f => {
   console.log(`  ✓ Cloudflare Pages function ${f} integrates with env.DB D1 binding`);
 });
 
-// Verify Zero-Popup On-Site Direct Checkout
+// Verify Zero-Popup On-Site Direct Checkout & Policy Compliance
 const checkoutHtml = fs.readFileSync(path.join(__dirname, '../checkout.html'), 'utf8');
 assert(!checkoutHtml.includes('PaystackPop.setup'), 'checkout.html must not use PaystackPop popup setup');
 assert(checkoutHtml.includes('setPaymentMethod(\'paystack\')'), 'checkout.html must have direct Paystack on-site payment option');
-totalTests += 2; passedTests += 2;
+assert(!checkoutHtml.includes('cardOptCod'), 'checkout.html must not include Pay on Delivery option');
+totalTests += 3; passedTests += 3;
 console.log('  ✓ checkout.html executes on-site Paystack direct STK push without popup window');
+console.log('  ✓ checkout.html has Pay on Delivery removed (100% direct prepaid policy enforced)');
 
 const paystackJs = fs.readFileSync(path.join(__dirname, '../js/paystack-service.js'), 'utf8');
 assert(!paystackJs.includes('.openIframe()'), 'js/paystack-service.js must not invoke openIframe()');

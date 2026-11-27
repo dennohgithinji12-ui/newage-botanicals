@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Discreet Direct Checkout | NewAge Health Botanicals</title>
-  <meta name="description" content="Fast, 100% confidential direct checkout with instant Lipa na M-Pesa, Pay on Delivery, and unbranded plain packaging.">
+  <meta name="description" content="Fast, 100% confidential direct checkout with instant Lipa na M-Pesa, Paystack Direct, and unbranded plain packaging.">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -288,21 +288,7 @@
               </div>
             </label>
 
-            <!-- Option 2: Pay on Delivery -->
-            <label class="payment-option-card" id="cardOptCod" onclick="setPaymentMethod('cod')">
-              <input type="radio" name="paymentMethodRadio" value="cod">
-              <div style="flex: 1;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                  <strong style="color: #f9d976; font-size: 0.95rem;">💵 Pay on Delivery (Courier Doorstep M-Pesa / Cash)</strong>
-                  <span style="font-size: 0.72rem; background: rgba(249, 217, 118, 0.15); color: #f9d976; padding: 0.15rem 0.45rem; border-radius: 4px; font-weight: 600;">Plain Box Inspection</span>
-                </div>
-                <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0.25rem 0 0;">
-                  Inspect your neutral, unbranded parcel at your doorstep first. Pay via M-Pesa or Cash directly to the dispatch rider upon delivery.
-                </p>
-              </div>
-            </label>
-
-            <!-- Option 3: Direct Manual M-Pesa -->
+            <!-- Option 2: Direct Manual M-Pesa -->
             <label class="payment-option-card" id="cardOptMpesa" onclick="setPaymentMethod('mpesa')">
               <input type="radio" name="paymentMethodRadio" value="mpesa">
               <div style="flex: 1;">
@@ -332,7 +318,7 @@
               </div>
             </label>
 
-            <!-- Option 4: WhatsApp Direct Express -->
+            <!-- Option 3: WhatsApp Direct Express -->
             <label class="payment-option-card" id="cardOptWhatsApp" onclick="setPaymentMethod('whatsapp')">
               <input type="radio" name="paymentMethodRadio" value="whatsapp">
               <div style="flex: 1;">
@@ -486,14 +472,14 @@
     };
 
     let checkoutItems = [];
-    let selectedPayment = 'paystack'; // 'paystack' | 'cod' | 'mpesa' | 'whatsapp'
+    let selectedPayment = 'paystack'; // 'paystack' | 'mpesa' | 'whatsapp'
     let appliedCoupon = null;
     let urlUtmParams = {};
     let selectedRegionKey = 'nairobi_metro';
 
     function setPaymentMethod(method) {
       selectedPayment = method;
-      ['cardOptPaystack', 'cardOptCod', 'cardOptMpesa', 'cardOptWhatsApp'].forEach(id => {
+      ['cardOptPaystack', 'cardOptMpesa', 'cardOptWhatsApp'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.classList.remove('active');
       });
@@ -505,11 +491,6 @@
         if (opt) opt.classList.add('active');
         if (mpesaBox) mpesaBox.style.display = 'none';
         if (submitBtnText) submitBtnText.textContent = '⚡ Complete Order & Send M-Pesa Prompt to Phone';
-      } else if (method === 'cod') {
-        const opt = document.getElementById('cardOptCod');
-        if (opt) opt.classList.add('active');
-        if (mpesaBox) mpesaBox.style.display = 'none';
-        if (submitBtnText) submitBtnText.textContent = '⚡ Confirm Direct Order (Pay on Delivery)';
       } else if (method === 'mpesa') {
         const opt = document.getElementById('cardOptMpesa');
         if (opt) opt.classList.add('active');
@@ -993,24 +974,6 @@
         return;
       }
 
-      // 4. Pay on Delivery Option
-      if (selectedPayment === 'cod') {
-        if (submitBtn && submitText) {
-          submitBtn.disabled = true;
-          submitText.textContent = '⏳ Recording Order for Courier Dispatch...';
-        }
-
-        await syncOrderToD1(reference, 'pay_on_delivery');
-
-        if (window.cart) window.cart.clearCart();
-        if (submitBtn && submitText) {
-          submitBtn.disabled = false;
-          submitText.textContent = '✅ Order Confirmed';
-        }
-        showSuccessScreen({ ...orderData, paymentMethod: 'cod' });
-        return;
-      }
-
       // Fallback direct order sync
       if (submitBtn && submitText) {
         submitBtn.disabled = true;
@@ -1037,7 +1000,6 @@
       document.getElementById('successTown').textContent = orderData.customerAddress;
 
       let paymentLabel = '⚡ Paystack Direct M-Pesa (STK Push Triggered)';
-      if (orderData.paymentMethod === 'cod') paymentLabel = '💵 Pay on Delivery (Courier Doorstep M-Pesa / Cash)';
       if (orderData.paymentMethod === 'mpesa') paymentLabel = '📱 Lipa na M-Pesa Hotline (0141 270 112)';
       if (orderData.paymentMethod === 'whatsapp') paymentLabel = '💬 Direct WhatsApp Dispatch';
       document.getElementById('successPayment').textContent = paymentLabel;
